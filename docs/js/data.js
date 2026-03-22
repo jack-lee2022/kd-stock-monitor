@@ -317,17 +317,20 @@ const DataManager = {
     },
     
     /**
-     * Format date
+     * Format date (convert UTC to Taiwan time)
      */
     formatDate(dateString) {
         if (!dateString) return 'N/A';
         const date = new Date(dateString);
-        return date.toLocaleString('zh-TW', {
+        // Convert to Taiwan time (UTC+8)
+        const taiwanDate = new Date(date.getTime() + (8 * 60 * 60 * 1000));
+        return taiwanDate.toLocaleString('zh-TW', {
             year: 'numeric',
             month: '2-digit',
             day: '2-digit',
             hour: '2-digit',
-            minute: '2-digit'
+            minute: '2-digit',
+            timeZone: 'UTC'
         });
     },
     
