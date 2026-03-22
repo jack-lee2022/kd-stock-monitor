@@ -222,7 +222,7 @@ function createAlertItem(alert) {
                 <div class="mt-1 text-sm text-gray-600">
                     KD-K: <span class="font-semibold">${alert.kd_k}</span> | 
                     KD-D: <span class="font-semibold">${alert.kd_d}</span> | 
-                    價格: <span class="font-semibold">${alert.current_price}</span>
+                    價格: <span class="font-semibold">${DataManager.formatPrice(alert.current_price, alert.market === 'TW' ? 'TWD' : 'USD')}</span>
                 </div>
             </div>
         </div>
