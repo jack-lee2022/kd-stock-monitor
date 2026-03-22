@@ -120,6 +120,14 @@ function createStockCard(stock) {
     const statusText = status === 'overbought' ? '超買' : 
                        status === 'oversold' ? '超賣' : '正常';
     
+    // Text color classes for alerts
+    const textColorClass = status === 'overbought' ? 'text-red-600' : 
+                          status === 'oversold' ? 'text-green-600' : 'text-gray-800';
+    const priceColorClass = status === 'overbought' ? 'text-red-700' : 
+                           status === 'oversold' ? 'text-green-700' : 'text-gray-800';
+    const kdColorClass = status === 'overbought' ? 'text-red-600' : 
+                        status === 'oversold' ? 'text-green-600' : '';
+    
     const kdKClass = stock.kd_k >= 80 ? 'high' : stock.kd_k <= 20 ? 'low' : 'normal';
     const kdDClass = stock.kd_d >= 80 ? 'high' : stock.kd_d <= 20 ? 'low' : 'normal';
     
@@ -133,8 +141,8 @@ function createStockCard(stock) {
         <div class="stock-card ${statusClass} p-4" onclick="selectStockForChart('${stock.symbol}')">
             <div class="flex justify-between items-start mb-2">
                 <div>
-                    <h3 class="font-bold text-lg text-gray-800">${stock.symbol}</h3>
-                    <p class="text-sm text-gray-600">${stock.name}</p>
+                    <h3 class="font-bold text-lg ${textColorClass}">${stock.symbol}</h3>
+                    <p class="text-sm ${status === 'overbought' ? 'text-red-500' : status === 'oversold' ? 'text-green-500' : 'text-gray-600'}">${stock.name}</p>
                 </div>
                 <div class="text-right">
                     <span class="market-badge ${marketClass}">${stock.market}</span>
@@ -145,7 +153,7 @@ function createStockCard(stock) {
             <div class="grid grid-cols-2 gap-4 mb-3">
                 <div>
                     <p class="text-xs text-gray-500">現價</p>
-                    <p class="font-bold text-gray-800">${DataManager.formatPrice(stock.current_price, currency)}</p>
+                    <p class="font-bold ${priceColorClass}">${DataManager.formatPrice(stock.current_price, currency)}</p>
                 </div>
                 <div class="text-right">
                     <p class="text-xs text-gray-500">更新時間</p>
@@ -156,11 +164,11 @@ function createStockCard(stock) {
             <div class="border-t pt-3">
                 <div class="flex justify-between items-center mb-2">
                     <span class="text-sm text-gray-600">KD-K</span>
-                    <span class="kd-value ${kdKClass}">${stock.kd_k !== null ? stock.kd_k.toFixed(2) : '-'}</span>
+                    <span class="kd-value ${kdKClass} ${kdColorClass}">${stock.kd_k !== null ? stock.kd_k.toFixed(2) : '-'}</span>
                 </div>
                 <div class="flex justify-between items-center mb-2">
                     <span class="text-sm text-gray-600">KD-D</span>
-                    <span class="kd-value ${kdDClass}">${stock.kd_d !== null ? stock.kd_d.toFixed(2) : '-'}</span>
+                    <span class="kd-value ${kdDClass} ${kdColorClass}">${stock.kd_d !== null ? stock.kd_d.toFixed(2) : '-'}</span>
                 </div>
                 <div class="kd-progress-bar">
                     <div class="kd-progress-fill ${progressClass}" style="width: ${Math.min(Math.max(progressValue, 0), 100)}%"></div>
