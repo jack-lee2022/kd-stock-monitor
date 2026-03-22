@@ -1,0 +1,72 @@
+name: Update Stock Data
+
+on:
+  schedule:
+    # Run at 16:00 UTC (00:00 CST+8) - after TW market close
+    # Run at 21:00 UTC (05:00 CST+8) - after US market close
+    - cron: '0 16 * * 1-5'
+    - cron: '0 21 * * 1-5'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Cache pip packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run stock data update
+      run: |
+        cd src
+        python main.py
+        
+    - name: Check if data files changed
+      id: check_changes
+      run: |
+        if [ -n "$(git status --porcelain data/)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/
+        git commit -m "📊 Update stock data - $(date +'%Y-%m-%d %H:%M UTC')"
+        git push
+        
+    - name: Create summary
+      run: |
+        echo "## 📊 Stock Data Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Date:** $(date +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "- **Status:** ${{ steps.check_changes.outputs.changed == 'true' && '✅ Data updated' || '⚡ No changes' }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ -f data/summary.json ]; then
+          echo "### Summary Stats" >> $GITHUB_STEP_SUMMARY
+          echo '```json' >> $GITHUB_STEP_SUMMARY
+          cat data/summary.json >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+        fi

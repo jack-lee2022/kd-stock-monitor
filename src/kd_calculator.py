@@ -1,0 +1,247 @@
+#!/usr/bin/env python3
+"""
+KD Calculator - Calculates Stochastic Oscillator (KD) indicator using pandas_ta.
+"""
+
+import pandas as pd
+import json
+import os
+from datetime import datetime
+from typing import Dict, List, Optional, Tuple
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+
+class KDCalculator:
+    """Calculates KD (Stochastic Oscillator) indicator for stock data."""
+    
+    def __init__(self, config_path: str = "config.json"):
+        """Initialize with configuration."""
+        self.config = self._load_config(config_path)
+        self.kd_settings = self.config.get("kd_settings", {
+            "k_period": 9,
+            "d_period": 3,
+            "smooth": 3
+        })
+        self.data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
+        os.makedirs(self.data_dir, exist_ok=True)
+    
+    def _load_config(self, config_path: str) -> dict:
+        """Load configuration from JSON file."""
+        with open(config_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    
+    def calculate_kd(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Calculate KD (Stochastic Oscillator) for the given DataFrame.
+        
+        The KD indicator consists of:
+        - %K (Fast Stochastic): Shows where the current close is relative to the high-low range
+        - %D (Slow Stochastic): A moving average of %K (signal line)
+        
+        Formula:
+        - RSV = 100 * (Close - Lowest Low) / (Highest High - Lowest Low)
+        - K = (2/3) * Previous K + (1/3) * RSV
+        - D = (2/3) * Previous D + (1/3) * K
+        
+        Args:
+            df: DataFrame with columns: open, high, low, close, volume
+        
+        Returns:
+            DataFrame with additional 'kd_k' and 'kd_d' columns
+        """
+        if df is None or df.empty:
+            raise ValueError("DataFrame is empty or None")
+        
+        required_cols = ['high', 'low', 'close']
+        for col in required_cols:
+            if col not in df.columns:
+                raise ValueError(f"Required column '{col}' not found in DataFrame")
+        
+        # Make a copy to avoid modifying original
+        result_df = df.copy()
+        
+        # Get settings
+        k_period = self.kd_settings.get("k_period", 9)
+        d_period = self.kd_settings.get("d_period", 3)
+        
+        # Calculate KD using manual method
+        result_df = self._calculate_kd_manual(result_df, k_period, d_period)
+        
+        return result_df
+    
+    def _calculate_kd_manual(self, df: pd.DataFrame, k_period: int, d_period: int) -> pd.DataFrame:
+        """
+        Manual KD calculation (Taiwan style).
+        
+        RSV = 100 * (Close - Lowest Low) / (Highest High - Lowest Low)
+        K = (2/3) * Previous K + (1/3) * RSV
+        D = (2/3) * Previous D + (1/3) * K
+        """
+        result_df = df.copy()
+        
+        # Calculate lowest low and highest high over k_period
+        low_min = result_df['low'].rolling(window=k_period, min_periods=1).min()
+        high_max = result_df['high'].rolling(window=k_period, min_periods=1).max()
+        
+        # Calculate RSV (Raw Stochastic Value)
+        rsv = 100 * (result_df['close'] - low_min) / (high_max - low_min)
+        rsv = rsv.fillna(50)  # Fill NaN with neutral value
+        
+        # Initialize K and D arrays
+        k_values = []
+        d_values = []
+        prev_k = 50.0  # Initial value
+        prev_d = 50.0  # Initial value
+        
+        for i, rsv_val in enumerate(rsv):
+            if i < k_period - 1:
+                # Not enough data yet, use neutral values
+                k_values.append(50.0)
+                d_values.append(50.0)
+            else:
+                # Calculate K and D
+                k = (2/3) * prev_k + (1/3) * rsv_val
+                d = (2/3) * prev_d + (1/3) * k
+                k_values.append(k)
+                d_values.append(d)
+                prev_k = k
+                prev_d = d
+        
+        result_df['kd_k'] = pd.Series(k_values, index=result_df.index).round(2)
+        result_df['kd_d'] = pd.Series(d_values, index=result_df.index).round(2)
+        
+        logger.info("KD calculated using Taiwan style formula")
+        return result_df
+    
+    def get_current_kd(self, df: pd.DataFrame) -> Optional[Dict]:
+        """
+        Get the most recent KD values from a DataFrame.
+        
+        Returns:
+            Dictionary with current K, D values and date, or None if not available
+        """
+        if df is None or df.empty:
+            return None
+        
+        if 'kd_k' not in df.columns or 'kd_d' not in df.columns:
+            return None
+        
+        latest = df.iloc[-1]
+        
+        return {
+            "kd_k": float(latest['kd_k']) if pd.notna(latest['kd_k']) else None,
+            "kd_d": float(latest['kd_d']) if pd.notna(latest['kd_d']) else None,
+            "date": str(latest.get('date', latest.name)) if isinstance(latest.name, pd.Timestamp) else str(df.index[-1]),
+            "close": float(latest['close']) if 'close' in latest else None
+        }
+    
+    def calculate_all_stocks(self, stock_data: Dict[str, List[Dict]]) -> Dict[str, List[Dict]]:
+        """
+        Calculate KD for all stocks in the provided data.
+        
+        Args:
+            stock_data: Dictionary with 'TW' and 'US' keys containing stock data
+        
+        Returns:
+            Dictionary with KD values added to each stock
+        """
+        results = {"TW": [], "US": []}
+        
+        for market in ["TW", "US"]:
+            for stock in stock_data.get(market, []):
+                symbol = stock["symbol"]
+                df = stock.get("data")
+                
+                if df is not None and not df.empty:
+                    try:
+                        # Calculate KD
+                        df_with_kd = self.calculate_kd(df)
+                        current_kd = self.get_current_kd(df_with_kd)
+                        
+                        # Save processed data
+                        self._save_processed_data(symbol, df_with_kd)
+                        
+                        results[market].append({
+                            "symbol": symbol,
+                            "name": stock["name"],
+                            "market": market,
+                            "current_price": current_kd.get("close") if current_kd else None,
+                            "kd_k": current_kd.get("kd_k") if current_kd else None,
+                            "kd_d": current_kd.get("kd_d") if current_kd else None,
+                            "last_updated": stock.get("last_updated"),
+                            "data_points": len(df_with_kd),
+                            "history": df_with_kd[['date', 'open', 'high', 'low', 'close', 'volume', 'kd_k', 'kd_d']].to_dict('records')[-30:]  # Last 30 days
+                        })
+                        
+                        logger.info(f"KD calculated for {symbol}: K={current_kd.get('kd_k')}, D={current_kd.get('kd_d')}")
+                        
+                    except Exception as e:
+                        logger.error(f"Error calculating KD for {symbol}: {e}")
+                        results[market].append({
+                            "symbol": symbol,
+                            "name": stock["name"],
+                            "market": market,
+                            "error": str(e)
+                        })
+        
+        return results
+    
+    def _save_processed_data(self, symbol: str, df: pd.DataFrame):
+        """Save processed data with KD values to CSV."""
+        filepath = os.path.join(self.data_dir, f"{symbol.replace('.', '_')}_kd.csv")
+        df.to_csv(filepath, index=False)
+        logger.info(f"Saved processed data to {filepath}")
+    
+    def analyze_kd_signal(self, kd_k: float, kd_d: float) -> str:
+        """
+        Analyze KD values and return a signal description.
+        
+        Returns:
+            Signal description: 'overbought', 'oversold', 'golden_cross', 'death_cross', or 'neutral'
+        """
+        thresholds = self.config.get("alert_thresholds", {"overbought": 80, "oversold": 20})
+        overbought = thresholds.get("overbought", 80)
+        oversold = thresholds.get("oversold", 20)
+        
+        if kd_k >= overbought and kd_d >= overbought:
+            return "overbought"
+        elif kd_k <= oversold and kd_d <= oversold:
+            return "oversold"
+        elif kd_k > kd_d:
+            return "bullish"  # K above D is generally bullish
+        elif kd_k < kd_d:
+            return "bearish"  # K below D is generally bearish
+        else:
+            return "neutral"
+
+
+def main():
+    """Test the KD calculator."""
+    from fetcher import StockFetcher
+    
+    # Fetch some test data
+    fetcher = StockFetcher()
+    df = fetcher.fetch_stock_data("AAPL", period="1mo")
+    
+    if df is not None:
+        calculator = KDCalculator()
+        
+        # Calculate KD
+        df_with_kd = calculator.calculate_kd(df)
+        
+        print("\nLast 5 days with KD values:")
+        print(df_with_kd[['date', 'close', 'kd_k', 'kd_d']].tail())
+        
+        # Get current KD
+        current = calculator.get_current_kd(df_with_kd)
+        print(f"\nCurrent KD values:")
+        print(f"  K: {current['kd_k']}")
+        print(f"  D: {current['kd_d']}")
+        print(f"  Signal: {calculator.analyze_kd_signal(current['kd_k'], current['kd_d'])}")
+
+
+if __name__ == "__main__":
+    main()
