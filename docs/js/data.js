@@ -212,9 +212,11 @@ const DataManager = {
         try {
             // Try to load from data files
             // Note: When deployed to GitHub Pages, data is copied to docs/data/
-            const stockResponse = await fetch('./data/stock_data.json');
-            const alertsResponse = await fetch('./data/alerts.json');
-            const summaryResponse = await fetch('./data/summary.json');
+            // Add timestamp to bypass cache
+            const timestamp = new Date().getTime();
+            const stockResponse = await fetch(`./data/stock_data.json?v=${timestamp}`);
+            const alertsResponse = await fetch(`./data/alerts.json?v=${timestamp}`);
+            const summaryResponse = await fetch(`./data/summary.json?v=${timestamp}`);
             
             if (stockResponse.ok) {
                 this.stockData = await stockResponse.json();
