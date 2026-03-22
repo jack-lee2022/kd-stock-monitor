@@ -211,9 +211,10 @@ const DataManager = {
     async loadData() {
         try {
             // Try to load from data files
-            const stockResponse = await fetch('../data/stock_data.json');
-            const alertsResponse = await fetch('../data/alerts.json');
-            const summaryResponse = await fetch('../data/summary.json');
+            // Note: When deployed to GitHub Pages, data is copied to docs/data/
+            const stockResponse = await fetch('./data/stock_data.json');
+            const alertsResponse = await fetch('./data/alerts.json');
+            const summaryResponse = await fetch('./data/summary.json');
             
             if (stockResponse.ok) {
                 this.stockData = await stockResponse.json();
