@@ -195,6 +195,16 @@ class AlertChecker:
             
             for market in ["TW", "US"]:
                 for stock in stocks_data.get(market, []):
+                    # Convert history dates to strings to ensure JSON serialization
+                    history = stock.get("history", [])[-7:] if "history" in stock else []
+                    clean_history = []
+                    for h in history:
+                        clean_h = h.copy()
+                        # Convert any Timestamp objects to ISO format strings
+                        if "date" in clean_h and hasattr(clean_h["date"], "isoformat"):
+                            clean_h["date"] = clean_h["date"].isoformat()
+                        clean_history.append(clean_h)
+                    
                     dashboard_data[market].append({
                         "symbol": stock.get("symbol"),
                         "name": stock.get("name"),
@@ -205,7 +215,7 @@ class AlertChecker:
                         "last_updated": stock.get("last_updated"),
                         "data_points": stock.get("data_points"),
                         # Include last 7 days of history for sparkline charts
-                        "history": stock.get("history", [])[-7:] if "history" in stock else []
+                        "history": clean_history
                     })
             
             with open(self.stock_data_file, 'w', encoding='utf-8') as f:

@@ -1,14 +1,33 @@
 {
-  "timestamp": "2026-03-22T00:27:12.903687",
+  "timestamp": "2026-03-22T05:22:02.511452",
   "date": "2026-03-22",
   "stocks_processed": 10,
   "stocks_successful": 10,
   "stocks_failed": 0,
   "new_alerts": 0,
   "overbought_count": 0,
-  "oversold_count": 0,
-  "normal_count": 10,
+  "oversold_count": 3,
+  "normal_count": 7,
   "overbought_stocks": [],
-  "oversold_stocks": [],
+  "oversold_stocks": [
+    {
+      "symbol": "2317.TW",
+      "name": "鴻海",
+      "kd_k": 16.52,
+      "kd_d": 21.91
+    },
+    {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "kd_k": 14.84,
+      "kd_d": 18.46
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corp.",
+      "kd_k": 15.44,
+      "kd_d": 28.44
+    }
+  ],
   "errors": []
 }
