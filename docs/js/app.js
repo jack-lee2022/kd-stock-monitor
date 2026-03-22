@@ -180,7 +180,7 @@ function createStockCard(stock) {
  */
 function renderAlertHistory() {
     const container = document.getElementById('alert-history');
-    const alerts = DataManager.getAlerts(10); // Show last 10 alerts
+    const alerts = DataManager.getAlerts(); // Show all alerts
     
     if (alerts.length === 0) {
         container.innerHTML = `
