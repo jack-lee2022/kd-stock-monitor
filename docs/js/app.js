@@ -165,11 +165,6 @@ function createStockCard(stock) {
                 <div class="kd-progress-bar">
                     <div class="kd-progress-fill ${progressClass}" style="width: ${Math.min(Math.max(progressValue, 0), 100)}%"></div>
                 </div>
-                <div class="flex justify-between text-xs text-gray-400 mt-1">
-                    <span>0</span>
-                    <span>50</span>
-                    <span>100</span>
-                </div>
             </div>
         </div>
     `;
