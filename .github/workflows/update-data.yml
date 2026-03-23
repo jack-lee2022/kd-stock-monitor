@@ -59,12 +59,20 @@ jobs:
           echo "changed=false" >> $GITHUB_OUTPUT
         fi
         
+    - name: Sync data to docs folder for GitHub Pages
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        # Copy updated data to docs folder for GitHub Pages deployment
+        cp -r data/*.json docs/data/
+        cp -r data/*_kd.csv docs/data/ 2>/dev/null || true
+        cp -r data/*_raw.csv docs/data/ 2>/dev/null || true
+        
     - name: Commit and push changes
       if: steps.check_changes.outputs.changed == 'true'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add data/
+        git add data/ docs/data/
         git commit -m "📊 Update stock data - $(date +'%Y-%m-%d %H:%M UTC')"
         git push
         
