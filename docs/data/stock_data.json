@@ -7,7 +7,7 @@
       "current_price": 74.25,
       "kd_k": 44.04,
       "kd_d": 53.87,
-      "last_updated": "2026-03-23T19:29:41.454764",
+      "last_updated": "2026-03-23T19:37:58.047573",
       "data_points": 55,
       "history": [
         {
@@ -90,12 +90,12 @@
             "signal": "AVOID",
             "description": "縮量下跌3.1%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -105,7 +105,7 @@
       "current_price": 37.970001220703125,
       "kd_k": 52.08,
       "kd_d": 65.89,
-      "last_updated": "2026-03-23T19:29:41.628020",
+      "last_updated": "2026-03-23T19:37:58.092614",
       "data_points": 55,
       "history": [
         {
@@ -180,11 +180,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.8倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌3.0%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -194,7 +211,7 @@
       "current_price": 65.4000015258789,
       "kd_k": 22.43,
       "kd_d": 35.94,
-      "last_updated": "2026-03-23T19:29:41.787153",
+      "last_updated": "2026-03-23T19:37:58.127650",
       "data_points": 55,
       "history": [
         {
@@ -269,11 +286,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.5%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -283,7 +309,7 @@
       "current_price": 1810.0,
       "kd_k": 32.46,
       "kd_d": 42.58,
-      "last_updated": "2026-03-23T19:29:41.986286",
+      "last_updated": "2026-03-23T19:37:58.179366",
       "data_points": 55,
       "history": [
         {
@@ -358,11 +384,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌3.2%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -372,7 +407,7 @@
       "current_price": 196.0,
       "kd_k": 12.34,
       "kd_d": 18.72,
-      "last_updated": "2026-03-23T19:29:42.168875",
+      "last_updated": "2026-03-23T19:37:58.235558",
       "data_points": 55,
       "history": [
         {
@@ -451,7 +486,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -461,7 +496,7 @@
       "current_price": 1625.0,
       "kd_k": 30.27,
       "kd_d": 38.68,
-      "last_updated": "2026-03-23T19:29:42.324966",
+      "last_updated": "2026-03-23T19:37:58.288714",
       "data_points": 55,
       "history": [
         {
@@ -536,11 +571,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌6.1%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -550,7 +594,7 @@
       "current_price": 97.80000305175781,
       "kd_k": 32.37,
       "kd_d": 51.86,
-      "last_updated": "2026-03-23T19:29:42.447581",
+      "last_updated": "2026-03-23T19:37:58.321094",
       "data_points": 55,
       "history": [
         {
@@ -629,7 +673,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -639,7 +683,7 @@
       "current_price": 10.630000114440918,
       "kd_k": 30.92,
       "kd_d": 50.35,
-      "last_updated": "2026-03-23T19:29:42.597551",
+      "last_updated": "2026-03-23T19:37:58.355145",
       "data_points": 55,
       "history": [
         {
@@ -714,11 +758,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.7倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.7%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -728,7 +789,7 @@
       "current_price": 50.650001525878906,
       "kd_k": 39.66,
       "kd_d": 55.24,
-      "last_updated": "2026-03-23T19:29:42.775610",
+      "last_updated": "2026-03-23T19:37:58.393091",
       "data_points": 55,
       "history": [
         {
@@ -803,11 +864,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.5倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.0%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -817,7 +895,7 @@
       "current_price": 106.6500015258789,
       "kd_k": 27.31,
       "kd_d": 47.98,
-      "last_updated": "2026-03-23T19:29:43.343191",
+      "last_updated": "2026-03-23T19:37:59.140014",
       "data_points": 55,
       "history": [
         {
@@ -900,12 +978,12 @@
             "signal": "AVOID",
             "description": "縮量下跌3.4%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -915,7 +993,7 @@
       "current_price": 32.630001068115234,
       "kd_k": 45.64,
       "kd_d": 60.79,
-      "last_updated": "2026-03-23T19:29:43.436689",
+      "last_updated": "2026-03-23T19:37:59.169515",
       "data_points": 55,
       "history": [
         {
@@ -990,11 +1068,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.7倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.9%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1004,7 +1099,7 @@
       "current_price": 38.63999938964844,
       "kd_k": 29.64,
       "kd_d": 44.35,
-      "last_updated": "2026-03-23T19:29:43.536033",
+      "last_updated": "2026-03-23T19:37:59.200346",
       "data_points": 55,
       "history": [
         {
@@ -1079,11 +1174,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌4.0%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1093,7 +1197,7 @@
       "current_price": 172.25,
       "kd_k": 43.97,
       "kd_d": 53.96,
-      "last_updated": "2026-03-23T19:29:43.714148",
+      "last_updated": "2026-03-23T19:37:59.246040",
       "data_points": 55,
       "history": [
         {
@@ -1176,12 +1280,12 @@
             "signal": "AVOID",
             "description": "縮量下跌3.1%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1191,7 +1295,7 @@
       "current_price": 65.1500015258789,
       "kd_k": 44.21,
       "kd_d": 54.3,
-      "last_updated": "2026-03-23T19:29:43.834618",
+      "last_updated": "2026-03-23T19:37:59.288314",
       "data_points": 55,
       "history": [
         {
@@ -1274,12 +1378,12 @@
             "signal": "AVOID",
             "description": "縮量下跌3.3%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1289,7 +1393,7 @@
       "current_price": 27.489999771118164,
       "kd_k": 48.86,
       "kd_d": 61.77,
-      "last_updated": "2026-03-23T19:29:43.992736",
+      "last_updated": "2026-03-23T19:37:59.324709",
       "data_points": 55,
       "history": [
         {
@@ -1364,11 +1468,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌3.4%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1378,7 +1491,7 @@
       "current_price": 28.290000915527344,
       "kd_k": 52.43,
       "kd_d": 62.33,
-      "last_updated": "2026-03-23T19:29:44.107209",
+      "last_updated": "2026-03-23T19:37:59.365090",
       "data_points": 55,
       "history": [
         {
@@ -1453,11 +1566,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.2倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.7%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1467,7 +1597,7 @@
       "current_price": 19.260000228881836,
       "kd_k": 53.08,
       "kd_d": 64.18,
-      "last_updated": "2026-03-23T19:29:44.266954",
+      "last_updated": "2026-03-23T19:37:59.401564",
       "data_points": 55,
       "history": [
         {
@@ -1542,11 +1672,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.6%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1556,7 +1703,7 @@
       "current_price": 54.5,
       "kd_k": 57.86,
       "kd_d": 69.44,
-      "last_updated": "2026-03-23T19:29:44.397993",
+      "last_updated": "2026-03-23T19:37:59.439031",
       "data_points": 55,
       "history": [
         {
@@ -1639,12 +1786,12 @@
             "signal": "AVOID",
             "description": "縮量下跌3.9%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1654,7 +1801,7 @@
       "current_price": 50.95000076293945,
       "kd_k": 50.47,
       "kd_d": 60.74,
-      "last_updated": "2026-03-23T19:29:44.524331",
+      "last_updated": "2026-03-23T19:37:59.483507",
       "data_points": 55,
       "history": [
         {
@@ -1729,11 +1876,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1743,7 +1899,7 @@
       "current_price": 22.079999923706055,
       "kd_k": 52.35,
       "kd_d": 61.98,
-      "last_updated": "2026-03-23T19:29:44.644015",
+      "last_updated": "2026-03-23T19:37:59.522550",
       "data_points": 55,
       "history": [
         {
@@ -1818,11 +1974,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.4%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1832,7 +2005,7 @@
       "current_price": 22.889999389648438,
       "kd_k": 49.34,
       "kd_d": 60.73,
-      "last_updated": "2026-03-23T19:29:44.800433",
+      "last_updated": "2026-03-23T19:37:59.557372",
       "data_points": 55,
       "history": [
         {
@@ -1907,11 +2080,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.5倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.8%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -1921,7 +2111,7 @@
       "current_price": 22.020000457763672,
       "kd_k": 46.77,
       "kd_d": 62.54,
-      "last_updated": "2026-03-23T19:29:44.914449",
+      "last_updated": "2026-03-23T19:37:59.594252",
       "data_points": 55,
       "history": [
         {
@@ -2000,7 +2190,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2010,7 +2200,7 @@
       "current_price": 22.440000534057617,
       "kd_k": 47.37,
       "kd_d": 60.83,
-      "last_updated": "2026-03-23T19:29:45.040099",
+      "last_updated": "2026-03-23T19:37:59.629399",
       "data_points": 55,
       "history": [
         {
@@ -2085,11 +2275,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌3.6%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2099,7 +2298,7 @@
       "current_price": 19.219999313354492,
       "kd_k": 54.63,
       "kd_d": 70.69,
-      "last_updated": "2026-03-23T19:29:45.164862",
+      "last_updated": "2026-03-23T19:37:59.666238",
       "data_points": 55,
       "history": [
         {
@@ -2174,11 +2373,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌3.0%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2188,7 +2396,7 @@
       "current_price": 21.239999771118164,
       "kd_k": 52.02,
       "kd_d": 64.92,
-      "last_updated": "2026-03-23T19:29:45.274387",
+      "last_updated": "2026-03-23T19:37:59.702153",
       "data_points": 55,
       "history": [
         {
@@ -2263,11 +2471,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌4.2%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2277,7 +2494,7 @@
       "current_price": 17.489999771118164,
       "kd_k": 64.11,
       "kd_d": 72.87,
-      "last_updated": "2026-03-23T19:29:45.386788",
+      "last_updated": "2026-03-23T19:37:59.740888",
       "data_points": 55,
       "history": [
         {
@@ -2352,11 +2569,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.9%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2366,7 +2592,7 @@
       "current_price": 15.40999984741211,
       "kd_k": 50.26,
       "kd_d": 63.25,
-      "last_updated": "2026-03-23T19:29:45.492863",
+      "last_updated": "2026-03-23T19:37:59.777197",
       "data_points": 55,
       "history": [
         {
@@ -2449,12 +2675,12 @@
             "signal": "AVOID",
             "description": "縮量下跌3.3%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2464,7 +2690,7 @@
       "current_price": 9.5600004196167,
       "kd_k": 52.96,
       "kd_d": 66.48,
-      "last_updated": "2026-03-23T19:29:45.647675",
+      "last_updated": "2026-03-23T19:37:59.812770",
       "data_points": 55,
       "history": [
         {
@@ -2539,11 +2765,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.5倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.7%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2553,7 +2796,7 @@
       "current_price": 9.949999809265137,
       "kd_k": 59.91,
       "kd_d": 70.95,
-      "last_updated": "2026-03-23T19:29:45.764498",
+      "last_updated": "2026-03-23T19:37:59.848288",
       "data_points": 55,
       "history": [
         {
@@ -2628,11 +2871,28 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.8倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.3%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2642,7 +2902,7 @@
       "current_price": 46.18000030517578,
       "kd_k": 9.24,
       "kd_d": 15.76,
-      "last_updated": "2026-03-23T19:29:45.883256",
+      "last_updated": "2026-03-23T19:37:59.879462",
       "data_points": 55,
       "history": [
         {
@@ -2725,12 +2985,12 @@
             "signal": "BUY",
             "description": "連跌後放量2.9倍殺跌",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "BUY",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2740,7 +3000,7 @@
       "current_price": 54.099998474121094,
       "kd_k": 50.45,
       "kd_d": 62.32,
-      "last_updated": "2026-03-23T19:29:46.612194",
+      "last_updated": "2026-03-23T19:38:00.631968",
       "data_points": 55,
       "history": [
         {
@@ -2823,12 +3083,12 @@
             "signal": "AVOID",
             "description": "縮量至0.5倍",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2838,7 +3098,7 @@
       "current_price": 36.18000030517578,
       "kd_k": 64.42,
       "kd_d": 69.1,
-      "last_updated": "2026-03-23T19:29:46.724926",
+      "last_updated": "2026-03-23T19:38:00.668592",
       "data_points": 55,
       "history": [
         {
@@ -2913,11 +3173,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.7倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -2927,7 +3196,7 @@
       "current_price": 55.849998474121094,
       "kd_k": 59.42,
       "kd_d": 69.8,
-      "last_updated": "2026-03-23T19:29:46.870595",
+      "last_updated": "2026-03-23T19:38:00.701172",
       "data_points": 55,
       "history": [
         {
@@ -3002,11 +3271,20 @@
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.7倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -3016,7 +3294,7 @@
       "current_price": 38.369998931884766,
       "kd_k": 46.86,
       "kd_d": 65.16,
-      "last_updated": "2026-03-23T19:29:46.988175",
+      "last_updated": "2026-03-23T19:38:00.733211",
       "data_points": 55,
       "history": [
         {
@@ -3099,12 +3377,12 @@
             "signal": "AVOID",
             "description": "縮量下跌5.7%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     }
   ],
@@ -3113,10 +3391,10 @@
       "symbol": "AAPL",
       "name": "Apple Inc.",
       "market": "US",
-      "current_price": 251.7698974609375,
-      "kd_k": 21.82,
-      "kd_d": 19.58,
-      "last_updated": "2026-03-23T19:29:47.202665",
+      "current_price": 251.88009643554688,
+      "kd_k": 22.04,
+      "kd_d": 19.65,
+      "last_updated": "2026-03-23T19:38:00.800535",
       "data_points": 61,
       "history": [
         {
@@ -3184,10 +3462,10 @@
           "open": 253.99000549316406,
           "high": 254.55999755859375,
           "low": 250.27999877929688,
-          "close": 251.7698974609375,
-          "volume": 25356290,
-          "kd_k": 21.82,
-          "kd_d": 19.58
+          "close": 251.88009643554688,
+          "volume": 25704711,
+          "kd_k": 22.04,
+          "kd_d": 19.65
         }
       ],
       "patterns": {
@@ -3195,17 +3473,17 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "TSLA",
       "name": "Tesla Inc.",
       "market": "US",
-      "current_price": 381.239990234375,
-      "kd_k": 24.99,
-      "kd_d": 30.24,
-      "last_updated": "2026-03-23T19:29:47.349376",
+      "current_price": 381.05999755859375,
+      "kd_k": 24.87,
+      "kd_d": 30.2,
+      "last_updated": "2026-03-23T19:38:00.831223",
       "data_points": 61,
       "history": [
         {
@@ -3273,10 +3551,10 @@
           "open": 373.0849914550781,
           "high": 385.3299865722656,
           "low": 372.7300109863281,
-          "close": 381.239990234375,
-          "volume": 64274262,
-          "kd_k": 24.99,
-          "kd_d": 30.24
+          "close": 381.05999755859375,
+          "volume": 64974029,
+          "kd_k": 24.87,
+          "kd_d": 30.2
         }
       ],
       "patterns": {
@@ -3284,17 +3562,17 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "MSFT",
       "name": "Microsoft Corp.",
       "market": "US",
-      "current_price": 383.0199890136719,
-      "kd_k": 13.64,
-      "kd_d": 23.51,
-      "last_updated": "2026-03-23T19:29:47.569869",
+      "current_price": 383.135009765625,
+      "kd_k": 13.77,
+      "kd_d": 23.55,
+      "last_updated": "2026-03-23T19:38:00.885141",
       "data_points": 61,
       "history": [
         {
@@ -3362,18 +3640,27 @@
           "open": 383.9949951171875,
           "high": 387.2099914550781,
           "low": 381.67999267578125,
-          "close": 383.0199890136719,
-          "volume": 19711749,
-          "kd_k": 13.64,
-          "kd_d": 23.51
+          "close": 383.135009765625,
+          "volume": 20023853,
+          "kd_k": 13.77,
+          "kd_d": 23.55
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌4.1%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
@@ -3383,7 +3670,7 @@
       "current_price": 302.70001220703125,
       "kd_k": 46.57,
       "kd_d": 57.16,
-      "last_updated": "2026-03-23T19:29:47.732943",
+      "last_updated": "2026-03-23T19:38:00.922453",
       "data_points": 61,
       "history": [
         {
@@ -3452,27 +3739,36 @@
           "high": 305.9700012207031,
           "low": 300.92999267578125,
           "close": 302.70001220703125,
-          "volume": 21168440,
+          "volume": 21460231,
           "kd_k": 46.57,
           "kd_d": 57.16
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.6%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corp.",
       "market": "US",
-      "current_price": 176.24000549316406,
-      "kd_k": 27.21,
-      "kd_d": 35.59,
-      "last_updated": "2026-03-23T19:29:47.928023",
+      "current_price": 176.47000122070312,
+      "kd_k": 27.65,
+      "kd_d": 35.74,
+      "last_updated": "2026-03-23T19:38:01.004701",
       "data_points": 61,
       "history": [
         {
@@ -3540,28 +3836,37 @@
           "open": 177.25,
           "high": 178.3699951171875,
           "low": 174.75999450683594,
-          "close": 176.24000549316406,
-          "volume": 148949402,
-          "kd_k": 27.21,
-          "kd_d": 35.59
+          "close": 176.47000122070312,
+          "volume": 151119830,
+          "kd_k": 27.65,
+          "kd_d": 35.74
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌3.0%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com Inc.",
       "market": "US",
-      "current_price": 210.6999969482422,
-      "kd_k": 35.52,
-      "kd_d": 38.66,
-      "last_updated": "2026-03-23T19:29:48.027071",
+      "current_price": 210.82000732421875,
+      "kd_k": 35.84,
+      "kd_d": 38.76,
+      "last_updated": "2026-03-23T19:38:01.051246",
       "data_points": 61,
       "history": [
         {
@@ -3629,28 +3934,37 @@
           "open": 209.77999877929688,
           "high": 212.8000030517578,
           "low": 209.50999450683594,
-          "close": 210.6999969482422,
-          "volume": 32860034,
-          "kd_k": 35.52,
-          "kd_d": 38.66
+          "close": 210.82000732421875,
+          "volume": 33392760,
+          "kd_k": 35.84,
+          "kd_d": 38.76
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.0%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "META",
       "name": "Meta Platforms Inc.",
       "market": "US",
-      "current_price": 606.7949829101562,
-      "kd_k": 19.23,
-      "kd_d": 22.31,
-      "last_updated": "2026-03-23T19:29:48.130502",
+      "current_price": 606.2899780273438,
+      "kd_k": 19.0,
+      "kd_d": 22.23,
+      "last_updated": "2026-03-23T19:38:01.090146",
       "data_points": 61,
       "history": [
         {
@@ -3718,10 +4032,10 @@
           "open": 605.7869873046875,
           "high": 608.6400146484375,
           "low": 599.010009765625,
-          "close": 606.7949829101562,
-          "volume": 9749317,
-          "kd_k": 19.23,
-          "kd_d": 22.31
+          "close": 606.2899780273438,
+          "volume": 9903249,
+          "kd_k": 19.0,
+          "kd_d": 22.23
         }
       ],
       "patterns": {
@@ -3729,17 +4043,17 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices Inc.",
       "market": "US",
-      "current_price": 204.5500030517578,
-      "kd_k": 60.97,
-      "kd_d": 53.81,
-      "last_updated": "2026-03-23T19:29:48.223100",
+      "current_price": 204.1199951171875,
+      "kd_k": 60.13,
+      "kd_d": 53.53,
+      "last_updated": "2026-03-23T19:38:01.125368",
       "data_points": 61,
       "history": [
         {
@@ -3807,28 +4121,37 @@
           "open": 206.39500427246094,
           "high": 209.10000610351562,
           "low": 201.7100067138672,
-          "close": 204.5500030517578,
-          "volume": 25884834,
-          "kd_k": 60.97,
-          "kd_d": 53.81
+          "close": 204.1199951171875,
+          "volume": 26181984,
+          "kd_k": 60.13,
+          "kd_d": 53.53
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量上漲",
+            "pattern_name": "趨勢健康",
+            "signal": "HOLD",
+            "description": "縮量上漲4.0%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
         "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "AVGO",
       "name": "Broadcom Inc.",
       "market": "US",
-      "current_price": 325.3599853515625,
-      "kd_k": 27.03,
-      "kd_d": 29.03,
-      "last_updated": "2026-03-23T19:29:48.356006",
+      "current_price": 324.6000061035156,
+      "kd_k": 26.35,
+      "kd_d": 28.8,
+      "last_updated": "2026-03-23T19:38:01.171739",
       "data_points": 61,
       "history": [
         {
@@ -3896,28 +4219,37 @@
           "open": 318.0899963378906,
           "high": 326.4800109863281,
           "low": 314.92999267578125,
-          "close": 325.3599853515625,
-          "volume": 18645407,
-          "kd_k": 27.03,
-          "kd_d": 29.03
+          "close": 324.6000061035156,
+          "volume": 19137098,
+          "kd_k": 26.35,
+          "kd_d": 28.8
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "快跌慢漲",
+            "pattern_name": "主力吸籌",
+            "signal": "BUY",
+            "description": "快跌5.2%後緩漲1.0%",
+            "confidence": 70.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "BUY",
+        "signal_strength": 70.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "NFLX",
       "name": "Netflix Inc.",
       "market": "US",
-      "current_price": 93.625,
-      "kd_k": 25.19,
-      "kd_d": 26.2,
-      "last_updated": "2026-03-23T19:29:48.453309",
+      "current_price": 93.66000366210938,
+      "kd_k": 25.35,
+      "kd_d": 26.26,
+      "last_updated": "2026-03-23T19:38:01.202213",
       "data_points": 61,
       "history": [
         {
@@ -3985,28 +4317,37 @@
           "open": 91.98999786376953,
           "high": 93.9800033569336,
           "low": 91.86000061035156,
-          "close": 93.625,
-          "volume": 24885842,
-          "kd_k": 25.19,
-          "kd_d": 26.2
+          "close": 93.66000366210938,
+          "volume": 25285614,
+          "kd_k": 25.35,
+          "kd_d": 26.26
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.7倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "PLTR",
       "name": "Palantir Technologies Inc.",
       "market": "US",
-      "current_price": 160.5,
-      "kd_k": 62.91,
-      "kd_d": 56.12,
-      "last_updated": "2026-03-23T19:29:48.553196",
+      "current_price": 160.47999572753906,
+      "kd_k": 62.86,
+      "kd_d": 56.1,
+      "last_updated": "2026-03-23T19:38:01.237386",
       "data_points": 61,
       "history": [
         {
@@ -4074,10 +4415,10 @@
           "open": 153.27000427246094,
           "high": 160.72999572753906,
           "low": 153.27000427246094,
-          "close": 160.5,
-          "volume": 47036679,
-          "kd_k": 62.91,
-          "kd_d": 56.12
+          "close": 160.47999572753906,
+          "volume": 47784558,
+          "kd_k": 62.86,
+          "kd_d": 56.1
         }
       ],
       "patterns": {
@@ -4089,22 +4430,22 @@
             "signal": "HOLD",
             "description": "縮量上漲3.5%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "CRWD",
       "name": "CrowdStrike Holdings Inc.",
       "market": "US",
-      "current_price": 416.29998779296875,
-      "kd_k": 34.21,
-      "kd_d": 49.29,
-      "last_updated": "2026-03-23T19:29:48.709674",
+      "current_price": 416.80999755859375,
+      "kd_k": 34.56,
+      "kd_d": 49.41,
+      "last_updated": "2026-03-23T19:38:01.274798",
       "data_points": 61,
       "history": [
         {
@@ -4172,28 +4513,37 @@
           "open": 410.8299865722656,
           "high": 417.42999267578125,
           "low": 407.0,
-          "close": 416.29998779296875,
-          "volume": 2494405,
-          "kd_k": 34.21,
-          "kd_d": 49.29
+          "close": 416.80999755859375,
+          "volume": 2533058,
+          "kd_k": 34.56,
+          "kd_d": 49.41
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌3.8%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "MU",
       "name": "Micron Technology Inc.",
       "market": "US",
-      "current_price": 406.7300109863281,
-      "kd_k": 50.01,
-      "kd_d": 67.02,
-      "last_updated": "2026-03-23T19:29:48.913299",
+      "current_price": 406.7950134277344,
+      "kd_k": 50.04,
+      "kd_d": 67.03,
+      "last_updated": "2026-03-23T19:38:01.340352",
       "data_points": 61,
       "history": [
         {
@@ -4261,10 +4611,10 @@
           "open": 426.1449890136719,
           "high": 444.2699890136719,
           "low": 401.5199890136719,
-          "close": 406.7300109863281,
-          "volume": 47480894,
-          "kd_k": 50.01,
-          "kd_d": 67.02
+          "close": 406.7950134277344,
+          "volume": 47989901,
+          "kd_k": 50.04,
+          "kd_d": 67.03
         }
       ],
       "patterns": {
@@ -4272,17 +4622,17 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
       "market": "US",
-      "current_price": 339.5150146484375,
-      "kd_k": 35.08,
-      "kd_d": 33.42,
-      "last_updated": "2026-03-23T19:29:49.065124",
+      "current_price": 339.5400085449219,
+      "kd_k": 35.11,
+      "kd_d": 33.43,
+      "last_updated": "2026-03-23T19:38:01.394758",
       "data_points": 61,
       "history": [
         {
@@ -4350,10 +4700,10 @@
           "open": 331.1000061035156,
           "high": 343.4100036621094,
           "low": 331.1000061035156,
-          "close": 339.5150146484375,
-          "volume": 13793516,
-          "kd_k": 35.08,
-          "kd_d": 33.42
+          "close": 339.5400085449219,
+          "volume": 14006694,
+          "kd_k": 35.11,
+          "kd_d": 33.43
         }
       ],
       "patterns": {
@@ -4361,17 +4711,17 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "VT",
       "name": "Vanguard Total World Stock ETF",
       "market": "US",
-      "current_price": 138.91000366210938,
-      "kd_k": 26.81,
-      "kd_d": 25.35,
-      "last_updated": "2026-03-23T19:29:49.226602",
+      "current_price": 138.8800048828125,
+      "kd_k": 26.68,
+      "kd_d": 25.3,
+      "last_updated": "2026-03-23T19:38:01.448988",
       "data_points": 61,
       "history": [
         {
@@ -4439,28 +4789,37 @@
           "open": 138.60000610351562,
           "high": 140.10000610351562,
           "low": 137.875,
-          "close": 138.91000366210938,
-          "volume": 6364156,
-          "kd_k": 26.81,
-          "kd_d": 25.35
+          "close": 138.8800048828125,
+          "volume": 6418910,
+          "kd_k": 26.68,
+          "kd_d": 25.3
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.7倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "VOO",
       "name": "Vanguard S&P 500 ETF",
       "market": "US",
-      "current_price": 606.1900024414062,
-      "kd_k": 23.36,
-      "kd_d": 22.84,
-      "last_updated": "2026-03-23T19:29:49.358967",
+      "current_price": 606.169921875,
+      "kd_k": 23.34,
+      "kd_d": 22.83,
+      "last_updated": "2026-03-23T19:38:01.498304",
       "data_points": 61,
       "history": [
         {
@@ -4528,10 +4887,10 @@
           "open": 606.8599853515625,
           "high": 611.0250244140625,
           "low": 603.0599975585938,
-          "close": 606.1900024414062,
-          "volume": 8602431,
-          "kd_k": 23.36,
-          "kd_d": 22.84
+          "close": 606.169921875,
+          "volume": 8721006,
+          "kd_k": 23.34,
+          "kd_d": 22.83
         }
       ],
       "patterns": {
@@ -4539,17 +4898,17 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "SPY",
       "name": "SPDR S&P 500 ETF Trust",
       "market": "US",
-      "current_price": 657.3499755859375,
-      "kd_k": 23.55,
-      "kd_d": 23.02,
-      "last_updated": "2026-03-23T19:29:49.572218",
+      "current_price": 657.280029296875,
+      "kd_k": 23.48,
+      "kd_d": 23.0,
+      "last_updated": "2026-03-23T19:38:01.574775",
       "data_points": 61,
       "history": [
         {
@@ -4617,10 +4976,10 @@
           "open": 658.0700073242188,
           "high": 662.614990234375,
           "low": 653.9400024414062,
-          "close": 657.3499755859375,
-          "volume": 102938592,
-          "kd_k": 23.55,
-          "kd_d": 23.02
+          "close": 657.280029296875,
+          "volume": 104447054,
+          "kd_k": 23.48,
+          "kd_d": 23.0
         }
       ],
       "patterns": {
@@ -4628,17 +4987,17 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "QQQ",
       "name": "Invesco QQQ Trust",
       "market": "US",
-      "current_price": 590.010009765625,
-      "kd_k": 27.28,
-      "kd_d": 31.64,
-      "last_updated": "2026-03-23T19:29:49.723133",
+      "current_price": 589.9500122070312,
+      "kd_k": 27.22,
+      "kd_d": 31.62,
+      "last_updated": "2026-03-23T19:38:01.634484",
       "data_points": 61,
       "history": [
         {
@@ -4706,28 +5065,37 @@
           "open": 590.469970703125,
           "high": 595.0800170898438,
           "low": 585.9600219726562,
-          "close": 590.010009765625,
-          "volume": 77512222,
-          "kd_k": 27.28,
-          "kd_d": 31.64
+          "close": 589.9500122070312,
+          "volume": 78384590,
+          "kd_k": 27.22,
+          "kd_d": 31.62
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.2%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "DIA",
       "name": "SPDR Dow Jones Industrial Average ETF",
       "market": "US",
-      "current_price": 463.05999755859375,
-      "kd_k": 21.36,
-      "kd_d": 17.27,
-      "last_updated": "2026-03-23T19:29:50.031570",
+      "current_price": 463.0299987792969,
+      "kd_k": 21.32,
+      "kd_d": 17.26,
+      "last_updated": "2026-03-23T19:38:01.697329",
       "data_points": 61,
       "history": [
         {
@@ -4795,10 +5163,10 @@
           "open": 463.29998779296875,
           "high": 467.0199890136719,
           "low": 460.92999267578125,
-          "close": 463.05999755859375,
-          "volume": 8960466,
-          "kd_k": 21.36,
-          "kd_d": 17.27
+          "close": 463.0299987792969,
+          "volume": 9079447,
+          "kd_k": 21.32,
+          "kd_d": 17.26
         }
       ],
       "patterns": {
@@ -4806,17 +5174,17 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "SMH",
       "name": "VanEck Semiconductor ETF",
       "market": "US",
-      "current_price": 393.489990234375,
-      "kd_k": 49.87,
-      "kd_d": 52.69,
-      "last_updated": "2026-03-23T19:29:50.161573",
+      "current_price": 393.125,
+      "kd_k": 49.36,
+      "kd_d": 52.51,
+      "last_updated": "2026-03-23T19:38:01.741070",
       "data_points": 61,
       "history": [
         {
@@ -4884,10 +5252,10 @@
           "open": 393.3599853515625,
           "high": 399.2749938964844,
           "low": 389.44000244140625,
-          "close": 393.489990234375,
-          "volume": 11016662,
-          "kd_k": 49.87,
-          "kd_d": 52.69
+          "close": 393.125,
+          "volume": 11320133,
+          "kd_k": 49.36,
+          "kd_d": 52.51
         }
       ],
       "patterns": {
@@ -4895,17 +5263,17 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "USD",
       "name": "ProShares Ultra Semiconductors",
       "market": "US",
-      "current_price": 51.31999969482422,
-      "kd_k": 35.85,
-      "kd_d": 41.73,
-      "last_updated": "2026-03-23T19:29:50.339694",
+      "current_price": 51.349998474121094,
+      "kd_k": 35.97,
+      "kd_d": 41.77,
+      "last_updated": "2026-03-23T19:38:01.798911",
       "data_points": 61,
       "history": [
         {
@@ -4973,28 +5341,37 @@
           "open": 51.529998779296875,
           "high": 52.68000030517578,
           "low": 50.29130172729492,
-          "close": 51.31999969482422,
-          "volume": 788578,
-          "kd_k": 35.85,
-          "kd_d": 41.73
+          "close": 51.349998474121094,
+          "volume": 796625,
+          "kd_k": 35.97,
+          "kd_d": 41.77
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌3.6%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "AMZU",
       "name": "Direxion Daily AMZN Bull 2X Shares",
       "market": "US",
-      "current_price": 27.825000762939453,
-      "kd_k": 33.1,
-      "kd_d": 36.19,
-      "last_updated": "2026-03-23T19:29:50.445510",
+      "current_price": 27.850000381469727,
+      "kd_k": 33.34,
+      "kd_d": 36.27,
+      "last_updated": "2026-03-23T19:38:01.835437",
       "data_points": 61,
       "history": [
         {
@@ -5062,10 +5439,10 @@
           "open": 27.6299991607666,
           "high": 28.360000610351562,
           "low": 27.520000457763672,
-          "close": 27.825000762939453,
-          "volume": 2477746,
-          "kd_k": 33.1,
-          "kd_d": 36.19
+          "close": 27.850000381469727,
+          "volume": 2508157,
+          "kd_k": 33.34,
+          "kd_d": 36.27
         }
       ],
       "patterns": {
@@ -5077,22 +5454,22 @@
             "signal": "AVOID",
             "description": "縮量下跌4.5%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "MSFU",
       "name": "Direxion Daily MSFT Bull 2X Shares",
       "market": "US",
-      "current_price": 24.889999389648438,
-      "kd_k": 12.7,
-      "kd_d": 22.2,
-      "last_updated": "2026-03-23T19:29:50.604001",
+      "current_price": 24.905000686645508,
+      "kd_k": 12.82,
+      "kd_d": 22.24,
+      "last_updated": "2026-03-23T19:38:01.876819",
       "data_points": 61,
       "history": [
         {
@@ -5160,28 +5537,37 @@
           "open": 25.06999969482422,
           "high": 25.43000030517578,
           "low": 24.719999313354492,
-          "close": 24.889999389648438,
-          "volume": 3711995,
-          "kd_k": 12.7,
-          "kd_d": 22.2
+          "close": 24.905000686645508,
+          "volume": 3725646,
+          "kd_k": 12.82,
+          "kd_d": 22.24
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌8.2%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "FBL",
       "name": "GraniteShares 2x Long META Daily ETF",
       "market": "US",
-      "current_price": 26.237300872802734,
-      "kd_k": 17.83,
-      "kd_d": 20.86,
-      "last_updated": "2026-03-23T19:29:50.759564",
+      "current_price": 26.184999465942383,
+      "kd_k": 17.56,
+      "kd_d": 20.77,
+      "last_updated": "2026-03-23T19:38:01.918065",
       "data_points": 61,
       "history": [
         {
@@ -5249,28 +5635,37 @@
           "open": 26.040000915527344,
           "high": 26.360000610351562,
           "low": 25.614700317382812,
-          "close": 26.237300872802734,
-          "volume": 828152,
-          "kd_k": 17.83,
-          "kd_d": 20.86
+          "close": 26.184999465942383,
+          "volume": 835108,
+          "kd_k": 17.56,
+          "kd_d": 20.77
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌5.5%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "GGLL",
       "name": "Direxion Daily GOOGL Bull 2X Shares",
       "market": "US",
-      "current_price": 87.95999908447266,
-      "kd_k": 44.96,
-      "kd_d": 55.15,
-      "last_updated": "2026-03-23T19:29:50.930200",
+      "current_price": 87.87999725341797,
+      "kd_k": 44.65,
+      "kd_d": 55.05,
+      "last_updated": "2026-03-23T19:38:01.954463",
       "data_points": 61,
       "history": [
         {
@@ -5338,10 +5733,10 @@
           "open": 87.7699966430664,
           "high": 89.75,
           "low": 86.83999633789062,
-          "close": 87.95999908447266,
-          "volume": 1116087,
-          "kd_k": 44.96,
-          "kd_d": 55.15
+          "close": 87.87999725341797,
+          "volume": 1119509,
+          "kd_k": 44.65,
+          "kd_d": 55.05
         }
       ],
       "patterns": {
@@ -5351,24 +5746,24 @@
             "pattern_id": "縮量下跌",
             "pattern_name": "繼續看跌",
             "signal": "AVOID",
-            "description": "縮量下跌5.4%",
+            "description": "縮量下跌5.5%",
             "confidence": 100.0,
-            "detected_at": "2026-03-23 19:29:51"
+            "detected_at": "2026-03-23 19:38:02"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-03-23 19:29:51"
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "NVDL",
       "name": "GraniteShares 2x Long NVDA Daily ETF",
       "market": "US",
-      "current_price": 74.77999877929688,
-      "kd_k": 26.37,
-      "kd_d": 34.16,
-      "last_updated": "2026-03-23T19:29:51.029262",
+      "current_price": 74.95500183105469,
+      "kd_k": 26.76,
+      "kd_d": 34.29,
+      "last_updated": "2026-03-23T19:38:01.987320",
       "data_points": 61,
       "history": [
         {
@@ -5436,28 +5831,37 @@
           "open": 75.61000061035156,
           "high": 76.5,
           "low": 73.51419830322266,
-          "close": 74.77999877929688,
-          "volume": 10073709,
-          "kd_k": 26.37,
-          "kd_d": 34.16
+          "close": 74.95500183105469,
+          "volume": 10152582,
+          "kd_k": 26.76,
+          "kd_d": 34.29
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:51"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌6.3%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "NFXL",
       "name": "Direxion Daily NFLX Bull 2X Shares",
       "market": "US",
-      "current_price": 28.860000610351562,
-      "kd_k": 24.15,
-      "kd_d": 25.15,
-      "last_updated": "2026-03-23T19:29:51.133503",
+      "current_price": 28.850000381469727,
+      "kd_k": 24.08,
+      "kd_d": 25.12,
+      "last_updated": "2026-03-23T19:38:02.024376",
       "data_points": 61,
       "history": [
         {
@@ -5525,28 +5929,45 @@
           "open": 27.760000228881836,
           "high": 29.06909942626953,
           "low": 27.760000228881836,
-          "close": 28.860000610351562,
-          "volume": 225948,
-          "kd_k": 24.15,
-          "kd_d": 25.15
+          "close": 28.850000381469727,
+          "volume": 226537,
+          "kd_k": 24.08,
+          "kd_d": 25.12
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:52"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.3倍",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          },
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.1%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 200.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "MULL",
       "name": "GraniteShares 2x Long MU Daily ETF",
       "market": "US",
-      "current_price": 157.839599609375,
-      "kd_k": 46.55,
-      "kd_d": 64.55,
-      "last_updated": "2026-03-23T19:29:51.236808",
+      "current_price": 158.10000610351562,
+      "kd_k": 46.69,
+      "kd_d": 64.6,
+      "last_updated": "2026-03-23T19:38:02.062587",
       "data_points": 61,
       "history": [
         {
@@ -5614,28 +6035,37 @@
           "open": 173.61000061035156,
           "high": 176.59500122070312,
           "low": 153.5,
-          "close": 157.839599609375,
-          "volume": 746396,
-          "kd_k": 46.55,
-          "kd_d": 64.55
+          "close": 158.10000610351562,
+          "volume": 749210,
+          "kd_k": 46.69,
+          "kd_d": 64.6
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:52"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "放量下跌",
+            "pattern_name": "恐慌殺跌",
+            "signal": "BUY",
+            "description": "連跌後放量1.6倍殺跌",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "BUY",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "AMDL",
       "name": "GraniteShares 2x Long AMD Daily ETF",
       "market": "US",
-      "current_price": 12.563400268554688,
-      "kd_k": 57.27,
-      "kd_d": 49.94,
-      "last_updated": "2026-03-23T19:29:51.329769",
+      "current_price": 12.505000114440918,
+      "kd_k": 56.33,
+      "kd_d": 49.62,
+      "last_updated": "2026-03-23T19:38:02.096016",
       "data_points": 61,
       "history": [
         {
@@ -5703,28 +6133,37 @@
           "open": 12.800000190734863,
           "high": 13.095199584960938,
           "low": 12.220000267028809,
-          "close": 12.563400268554688,
-          "volume": 10211517,
-          "kd_k": 57.27,
-          "kd_d": 49.94
+          "close": 12.505000114440918,
+          "volume": 10250387,
+          "kd_k": 56.33,
+          "kd_d": 49.62
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量上漲",
+            "pattern_name": "趨勢健康",
+            "signal": "HOLD",
+            "description": "縮量上漲7.7%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
         "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:52"
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     },
     {
       "symbol": "TSMX",
       "name": "Direxion Daily TSM Bull 2X Shares",
       "market": "US",
-      "current_price": 58.599998474121094,
-      "kd_k": 31.58,
-      "kd_d": 29.39,
-      "last_updated": "2026-03-23T19:29:51.432122",
+      "current_price": 58.4900016784668,
+      "kd_k": 31.26,
+      "kd_d": 29.29,
+      "last_updated": "2026-03-23T19:38:02.133401",
       "data_points": 61,
       "history": [
         {
@@ -5792,20 +6231,29 @@
           "open": 55.70500183105469,
           "high": 59.78900146484375,
           "low": 55.70500183105469,
-          "close": 58.599998474121094,
-          "volume": 999317,
-          "kd_k": 31.58,
-          "kd_d": 29.39
+          "close": 58.4900016784668,
+          "volume": 1006745,
+          "kd_k": 31.26,
+          "kd_d": 29.29
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-03-23 19:29:52"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌4.1%",
+            "confidence": 100.0,
+            "detected_at": "2026-03-23 19:38:02"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-03-23 19:38:02"
       }
     }
   ],
-  "last_updated": "2026-03-23T19:29:51.654478"
+  "last_updated": "2026-03-23T19:38:02.476647"
 }
