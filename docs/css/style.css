@@ -7,6 +7,20 @@
     transition-timing-function: ease-in-out;
 }
 
+/* Volume Sparkline */
+.volume-sparkline {
+    display: block;
+    width: 100%;
+}
+
+.volume-sparkline rect {
+    transition: opacity 0.2s;
+}
+
+.volume-sparkline:hover rect {
+    opacity: 0.7;
+}
+
 /* Stock Card Styles */
 .stock-card {
     @apply bg-white rounded-lg shadow hover:shadow-lg cursor-pointer transform hover:-translate-y-1;

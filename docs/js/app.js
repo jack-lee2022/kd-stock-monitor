@@ -161,6 +161,8 @@ function createStockCard(stock) {
                 </div>
             </div>
             
+            ${createVolumeSparkline(stock.history, stock.market)}
+            
             <div class="border-t pt-3">
                 <div class="flex justify-between items-center mb-2">
                     <span class="text-sm text-gray-600">KD-K</span>
@@ -176,6 +178,88 @@ function createStockCard(stock) {
             </div>
             
             ${createPatternSection(stock.patterns)}
+        </div>
+    `;
+}
+
+/**
+ * Create volume sparkline chart
+ * Shows historical volume trend as a mini bar chart
+ */
+function createVolumeSparkline(history, market) {
+    if (!history || history.length < 5) {
+        return '';
+    }
+    
+    // Get last 10 days of volume data
+    const recentData = history.slice(-10);
+    const volumes = recentData.map(d => d.volume || 0);
+    
+    if (volumes.length === 0 || volumes.every(v => v === 0)) {
+        return '';
+    }
+    
+    // Calculate min and max for normalization
+    const maxVolume = Math.max(...volumes);
+    const minVolume = Math.min(...volumes);
+    const range = maxVolume - minVolume || 1;
+    
+    // Calculate average volume
+    const avgVolume = volumes.reduce((a, b) => a + b, 0) / volumes.length;
+    const latestVolume = volumes[volumes.length - 1];
+    
+    // Determine trend color
+    let trendColor = 'text-gray-500';
+    let trendIcon = '→';
+    if (latestVolume > avgVolume * 1.3) {
+        trendColor = 'text-red-500';
+        trendIcon = '↑';
+    } else if (latestVolume < avgVolume * 0.7) {
+        trendColor = 'text-green-500';
+        trendIcon = '↓';
+    }
+    
+    // Create SVG sparkline
+    const width = 100;
+    const height = 30;
+    const barWidth = width / volumes.length - 1;
+    
+    let barsHtml = '';
+    volumes.forEach((vol, i) => {
+        const height_pct = ((vol - minVolume) / range) * 80 + 20; // Min 20% height
+        const x = i * (barWidth + 1);
+        const y = height - (height_pct / 100 * height);
+        
+        // Color based on volume level
+        let barColor = '#9CA3AF'; // gray-400
+        const volRatio = vol / avgVolume;
+        if (volRatio > 1.5) barColor = '#EF4444'; // red-500 (high volume)
+        else if (volRatio > 1.2) barColor = '#F59E0B'; // amber-500 (above average)
+        else if (volRatio < 0.6) barColor = '#10B981'; // emerald-500 (low volume)
+        
+        barsHtml += `<rect x="${x}" y="${y}" width="${barWidth}" height="${height_pct / 100 * height}" fill="${barColor}" rx="1" />`;
+    });
+    
+    // Format volume number
+    const formatVolume = (vol) => {
+        if (vol >= 1000000) return (vol / 1000000).toFixed(1) + 'M';
+        if (vol >= 1000) return (vol / 1000).toFixed(1) + 'K';
+        return vol.toString();
+    };
+    
+    return `
+        <div class="mb-3">
+            <div class="flex justify-between items-center mb-1">
+                <span class="text-xs text-gray-500">成交量趨勢</span>
+                <span class="text-xs ${trendColor} font-medium">${trendIcon} ${formatVolume(latestVolume)}</span>
+            </div>
+            <svg width="100%" height="${height}" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" class="volume-sparkline">
+                ${barsHtml}
+            </svg>
+            <div class="flex justify-between text-xs text-gray-400 mt-1">
+                <span>10日前</span>
+                <span>今日</span>
+            </div>
         </div>
     `;
 }
