@@ -69,9 +69,10 @@ class TradingPatternAnalyzer:
         first_half_change = (first_half['Close'].iloc[-1] / first_half['Close'].iloc[0] - 1) * 100
         second_half_change = (second_half['Close'].iloc[-1] / second_half['Close'].iloc[0] - 1) * 100
         
-        quick_rise = first_half_change > 10
-        slow_fall = -5 < second_half_change < 0
-        volume_shrink = second_half['Volume'].mean() < first_half['Volume'].mean() * 0.8
+        # 放寬標準：從 10% 降到 5%
+        quick_rise = first_half_change > 5
+        slow_fall = -3 < second_half_change < 0
+        volume_shrink = second_half['Volume'].mean() < first_half['Volume'].mean() * 0.85
         
         confidence = 0.0
         if quick_rise:
@@ -99,9 +100,10 @@ class TradingPatternAnalyzer:
         first_half_change = (first_half['Close'].iloc[-1] / first_half['Close'].iloc[0] - 1) * 100
         second_half_change = (second_half['Close'].iloc[-1] / second_half['Close'].iloc[0] - 1) * 100
         
-        quick_fall = first_half_change < -10
-        slow_rise = 0 < second_half_change < 8
-        volume_shrink = second_half['Volume'].mean() < first_half['Volume'].mean() * 0.7
+        # 放寬標準：從 -10% 降到 -5%
+        quick_fall = first_half_change < -5
+        slow_rise = 0 < second_half_change < 5
+        volume_shrink = second_half['Volume'].mean() < first_half['Volume'].mean() * 0.8
         
         confidence = 0.0
         if quick_fall:
@@ -121,8 +123,9 @@ class TradingPatternAnalyzer:
         """放量上漲 - 可能短期見頂"""
         latest = self.df.iloc[-1]
         
-        volume_surge = latest['Volume_Ratio'] > 2.0
-        price_rise = latest['Price_Change'] > 0.05
+        # 放寬標準：從 2.0 倍降到 1.5 倍
+        volume_surge = latest['Volume_Ratio'] > 1.5
+        price_rise = latest['Price_Change'] > 0.03
         
         confidence = 0.0
         if volume_surge:
@@ -131,7 +134,7 @@ class TradingPatternAnalyzer:
             confidence += 0.3
         
         recent_3days = self.df.tail(3)
-        continuous_surge = (recent_3days['Volume_Ratio'] > 1.5).sum() >= 2
+        continuous_surge = (recent_3days['Volume_Ratio'] > 1.3).sum() >= 2
         if continuous_surge:
             confidence += 0.2
         
@@ -144,8 +147,9 @@ class TradingPatternAnalyzer:
         """縮量不跌 - 頭部可能形成"""
         recent = self.df.tail(5)
         
-        volume_shrink = recent['Volume_Ratio'].mean() < 0.6
-        price_flat = abs(recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) < 0.02
+        # 放寬標準
+        volume_shrink = recent['Volume_Ratio'].mean() < 0.8
+        price_flat = abs(recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) < 0.03
         
         confidence = 0.0
         if volume_shrink:
@@ -162,8 +166,9 @@ class TradingPatternAnalyzer:
         """縮量上漲 - 籌碼穩定"""
         recent = self.df.tail(5)
         
-        volume_shrink = recent['Volume_Ratio'].mean() < 0.8
-        price_rise = (recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) > 0.03
+        # 放寬標準
+        volume_shrink = recent['Volume_Ratio'].mean() < 1.0
+        price_rise = (recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) > 0.02
         
         confidence = 0.0
         if volume_shrink:
@@ -181,8 +186,9 @@ class TradingPatternAnalyzer:
         """縮量下跌 - 繼續看跌"""
         recent = self.df.tail(5)
         
-        volume_shrink = recent['Volume_Ratio'].mean() < 0.7
-        price_fall = (recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) < -0.03
+        # 放寬標準
+        volume_shrink = recent['Volume_Ratio'].mean() < 1.0
+        price_fall = (recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) < -0.02
         
         confidence = 0.0
         if volume_shrink:
@@ -201,10 +207,11 @@ class TradingPatternAnalyzer:
         recent = self.df.tail(5)
         
         price_vs_ma20 = recent['Close'].iloc[-1] / recent['MA20'].iloc[-1]
-        at_high = price_vs_ma20 > 1.1
+        # 放寬標準：從 1.1 降到 1.05
+        at_high = price_vs_ma20 > 1.05
         
-        volume_shrink = recent['Volume_Ratio'].mean() < 0.7
-        price_stagnant = abs(recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) < 0.02
+        volume_shrink = recent['Volume_Ratio'].mean() < 0.9
+        price_stagnant = abs(recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) < 0.03
         
         confidence = 0.0
         if at_high:
@@ -223,8 +230,9 @@ class TradingPatternAnalyzer:
         """放量下跌 - 恐慌殺跌"""
         latest = self.df.iloc[-1]
         
-        volume_surge = latest['Volume_Ratio'] > 2.0
-        price_fall = latest['Price_Change'] < -0.05
+        # 放寬標準：從 2.0 倍降到 1.5 倍
+        volume_surge = latest['Volume_Ratio'] > 1.5
+        price_fall = latest['Price_Change'] < -0.03
         
         confidence = 0.0
         if volume_surge:
@@ -234,7 +242,7 @@ class TradingPatternAnalyzer:
         
         if volume_surge and price_fall:
             recent_5days = self.df.tail(5)['Price_Change'].sum()
-            if recent_5days < -0.10:
+            if recent_5days < -0.08:
                 confidence += 0.3
                 return True, f"連跌後放量{latest['Volume_Ratio']:.1f}倍殺跌", min(confidence, 1.0)
             else:
