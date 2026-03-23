@@ -144,12 +144,14 @@ class TradingPatternAnalyzer:
         return False, "未達放量上漲條件", 0.0
     
     def detect_pattern_4_volume_shrink_flat(self) -> Tuple[bool, str, float]:
-        """縮量不跌 - 頭部可能形成"""
+        """縮量不跌 - 頭部可能形成（價格橫盤，不漲不跌）"""
         recent = self.df.tail(5)
         
         # 放寬標準
         volume_shrink = recent['Volume_Ratio'].mean() < 0.8
-        price_flat = abs(recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) < 0.03
+        price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
+        # 橫盤：變動在 -2% 到 +2% 之間
+        price_flat = -0.02 <= price_change <= 0.02
         
         confidence = 0.0
         if volume_shrink:
@@ -163,12 +165,14 @@ class TradingPatternAnalyzer:
         return False, "不符合縮量不跌特徵", 0.0
     
     def detect_pattern_5_volume_shrink_rise(self) -> Tuple[bool, str, float]:
-        """縮量上漲 - 籌碼穩定"""
+        """縮量上漲 - 籌碼穩定（明顯上漲，漲幅超過 2%）"""
         recent = self.df.tail(5)
         
         # 放寬標準
         volume_shrink = recent['Volume_Ratio'].mean() < 1.0
-        price_rise = (recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) > 0.02
+        price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
+        # 明顯上漲：漲幅超過 2%
+        price_rise = price_change > 0.02
         
         confidence = 0.0
         if volume_shrink:
@@ -177,18 +181,19 @@ class TradingPatternAnalyzer:
             confidence += 0.6
         
         if volume_shrink and price_rise:
-            change = (recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) * 100
-            return True, f"縮量上漲{change:.1f}%", confidence
+            return True, f"縮量上漲{price_change*100:.1f}%", confidence
         
         return False, "不符合縮量上漲特徵", 0.0
     
     def detect_pattern_6_volume_shrink_fall(self) -> Tuple[bool, str, float]:
-        """縮量下跌 - 繼續看跌"""
+        """縮量下跌 - 繼續看跌（明顯下跌，跌幅超過 2%）"""
         recent = self.df.tail(5)
         
         # 放寬標準
         volume_shrink = recent['Volume_Ratio'].mean() < 1.0
-        price_fall = (recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) < -0.02
+        price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
+        # 明顯下跌：跌幅超過 2%
+        price_fall = price_change < -0.02
         
         confidence = 0.0
         if volume_shrink:
@@ -197,8 +202,7 @@ class TradingPatternAnalyzer:
             confidence += 0.6
         
         if volume_shrink and price_fall:
-            change = (recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) * 100
-            return True, f"縮量下跌{abs(change):.1f}%", confidence
+            return True, f"縮量下跌{abs(price_change)*100:.1f}%", confidence
         
         return False, "不符合縮量下跌特徵", 0.0
     
