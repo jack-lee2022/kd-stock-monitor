@@ -174,8 +174,75 @@ function createStockCard(stock) {
                     <div class="kd-progress-fill ${progressClass}" style="width: ${Math.min(Math.max(progressValue, 0), 100)}%"></div>
                 </div>
             </div>
+            
+            ${createPatternSection(stock.patterns)}
         </div>
     `;
+}
+
+/**
+ * Create pattern analysis section HTML
+ */
+function createPatternSection(patterns) {
+    if (!patterns || !patterns.patterns || patterns.patterns.length === 0) {
+        return '';
+    }
+    
+    const signalEmojis = {
+        'BUY': '🟢',
+        'SELL': '🔴',
+        'HOLD': '🟡',
+        'AVOID': '⚫'
+    };
+    
+    const signalLabels = {
+        'BUY': '買入',
+        'SELL': '賣出',
+        'HOLD': '持有',
+        'AVOID': '避開'
+    };
+    
+    // Get dominant signal
+    const dominantSignal = patterns.dominant_signal || 'HOLD';
+    const signalStrength = patterns.signal_strength || 0;
+    
+    // Get top 2 patterns
+    const topPatterns = patterns.patterns.slice(0, 2);
+    
+    let patternsHtml = topPatterns.map(p => {
+        const emoji = signalEmojis[p.signal] || '⚪';
+        return `
+            <div class="flex items-center justify-between text-xs mb-1">
+                <span class="text-gray-600">${emoji} ${p.pattern_id}</span>
+                <span class="font-medium">${p.confidence}%</span>
+            </div>
+        `;
+    }).join('');
+    
+    return `
+        <div class="border-t mt-2 pt-2">
+            <div class="flex items-center justify-between mb-1">
+                <span class="text-xs text-gray-500">交易信號</span>
+                <span class="text-xs font-bold ${getSignalColorClass(dominantSignal)}">
+                    ${signalEmojis[dominantSignal]} ${signalLabels[dominantSignal]}
+                </span>
+            </div>
+            ${patternsHtml}
+        </div>
+    `;
+}
+
+/**
+ * Get CSS color class for signal
+ */
+function getSignalColorClass(signal) {
+    const classes = {
+        'BUY': 'text-green-600',
+        'SELL': 'text-red-600',
+        'HOLD': 'text-yellow-600',
+        'AVOID': 'text-gray-600'
+    };
+    return classes[signal] || 'text-gray-600';
 }
 
 /**

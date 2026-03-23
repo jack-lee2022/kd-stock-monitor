@@ -9,6 +9,14 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Optional
 import logging
 
+# Import pattern analyzer
+try:
+    from pattern_analyzer import analyze_stock_patterns
+    PATTERN_ANALYSIS_AVAILABLE = True
+except ImportError:
+    PATTERN_ANALYSIS_AVAILABLE = False
+    logging.warning("Pattern analyzer not available")
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
@@ -187,6 +195,58 @@ class AlertChecker:
             "all_alerts": all_alerts
         }
     
+    def _analyze_stock_pattern(self, stock_data: Dict) -> Dict:
+        """Analyze trading patterns for a single stock."""
+        if not PATTERN_ANALYSIS_AVAILABLE:
+            return {
+                "patterns_detected": 0,
+                "patterns": [],
+                "dominant_signal": "HOLD",
+                "signal_strength": 0
+            }
+        
+        try:
+            # Import pandas here to avoid dependency issues
+            import pandas as pd
+            
+            # Reconstruct DataFrame from history
+            history = stock_data.get("history", [])
+            if len(history) < 30:
+                return {
+                    "patterns_detected": 0,
+                    "patterns": [],
+                    "dominant_signal": "HOLD",
+                    "signal_strength": 0,
+                    "note": "Insufficient data (need 30 days)"
+                }
+            
+            # Create DataFrame
+            df = pd.DataFrame(history)
+            df['date'] = pd.to_datetime(df['date'])
+            df.set_index('date', inplace=True)
+            
+            # Rename columns to match expected format
+            df.rename(columns={
+                'open': 'Open',
+                'high': 'High',
+                'low': 'Low',
+                'close': 'Close',
+                'volume': 'Volume'
+            }, inplace=True)
+            
+            # Analyze patterns
+            return analyze_stock_patterns(df)
+            
+        except Exception as e:
+            logger.error(f"Error analyzing patterns for {stock_data.get('symbol')}: {e}")
+            return {
+                "patterns_detected": 0,
+                "patterns": [],
+                "dominant_signal": "HOLD",
+                "signal_strength": 0,
+                "error": str(e)
+            }
+    
     def _save_stock_data(self, stocks_data: Dict[str, List[Dict]]):
         """Save processed stock data for dashboard use."""
         try:
@@ -205,7 +265,10 @@ class AlertChecker:
                             clean_h["date"] = clean_h["date"].isoformat()
                         clean_history.append(clean_h)
                     
-                    dashboard_data[market].append({
+                    # Analyze trading patterns
+                    pattern_analysis = self._analyze_stock_pattern(stock)
+                    
+                    stock_entry = {
                         "symbol": stock.get("symbol"),
                         "name": stock.get("name"),
                         "market": stock.get("market"),
@@ -215,13 +278,23 @@ class AlertChecker:
                         "last_updated": stock.get("last_updated"),
                         "data_points": stock.get("data_points"),
                         # Include last 7 days of history for sparkline charts
-                        "history": clean_history
-                    })
+                        "history": clean_history,
+                        # Add pattern analysis
+                        "patterns": pattern_analysis
+                    }
+                    
+                    dashboard_data[market].append(stock_entry)
             
             with open(self.stock_data_file, 'w', encoding='utf-8') as f:
                 json.dump(dashboard_data, f, indent=2, ensure_ascii=False)
             
-            logger.info(f"Saved stock data to {self.stock_data_file}")
+            # Log pattern detection summary
+            total_patterns = sum(
+                len(stock.get("patterns", {}).get("patterns", []))
+                for market in ["TW", "US"]
+                for stock in dashboard_data.get(market, [])
+            )
+            logger.info(f"Saved stock data to {self.stock_data_file} (Patterns detected: {total_patterns})")
         except Exception as e:
             logger.error(f"Error saving stock data: {e}")
     
