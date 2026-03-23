@@ -1,32 +1,62 @@
 {
-  "timestamp": "2026-03-22T05:22:02.511452",
-  "date": "2026-03-22",
-  "stocks_processed": 10,
-  "stocks_successful": 10,
+  "timestamp": "2026-03-23T15:58:41.025120",
+  "date": "2026-03-23",
+  "stocks_processed": 64,
+  "stocks_successful": 64,
   "stocks_failed": 0,
   "new_alerts": 0,
   "overbought_count": 0,
-  "oversold_count": 3,
-  "normal_count": 7,
+  "oversold_count": 8,
+  "normal_count": 56,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
       "symbol": "2317.TW",
       "name": "鴻海",
-      "kd_k": 16.52,
-      "kd_d": 21.91
+      "kd_k": 12.34,
+      "kd_d": 18.72
+    },
+    {
+      "symbol": "00635U.TW",
+      "name": "期元大S&P黃金",
+      "kd_k": 9.24,
+      "kd_d": 15.76
     },
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "kd_k": 14.84,
-      "kd_d": 18.46
+      "kd_k": 21.79,
+      "kd_d": 19.57
     },
     {
       "symbol": "MSFT",
       "name": "Microsoft Corp.",
-      "kd_k": 15.44,
-      "kd_d": 28.44
+      "kd_k": 14.16,
+      "kd_d": 23.68
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms Inc.",
+      "kd_k": 18.26,
+      "kd_d": 21.99
+    },
+    {
+      "symbol": "DIA",
+      "name": "SPDR Dow Jones Industrial Average ETF",
+      "kd_k": 21.1,
+      "kd_d": 17.19
+    },
+    {
+      "symbol": "MSFU",
+      "name": "Direxion Daily MSFT Bull 2X Shares",
+      "kd_k": 13.16,
+      "kd_d": 22.35
+    },
+    {
+      "symbol": "FBL",
+      "name": "GraniteShares 2x Long META Daily ETF",
+      "kd_k": 17.08,
+      "kd_d": 20.61
     }
   ],
   "errors": []
