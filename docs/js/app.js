@@ -205,13 +205,13 @@ async function forceRefreshData() {
         await DataManager.loadData();
         
         // Re-render all components
-        renderStats();
+        updateStats();
         renderStockGrid();
         renderAlertHistory();
-        initCharts();
+        initializeChart();
         
         // Update timestamp display
-        updateLastUpdatedTime();
+        updateLastUpdated();
         
         // Show success message
         alert('資料已更新！');
