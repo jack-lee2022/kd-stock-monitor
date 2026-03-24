@@ -2,17 +2,11 @@ name: Update Stock Data
 
 on:
   schedule:
-    # Taiwan Stock Market (TWSE): 09:05-13:30 CST+8
-    # Updates every hour during trading + 2 hours after close
-    - cron: '5 1-5 * * 1-5'    # 09:05-13:05 CST+8, hourly
-    - cron: '35 7 * * 1-5'     # 15:35 CST+8, 2 hours after TW close
+    # 每小時更新一次（UTC時間）
+    # 對應台灣時間：08:00, 09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00, 21:00, 22:00, 23:00
+    - cron: '0 * * * 1-5'
     
-    # US Stock Market: 21:35-04:00 CST+8 (next day)
-    # Updates every hour during trading + 2 hours after close
-    - cron: '35 13-19 * * 1-5' # 21:35-03:35 CST+8, hourly
-    - cron: '5 22 * * 1-5'     # 06:05 CST+8, 2 hours after US close
-    
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:  # 允許手動觸發
 
 permissions:
   contents: write
@@ -26,46 +20,46 @@ jobs:
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
       
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
         
-    - name: Cache pip packages
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
     - name: Run stock data update
+      id: update
       run: |
+        echo "Starting update at $(date)"
         cd src
         python main.py
+        echo "Update completed at $(date)"
+      continue-on-error: false
         
-    - name: Check if data files changed
+    - name: Check for changes
       id: check_changes
       run: |
         if [ -n "$(git status --porcelain data/)" ]; then
           echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Data files changed"
         else
           echo "changed=false" >> $GITHUB_OUTPUT
+          echo "No data changes"
         fi
         
-    - name: Sync data to docs folder for GitHub Pages
+    - name: Copy data to docs folder
       if: steps.check_changes.outputs.changed == 'true'
       run: |
-        # Copy updated data to docs folder for GitHub Pages deployment
+        echo "Copying data to docs folder..."
         cp -r data/*.json docs/data/
         cp -r data/*_kd.csv docs/data/ 2>/dev/null || true
         cp -r data/*_raw.csv docs/data/ 2>/dev/null || true
+        echo "Data copied successfully"
         
     - name: Commit and push changes
       if: steps.check_changes.outputs.changed == 'true'
@@ -75,17 +69,4 @@ jobs:
         git add data/ docs/data/
         git commit -m "📊 Update stock data - $(date +'%Y-%m-%d %H:%M UTC')"
         git push
-        
-    - name: Create summary
-      run: |
-        echo "## 📊 Stock Data Update Summary" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "- **Date:** $(date +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
-        echo "- **Status:** ${{ steps.check_changes.outputs.changed == 'true' && '✅ Data updated' || '⚡ No changes' }}" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        if [ -f data/summary.json ]; then
-          echo "### Summary Stats" >> $GITHUB_STEP_SUMMARY
-          echo '```json' >> $GITHUB_STEP_SUMMARY
-          cat data/summary.json >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-        fi
+        echo "Changes pushed successfully"
