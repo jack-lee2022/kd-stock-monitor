@@ -183,6 +183,52 @@ function createStockCard(stock) {
 }
 
 /**
+ * Force refresh data by clearing cache and reloading
+ */
+async function forceRefreshData() {
+    console.log('Force refreshing data...');
+    
+    // Show loading state
+    const updateButton = document.querySelector('button[onclick="forceRefreshData()"]');
+    if (updateButton) {
+        updateButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> 更新中...';
+        updateButton.disabled = true;
+    }
+    
+    try {
+        // Clear application cache
+        DataManager.stockData = null;
+        DataManager.alerts = null;
+        DataManager.summary = null;
+        
+        // Reload data with cache-busting
+        await DataManager.loadData();
+        
+        // Re-render all components
+        renderStats();
+        renderStockGrid();
+        renderAlertHistory();
+        initCharts();
+        
+        // Update timestamp display
+        updateLastUpdatedTime();
+        
+        // Show success message
+        alert('資料已更新！');
+        
+    } catch (error) {
+        console.error('Error refreshing data:', error);
+        alert('更新失敗，請稍後再試');
+    } finally {
+        // Restore button state
+        if (updateButton) {
+            updateButton.innerHTML = '<i class="fas fa-redo mr-1"></i> 更新資料';
+            updateButton.disabled = false;
+        }
+    }
+}
+
+/**
  * Create volume sparkline chart
  * Shows historical volume trend as a mini bar chart
  */
