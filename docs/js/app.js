@@ -50,6 +50,50 @@ function updateStats() {
 
         const todayAlertsEl = document.getElementById('today-alerts');
         if (todayAlertsEl) todayAlertsEl.textContent = todayAlerts.length;
+
+        // Update Macro Stats
+        if (summary.macro) {
+            const macro = summary.macro;
+            
+            // 1. Fear & Greed
+            const fngEl = document.getElementById('macro-fng');
+            if (fngEl && macro.fear_greed) {
+                const val = macro.fear_greed.value || 0;
+                const label = macro.fear_greed.label || 'N/A';
+                let colorClass = 'text-gray-300';
+                if (val >= 75) colorClass = 'text-green-400';
+                else if (val >= 60) colorClass = 'text-green-300';
+                else if (val <= 25) colorClass = 'text-red-500';
+                else if (val <= 40) colorClass = 'text-red-400';
+                else colorClass = 'text-yellow-400';
+                
+                fngEl.className = `font-bold text-lg ${colorClass}`;
+                fngEl.textContent = val;
+                fngEl.title = label;
+            }
+
+            // 2. US 10Y
+            const us10yEl = document.getElementById('macro-us10y');
+            if (us10yEl && macro.us10y) {
+                const val = macro.us10y.value || 0;
+                const change = macro.us10y.change || 0;
+                const colorClass = change >= 0 ? 'text-red-400' : 'text-green-400';
+                const icon = change >= 0 ? '↑' : '↓';
+                us10yEl.className = `font-bold text-lg ${colorClass}`;
+                us10yEl.textContent = `${val.toFixed(2)}%`;
+                // Add a small change label if possible
+            }
+
+            // 3. DXY
+            const dxyEl = document.getElementById('macro-dxy');
+            if (dxyEl && macro.dxy) {
+                const val = macro.dxy.value || 0;
+                const change = macro.dxy.change || 0;
+                const colorClass = change >= 0 ? 'text-red-400' : 'text-green-400';
+                dxyEl.className = `font-bold text-lg ${colorClass}`;
+                dxyEl.textContent = val.toFixed(2);
+            }
+        }
     } catch (e) {
         console.error("Error updating stats:", e);
     }

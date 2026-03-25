@@ -103,6 +103,62 @@ class StockFetcher:
         filepath = os.path.join(self.data_dir, f"{symbol.replace('.', '_')}_raw.csv")
         df.to_csv(filepath, index=False)
         logger.info(f"Saved raw data to {filepath}")
+
+    def fetch_macro_indicators(self) -> Dict:
+        """Fetch US10Y yield, Dollar Index, and CNN Fear & Greed Index."""
+        macro_data = {
+            "us10y": {"value": None, "change": None},
+            "dxy": {"value": None, "change": None},
+            "fear_greed": {"value": None, "label": "N/A", "previous_close": None}
+        }
+
+        # 1. Fetch US10Y Yield (^TNX)
+        try:
+            ticker_us10y = yf.Ticker("^TNX")
+            hist_us10y = ticker_us10y.history(period="2d")
+            if not hist_us10y.empty and len(hist_us10y) >= 1:
+                latest_val = hist_us10y['Close'].iloc[-1]
+                prev_val = hist_us10y['Close'].iloc[-2] if len(hist_us10y) >= 2 else latest_val
+                macro_data["us10y"] = {
+                    "value": round(latest_val, 3),
+                    "change": round(latest_val - prev_val, 3)
+                }
+        except Exception as e:
+            logger.error(f"Error fetching US10Y: {e}")
+
+        # 2. Fetch Dollar Index (DX-Y.NYB)
+        try:
+            ticker_dxy = yf.Ticker("DX-Y.NYB")
+            hist_dxy = ticker_dxy.history(period="2d")
+            if not hist_dxy.empty and len(hist_dxy) >= 1:
+                latest_val = hist_dxy['Close'].iloc[-1]
+                prev_val = hist_dxy['Close'].iloc[-2] if len(hist_dxy) >= 2 else latest_val
+                macro_data["dxy"] = {
+                    "value": round(latest_val, 2),
+                    "change": round(latest_val - prev_val, 2)
+                }
+        except Exception as e:
+            logger.error(f"Error fetching DXY: {e}")
+
+        # 3. Fetch CNN Fear & Greed Index (Using a public API/Proxy if possible, or fallback)
+        try:
+            import requests
+            # Use a reliable public API for Fear & Greed
+            response = requests.get("https://api.alternative.me/fng/", timeout=10)
+            if response.ok:
+                data = response.json()
+                if "data" in data and len(data["data"]) > 0:
+                    val = int(data["data"][0]["value"])
+                    label = data["data"][0]["value_classification"]
+                    macro_data["fear_greed"] = {
+                        "value": val,
+                        "label": label,
+                        "timestamp": datetime.now().isoformat()
+                    }
+        except Exception as e:
+            logger.error(f"Error fetching Fear & Greed Index: {e}")
+
+        return macro_data
     
     def get_latest_price(self, symbol: str) -> Optional[float]:
         """Get the latest closing price for a stock."""
