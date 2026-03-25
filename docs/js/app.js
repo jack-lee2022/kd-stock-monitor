@@ -55,21 +55,24 @@ function updateStats() {
         if (summary.macro) {
             const macro = summary.macro;
             
-            // 1. Fear & Greed
+            // 1. Fear & Greed (Actually VIX Index)
             const fngEl = document.getElementById('macro-fng');
             if (fngEl && macro.fear_greed && macro.fear_greed.value !== null) {
                 const val = macro.fear_greed.value;
                 const label = macro.fear_greed.label || 'N/A';
                 let colorClass = 'text-gray-300';
-                if (val >= 75) colorClass = 'text-green-400';
-                else if (val >= 60) colorClass = 'text-green-300';
-                else if (val <= 25) colorClass = 'text-red-500';
-                else if (val <= 40) colorClass = 'text-red-400';
-                else colorClass = 'text-yellow-400';
+                
+                // Adjust logic for VIX Index: Higher is more fearful (Red), Lower is more calm (Green)
+                if (val >= 40) colorClass = 'text-red-600 font-extrabold'; // Extreme Panic
+                else if (val >= 30) colorClass = 'text-red-500';          // High Fear
+                else if (val >= 25) colorClass = 'text-orange-400';       // Elevated Alert
+                else if (val >= 20) colorClass = 'text-yellow-400';       // Normal-High
+                else if (val < 15) colorClass = 'text-green-500';         // Extreme Calm
+                else colorClass = 'text-green-400';                       // Calm/Normal
                 
                 fngEl.className = `font-bold text-lg ${colorClass}`;
-                fngEl.textContent = val;
-                fngEl.title = label;
+                fngEl.textContent = val.toFixed(2);
+                fngEl.title = `VIX 恐慌指數: ${val.toFixed(2)}`;
             }
 
             // 2. US 10Y

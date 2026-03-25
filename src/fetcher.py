@@ -152,30 +152,22 @@ class StockFetcher:
         except Exception as e:
             logger.error(f"Error fetching BTC: {e}")
 
-        # 4. Fetch Real CNN Fear & Greed Index
+        # 4. Fetch VIX Index (^VIX)
         try:
-            import requests
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Accept': 'application/json'
-            }
-            # Use the historical endpoint which is often more stable
-            response = requests.get("https://production.dataviz.cnn.io/index/feargreed/static/historical", headers=headers, timeout=15)
-            if response.ok:
-                data = response.json()
-                if 'fear_and_greed' in data:
-                    fng_val = data['fear_and_greed'].get('score')
-                    fng_rating = data['fear_and_greed'].get('rating', 'N/A')
-                    if fng_val is not None:
-                        macro_data["fear_greed"] = {
-                            "value": int(fng_val),
-                            "label": fng_rating.capitalize(),
-                            "timestamp": datetime.now().isoformat()
-                        }
-            else:
-                logger.error(f"CNN Fear & Greed request failed: {response.status_code}")
+            ticker_vix = yf.Ticker("^VIX")
+            hist_vix = ticker_vix.history(period="2d")
+            if not hist_vix.empty:
+                latest_val = hist_vix['Close'].iloc[-1]
+                prev_val = hist_vix['Close'].iloc[-2] if len(hist_vix) >= 2 else latest_val
+                macro_data["fear_greed"] = {
+                    "value": round(latest_val, 2),
+                    "change": round(latest_val - prev_val, 2),
+                    "label": "VIX Index",
+                    "timestamp": datetime.now().isoformat()
+                }
+                logger.info(f"VIX Index: {round(latest_val, 2)}")
         except Exception as e:
-            logger.error(f"Error parsing CNN Fear & Greed: {e}")
+            logger.error(f"Error fetching VIX: {e}")
 
         return macro_data
     
