@@ -4,6 +4,10 @@ on:
   schedule:
     # 每小時執行一次 (例如 01:00, 02:00...)
     - cron: '0 * * * *'
+  push:
+    branches:
+      - main
+      - master
   workflow_dispatch: # 允許手動觸發測試
 
 permissions:
@@ -90,5 +94,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-# 為了觸發 Git Commit 而加入的註解 - 2026-03-25
