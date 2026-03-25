@@ -29,6 +29,16 @@ Automated analysis of 8 market patterns:
 7. 🔴 **Shrinking Volume, No Rise** (Top confirmed): Suggest sell.
 8. 🟢 **Volume Surge on Fall** (Panic selling): Potential buying opportunity.
 
+### 🌐 Macro Indicators | 宏觀指標
+1. **VIX (Fear Index) | VIX 恐慌指數**: Measures market volatility and fear levels. High VIX (>30) indicates high fear and potential buying opportunities.
+   *   衡量市場波動度與恐慌情緒。高 VIX (>30) 通常代表恐慌，可能是分批買點。
+2. **US 10Y (Bond Yield) | 美債 10 年期收益率**: Benchmark for risk-free rates. Rising yields can put pressure on stock valuations, especially for tech stocks.
+   *   無風險利率的基準。收益率上升會對股市估值造成壓力，尤其是科技股。
+3. **DXY (US Dollar Index) | 美元指數**: Strength of the USD. Strong dollar often correlates with pressure on emerging markets and commodity prices.
+   *   衡量美元強度。強勢美元通常會對新興市場與大宗商品價格產生壓力。
+4. **BTC (Bitcoin) | 比特幣**: Often considered a high-risk asset proxy. Its trend can reflect overall market risk appetite.
+   *   通常被視為高風險資產的代表。其趨勢反映了市場對風險的整體偏好程度。
+
 ---
 
 <a name="繁體中文"></a>
