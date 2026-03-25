@@ -32,15 +32,27 @@ document.addEventListener('DOMContentLoaded', async () => {
  * Update statistics cards
  */
 function updateStats() {
-    const summary = DataManager.getSummary();
-    const allStocks = DataManager.getAllStocks();
-    const today = new Date().toISOString().split('T')[0];
-    const todayAlerts = DataManager.getAlerts().filter(a => a.date === today);
-    
-    document.getElementById('total-stocks').textContent = allStocks.length;
-    document.getElementById('overbought-count').textContent = summary.overbought_count || 0;
-    document.getElementById('oversold-count').textContent = summary.oversold_count || 0;
-    document.getElementById('today-alerts').textContent = todayAlerts.length;
+    try {
+        const summary = DataManager.getSummary() || { overbought_count: 0, oversold_count: 0 };
+        const allStocks = DataManager.getAllStocks() || [];
+        const alerts = DataManager.getAlerts() || [];
+        const today = new Date().toISOString().split('T')[0];
+        const todayAlerts = alerts.filter(a => a && a.date === today);
+        
+        const totalStocksEl = document.getElementById('total-stocks');
+        if (totalStocksEl) totalStocksEl.textContent = allStocks.length;
+
+        const overboughtEl = document.getElementById('overbought-count');
+        if (overboughtEl) overboughtEl.textContent = summary.overbought_count || 0;
+
+        const oversoldEl = document.getElementById('oversold-count');
+        if (oversoldEl) oversoldEl.textContent = summary.oversold_count || 0;
+
+        const todayAlertsEl = document.getElementById('today-alerts');
+        if (todayAlertsEl) todayAlertsEl.textContent = todayAlerts.length;
+    } catch (e) {
+        console.error("Error updating stats:", e);
+    }
 }
 
 /**
@@ -183,44 +195,68 @@ function createStockCard(stock) {
 }
 
 /**
- * Force refresh data by clearing cache and reloading
+ * Force refresh data by triggering GitHub Action or reloading
  */
 async function forceRefreshData() {
-    console.log('Force refreshing data...');
+    console.log('Attempting to trigger real data update...');
     
-    // Show loading state
+    // 1. 詢問使用者要「重新整理頁面資料」還是「觸發後台抓取新股價」
+    const choice = confirm("您想要執行哪種更新？\n\n【確定】：通知後台去抓取最新股價 (需 2-3 分鐘，需 Token)\n【取消】：僅重新讀取目前已存好的資料");
+    
+    if (!choice) {
+        // 原本的邏輯：重新讀取檔案
+        location.reload(); 
+        return;
+    }
+
+    // 2. 獲取 GitHub Token (優先從 localStorage 讀取)
+    let token = localStorage.getItem('github_token');
+    if (!token) {
+        token = prompt("請輸入您的 GitHub Personal Access Token (PAT) 以觸發後台更新：\n(此 Token 僅存存在您的瀏覽器中，不會公開)");
+        if (!token) return;
+        localStorage.setItem('github_token', token);
+    }
+
+    // 3. 顯示更新中狀態
     const updateButton = document.querySelector('button[onclick="forceRefreshData()"]');
     if (updateButton) {
-        updateButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> 更新中...';
+        updateButton.innerHTML = '<i class="fas fa-rocket fa-spin mr-1"></i> 指令發送中...';
         updateButton.disabled = true;
     }
-    
+
     try {
-        // Clear application cache
-        DataManager.stockData = null;
-        DataManager.alerts = null;
-        DataManager.summary = null;
-        
-        // Reload data with cache-busting
-        await DataManager.loadData();
-        
-        // Re-render all components
-        updateStats();
-        renderStockGrid();
-        renderAlertHistory();
-        initializeChart();
-        
-        // Update timestamp display
-        updateLastUpdated();
-        
-        // Show success message
-        alert('資料已更新！');
-        
+        const owner = 'jack-lee2022';
+        const repo = 'kd-stock-monitor';
+        const workflow_id = 'update-data.yml'; 
+
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflow_id}/dispatches`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            },
+            body: JSON.stringify({
+                ref: 'main' // 或您的分支名稱
+            })
+        });
+
+        if (response.ok || response.status === 204) {
+            alert('🚀 成功觸發後台更新！\n\n請注意：資料抓取與網頁部署約需 2-3 分鐘。\n建議您 3 分鐘後再回來查看最新資料。');
+        } else {
+            const errData = await response.json();
+            throw new Error(errData.message || 'API 呼叫失敗');
+        }
+
     } catch (error) {
-        console.error('Error refreshing data:', error);
-        alert('更新失敗，請稍後再試');
+        console.error('Trigger Error:', error);
+        if (error.message.includes('Unauthorized') || error.message.includes('Bad credentials')) {
+            alert('Token 錯誤或已過期，請重新輸入。');
+            localStorage.removeItem('github_token');
+        } else {
+            alert('觸發失敗：' + error.message);
+        }
     } finally {
-        // Restore button state
         if (updateButton) {
             updateButton.innerHTML = '<i class="fas fa-redo mr-1"></i> 更新資料';
             updateButton.disabled = false;
