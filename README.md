@@ -1,6 +1,6 @@
 # 📊 KD Stock Monitor
 
-A GitHub-powered stock monitoring system that tracks KD (Stochastic Oscillator) indicators for Taiwan and US stocks. Features automatic daily data updates and a web dashboard deployed on GitHub Pages.
+A GitHub-powered stock monitoring system that tracks KD (Stochastic Oscillator) indicators for Taiwan and US stocks. Features automatic **hourly** data updates and a web dashboard deployed on GitHub Pages.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
@@ -13,7 +13,7 @@ A GitHub-powered stock monitoring system that tracks KD (Stochastic Oscillator) 
 - 🇹🇼 **Taiwan Stocks**: Supports TWSE stocks (0050.TW, 2330.TW, etc.)
 - 🇺🇸 **US Stocks**: Supports NYSE/NASDAQ stocks (AAPL, TSLA, etc.)
 - 🌐 **Web Dashboard**: Interactive dashboard with charts and real-time data
-- ⚡ **Auto Updates**: Daily automated data fetching via GitHub Actions
+- ⚡ **Auto Updates**: **Hourly** automated data fetching and deployment via GitHub Actions
 - 📱 **Mobile Friendly**: Responsive design works on all devices
 
 ## 🚀 Quick Start
@@ -27,7 +27,7 @@ A GitHub-powered stock monitoring system that tracks KD (Stochastic Oscillator) 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/kd-stock-monitor.git
+   git clone https://github.com/jack-lee2022/kd-stock-monitor.git
    cd kd-stock-monitor
    ```
 
@@ -53,9 +53,8 @@ A GitHub-powered stock monitoring system that tracks KD (Stochastic Oscillator) 
 ```
 kd-stock-monitor/
 ├── .github/
-│   └── workflows/          # GitHub Actions
-│       ├── update-data.yml # Daily data update job
-│       └── deploy-pages.yml# GitHub Pages deployment
+│   └── workflows/          
+│       └── update-data.yml # Hourly Stock Update & Deploy (Merged)
 ├── data/                   # Generated data files (JSON/CSV)
 ├── docs/                   # GitHub Pages website
 │   ├── index.html         # Dashboard
@@ -63,7 +62,7 @@ kd-stock-monitor/
 │   │   └── style.css      # Custom styles
 │   └── js/
 │       ├── data.js        # Data management
-│       └── app.js         # Dashboard logic
+│       └── app.js         # Dashboard logic (includes API trigger)
 ├── src/                   # Python backend
 │   ├── main.py            # Main orchestrator
 │   ├── fetcher.py         # Yahoo Finance data fetcher
