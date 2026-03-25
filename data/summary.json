@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-03-25T21:07:47.568329",
+  "timestamp": "2026-03-25T22:58:32.156824",
   "date": "2026-03-25",
   "macro": {
     "us10y": {
-      "value": 4.338,
-      "change": -0.054
+      "value": 4.324,
+      "change": -0.068
     },
     "dxy": {
-      "value": 99.37,
-      "change": -0.06
+      "value": 99.44,
+      "change": 0.01
     },
     "fear_greed": {
-      "value": 25.9,
-      "change": -1.05,
+      "value": 25.09,
+      "change": -1.86,
       "label": "VIX Index",
-      "timestamp": "2026-03-25T21:07:46.971567"
+      "timestamp": "2026-03-25T22:58:31.554005"
     },
     "btc": {
-      "value": 71771.0,
-      "change_pct": 1.78
+      "value": 71338.0,
+      "change_pct": 1.16
     }
   },
   "stocks_processed": 64,
   "stocks_successful": 64,
   "stocks_failed": 0,
-  "new_alerts": 0,
+  "new_alerts": 1,
   "overbought_count": 0,
-  "oversold_count": 9,
-  "normal_count": 55,
+  "oversold_count": 8,
+  "normal_count": 56,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
@@ -45,44 +45,38 @@
     {
       "symbol": "MSFT",
       "name": "Microsoft Corp.",
-      "kd_k": 9.95,
-      "kd_d": 18.98
+      "kd_k": 8.37,
+      "kd_d": 15.44
     },
     {
       "symbol": "META",
       "name": "Meta Platforms Inc.",
-      "kd_k": 14.85,
-      "kd_d": 19.54
+      "kd_k": 17.27,
+      "kd_d": 18.78
     },
     {
-      "symbol": "NFLX",
-      "name": "Netflix Inc.",
-      "kd_k": 17.4,
-      "kd_d": 23.02
-    },
-    {
-      "symbol": "DIA",
-      "name": "SPDR Dow Jones Industrial Average ETF",
-      "kd_k": 25.56,
-      "kd_d": 19.69
+      "symbol": "CRWD",
+      "name": "CrowdStrike Holdings Inc.",
+      "kd_k": 18.97,
+      "kd_d": 32.99
     },
     {
       "symbol": "MSFU",
       "name": "Direxion Daily MSFT Bull 2X Shares",
-      "kd_k": 9.29,
-      "kd_d": 17.91
+      "kd_k": 7.75,
+      "kd_d": 14.53
     },
     {
       "symbol": "FBL",
       "name": "GraniteShares 2x Long META Daily ETF",
-      "kd_k": 13.74,
-      "kd_d": 18.22
+      "kd_k": 16.11,
+      "kd_d": 17.52
     },
     {
       "symbol": "NFXL",
       "name": "Direxion Daily NFLX Bull 2X Shares",
-      "kd_k": 16.05,
-      "kd_d": 21.83
+      "kd_k": 18.63,
+      "kd_d": 20.83
     }
   ],
   "errors": []
