@@ -95,6 +95,56 @@ python main.py
 
 ---
 
+## 🚀 Deployment & Usage | 部署與使用
+
+### Deploying to GitHub Pages | 部署至 GitHub Pages
+Follow these steps to deploy your own instance of the KD Stock Monitor on GitHub Pages.
+請遵循以下步驟，將您自己的 KD 股票監控器部署到 GitHub Pages。
+
+1.  **Fork the Repository | Fork 此專案**: Click the "Fork" button at the top-right of this page to create a copy of this project in your GitHub account.
+    *   點擊頁面右上角的 "Fork" 按鈕，將此專案複製一份到您自己的 GitHub 帳號下。
+2.  **Enable Actions | 啟用 Actions**: In your forked repository, go to the `Actions` tab and click the "I understand my workflows, go ahead and enable them" button. This is required for automatic data updates and deployment.
+    *   在您 Fork 的專案中，前往 `Actions` 頁籤，點擊 "I understand my workflows, go ahead and enable them" 按鈕以啟用工作流程。這是實現自動化資料更新與部署的必要步驟。
+3.  **Trigger the Deployment | 觸發部署**:
+    *   Still in the `Actions` tab, click on `Hourly Stock Update & Deploy` on the left sidebar.
+    *   Click the `Run workflow` dropdown, then the green `Run workflow` button. This will start the first build and deployment process.
+    *   仍在 `Actions` 頁籤，點擊左側的 `Hourly Stock Update & Deploy`，接著點擊 `Run workflow` 下拉選單，並按下綠色的 `Run workflow` 按鈕。這會開始第一次的建置與部署流程。
+4.  **Configure and Visit Your Site | 設定並瀏覽您的網站**:
+    *   Wait for the workflow to complete (it may take 2-3 minutes).
+    *   Go to your repository's `Settings` > `Pages` tab.
+    *   You should see a message "Your site is live at `https://<Your-Username>.github.io/<Your-Repo-Name>/`". Visit this URL to see your monitor.
+    *   If not already configured, set the `Source` under `Build and deployment` to `GitHub Actions`.
+    *   等待工作流程執行完畢 (約需 2-3 分鐘)，然後前往專案的 `Settings` > `Pages` 頁籤。您會看到網站已發佈的網址，例如：`https://<您的帳號>.github.io/<專案名稱>/`。如果頁面尚未設定，請在 `Build and deployment` 的 `Source` 選擇 `GitHub Actions`。
+
+### Using the Web Interface Locally | 在本地端使用網頁介面
+You can run the web dashboard on your local machine to view the latest data you've fetched.
+您可以在本機電腦上運行網頁儀表板，以查看您已抓取的最新數據。
+
+1.  **Fetch Data | 抓取資料**: First, run the Python script to fetch the latest stock data. This will populate the `/data` directory.
+    *   首先，執行 Python 腳本以抓取最新的股票數據，這會將資料填入 `/data` 資料夾。
+    ```bash
+    python src/main.py
+    ```
+2.  **Copy Data to Docs | 複製資料至 docs**: The web page expects data to be inside the `/docs/data` directory. Copy the fetched data over.
+    *   網頁需要讀取 `/docs/data` 裡的資料，請將剛抓取的數據複製過去。
+    ```bash
+    # On macOS/Linux | 在 macOS/Linux 上
+    mkdir -p docs/data && cp -r data/* docs/data/
+
+    # On Windows (PowerShell) | 在 Windows (PowerShell) 上
+    if (-not (Test-Path -Path docs/data)) { New-Item -ItemType Directory -Path docs/data }; Copy-Item -Path data\* -Destination docs\data -Recurse
+    ```
+3.  **Start a Web Server | 啟動網頁伺服器**: You need a local web server to view the `index.html` file correctly. The easiest way is using Python's built-in server. From the project's root directory, run:
+    *   您需要一個本地網頁伺服器才能正確瀏覽 `index.html`。最簡單的方式是使用 Python 內建的伺服器。請在專案的根目錄下執行：
+    ```bash
+    # For Python 3 | 適用於 Python 3
+    python -m http.server 8000
+    ```
+4.  **View in Browser | 在瀏覽器中查看**: Open your web browser and navigate to `http://localhost:8000/docs/`.
+    *   打開您的瀏覽器並前往 `http://localhost:8000/docs/`。
+
+---
+
 ## 📊 Data Update Schedule | 資料更新排程
 
 GitHub Actions runs automatically:
