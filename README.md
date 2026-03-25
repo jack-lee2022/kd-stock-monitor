@@ -110,9 +110,9 @@ Edit `config.json` to customize:
 ## 📊 Data Update Schedule
 
 GitHub Actions runs automatically:
-- **16:00 UTC** (00:00 CST+8) - After Taiwan market close
-- **21:00 UTC** (05:00 CST+8) - After US market close
-- **Manual trigger** - Via Actions tab
+- **Every Hour**: Runs on the hour (`0 * * * *`), 24/7.
+- **On Push**: Whenever code is pushed to the `main` or `master` branch.
+- **Manual Trigger**: Via the **Actions** tab in your GitHub repository.
 
 ## 📈 Dashboard Features
 
