@@ -5,56 +5,52 @@
    - **原因**：原先的 `update-data.yml` 與 `deploy-pages.yml` 是分開的。由於資料更新是由 `GITHUB_TOKEN` 推送的，GitHub 為了安全會阻止其觸發另一個 Deployment 工作流，導致網頁內容永不更新。
    - **解決方法**：將「抓取資料」與「部署網頁」合併至同一個 `update-data.yml` 檔案中，打破連鎖限制。
 
-2. **網頁按鈕更新失敗**：
-   - **原因**：前端 JavaScript 在資料尚未就緒或路徑變動時會拋出異常，且原先按鈕僅具備「重新整理頁面」功能，而非「觸發後台更新」。
-   - **解決方法**：重寫 `app.js` 邏輯，增加防錯機制，並實作 GitHub API 調用功能。
+2. **Git 推送衝突與連線中斷**：
+   - **原因**：由於後台每小時自動產生新資料，導致本地推送時經常落後於遠端；且專案歷史物件較多，網路波動時易造成 RPC 傳輸失敗。
+   - **解決方法**：使用 `git pull origin main --no-edit` 同步資料，並透過 `git config --global http.postBuffer 524288000` 加大傳輸緩衝區以應對不穩定的網路環境。
 
 ---
 
 ## ✨ 新增功能與優化
 1. **每小時自動更新 (Hourly Update)**：
-   - 設定為每小時整點執行 (`cron: '0 * * * *'`)，確保資料最即時。
-   - 包含週六日（若有美股需求）或根據排程全天候運作。
+   - 設定為每小時整點執行 (`cron: '0 * * * *'`)，確保資料隨時最新。
+   - 同步修正了 `on: push` 觸發條件，確保每次程式碼變動後能立即執行更新與部署。
 
-2. **台灣時區支援 (Taiwan Timezone)**：
-   - 在 GitHub Actions 環境中設定 `TZ: Asia/Taipei`。
-   - 自動產生的 Commit 訊息（如：`📊 自動更新資料 - 2026-03-25 10:30 (台北時間)`）現在會顯示精確的台灣時間。
+2. **效能加速 (Pip Caching)**：
+   - 在 GitHub Actions 中啟動 **pip 快取機制**。
+   - **成效**：從 GitHub 的內網快取空間直接還原套件，大幅縮短 `Install dependencies` 步驟的時間，避免每次都重新從網路下載 `pandas`、`yfinance` 等大型套件。
 
-3. **網頁端「遠端觸發」功能**：
-   - 點擊網頁右上角「更新資料」後，可選擇「確定」以通知 GitHub 後台立刻抓取最新股價。
-   - 支援安全儲存 **Personal Access Token (PAT)** 於瀏覽器 `localStorage` 中。
+3. **安全性強化 (Security Hardening)**：
+   - **決策**：基於網路安全考量（防止 Personal Access Token 遭竊或洩漏），決定移除網頁端的「手動更新按鈕」。
+   - **修改內容**：刪除 `index.html` 中的按鈕與 `app.js` 裡的 API 調用邏輯。
+   - **結果**：網頁端 100% 安全，不再需要輸入或儲存任何 Token。
 
-4. **效能加速 (Pip Caching)**：
-   - 啟用 GitHub Actions 的 `pip` 快取機制，大幅縮短每次安裝 `pandas`、`yfinance` 等套件的時間。
-
-5. **前端穩定性增強**：
-   - 修正 `updateStats()` 等渲染函數，在 JSON 資料不完整時會自動使用範例資料或優雅跳過，不再跳出報錯視窗。
+4. **台灣時區與自動化紀錄**：
+   - 設定 `TZ: Asia/Taipei`，使所有自動化產生的 Commit 訊息與系統 Log 均顯示為台北時間。
 
 ---
 
-## 📖 操作指南
-### 1. 如何手動觸發後台更新？
-- 打開網頁，點擊「更新資料」。
-- 點選「確定」。
-- 第一次使用時，請輸入您的 **GitHub PAT (Token)**。
-- 看到「成功觸發」訊息後，約等 **3 分鐘**，GitHub Actions 跑完綠燈後重新整理網頁即可。
+## 📝 文檔同步 (README Updates)
+- 更新了 `README.md` 的 **Data Update Schedule**，修正為「每小時執行一次」。
+- 更新了專案結構說明，反映工作流檔案合併後的狀態。
+- 修正了手動觸發方式的引導，改為引導至 GitHub Actions 官方頁面手動執行。
 
-### 2. 遇到 Git 推送衝突怎麼辦？
-由於後台會自動更新資料，若您本地端有修改程式碼，推送前請執行：
+---
+
+## 📖 核心操作建議
+### 1. 如何安全地手動觸發更新？
+若不想等到整點更新，請直接執行以下步驟：
+- 前往 GitHub 專案頁面 -> 點選 **Actions** 標籤。
+- 點選左側的 **Hourly Stock Update & Deploy**。
+- 點選右側的 **Run workflow** -> **Run workflow** (綠色按鈕)。
+
+### 2. 本地推送的小技巧
+推送變更前，請習慣性執行：
 ```powershell
 git pull origin main --no-edit
 git push
 ```
-如果衝突嚴重，可使用強行推送（謹慎使用）：
-```powershell
-git push -f
-```
-
----
-
-## 📅 下一步建議
-- 定期檢查 `data/run_log.json` 確保自動化任務沒有因為 yfinance API 限制而失敗。
-- 若有新增監控股票，請修改 `src/main.py` 或相關設定檔後推送即可。
+如果遇到卡住且本地沒什麼重要資料變動，可用 `git push -f` 強制推送蓋掉自動產生的 JSON 檔案。
 
 ---
 **紀錄整理者：** Gemini CLI 助手

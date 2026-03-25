@@ -114,12 +114,21 @@ GitHub Actions runs automatically:
 - **On Push**: Whenever code is pushed to the `main` or `master` branch.
 - **Manual Trigger**: Via the **Actions** tab in your GitHub repository.
 
-## 📈 Dashboard Features
+## 📉 Dashboard Features
 
 - **Stock Cards**: Visual KD indicators with color coding
   - 🔴 Red: Overbought (KD ≥ 80)
   - 🟢 Green: Oversold (KD ≤ 20)
   - ⚪ Gray: Normal range
+- **Trading Patterns**: Automated analysis of 8 market patterns:
+  1. 🔴 **快漲慢跌** (主力出貨): 快漲慢跌通常是主力出貨的信號，建議賣出。
+  2. 🟢 **快跌慢漲** (主力吸籌): 快跌慢漲通常是主力吸籌的信號，建議買入。
+  3. 🔴 **放量上漲** (見頂風險): 股價上漲且成交量異常放大，可能是見頂風險，建議賣出。
+  4. ⚫ **縮量不跌** (頭部形成): 股價不跌但成交量萎縮，可能是頭部形成，建議避開。
+  5. 🟡 **縮量上漲** (趨勢健康): 股價上漲且成交量穩定，代表趨勢健康，建議持有。
+  6. ⚫ **縮量下跌** (繼續看跌): 股價下跌且成交量萎縮，代表買盤不足，建議繼續看跌。
+  7. 🔴 **縮量不漲** (頭部確立): 股價不漲且成交量萎縮，通常是頭部確立的信號，建議賣出。
+  8. 🟢 **放量下跌** (恐慌殺跌): 股價大跌且成交量异常放大，通常是恐慌殺跌，可能是分批買入機會。
 - **Interactive Charts**: Price and KD trend visualization
 - **Alert History**: Track past overbought/oversold events
 - **Market Filter**: Switch between TW/US stocks
