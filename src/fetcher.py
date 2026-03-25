@@ -138,12 +138,17 @@ class StockFetcher:
         # 3. Fetch Bitcoin Price (BTC-USD)
         try:
             ticker_btc = yf.Ticker("BTC-USD")
-            hist_btc = ticker_btc.history(period="2d")
-            if not hist_btc.empty:
-                latest_val = hist_btc['Close'].iloc[-1]
-                prev_val = hist_btc['Close'].iloc[-2] if len(hist_btc) >= 2 else latest_val
-                change_pct = ((latest_val - prev_val) / prev_val) * 100 if prev_val else 0
+            # Use fast_info for current price as it's more reliable for cryptos
+            latest_val = ticker_btc.fast_info.get('lastPrice')
+            if latest_val:
+                hist_btc = ticker_btc.history(period="2d")
+                change_pct = 0
+                if len(hist_btc) >= 2:
+                    prev_val = hist_btc['Close'].iloc[-2]
+                    change_pct = ((latest_val - prev_val) / prev_val) * 100
                 macro_data["btc"] = {"value": round(latest_val, 0), "change_pct": round(change_pct, 2)}
+            else:
+                logger.warning("Could not get Bitcoin price via fast_info")
         except Exception as e:
             logger.error(f"Error fetching BTC: {e}")
 
@@ -151,20 +156,26 @@ class StockFetcher:
         try:
             import requests
             headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'application/json'
             }
+            # Use the historical endpoint which is often more stable
             response = requests.get("https://production.dataviz.cnn.io/index/feargreed/static/historical", headers=headers, timeout=15)
             if response.ok:
                 data = response.json()
-                fng_val = data['fear_and_greed']['score']
-                fng_rating = data['fear_and_greed']['rating']
-                macro_data["fear_greed"] = {
-                    "value": int(fng_val),
-                    "label": fng_rating.capitalize(),
-                    "timestamp": datetime.now().isoformat()
-                }
+                if 'fear_and_greed' in data:
+                    fng_val = data['fear_and_greed'].get('score')
+                    fng_rating = data['fear_and_greed'].get('rating', 'N/A')
+                    if fng_val is not None:
+                        macro_data["fear_greed"] = {
+                            "value": int(fng_val),
+                            "label": fng_rating.capitalize(),
+                            "timestamp": datetime.now().isoformat()
+                        }
+            else:
+                logger.error(f"CNN Fear & Greed request failed: {response.status_code}")
         except Exception as e:
-            logger.error(f"Error fetching CNN Fear & Greed: {e}")
+            logger.error(f"Error parsing CNN Fear & Greed: {e}")
 
         return macro_data
     

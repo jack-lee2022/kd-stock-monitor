@@ -57,8 +57,8 @@ function updateStats() {
             
             // 1. Fear & Greed
             const fngEl = document.getElementById('macro-fng');
-            if (fngEl && macro.fear_greed) {
-                const val = macro.fear_greed.value || 0;
+            if (fngEl && macro.fear_greed && macro.fear_greed.value !== null) {
+                const val = macro.fear_greed.value;
                 const label = macro.fear_greed.label || 'N/A';
                 let colorClass = 'text-gray-300';
                 if (val >= 75) colorClass = 'text-green-400';
