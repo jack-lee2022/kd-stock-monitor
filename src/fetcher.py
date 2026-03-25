@@ -105,24 +105,22 @@ class StockFetcher:
         logger.info(f"Saved raw data to {filepath}")
 
     def fetch_macro_indicators(self) -> Dict:
-        """Fetch US10Y yield, Dollar Index, and CNN Fear & Greed Index."""
+        """Fetch US10Y yield, Dollar Index, CNN Fear & Greed, and Bitcoin."""
         macro_data = {
             "us10y": {"value": None, "change": None},
             "dxy": {"value": None, "change": None},
-            "fear_greed": {"value": None, "label": "N/A", "previous_close": None}
+            "fear_greed": {"value": None, "label": "N/A"},
+            "btc": {"value": None, "change_pct": None}
         }
 
         # 1. Fetch US10Y Yield (^TNX)
         try:
             ticker_us10y = yf.Ticker("^TNX")
             hist_us10y = ticker_us10y.history(period="2d")
-            if not hist_us10y.empty and len(hist_us10y) >= 1:
+            if not hist_us10y.empty:
                 latest_val = hist_us10y['Close'].iloc[-1]
                 prev_val = hist_us10y['Close'].iloc[-2] if len(hist_us10y) >= 2 else latest_val
-                macro_data["us10y"] = {
-                    "value": round(latest_val, 3),
-                    "change": round(latest_val - prev_val, 3)
-                }
+                macro_data["us10y"] = {"value": round(latest_val, 3), "change": round(latest_val - prev_val, 3)}
         except Exception as e:
             logger.error(f"Error fetching US10Y: {e}")
 
@@ -130,33 +128,43 @@ class StockFetcher:
         try:
             ticker_dxy = yf.Ticker("DX-Y.NYB")
             hist_dxy = ticker_dxy.history(period="2d")
-            if not hist_dxy.empty and len(hist_dxy) >= 1:
+            if not hist_dxy.empty:
                 latest_val = hist_dxy['Close'].iloc[-1]
                 prev_val = hist_dxy['Close'].iloc[-2] if len(hist_dxy) >= 2 else latest_val
-                macro_data["dxy"] = {
-                    "value": round(latest_val, 2),
-                    "change": round(latest_val - prev_val, 2)
-                }
+                macro_data["dxy"] = {"value": round(latest_val, 2), "change": round(latest_val - prev_val, 2)}
         except Exception as e:
             logger.error(f"Error fetching DXY: {e}")
 
-        # 3. Fetch CNN Fear & Greed Index (Using a public API/Proxy if possible, or fallback)
+        # 3. Fetch Bitcoin Price (BTC-USD)
+        try:
+            ticker_btc = yf.Ticker("BTC-USD")
+            hist_btc = ticker_btc.history(period="2d")
+            if not hist_btc.empty:
+                latest_val = hist_btc['Close'].iloc[-1]
+                prev_val = hist_btc['Close'].iloc[-2] if len(hist_btc) >= 2 else latest_val
+                change_pct = ((latest_val - prev_val) / prev_val) * 100 if prev_val else 0
+                macro_data["btc"] = {"value": round(latest_val, 0), "change_pct": round(change_pct, 2)}
+        except Exception as e:
+            logger.error(f"Error fetching BTC: {e}")
+
+        # 4. Fetch Real CNN Fear & Greed Index
         try:
             import requests
-            # Use a reliable public API for Fear & Greed
-            response = requests.get("https://api.alternative.me/fng/", timeout=10)
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            }
+            response = requests.get("https://production.dataviz.cnn.io/index/feargreed/static/historical", headers=headers, timeout=15)
             if response.ok:
                 data = response.json()
-                if "data" in data and len(data["data"]) > 0:
-                    val = int(data["data"][0]["value"])
-                    label = data["data"][0]["value_classification"]
-                    macro_data["fear_greed"] = {
-                        "value": val,
-                        "label": label,
-                        "timestamp": datetime.now().isoformat()
-                    }
+                fng_val = data['fear_and_greed']['score']
+                fng_rating = data['fear_and_greed']['rating']
+                macro_data["fear_greed"] = {
+                    "value": int(fng_val),
+                    "label": fng_rating.capitalize(),
+                    "timestamp": datetime.now().isoformat()
+                }
         except Exception as e:
-            logger.error(f"Error fetching Fear & Greed Index: {e}")
+            logger.error(f"Error fetching CNN Fear & Greed: {e}")
 
         return macro_data
     

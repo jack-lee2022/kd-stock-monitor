@@ -93,6 +93,17 @@ function updateStats() {
                 dxyEl.className = `font-bold text-lg ${colorClass}`;
                 dxyEl.textContent = val.toFixed(2);
             }
+
+            // 4. Bitcoin
+            const btcEl = document.getElementById('macro-btc');
+            if (btcEl && macro.btc) {
+                const val = macro.btc.value || 0;
+                const change = macro.btc.change_pct || 0;
+                const colorClass = change >= 0 ? 'text-green-400' : 'text-red-400';
+                const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+                btcEl.className = `font-bold text-lg ${colorClass}`;
+                btcEl.textContent = formattedPrice;
+            }
         }
     } catch (e) {
         console.error("Error updating stats:", e);
