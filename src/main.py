@@ -166,8 +166,8 @@ class KDStockMonitor:
             all_stocks.extend(stocks_data.get(market, []))
         
         # Count stocks by status
-        overbought = []
-        oversold = []
+        overbought_stocks = []
+        oversold_stocks = []
         normal = []
         errors = []
         
@@ -185,10 +185,19 @@ class KDStockMonitor:
                 errors.append(stock)
                 continue
             
+            stock_summary = {
+                "symbol": stock["symbol"], 
+                "name": stock["name"], 
+                "current_price": stock.get("current_price"),
+                "change_pct": stock.get("change_pct"),
+                "kd_k": kd_k, 
+                "kd_d": kd_d
+            }
+            
             if kd_k >= thresholds["overbought"] or kd_d >= thresholds["overbought"]:
-                overbought.append(stock)
+                overbought_stocks.append(stock_summary)
             elif kd_k <= thresholds["oversold"] or kd_d <= thresholds["oversold"]:
-                oversold.append(stock)
+                oversold_stocks.append(stock_summary)
             else:
                 normal.append(stock)
         
@@ -200,11 +209,11 @@ class KDStockMonitor:
             "stocks_successful": len([s for s in all_stocks if "error" not in s]),
             "stocks_failed": len(errors),
             "new_alerts": alert_result["summary"]["new_alerts"],
-            "overbought_count": len(overbought),
-            "oversold_count": len(oversold),
+            "overbought_count": len(overbought_stocks),
+            "oversold_count": len(oversold_stocks),
             "normal_count": len(normal),
-            "overbought_stocks": [{"symbol": s["symbol"], "name": s["name"], "kd_k": s["kd_k"], "kd_d": s["kd_d"]} for s in overbought],
-            "oversold_stocks": [{"symbol": s["symbol"], "name": s["name"], "kd_k": s["kd_k"], "kd_d": s["kd_d"]} for s in oversold],
+            "overbought_stocks": overbought_stocks,
+            "oversold_stocks": oversold_stocks,
             "errors": [{"symbol": s["symbol"], "error": s.get("error", "Unknown error")} for s in errors]
         }
         
