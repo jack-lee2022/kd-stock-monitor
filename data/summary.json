@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-26T11:17:02.796955",
+  "timestamp": "2026-03-26T13:05:16.784316",
   "date": "2026-03-26",
   "macro": {
     "us10y": {
@@ -7,28 +7,43 @@
       "change": -0.064
     },
     "dxy": {
-      "value": 99.67,
-      "change": 0.24
+      "value": 99.58,
+      "change": -0.02
     },
     "fear_greed": {
       "value": 25.33,
       "change": -1.62,
       "label": "VIX Index",
-      "timestamp": "2026-03-26T11:17:02.157342"
+      "timestamp": "2026-03-26T13:05:16.211302"
     },
     "btc": {
-      "value": 70886.0,
+      "value": 70742.0,
       "change_pct": 0
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 0,
+  "new_alerts": 1,
+  "overbought_count": 1,
   "oversold_count": 12,
-  "normal_count": 56,
-  "overbought_stocks": [],
+  "normal_count": 55,
+  "overbought_stocks": [
+    {
+      "symbol": "00910.TW",
+      "name": "復華航太衛星",
+      "current_price": 61.3,
+      "change_pct": 4.61,
+      "extra_data": {
+        "regular_market_price": 61.3,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 58.6
+      },
+      "kd_k": 82.6,
+      "kd_d": 76.04
+    }
+  ],
   "oversold_stocks": [
     {
       "symbol": "2317.TW",
@@ -47,44 +62,44 @@
     {
       "symbol": "2454.TW",
       "name": "聯發科",
-      "current_price": 1605.0,
-      "change_pct": -0.93,
+      "current_price": 1600.0,
+      "change_pct": -1.23,
       "extra_data": {
-        "regular_market_price": 1605.0,
+        "regular_market_price": 1600.0,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 1620.0
       },
-      "kd_k": 14.56,
-      "kd_d": 24.23
+      "kd_k": 13.41,
+      "kd_d": 23.85
     },
     {
       "symbol": "00757.TW",
       "name": "統一FANG+",
-      "current_price": 106.6,
-      "change_pct": -0.93,
+      "current_price": 106.8,
+      "change_pct": -0.74,
       "extra_data": {
-        "regular_market_price": 106.6,
+        "regular_market_price": 106.8,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 107.6
       },
-      "kd_k": 18.49,
-      "kd_d": 33.35
+      "kd_k": 18.53,
+      "kd_d": 29.69
     },
     {
       "symbol": "00635U.TW",
       "name": "期元大S&P黃金",
-      "current_price": 47.71,
-      "change_pct": -1.14,
+      "current_price": 47.83,
+      "change_pct": -0.89,
       "extra_data": {
-        "regular_market_price": 47.71,
+        "regular_market_price": 47.83,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 48.26
       },
-      "kd_k": 12.77,
-      "kd_d": 12.89
+      "kd_k": 19.18,
+      "kd_d": 15.46
     },
     {
       "symbol": "MSFT",
@@ -167,8 +182,8 @@
         "post_market_price": 27.67,
         "prev_close": 26.95
       },
-      "kd_k": 18.76,
-      "kd_d": 20.81
+      "kd_k": 19.63,
+      "kd_d": 21.16
     },
     {
       "symbol": "FNGS",
