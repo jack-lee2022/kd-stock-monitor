@@ -207,6 +207,11 @@ function createStockCard(stock) {
     const currency = stock.market === 'TW' ? 'TWD' : 'USD';
     const marketClass = stock.market === 'TW' ? 'tw' : 'us';
     
+    const changePct = stock.change_pct || 0;
+    const changeClass = changePct >= 0 ? 'text-red-500' : 'text-green-500';
+    const changeIcon = changePct >= 0 ? '▲' : '▼';
+    const changeText = `${changeIcon} ${Math.abs(changePct).toFixed(2)}%`;
+    
     return `
         <div class="stock-card ${statusClass} p-4" onclick="selectStockForChart('${stock.symbol}')">
             <div class="flex justify-between items-start mb-2">
@@ -223,7 +228,10 @@ function createStockCard(stock) {
             <div class="grid grid-cols-2 gap-4 mb-3">
                 <div>
                     <p class="text-xs text-gray-500">現價</p>
-                    <p class="font-bold ${priceColorClass}">${DataManager.formatPrice(stock.current_price, currency)}</p>
+                    <div class="flex items-baseline space-x-1">
+                        <p class="font-bold ${priceColorClass}">${DataManager.formatPrice(stock.current_price, currency)}</p>
+                        <span class="text-[10px] font-bold ${changeClass}">${changeText}</span>
+                    </div>
                 </div>
                 <div class="text-right">
                     <p class="text-xs text-gray-500">更新時間</p>

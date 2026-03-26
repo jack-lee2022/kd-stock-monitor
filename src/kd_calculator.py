@@ -161,6 +161,13 @@ class KDCalculator:
                         df_with_kd = self.calculate_kd(df)
                         current_kd = self.get_current_kd(df_with_kd)
                         
+                        # Calculate daily change percentage
+                        change_pct = 0.0
+                        if len(df_with_kd) >= 2:
+                            current_close = df_with_kd['close'].iloc[-1]
+                            prev_close = df_with_kd['close'].iloc[-2]
+                            change_pct = ((current_close - prev_close) / prev_close) * 100
+                        
                         # Save processed data
                         self._save_processed_data(symbol, df_with_kd)
                         
@@ -169,6 +176,7 @@ class KDCalculator:
                             "name": stock["name"],
                             "market": market,
                             "current_price": current_kd.get("close") if current_kd else None,
+                            "change_pct": round(change_pct, 2),
                             "kd_k": current_kd.get("kd_k") if current_kd else None,
                             "kd_d": current_kd.get("kd_d") if current_kd else None,
                             "last_updated": stock.get("last_updated"),
