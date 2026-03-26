@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-26T07:33:42.965661",
+  "timestamp": "2026-03-26T09:48:40.022013",
   "date": "2026-03-26",
   "macro": {
     "us10y": {
@@ -7,40 +7,46 @@
       "change": -0.064
     },
     "dxy": {
-      "value": 99.64,
-      "change": 0.21
+      "value": 99.61,
+      "change": 0.18
     },
     "fear_greed": {
       "value": 25.33,
       "change": -1.62,
       "label": "VIX Index",
-      "timestamp": "2026-03-26T07:33:42.361763"
+      "timestamp": "2026-03-26T09:48:39.397378"
     },
     "btc": {
-      "value": 71336.0,
-      "change_pct": 1.16
+      "value": 71228.0,
+      "change_pct": 0
     }
   },
-  "stocks_processed": 64,
-  "stocks_successful": 64,
+  "stocks_processed": 67,
+  "stocks_successful": 67,
   "stocks_failed": 0,
-  "new_alerts": 0,
+  "new_alerts": 3,
   "overbought_count": 0,
-  "oversold_count": 8,
+  "oversold_count": 11,
   "normal_count": 56,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
       "symbol": "2317.TW",
       "name": "鴻海",
-      "kd_k": 14.9,
-      "kd_d": 15.42
+      "kd_k": 24.12,
+      "kd_d": 18.32
+    },
+    {
+      "symbol": "00757.TW",
+      "name": "統一FANG+",
+      "kd_k": 19.41,
+      "kd_d": 33.66
     },
     {
       "symbol": "00635U.TW",
       "name": "期元大S&P黃金",
-      "kd_k": 14.89,
-      "kd_d": 13.6
+      "kd_k": 13.5,
+      "kd_d": 13.14
     },
     {
       "symbol": "MSFT",
@@ -77,6 +83,18 @@
       "name": "Direxion Daily NFLX Bull 2X Shares",
       "kd_k": 18.76,
       "kd_d": 20.81
+    },
+    {
+      "symbol": "FNGS",
+      "name": "MicroSectors FANG+ Index ETN",
+      "kd_k": 14.26,
+      "kd_d": 22.66
+    },
+    {
+      "symbol": "FNGG",
+      "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
+      "kd_k": 11.51,
+      "kd_d": 19.62
     }
   ],
   "errors": []
