@@ -86,11 +86,26 @@ class StockFetcher:
                     # Save raw data
                     self._save_raw_data(symbol, df)
                     
+                    # Get real-time/extended hours data
+                    extra_data = {}
+                    try:
+                        ticker = yf.Ticker(symbol)
+                        info = ticker.info
+                        extra_data = {
+                            "regular_market_price": info.get("regularMarketPrice"),
+                            "pre_market_price": info.get("preMarketPrice"),
+                            "post_market_price": info.get("postMarketPrice"),
+                            "prev_close": info.get("regularMarketPreviousClose")
+                        }
+                    except Exception as e:
+                        logger.error(f"Error fetching extra data for {symbol}: {e}")
+                    
                     results[market].append({
                         "symbol": symbol,
                         "name": stock["name"],
                         "market": market,
                         "data": df,
+                        "extra_data": extra_data,
                         "last_updated": datetime.now().isoformat()
                     })
                 else:
@@ -103,6 +118,73 @@ class StockFetcher:
         filepath = os.path.join(self.data_dir, f"{symbol.replace('.', '_')}_raw.csv")
         df.to_csv(filepath, index=False)
         logger.info(f"Saved raw data to {filepath}")
+
+    def fetch_macro_indicators(self) -> Dict:
+        """Fetch US10Y yield, Dollar Index, CNN Fear & Greed, and Bitcoin."""
+        macro_data = {
+            "us10y": {"value": None, "change": None},
+            "dxy": {"value": None, "change": None},
+            "fear_greed": {"value": None, "label": "N/A"},
+            "btc": {"value": None, "change_pct": None}
+        }
+
+        # 1. Fetch US10Y Yield (^TNX)
+        try:
+            ticker_us10y = yf.Ticker("^TNX")
+            hist_us10y = ticker_us10y.history(period="2d")
+            if not hist_us10y.empty:
+                latest_val = hist_us10y['Close'].iloc[-1]
+                prev_val = hist_us10y['Close'].iloc[-2] if len(hist_us10y) >= 2 else latest_val
+                macro_data["us10y"] = {"value": round(latest_val, 3), "change": round(latest_val - prev_val, 3)}
+        except Exception as e:
+            logger.error(f"Error fetching US10Y: {e}")
+
+        # 2. Fetch Dollar Index (DX-Y.NYB)
+        try:
+            ticker_dxy = yf.Ticker("DX-Y.NYB")
+            hist_dxy = ticker_dxy.history(period="2d")
+            if not hist_dxy.empty:
+                latest_val = hist_dxy['Close'].iloc[-1]
+                prev_val = hist_dxy['Close'].iloc[-2] if len(hist_dxy) >= 2 else latest_val
+                macro_data["dxy"] = {"value": round(latest_val, 2), "change": round(latest_val - prev_val, 2)}
+        except Exception as e:
+            logger.error(f"Error fetching DXY: {e}")
+
+        # 3. Fetch Bitcoin Price (BTC-USD)
+        try:
+            ticker_btc = yf.Ticker("BTC-USD")
+            # Use fast_info for current price as it's more reliable for cryptos
+            latest_val = ticker_btc.fast_info.get('lastPrice')
+            if latest_val:
+                hist_btc = ticker_btc.history(period="2d")
+                change_pct = 0
+                if len(hist_btc) >= 2:
+                    prev_val = hist_btc['Close'].iloc[-2]
+                    change_pct = ((latest_val - prev_val) / prev_val) * 100
+                macro_data["btc"] = {"value": round(latest_val, 0), "change_pct": round(change_pct, 2)}
+            else:
+                logger.warning("Could not get Bitcoin price via fast_info")
+        except Exception as e:
+            logger.error(f"Error fetching BTC: {e}")
+
+        # 4. Fetch VIX Index (^VIX)
+        try:
+            ticker_vix = yf.Ticker("^VIX")
+            hist_vix = ticker_vix.history(period="2d")
+            if not hist_vix.empty:
+                latest_val = hist_vix['Close'].iloc[-1]
+                prev_val = hist_vix['Close'].iloc[-2] if len(hist_vix) >= 2 else latest_val
+                macro_data["fear_greed"] = {
+                    "value": round(latest_val, 2),
+                    "change": round(latest_val - prev_val, 2),
+                    "label": "VIX Index",
+                    "timestamp": datetime.now().isoformat()
+                }
+                logger.info(f"VIX Index: {round(latest_val, 2)}")
+        except Exception as e:
+            logger.error(f"Error fetching VIX: {e}")
+
+        return macro_data
     
     def get_latest_price(self, symbol: str) -> Optional[float]:
         """Get the latest closing price for a stock."""

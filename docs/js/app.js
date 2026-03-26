@@ -32,15 +32,85 @@ document.addEventListener('DOMContentLoaded', async () => {
  * Update statistics cards
  */
 function updateStats() {
-    const summary = DataManager.getSummary();
-    const allStocks = DataManager.getAllStocks();
-    const today = new Date().toISOString().split('T')[0];
-    const todayAlerts = DataManager.getAlerts().filter(a => a.date === today);
-    
-    document.getElementById('total-stocks').textContent = allStocks.length;
-    document.getElementById('overbought-count').textContent = summary.overbought_count || 0;
-    document.getElementById('oversold-count').textContent = summary.oversold_count || 0;
-    document.getElementById('today-alerts').textContent = todayAlerts.length;
+    try {
+        const summary = DataManager.getSummary() || { overbought_count: 0, oversold_count: 0 };
+        const allStocks = DataManager.getAllStocks() || [];
+        const alerts = DataManager.getAlerts() || [];
+        const today = new Date().toISOString().split('T')[0];
+        const todayAlerts = alerts.filter(a => a && a.date === today);
+        
+        const totalStocksEl = document.getElementById('total-stocks');
+        if (totalStocksEl) totalStocksEl.textContent = allStocks.length;
+
+        const overboughtEl = document.getElementById('overbought-count');
+        if (overboughtEl) overboughtEl.textContent = summary.overbought_count || 0;
+
+        const oversoldEl = document.getElementById('oversold-count');
+        if (oversoldEl) oversoldEl.textContent = summary.oversold_count || 0;
+
+        const todayAlertsEl = document.getElementById('today-alerts');
+        if (todayAlertsEl) todayAlertsEl.textContent = todayAlerts.length;
+
+        // Update Macro Stats
+        if (summary.macro) {
+            const macro = summary.macro;
+            
+            // 1. Fear & Greed (Actually VIX Index)
+            const fngEl = document.getElementById('macro-fng');
+            if (fngEl && macro.fear_greed && macro.fear_greed.value !== null) {
+                const val = macro.fear_greed.value;
+                const label = macro.fear_greed.label || 'N/A';
+                let colorClass = 'text-gray-300';
+                
+                // Adjust logic for VIX Index: Higher is more fearful (Red), Lower is more calm (Green)
+                if (val >= 40) colorClass = 'text-red-600 font-extrabold'; // Extreme Panic
+                else if (val >= 30) colorClass = 'text-red-500';          // High Fear
+                else if (val >= 25) colorClass = 'text-orange-400';       // Elevated Alert
+                else if (val >= 20) colorClass = 'text-yellow-400';       // Normal-High
+                else if (val < 15) colorClass = 'text-green-500';         // Extreme Calm
+                else colorClass = 'text-green-400';                       // Calm/Normal
+                
+                fngEl.className = `font-bold text-lg ${colorClass}`;
+                fngEl.textContent = val.toFixed(2);
+                fngEl.title = `VIX 恐慌指數: ${val.toFixed(2)}`;
+            }
+
+            // 2. US 10Y
+            const us10yEl = document.getElementById('macro-us10y');
+            if (us10yEl && macro.us10y) {
+                const val = macro.us10y.value || 0;
+                const change = macro.us10y.change || 0;
+                const colorClass = change >= 0 ? 'text-red-400' : 'text-green-400';
+                const icon = change >= 0 ? '↑' : '↓';
+                us10yEl.className = `font-bold text-lg ${colorClass}`;
+                us10yEl.textContent = `${val.toFixed(2)}%`;
+                // Add a small change label if possible
+            }
+
+            // 3. DXY
+            const dxyEl = document.getElementById('macro-dxy');
+            if (dxyEl && macro.dxy) {
+                const val = macro.dxy.value || 0;
+                const change = macro.dxy.change || 0;
+                const colorClass = change >= 0 ? 'text-red-400' : 'text-green-400';
+                dxyEl.className = `font-bold text-lg ${colorClass}`;
+                dxyEl.textContent = val.toFixed(2);
+            }
+
+            // 4. Bitcoin
+            const btcEl = document.getElementById('macro-btc');
+            if (btcEl && macro.btc) {
+                const val = macro.btc.value || 0;
+                const change = macro.btc.change_pct || 0;
+                const colorClass = change >= 0 ? 'text-green-400' : 'text-red-400';
+                const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+                btcEl.className = `font-bold text-lg ${colorClass}`;
+                btcEl.textContent = formattedPrice;
+            }
+        }
+    } catch (e) {
+        console.error("Error updating stats:", e);
+    }
 }
 
 /**
@@ -137,6 +207,27 @@ function createStockCard(stock) {
     const currency = stock.market === 'TW' ? 'TWD' : 'USD';
     const marketClass = stock.market === 'TW' ? 'tw' : 'us';
     
+    const changePct = stock.change_pct || 0;
+    const changeClass = changePct >= 0 ? 'text-red-500' : 'text-green-500';
+    const changeIcon = changePct >= 0 ? '▲' : '▼';
+    const changeText = `${changeIcon} ${Math.abs(changePct).toFixed(2)}%`;
+    
+    // Extended Hours Data
+    let extendedHoursHtml = '';
+    const extra = stock.extra_data || {};
+    if (stock.market === 'US') {
+        if (extra.pre_market_price) {
+            const preChange = ((extra.pre_market_price - stock.current_price) / stock.current_price * 100).toFixed(2);
+            const preClass = preChange >= 0 ? 'text-red-400' : 'text-green-400';
+            extendedHoursHtml += `<p class="text-[10px] ${preClass}">盤前: $${extra.pre_market_price.toFixed(2)} (${preChange}%)</p>`;
+        }
+        if (extra.post_market_price) {
+            const postChange = ((extra.post_market_price - stock.current_price) / stock.current_price * 100).toFixed(2);
+            const postClass = postChange >= 0 ? 'text-red-400' : 'text-green-400';
+            extendedHoursHtml += `<p class="text-[10px] ${postClass}">盤後: $${extra.post_market_price.toFixed(2)} (${postChange}%)</p>`;
+        }
+    }
+    
     return `
         <div class="stock-card ${statusClass} p-4" onclick="selectStockForChart('${stock.symbol}')">
             <div class="flex justify-between items-start mb-2">
@@ -153,7 +244,11 @@ function createStockCard(stock) {
             <div class="grid grid-cols-2 gap-4 mb-3">
                 <div>
                     <p class="text-xs text-gray-500">現價</p>
-                    <p class="font-bold ${priceColorClass}">${DataManager.formatPrice(stock.current_price, currency)}</p>
+                    <div class="flex items-baseline space-x-1">
+                        <p class="font-bold ${priceColorClass}">${DataManager.formatPrice(stock.current_price, currency)}</p>
+                        <span class="text-[10px] font-bold ${changeClass}">${changeText}</span>
+                    </div>
+                    ${extendedHoursHtml}
                 </div>
                 <div class="text-right">
                     <p class="text-xs text-gray-500">更新時間</p>
@@ -183,44 +278,68 @@ function createStockCard(stock) {
 }
 
 /**
- * Force refresh data by clearing cache and reloading
+ * Force refresh data by triggering GitHub Action or reloading
  */
 async function forceRefreshData() {
-    console.log('Force refreshing data...');
+    console.log('Attempting to trigger real data update...');
     
-    // Show loading state
+    // 1. 詢問使用者要「重新整理頁面資料」還是「觸發後台抓取新股價」
+    const choice = confirm("您想要執行哪種更新？\n\n【確定】：通知後台去抓取最新股價 (需 2-3 分鐘，需 Token)\n【取消】：僅重新讀取目前已存好的資料");
+    
+    if (!choice) {
+        // 原本的邏輯：重新讀取檔案
+        location.reload(); 
+        return;
+    }
+
+    // 2. 獲取 GitHub Token (優先從 localStorage 讀取)
+    let token = localStorage.getItem('github_token');
+    if (!token) {
+        token = prompt("請輸入您的 GitHub Personal Access Token (PAT) 以觸發後台更新：\n(此 Token 僅存存在您的瀏覽器中，不會公開)");
+        if (!token) return;
+        localStorage.setItem('github_token', token);
+    }
+
+    // 3. 顯示更新中狀態
     const updateButton = document.querySelector('button[onclick="forceRefreshData()"]');
     if (updateButton) {
-        updateButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> 更新中...';
+        updateButton.innerHTML = '<i class="fas fa-rocket fa-spin mr-1"></i> 指令發送中...';
         updateButton.disabled = true;
     }
-    
+
     try {
-        // Clear application cache
-        DataManager.stockData = null;
-        DataManager.alerts = null;
-        DataManager.summary = null;
-        
-        // Reload data with cache-busting
-        await DataManager.loadData();
-        
-        // Re-render all components
-        updateStats();
-        renderStockGrid();
-        renderAlertHistory();
-        initializeChart();
-        
-        // Update timestamp display
-        updateLastUpdated();
-        
-        // Show success message
-        alert('資料已更新！');
-        
+        const owner = 'jack-lee2022';
+        const repo = 'kd-stock-monitor';
+        const workflow_id = 'update-data.yml'; 
+
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflow_id}/dispatches`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            },
+            body: JSON.stringify({
+                ref: 'main' // 或您的分支名稱
+            })
+        });
+
+        if (response.ok || response.status === 204) {
+            alert('🚀 成功觸發後台更新！\n\n請注意：資料抓取與網頁部署約需 2-3 分鐘。\n建議您 3 分鐘後再回來查看最新資料。');
+        } else {
+            const errData = await response.json();
+            throw new Error(errData.message || 'API 呼叫失敗');
+        }
+
     } catch (error) {
-        console.error('Error refreshing data:', error);
-        alert('更新失敗，請稍後再試');
+        console.error('Trigger Error:', error);
+        if (error.message.includes('Unauthorized') || error.message.includes('Bad credentials')) {
+            alert('Token 錯誤或已過期，請重新輸入。');
+            localStorage.removeItem('github_token');
+        } else {
+            alert('觸發失敗：' + error.message);
+        }
     } finally {
-        // Restore button state
         if (updateButton) {
             updateButton.innerHTML = '<i class="fas fa-redo mr-1"></i> 更新資料';
             updateButton.disabled = false;

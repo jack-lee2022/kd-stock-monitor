@@ -273,6 +273,8 @@ class AlertChecker:
                         "name": stock.get("name"),
                         "market": stock.get("market"),
                         "current_price": stock.get("current_price"),
+                        "change_pct": stock.get("change_pct"),
+                        "extra_data": stock.get("extra_data"),
                         "kd_k": stock.get("kd_k"),
                         "kd_d": stock.get("kd_d"),
                         "last_updated": stock.get("last_updated"),

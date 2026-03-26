@@ -65,16 +65,22 @@ class KDStockMonitor:
         logger.info("="*60)
         
         try:
-            # Step 1: Fetch stock data
-            logger.info("\n[Step 1/4] Fetching stock data...")
+            # Step 1: Fetch stock data and macro indicators
+            logger.info("\n[Step 1/4] Fetching stock data and macro indicators...")
             if test_mode:
                 stock_data = self._get_mock_data()
+                macro_indicators = {
+                    "us10y": {"value": 4.25, "change": 0.02},
+                    "dxy": {"value": 104.5, "change": -0.15},
+                    "fear_greed": {"value": 55, "label": "Greed"}
+                }
                 logger.info("Using mock data (test mode)")
             else:
                 stock_data = self.fetcher.fetch_all_stocks()
+                macro_indicators = self.fetcher.fetch_macro_indicators()
             
             stocks_fetched = sum(len(stocks) for stocks in stock_data.values())
-            logger.info(f"Fetched data for {stocks_fetched} stocks")
+            logger.info(f"Fetched data for {stocks_fetched} stocks and macro indicators")
             
             # Step 2: Calculate KD indicators
             logger.info("\n[Step 2/4] Calculating KD indicators...")
@@ -89,7 +95,7 @@ class KDStockMonitor:
             
             # Step 4: Generate summary report
             logger.info("\n[Step 4/4] Generating summary report...")
-            summary = self._generate_summary(stocks_with_kd, alert_result)
+            summary = self._generate_summary(stocks_with_kd, alert_result, macro_indicators)
             
             # Save run log
             self._save_run_log(summary)
@@ -153,15 +159,15 @@ class KDStockMonitor:
         
         return mock_data
     
-    def _generate_summary(self, stocks_data: Dict, alert_result: Dict) -> Dict:
+    def _generate_summary(self, stocks_data: Dict, alert_result: Dict, macro_indicators: Dict = None) -> Dict:
         """Generate a summary of the run."""
         all_stocks = []
         for market in ["TW", "US"]:
             all_stocks.extend(stocks_data.get(market, []))
         
         # Count stocks by status
-        overbought = []
-        oversold = []
+        overbought_stocks = []
+        oversold_stocks = []
         normal = []
         errors = []
         
@@ -179,25 +185,36 @@ class KDStockMonitor:
                 errors.append(stock)
                 continue
             
+            stock_summary = {
+                "symbol": stock["symbol"], 
+                "name": stock["name"], 
+                "current_price": stock.get("current_price"),
+                "change_pct": stock.get("change_pct"),
+                "extra_data": stock.get("extra_data"),
+                "kd_k": kd_k, 
+                "kd_d": kd_d
+            }
+            
             if kd_k >= thresholds["overbought"] or kd_d >= thresholds["overbought"]:
-                overbought.append(stock)
+                overbought_stocks.append(stock_summary)
             elif kd_k <= thresholds["oversold"] or kd_d <= thresholds["oversold"]:
-                oversold.append(stock)
+                oversold_stocks.append(stock_summary)
             else:
                 normal.append(stock)
         
         summary = {
             "timestamp": datetime.now().isoformat(),
             "date": datetime.now().strftime("%Y-%m-%d"),
+            "macro": macro_indicators or {},
             "stocks_processed": len(all_stocks),
             "stocks_successful": len([s for s in all_stocks if "error" not in s]),
             "stocks_failed": len(errors),
             "new_alerts": alert_result["summary"]["new_alerts"],
-            "overbought_count": len(overbought),
-            "oversold_count": len(oversold),
+            "overbought_count": len(overbought_stocks),
+            "oversold_count": len(oversold_stocks),
             "normal_count": len(normal),
-            "overbought_stocks": [{"symbol": s["symbol"], "name": s["name"], "kd_k": s["kd_k"], "kd_d": s["kd_d"]} for s in overbought],
-            "oversold_stocks": [{"symbol": s["symbol"], "name": s["name"], "kd_k": s["kd_k"], "kd_d": s["kd_d"]} for s in oversold],
+            "overbought_stocks": overbought_stocks,
+            "oversold_stocks": oversold_stocks,
             "errors": [{"symbol": s["symbol"], "error": s.get("error", "Unknown error")} for s in errors]
         }
         
