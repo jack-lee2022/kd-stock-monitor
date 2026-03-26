@@ -162,11 +162,20 @@ class KDCalculator:
                         current_kd = self.get_current_kd(df_with_kd)
                         
                         # Calculate daily change percentage
+                        extra_data = stock.get("extra_data", {})
                         change_pct = 0.0
-                        if len(df_with_kd) >= 2:
+                        
+                        reg_price = extra_data.get("regular_market_price")
+                        prev_close = extra_data.get("prev_close")
+                        
+                        if reg_price is not None and prev_close is not None:
+                            change_pct = ((reg_price - prev_close) / prev_close) * 100
+                            logger.info(f"Calculated change_pct for {symbol} using real-time info: {change_pct:.2f}%")
+                        elif len(df_with_kd) >= 2:
                             current_close = df_with_kd['close'].iloc[-1]
-                            prev_close = df_with_kd['close'].iloc[-2]
-                            change_pct = ((current_close - prev_close) / prev_close) * 100
+                            hist_prev_close = df_with_kd['close'].iloc[-2]
+                            change_pct = ((current_close - hist_prev_close) / hist_prev_close) * 100
+                            logger.info(f"Calculated change_pct for {symbol} using history: {change_pct:.2f}%")
                         
                         # Save processed data
                         self._save_processed_data(symbol, df_with_kd)
@@ -175,8 +184,9 @@ class KDCalculator:
                             "symbol": symbol,
                             "name": stock["name"],
                             "market": market,
-                            "current_price": current_kd.get("close") if current_kd else None,
+                            "current_price": reg_price if reg_price is not None else (current_kd.get("close") if current_kd else None),
                             "change_pct": round(change_pct, 2),
+                            "extra_data": extra_data,
                             "kd_k": current_kd.get("kd_k") if current_kd else None,
                             "kd_d": current_kd.get("kd_d") if current_kd else None,
                             "last_updated": stock.get("last_updated"),

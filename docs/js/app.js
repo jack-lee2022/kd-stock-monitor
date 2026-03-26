@@ -212,6 +212,22 @@ function createStockCard(stock) {
     const changeIcon = changePct >= 0 ? '▲' : '▼';
     const changeText = `${changeIcon} ${Math.abs(changePct).toFixed(2)}%`;
     
+    // Extended Hours Data
+    let extendedHoursHtml = '';
+    const extra = stock.extra_data || {};
+    if (stock.market === 'US') {
+        if (extra.pre_market_price) {
+            const preChange = ((extra.pre_market_price - stock.current_price) / stock.current_price * 100).toFixed(2);
+            const preClass = preChange >= 0 ? 'text-red-400' : 'text-green-400';
+            extendedHoursHtml += `<p class="text-[10px] ${preClass}">盤前: $${extra.pre_market_price.toFixed(2)} (${preChange}%)</p>`;
+        }
+        if (extra.post_market_price) {
+            const postChange = ((extra.post_market_price - stock.current_price) / stock.current_price * 100).toFixed(2);
+            const postClass = postChange >= 0 ? 'text-red-400' : 'text-green-400';
+            extendedHoursHtml += `<p class="text-[10px] ${postClass}">盤後: $${extra.post_market_price.toFixed(2)} (${postChange}%)</p>`;
+        }
+    }
+    
     return `
         <div class="stock-card ${statusClass} p-4" onclick="selectStockForChart('${stock.symbol}')">
             <div class="flex justify-between items-start mb-2">
@@ -232,6 +248,7 @@ function createStockCard(stock) {
                         <p class="font-bold ${priceColorClass}">${DataManager.formatPrice(stock.current_price, currency)}</p>
                         <span class="text-[10px] font-bold ${changeClass}">${changeText}</span>
                     </div>
+                    ${extendedHoursHtml}
                 </div>
                 <div class="text-right">
                     <p class="text-xs text-gray-500">更新時間</p>

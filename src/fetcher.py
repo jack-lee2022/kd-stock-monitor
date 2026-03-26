@@ -86,11 +86,26 @@ class StockFetcher:
                     # Save raw data
                     self._save_raw_data(symbol, df)
                     
+                    # Get real-time/extended hours data
+                    extra_data = {}
+                    try:
+                        ticker = yf.Ticker(symbol)
+                        info = ticker.info
+                        extra_data = {
+                            "regular_market_price": info.get("regularMarketPrice"),
+                            "pre_market_price": info.get("preMarketPrice"),
+                            "post_market_price": info.get("postMarketPrice"),
+                            "prev_close": info.get("regularMarketPreviousClose")
+                        }
+                    except Exception as e:
+                        logger.error(f"Error fetching extra data for {symbol}: {e}")
+                    
                     results[market].append({
                         "symbol": symbol,
                         "name": stock["name"],
                         "market": market,
                         "data": df,
+                        "extra_data": extra_data,
                         "last_updated": datetime.now().isoformat()
                     })
                 else:
