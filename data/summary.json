@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T13:06:41.536813",
+  "timestamp": "2026-03-27T15:06:21.981167",
   "date": "2026-03-27",
   "macro": {
     "us10y": {
@@ -7,113 +7,84 @@
       "change": 0.088
     },
     "dxy": {
-      "value": 99.82,
-      "change": -0.08
+      "value": 99.88,
+      "change": -0.03
     },
     "fear_greed": {
       "value": 27.44,
-      "change": 2.11,
+      "change": 0.0,
       "label": "VIX Index",
-      "timestamp": "2026-03-27T13:06:40.884509"
+      "timestamp": "2026-03-27T15:06:21.342380"
     },
     "btc": {
-      "value": 68518.0,
-      "change_pct": 0
+      "value": 68640.0,
+      "change_pct": -0.22
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
   "new_alerts": 0,
-  "overbought_count": 1,
-  "oversold_count": 20,
-  "normal_count": 47,
-  "overbought_stocks": [
-    {
-      "symbol": "00910.TW",
-      "name": "復華航太衛星",
-      "current_price": 60.2,
-      "change_pct": -1.31,
-      "extra_data": {
-        "regular_market_price": 60.2,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 61.0
-      },
-      "kd_k": 86.01,
-      "kd_d": 77.18
-    }
-  ],
+  "overbought_count": 0,
+  "oversold_count": 19,
+  "normal_count": 49,
+  "overbought_stocks": [],
   "oversold_stocks": [
     {
       "symbol": "2317.TW",
       "name": "鴻海",
-      "current_price": 200.0,
-      "change_pct": -0.25,
+      "current_price": 199.5,
+      "change_pct": -0.5,
       "extra_data": {
-        "regular_market_price": 200.0,
+        "regular_market_price": 199.5,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 200.5
       },
-      "kd_k": 21.66,
-      "kd_d": 18.33
+      "kd_k": 20.92,
+      "kd_d": 18.08
     },
     {
       "symbol": "2454.TW",
       "name": "聯發科",
-      "current_price": 1550.0,
-      "change_pct": -2.52,
+      "current_price": 1585.0,
+      "change_pct": -0.31,
       "extra_data": {
-        "regular_market_price": 1550.0,
+        "regular_market_price": 1585.0,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 1590.0
       },
-      "kd_k": 9.77,
-      "kd_d": 19.16
-    },
-    {
-      "symbol": "009800.TW",
-      "name": "中信NASDAQ",
-      "current_price": 10.54,
-      "change_pct": -1.5,
-      "extra_data": {
-        "regular_market_price": 10.54,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 10.7
-      },
-      "kd_k": 19.63,
-      "kd_d": 29.65
+      "kd_k": 15.61,
+      "kd_d": 21.1
     },
     {
       "symbol": "00757.TW",
       "name": "統一FANG+",
-      "current_price": 104.3,
-      "change_pct": -2.16,
+      "current_price": 104.55,
+      "change_pct": -1.92,
       "extra_data": {
-        "regular_market_price": 104.3,
+        "regular_market_price": 104.55,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 106.6
       },
-      "kd_k": 17.74,
-      "kd_d": 29.43
+      "kd_k": 14.14,
+      "kd_d": 24.21
     },
     {
       "symbol": "00635U.TW",
       "name": "期元大S&P黃金",
-      "current_price": 46.95,
-      "change_pct": -1.28,
+      "current_price": 47.01,
+      "change_pct": -1.16,
       "extra_data": {
-        "regular_market_price": 46.95,
+        "regular_market_price": 47.01,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 47.56
       },
-      "kd_k": 15.41,
-      "kd_d": 14.2
+      "kd_k": 17.76,
+      "kd_d": 15.97
     },
     {
       "symbol": "MSFT",
