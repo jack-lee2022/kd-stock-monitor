@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-28T12:51:57.872479",
+  "timestamp": "2026-03-28T13:56:27.322983",
   "date": "2026-03-28",
   "macro": {
     "us10y": {
@@ -14,20 +14,20 @@
       "value": 31.05,
       "change": 3.61,
       "label": "VIX Index",
-      "timestamp": "2026-03-28T12:51:57.232870"
+      "timestamp": "2026-03-28T13:56:26.711663"
     },
     "btc": {
-      "value": 66240.0,
+      "value": 66316.0,
       "change_pct": 0
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 0,
+  "new_alerts": 1,
   "overbought_count": 0,
-  "oversold_count": 23,
-  "normal_count": 45,
+  "oversold_count": 24,
+  "normal_count": 44,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
@@ -59,6 +59,20 @@
       "kd_d": 21.1
     },
     {
+      "symbol": "00757.TW",
+      "name": "統一FANG+",
+      "current_price": 104.55,
+      "change_pct": -1.92,
+      "extra_data": {
+        "regular_market_price": 104.55,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 106.6
+      },
+      "kd_k": 14.14,
+      "kd_d": 24.21
+    },
+    {
       "symbol": "00635U.TW",
       "name": "期元大S&P黃金",
       "current_price": 47.01,
@@ -69,8 +83,8 @@
         "post_market_price": null,
         "prev_close": 47.56
       },
-      "kd_k": 28.68,
-      "kd_d": 19.61
+      "kd_k": 17.76,
+      "kd_d": 15.97
     },
     {
       "symbol": "MSFT",
