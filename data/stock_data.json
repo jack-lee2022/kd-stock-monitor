@@ -4,18 +4,18 @@
       "symbol": "0050.TW",
       "name": "元大台灣50",
       "market": "TW",
-      "current_price": 72.35,
-      "change_pct": -2.1,
+      "current_price": 75.15,
+      "change_pct": 3.87,
       "extra_data": {
-        "regular_market_price": 72.35,
+        "regular_market_price": 75.15,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 73.9
+        "prev_close": 72.35
       },
-      "kd_k": 40.73,
-      "kd_d": 42.09,
-      "last_updated": "2026-04-01T07:32:49.718155",
-      "data_points": 56,
+      "kd_k": 43.4,
+      "kd_d": 42.98,
+      "last_updated": "2026-04-01T10:29:13.513607",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -78,40 +78,49 @@
           "kd_d": 42.77
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 256843643,
-          "kd_k": 40.73,
-          "kd_d": 42.09
+          "date": "2026-04-01T00:00:00",
+          "open": 75.0,
+          "high": 75.30000305175781,
+          "low": 74.5999984741211,
+          "close": 75.1500015258789,
+          "volume": 73490827,
+          "kd_k": 43.4,
+          "kd_d": 42.98
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "0056.TW",
       "name": "元大高股息",
       "market": "TW",
-      "current_price": 37.13,
-      "change_pct": -1.9,
+      "current_price": 38.0,
+      "change_pct": 2.34,
       "extra_data": {
-        "regular_market_price": 37.13,
+        "regular_market_price": 38.0,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 37.85
+        "prev_close": 37.13
       },
-      "kd_k": 37.38,
-      "kd_d": 39.83,
-      "last_updated": "2026-04-01T07:32:49.990661",
-      "data_points": 56,
+      "kd_k": 28.89,
+      "kd_d": 37.0,
+      "last_updated": "2026-04-01T10:29:14.066851",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -174,40 +183,49 @@
           "kd_d": 41.05
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 149494319,
-          "kd_k": 37.38,
-          "kd_d": 39.83
+          "date": "2026-04-01T00:00:00",
+          "open": 37.880001068115234,
+          "high": 38.029998779296875,
+          "low": 37.77000045776367,
+          "close": 38.0,
+          "volume": 26374778,
+          "kd_k": 28.89,
+          "kd_d": 37.0
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.8倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00646.TW",
       "name": "元大S&P500",
       "market": "TW",
-      "current_price": 64.55,
-      "change_pct": 0.55,
+      "current_price": 65.6,
+      "change_pct": 1.63,
       "extra_data": {
-        "regular_market_price": 64.55,
+        "regular_market_price": 65.6,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 64.2
+        "prev_close": 64.55
       },
-      "kd_k": 30.67,
-      "kd_d": 27.71,
-      "last_updated": "2026-04-01T07:32:50.661557",
-      "data_points": 56,
+      "kd_k": 35.67,
+      "kd_d": 29.38,
+      "last_updated": "2026-04-01T10:29:14.592624",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -270,14 +288,14 @@
           "kd_d": 26.23
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 2488600,
-          "kd_k": 30.67,
-          "kd_d": 27.71
+          "date": "2026-04-01T00:00:00",
+          "open": 65.80000305175781,
+          "high": 65.80000305175781,
+          "low": 65.55000305175781,
+          "close": 65.5999984741211,
+          "volume": 1041015,
+          "kd_k": 35.67,
+          "kd_d": 29.38
         }
       ],
       "patterns": {
@@ -285,36 +303,26 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "2330.TW",
       "name": "台積電",
       "market": "TW",
-      "current_price": 1760.0,
-      "change_pct": -1.12,
+      "current_price": 1845.0,
+      "change_pct": 4.83,
       "extra_data": {
-        "regular_market_price": 1760.0,
+        "regular_market_price": 1845.0,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 1780.0
+        "prev_close": 1760.0
       },
-      "kd_k": 15.38,
-      "kd_d": 26.4,
-      "last_updated": "2026-04-01T07:32:51.030669",
+      "kd_k": 34.89,
+      "kd_d": 29.23,
+      "last_updated": "2026-04-01T10:29:15.164265",
       "data_points": 56,
       "history": [
-        {
-          "date": "2026-03-23T00:00:00",
-          "open": 1790.0,
-          "high": 1815.0,
-          "low": 1785.0,
-          "close": 1810.0,
-          "volume": 34902948,
-          "kd_k": 32.46,
-          "kd_d": 42.58
-        },
         {
           "date": "2026-03-24T00:00:00",
           "open": 1850.0,
@@ -374,52 +382,43 @@
           "volume": 49221091,
           "kd_k": 15.38,
           "kd_d": 26.4
+        },
+        {
+          "date": "2026-04-01T00:00:00",
+          "open": 1840.0,
+          "high": 1845.0,
+          "low": 1830.0,
+          "close": 1845.0,
+          "volume": 18602371,
+          "kd_k": 34.89,
+          "kd_d": 29.23
         }
       ],
       "patterns": {
-        "patterns_detected": 1,
-        "patterns": [
-          {
-            "pattern_id": "縮量下跌",
-            "pattern_name": "繼續看跌",
-            "signal": "AVOID",
-            "description": "縮量下跌4.6%",
-            "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:10"
-          }
-        ],
-        "dominant_signal": "AVOID",
-        "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 0,
+        "patterns": [],
+        "dominant_signal": "HOLD",
+        "signal_strength": 0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "2317.TW",
       "name": "鴻海",
       "market": "TW",
-      "current_price": 187.5,
-      "change_pct": -3.35,
+      "current_price": 196.0,
+      "change_pct": 4.53,
       "extra_data": {
-        "regular_market_price": 187.5,
+        "regular_market_price": 196.0,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 194.0
+        "prev_close": 187.5
       },
-      "kd_k": 10.38,
-      "kd_d": 14.96,
-      "last_updated": "2026-04-01T07:32:51.340460",
+      "kd_k": 22.24,
+      "kd_d": 17.38,
+      "last_updated": "2026-04-01T10:29:15.851596",
       "data_points": 56,
       "history": [
-        {
-          "date": "2026-03-23T00:00:00",
-          "open": 196.5,
-          "high": 197.5,
-          "low": 195.0,
-          "close": 196.0,
-          "volume": 73041333,
-          "kd_k": 12.34,
-          "kd_d": 18.72
-        },
         {
           "date": "2026-03-24T00:00:00",
           "open": 198.5,
@@ -479,6 +478,16 @@
           "volume": 85781264,
           "kd_k": 10.38,
           "kd_d": 14.96
+        },
+        {
+          "date": "2026-04-01T00:00:00",
+          "open": 195.0,
+          "high": 197.0,
+          "low": 194.5,
+          "close": 196.0,
+          "volume": 22168978,
+          "kd_k": 22.24,
+          "kd_d": 17.38
         }
       ],
       "patterns": {
@@ -488,43 +497,33 @@
             "pattern_id": "縮量下跌",
             "pattern_name": "繼續看跌",
             "signal": "AVOID",
-            "description": "縮量下跌6.2%",
+            "description": "縮量下跌2.2%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:10"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "2454.TW",
       "name": "聯發科",
       "market": "TW",
-      "current_price": 1490.0,
-      "change_pct": -1.32,
+      "current_price": 1505.0,
+      "change_pct": 1.01,
       "extra_data": {
-        "regular_market_price": 1490.0,
+        "regular_market_price": 1505.0,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 1510.0
+        "prev_close": 1490.0
       },
-      "kd_k": 7.4,
-      "kd_d": 14.31,
-      "last_updated": "2026-04-01T07:32:51.625849",
+      "kd_k": 7.16,
+      "kd_d": 11.93,
+      "last_updated": "2026-04-01T10:29:16.481594",
       "data_points": 56,
       "history": [
-        {
-          "date": "2026-03-23T00:00:00",
-          "open": 1630.0,
-          "high": 1645.0,
-          "low": 1600.0,
-          "close": 1625.0,
-          "volume": 6372639,
-          "kd_k": 30.27,
-          "kd_d": 38.68
-        },
         {
           "date": "2026-03-24T00:00:00",
           "open": 1655.0,
@@ -584,6 +583,16 @@
           "volume": 10218910,
           "kd_k": 7.4,
           "kd_d": 14.31
+        },
+        {
+          "date": "2026-04-01T00:00:00",
+          "open": 1550.0,
+          "high": 1550.0,
+          "low": 1495.0,
+          "close": 1505.0,
+          "volume": 3773875,
+          "kd_k": 7.16,
+          "kd_d": 11.93
         }
       ],
       "patterns": {
@@ -591,25 +600,25 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00662.TW",
       "name": "富邦NASDAQ",
       "market": "TW",
-      "current_price": 95.25,
-      "change_pct": 0.05,
+      "current_price": 97.65,
+      "change_pct": 2.52,
       "extra_data": {
-        "regular_market_price": 95.25,
+        "regular_market_price": 97.65,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 95.2
+        "prev_close": 95.25
       },
-      "kd_k": 29.78,
-      "kd_d": 28.93,
-      "last_updated": "2026-04-01T07:32:51.882493",
-      "data_points": 56,
+      "kd_k": 31.12,
+      "kd_d": 29.37,
+      "last_updated": "2026-04-01T10:29:17.035641",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -672,14 +681,14 @@
           "kd_d": 28.5
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 4971531,
-          "kd_k": 29.78,
-          "kd_d": 28.93
+          "date": "2026-04-01T00:00:00",
+          "open": 97.80000305175781,
+          "high": 97.8499984741211,
+          "low": 97.6500015258789,
+          "close": 97.6500015258789,
+          "volume": 1148527,
+          "kd_k": 31.12,
+          "kd_d": 29.37
         }
       ],
       "patterns": {
@@ -687,36 +696,26 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "009800.TW",
       "name": "中信NASDAQ",
       "market": "TW",
-      "current_price": 10.33,
-      "change_pct": 0.1,
+      "current_price": 10.58,
+      "change_pct": 2.42,
       "extra_data": {
-        "regular_market_price": 10.33,
+        "regular_market_price": 10.58,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 10.32
+        "prev_close": 10.33
       },
-      "kd_k": 15.92,
-      "kd_d": 22.32,
-      "last_updated": "2026-04-01T07:32:52.104049",
+      "kd_k": 28.89,
+      "kd_d": 24.51,
+      "last_updated": "2026-04-01T10:29:17.604889",
       "data_points": 56,
       "history": [
-        {
-          "date": "2026-03-23T00:00:00",
-          "open": 10.670000076293945,
-          "high": 10.670000076293945,
-          "low": 10.619999885559082,
-          "close": 10.630000114440918,
-          "volume": 3627354,
-          "kd_k": 30.92,
-          "kd_d": 50.35
-        },
         {
           "date": "2026-03-24T00:00:00",
           "open": 10.789999961853027,
@@ -776,6 +775,16 @@
           "volume": 3036316,
           "kd_k": 15.92,
           "kd_d": 22.32
+        },
+        {
+          "date": "2026-04-01T00:00:00",
+          "open": 10.579999923706055,
+          "high": 10.600000381469727,
+          "low": 10.569999694824219,
+          "close": 10.579999923706055,
+          "volume": 841140,
+          "kd_k": 28.89,
+          "kd_d": 24.51
         }
       ],
       "patterns": {
@@ -783,25 +792,25 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00770.TW",
       "name": "國泰北美科技",
       "market": "TW",
-      "current_price": 48.29,
-      "change_pct": -0.52,
+      "current_price": 49.85,
+      "change_pct": 3.23,
       "extra_data": {
-        "regular_market_price": 48.29,
+        "regular_market_price": 49.85,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 48.54
+        "prev_close": 48.29
       },
-      "kd_k": 29.23,
-      "kd_d": 29.15,
-      "last_updated": "2026-04-01T07:32:52.338224",
-      "data_points": 56,
+      "kd_k": 27.91,
+      "kd_d": 28.71,
+      "last_updated": "2026-04-01T10:29:18.210692",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -864,14 +873,14 @@
           "kd_d": 29.11
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 881370,
-          "kd_k": 29.23,
-          "kd_d": 29.15
+          "date": "2026-04-01T00:00:00",
+          "open": 50.0,
+          "high": 50.0,
+          "low": 49.79999923706055,
+          "close": 49.849998474121094,
+          "volume": 308718,
+          "kd_k": 27.91,
+          "kd_d": 28.71
         }
       ],
       "patterns": {
@@ -879,25 +888,25 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00757.TW",
       "name": "統一FANG+",
       "market": "TW",
-      "current_price": 101.15,
-      "change_pct": -0.54,
+      "current_price": 105.15,
+      "change_pct": 3.95,
       "extra_data": {
-        "regular_market_price": 101.15,
+        "regular_market_price": 105.15,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 101.7
+        "prev_close": 101.15
       },
-      "kd_k": 25.12,
-      "kd_d": 21.95,
-      "last_updated": "2026-04-01T07:32:53.180571",
-      "data_points": 56,
+      "kd_k": 24.16,
+      "kd_d": 21.63,
+      "last_updated": "2026-04-01T10:29:19.924637",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -960,40 +969,49 @@
           "kd_d": 20.37
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 2939088,
-          "kd_k": 25.12,
-          "kd_d": 21.95
+          "date": "2026-04-01T00:00:00",
+          "open": 105.44999694824219,
+          "high": 105.5,
+          "low": 105.0,
+          "close": 105.1500015258789,
+          "volume": 1060593,
+          "kd_k": 24.16,
+          "kd_d": 21.63
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.3%",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00893.TW",
       "name": "國泰智能電動車",
       "market": "TW",
-      "current_price": 32.06,
-      "change_pct": -1.44,
+      "current_price": 33.1,
+      "change_pct": 3.24,
       "extra_data": {
-        "regular_market_price": 32.06,
+        "regular_market_price": 33.1,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 32.53
+        "prev_close": 32.06
       },
-      "kd_k": 47.23,
-      "kd_d": 52.92,
-      "last_updated": "2026-04-01T07:32:53.406452",
-      "data_points": 56,
+      "kd_k": 44.5,
+      "kd_d": 52.0,
+      "last_updated": "2026-04-01T10:29:20.486867",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1056,14 +1074,14 @@
           "kd_d": 55.76
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 1936842,
-          "kd_k": 47.23,
-          "kd_d": 52.92
+          "date": "2026-04-01T00:00:00",
+          "open": 32.849998474121094,
+          "high": 33.150001525878906,
+          "low": 32.849998474121094,
+          "close": 33.099998474121094,
+          "volume": 1490836,
+          "kd_k": 44.5,
+          "kd_d": 52.0
         }
       ],
       "patterns": {
@@ -1071,25 +1089,25 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00895.TW",
       "name": "富邦未來車",
       "market": "TW",
-      "current_price": 37.96,
-      "change_pct": -0.78,
+      "current_price": 39.18,
+      "change_pct": 3.21,
       "extra_data": {
-        "regular_market_price": 37.96,
+        "regular_market_price": 39.18,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 38.26
+        "prev_close": 37.96
       },
-      "kd_k": 38.88,
-      "kd_d": 39.34,
-      "last_updated": "2026-04-01T07:32:53.680263",
-      "data_points": 56,
+      "kd_k": 41.18,
+      "kd_d": 40.11,
+      "last_updated": "2026-04-01T10:29:21.062334",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1152,40 +1170,49 @@
           "kd_d": 39.57
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 505677,
-          "kd_k": 38.88,
-          "kd_d": 39.34
+          "date": "2026-04-01T00:00:00",
+          "open": 39.290000915527344,
+          "high": 39.290000915527344,
+          "low": 39.119998931884766,
+          "close": 39.18000030517578,
+          "volume": 382696,
+          "kd_k": 41.18,
+          "kd_d": 40.11
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.8倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "006208.TW",
       "name": "富邦台50",
       "market": "TW",
-      "current_price": 168.1,
-      "change_pct": -1.9,
+      "current_price": 174.8,
+      "change_pct": 3.99,
       "extra_data": {
-        "regular_market_price": 168.1,
+        "regular_market_price": 174.8,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 171.35
+        "prev_close": 168.1
       },
-      "kd_k": 38.35,
-      "kd_d": 40.13,
-      "last_updated": "2026-04-01T07:32:53.937263",
-      "data_points": 56,
+      "kd_k": 40.33,
+      "kd_d": 40.79,
+      "last_updated": "2026-04-01T10:29:21.604932",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1248,40 +1275,49 @@
           "kd_d": 41.02
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 9426846,
-          "kd_k": 38.35,
-          "kd_d": 40.13
+          "date": "2026-04-01T00:00:00",
+          "open": 173.85000610351562,
+          "high": 175.0,
+          "low": 173.3000030517578,
+          "close": 174.8000030517578,
+          "volume": 2036857,
+          "kd_k": 40.33,
+          "kd_d": 40.79
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00692.TW",
       "name": "富邦公司治理",
       "market": "TW",
-      "current_price": 63.85,
-      "change_pct": -1.77,
+      "current_price": 66.3,
+      "change_pct": 3.84,
       "extra_data": {
-        "regular_market_price": 63.85,
+        "regular_market_price": 66.3,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 65.0
+        "prev_close": 63.85
       },
-      "kd_k": 39.29,
-      "kd_d": 41.17,
-      "last_updated": "2026-04-01T07:32:54.219316",
-      "data_points": 56,
+      "kd_k": 42.41,
+      "kd_d": 42.22,
+      "last_updated": "2026-04-01T10:29:22.188653",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1344,40 +1380,49 @@
           "kd_d": 42.12
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 1597645,
-          "kd_k": 39.29,
-          "kd_d": 41.17
+          "date": "2026-04-01T00:00:00",
+          "open": 66.0,
+          "high": 66.4000015258789,
+          "low": 65.94999694824219,
+          "close": 66.30000305175781,
+          "volume": 1602229,
+          "kd_k": 42.41,
+          "kd_d": 42.22
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00922.TW",
       "name": "國泰台灣領袖50",
       "market": "TW",
-      "current_price": 26.86,
-      "change_pct": -2.15,
+      "current_price": 27.83,
+      "change_pct": 3.61,
       "extra_data": {
-        "regular_market_price": 26.86,
+        "regular_market_price": 27.83,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 27.45
+        "prev_close": 26.86
       },
-      "kd_k": 40.32,
-      "kd_d": 42.86,
-      "last_updated": "2026-04-01T07:32:54.511873",
-      "data_points": 56,
+      "kd_k": 39.44,
+      "kd_d": 42.57,
+      "last_updated": "2026-04-01T10:29:22.698450",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1440,40 +1485,49 @@
           "kd_d": 44.14
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 29403091,
-          "kd_k": 40.32,
-          "kd_d": 42.86
+          "date": "2026-04-01T00:00:00",
+          "open": 27.719999313354492,
+          "high": 27.8799991607666,
+          "low": 27.68000030517578,
+          "close": 27.829999923706055,
+          "volume": 8868664,
+          "kd_k": 39.44,
+          "kd_d": 42.57
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.3倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00923.TW",
       "name": "群益台ESG低碳50",
       "market": "TW",
-      "current_price": 27.52,
-      "change_pct": -2.65,
+      "current_price": 28.67,
+      "change_pct": 4.18,
       "extra_data": {
-        "regular_market_price": 27.52,
+        "regular_market_price": 28.67,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 28.27
+        "prev_close": 27.52
       },
-      "kd_k": 43.6,
-      "kd_d": 47.17,
-      "last_updated": "2026-04-01T07:32:54.784511",
-      "data_points": 56,
+      "kd_k": 42.41,
+      "kd_d": 46.77,
+      "last_updated": "2026-04-01T10:29:23.226571",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1536,40 +1590,49 @@
           "kd_d": 48.95
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 6520538,
-          "kd_k": 43.6,
-          "kd_d": 47.17
+          "date": "2026-04-01T00:00:00",
+          "open": 28.540000915527344,
+          "high": 28.709999084472656,
+          "low": 28.43000030517578,
+          "close": 28.670000076293945,
+          "volume": 2363950,
+          "kd_k": 42.41,
+          "kd_d": 46.77
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.4倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00905.TW",
       "name": "FT臺灣Smart",
       "market": "TW",
-      "current_price": 18.82,
-      "change_pct": -2.84,
+      "current_price": 19.57,
+      "change_pct": 3.99,
       "extra_data": {
-        "regular_market_price": 18.82,
+        "regular_market_price": 19.57,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 19.37
+        "prev_close": 18.82
       },
-      "kd_k": 46.72,
-      "kd_d": 50.28,
-      "last_updated": "2026-04-01T07:32:55.289509",
-      "data_points": 56,
+      "kd_k": 46.01,
+      "kd_d": 50.05,
+      "last_updated": "2026-04-01T10:29:23.832296",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1632,40 +1695,49 @@
           "kd_d": 52.06
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 1841262,
-          "kd_k": 46.72,
-          "kd_d": 50.28
+          "date": "2026-04-01T00:00:00",
+          "open": 19.450000762939453,
+          "high": 19.59000015258789,
+          "low": 19.43000030517578,
+          "close": 19.56999969482422,
+          "volume": 806142,
+          "kd_k": 46.01,
+          "kd_d": 50.05
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.5倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00733.TW",
       "name": "富邦臺灣中小",
       "market": "TW",
-      "current_price": 53.7,
-      "change_pct": -4.36,
+      "current_price": 56.55,
+      "change_pct": 5.31,
       "extra_data": {
-        "regular_market_price": 53.7,
+        "regular_market_price": 56.55,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 56.15
+        "prev_close": 53.7
       },
-      "kd_k": 55.91,
-      "kd_d": 57.37,
-      "last_updated": "2026-04-01T07:32:55.534014",
-      "data_points": 56,
+      "kd_k": 60.41,
+      "kd_d": 58.87,
+      "last_updated": "2026-04-01T10:29:24.539038",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1728,40 +1800,49 @@
           "kd_d": 58.1
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 1106877,
-          "kd_k": 55.91,
-          "kd_d": 57.37
+          "date": "2026-04-01T00:00:00",
+          "open": 56.349998474121094,
+          "high": 56.650001525878906,
+          "low": 55.900001525878906,
+          "close": 56.54999923706055,
+          "volume": 560027,
+          "kd_k": 60.41,
+          "kd_d": 58.87
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00713.TW",
       "name": "元大台灣高息低波",
       "market": "TW",
-      "current_price": 50.65,
-      "change_pct": -0.88,
+      "current_price": 51.4,
+      "change_pct": 1.48,
       "extra_data": {
-        "regular_market_price": 50.65,
+        "regular_market_price": 51.4,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 51.1
+        "prev_close": 50.65
       },
-      "kd_k": 45.97,
-      "kd_d": 49.44,
-      "last_updated": "2026-04-01T07:32:55.778699",
-      "data_points": 56,
+      "kd_k": 47.97,
+      "kd_d": 50.1,
+      "last_updated": "2026-04-01T10:29:25.100935",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1824,40 +1905,49 @@
           "kd_d": 51.17
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 7694486,
-          "kd_k": 45.97,
-          "kd_d": 49.44
+          "date": "2026-04-01T00:00:00",
+          "open": 51.099998474121094,
+          "high": 51.45000076293945,
+          "low": 51.099998474121094,
+          "close": 51.400001525878906,
+          "volume": 4238522,
+          "kd_k": 47.97,
+          "kd_d": 50.1
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00878.TW",
       "name": "國泰永續高股息",
       "market": "TW",
-      "current_price": 21.81,
-      "change_pct": -1.36,
+      "current_price": 22.25,
+      "change_pct": 2.02,
       "extra_data": {
-        "regular_market_price": 21.81,
+        "regular_market_price": 22.25,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 22.11
+        "prev_close": 21.81
       },
-      "kd_k": 43.08,
-      "kd_d": 45.29,
-      "last_updated": "2026-04-01T07:32:56.026605",
-      "data_points": 56,
+      "kd_k": 42.65,
+      "kd_d": 45.15,
+      "last_updated": "2026-04-01T10:29:25.606203",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -1920,40 +2010,49 @@
           "kd_d": 46.4
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 74098902,
-          "kd_k": 43.08,
-          "kd_d": 45.29
+          "date": "2026-04-01T00:00:00",
+          "open": 22.149999618530273,
+          "high": 22.270000457763672,
+          "low": 22.110000610351562,
+          "close": 22.25,
+          "volume": 19871897,
+          "kd_k": 42.65,
+          "kd_d": 45.15
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.5倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00915.TW",
       "name": "凱基優選高股息30",
       "market": "TW",
-      "current_price": 22.8,
-      "change_pct": -1.13,
+      "current_price": 23.2,
+      "change_pct": 1.75,
       "extra_data": {
-        "regular_market_price": 22.8,
+        "regular_market_price": 23.2,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 23.06
+        "prev_close": 22.8
       },
-      "kd_k": 49.42,
-      "kd_d": 52.13,
-      "last_updated": "2026-04-01T07:32:56.329170",
-      "data_points": 56,
+      "kd_k": 51.86,
+      "kd_d": 52.94,
+      "last_updated": "2026-04-01T10:29:26.135316",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -2016,40 +2115,49 @@
           "kd_d": 53.48
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 5198594,
-          "kd_k": 49.42,
-          "kd_d": 52.13
+          "date": "2026-04-01T00:00:00",
+          "open": 23.110000610351562,
+          "high": 23.200000762939453,
+          "low": 23.100000381469727,
+          "close": 23.200000762939453,
+          "volume": 2379391,
+          "kd_k": 51.86,
+          "kd_d": 52.94
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00918.TW",
       "name": "大華優利高填息30",
       "market": "TW",
-      "current_price": 21.6,
-      "change_pct": -1.32,
+      "current_price": 22.04,
+      "change_pct": 2.04,
       "extra_data": {
-        "regular_market_price": 21.6,
+        "regular_market_price": 22.04,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 21.89
+        "prev_close": 21.6
       },
-      "kd_k": 28.84,
-      "kd_d": 29.61,
-      "last_updated": "2026-04-01T07:32:56.588998",
-      "data_points": 56,
+      "kd_k": 17.88,
+      "kd_d": 25.95,
+      "last_updated": "2026-04-01T10:29:26.676885",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -2112,40 +2220,49 @@
           "kd_d": 29.99
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 39964074,
-          "kd_k": 28.84,
-          "kd_d": 29.61
+          "date": "2026-04-01T00:00:00",
+          "open": 21.90999984741211,
+          "high": 22.049999237060547,
+          "low": 21.90999984741211,
+          "close": 22.040000915527344,
+          "volume": 6703128,
+          "kd_k": 17.88,
+          "kd_d": 25.95
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.5倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00919.TW",
       "name": "群益台灣精選高息",
       "market": "TW",
-      "current_price": 22.02,
-      "change_pct": -1.26,
+      "current_price": 22.44,
+      "change_pct": 1.91,
       "extra_data": {
-        "regular_market_price": 22.02,
+        "regular_market_price": 22.44,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 22.3
+        "prev_close": 22.02
       },
-      "kd_k": 34.35,
-      "kd_d": 35.13,
-      "last_updated": "2026-04-01T07:32:56.834720",
-      "data_points": 56,
+      "kd_k": 28.8,
+      "kd_d": 33.28,
+      "last_updated": "2026-04-01T10:29:27.193093",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -2208,40 +2325,49 @@
           "kd_d": 35.52
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 171425129,
-          "kd_k": 34.35,
-          "kd_d": 35.13
+          "date": "2026-04-01T00:00:00",
+          "open": 22.3700008392334,
+          "high": 22.440000534057617,
+          "low": 22.350000381469727,
+          "close": 22.440000534057617,
+          "volume": 30101613,
+          "kd_k": 28.8,
+          "kd_d": 33.28
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.4倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00929.TW",
       "name": "復華台灣科技優息",
       "market": "TW",
-      "current_price": 18.61,
-      "change_pct": -2.41,
+      "current_price": 19.08,
+      "change_pct": 2.53,
       "extra_data": {
-        "regular_market_price": 18.61,
+        "regular_market_price": 19.08,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 19.07
+        "prev_close": 18.61
       },
-      "kd_k": 36.56,
-      "kd_d": 39.87,
-      "last_updated": "2026-04-01T07:32:57.069452",
-      "data_points": 56,
+      "kd_k": 23.81,
+      "kd_d": 35.62,
+      "last_updated": "2026-04-01T10:29:27.722122",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -2304,40 +2430,49 @@
           "kd_d": 41.53
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 44551704,
-          "kd_k": 36.56,
-          "kd_d": 39.87
+          "date": "2026-04-01T00:00:00",
+          "open": 19.110000610351562,
+          "high": 19.170000076293945,
+          "low": 19.020000457763672,
+          "close": 19.079999923706055,
+          "volume": 10661016,
+          "kd_k": 23.81,
+          "kd_d": 35.62
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.8%",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00934.TW",
       "name": "中信成長高股息",
       "market": "TW",
-      "current_price": 20.34,
-      "change_pct": -2.35,
+      "current_price": 20.9,
+      "change_pct": 2.75,
       "extra_data": {
-        "regular_market_price": 20.34,
+        "regular_market_price": 20.9,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 20.83
+        "prev_close": 20.34
       },
-      "kd_k": 30.17,
-      "kd_d": 31.9,
-      "last_updated": "2026-04-01T07:32:57.335109",
-      "data_points": 56,
+      "kd_k": 17.41,
+      "kd_d": 27.65,
+      "last_updated": "2026-04-01T10:29:28.222413",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -2400,40 +2535,49 @@
           "kd_d": 32.77
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 9329259,
-          "kd_k": 30.17,
-          "kd_d": 31.9
+          "date": "2026-04-01T00:00:00",
+          "open": 20.829999923706055,
+          "high": 20.920000076293945,
+          "low": 20.81999969482422,
+          "close": 20.899999618530273,
+          "volume": 1026050,
+          "kd_k": 17.41,
+          "kd_d": 27.65
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌2.8%",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00936.TW",
       "name": "台新永續高息中小",
       "market": "TW",
-      "current_price": 17.12,
-      "change_pct": -2.0,
+      "current_price": 17.48,
+      "change_pct": 2.1,
       "extra_data": {
-        "regular_market_price": 17.12,
+        "regular_market_price": 17.48,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 17.47
+        "prev_close": 17.12
       },
-      "kd_k": 41.41,
-      "kd_d": 46.52,
-      "last_updated": "2026-04-01T07:32:57.580775",
-      "data_points": 56,
+      "kd_k": 30.6,
+      "kd_d": 42.92,
+      "last_updated": "2026-04-01T10:29:28.852972",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -2496,97 +2640,96 @@
           "kd_d": 49.07
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 1219194,
-          "kd_k": 41.41,
-          "kd_d": 46.52
+          "date": "2026-04-01T00:00:00",
+          "open": 17.469999313354492,
+          "high": 17.5,
+          "low": 17.450000762939453,
+          "close": 17.479999542236328,
+          "volume": 393019,
+          "kd_k": 30.6,
+          "kd_d": 42.92
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.3倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00939.TW",
       "name": "統一台灣高息動能",
       "market": "TW",
-      "current_price": 15.0,
-      "change_pct": -2.09,
+      "current_price": 15.44,
+      "change_pct": 2.93,
       "extra_data": {
-        "regular_market_price": 15.0,
+        "regular_market_price": 15.44,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 15.32
+        "prev_close": 15.0
       },
-      "kd_k": 35.9,
-      "kd_d": 38.31,
-      "last_updated": "2026-04-01T07:32:57.827952",
+      "kd_k": 39.53,
+      "kd_d": 38.71,
+      "last_updated": "2026-04-01T10:29:29.430177",
       "data_points": 56,
       "history": [
         {
-          "date": "2026-03-23T00:00:00",
-          "open": 15.470000267028809,
-          "high": 15.470000267028809,
-          "low": 15.319999694824219,
-          "close": 15.40999984741211,
-          "volume": 6801537,
-          "kd_k": 50.26,
-          "kd_d": 63.25
-        },
-        {
           "date": "2026-03-24T00:00:00",
-          "open": 15.569999694824219,
-          "high": 15.609999656677246,
-          "low": 15.279999732971191,
-          "close": 15.420000076293945,
+          "open": 15.496824064084352,
+          "high": 15.536636034768751,
+          "low": 15.208187039324393,
+          "close": 15.347529411315918,
           "volume": 4171200,
           "kd_k": 38.58,
           "kd_d": 55.03
         },
         {
           "date": "2026-03-25T00:00:00",
-          "open": 15.720000267028809,
-          "high": 15.829999923706055,
-          "low": 15.720000267028809,
-          "close": 15.829999923706055,
+          "open": 15.646120151130498,
+          "high": 15.755602836608887,
+          "low": 15.646120151130498,
+          "close": 15.755602836608887,
           "volume": 5644491,
           "kd_k": 45.65,
           "kd_d": 51.9
         },
         {
           "date": "2026-03-26T00:00:00",
-          "open": 15.829999923706055,
-          "high": 15.869999885559082,
-          "low": 15.600000381469727,
-          "close": 15.619999885559082,
+          "open": 15.755602942657541,
+          "high": 15.795414914844223,
+          "low": 15.526684339882198,
+          "close": 15.546589851379395,
           "volume": 2612195,
           "kd_k": 42.75,
           "kd_d": 48.85
         },
         {
           "date": "2026-03-27T00:00:00",
-          "open": 15.460000038146973,
-          "high": 15.529999732971191,
-          "low": 15.350000381469727,
-          "close": 15.510000228881836,
+          "open": 15.387341883904837,
+          "high": 15.457012597576993,
+          "low": 15.277859198249693,
+          "close": 15.43710708618164,
           "volume": 2748086,
           "kd_k": 36.83,
           "kd_d": 44.84
         },
         {
           "date": "2026-03-30T00:00:00",
-          "open": 15.260000228881836,
-          "high": 15.329999923706055,
-          "low": 15.1899995803833,
-          "close": 15.319999694824219,
+          "open": 15.188281709143757,
+          "high": 15.257952421371671,
+          "low": 15.118610047723578,
+          "close": 15.24799919128418,
           "volume": 4074779,
           "kd_k": 28.85,
           "kd_d": 39.51
@@ -2597,46 +2740,55 @@
           "high": NaN,
           "low": NaN,
           "close": NaN,
-          "volume": 5823684,
+          "volume": 0,
           "kd_k": 35.9,
           "kd_d": 38.31
+        },
+        {
+          "date": "2026-04-01T00:00:00",
+          "open": 15.329999923706055,
+          "high": 15.449999809265137,
+          "low": 15.300000190734863,
+          "close": 15.4399995803833,
+          "volume": 2313966,
+          "kd_k": 39.53,
+          "kd_d": 38.71
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.3倍",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00940.TW",
       "name": "元大台灣價值高息",
       "market": "TW",
-      "current_price": 9.39,
-      "change_pct": -1.47,
+      "current_price": 9.58,
+      "change_pct": 2.02,
       "extra_data": {
-        "regular_market_price": 9.39,
+        "regular_market_price": 9.58,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 9.53
+        "prev_close": 9.39
       },
-      "kd_k": 20.44,
-      "kd_d": 33.65,
-      "last_updated": "2026-04-01T07:32:58.064018",
+      "kd_k": 29.89,
+      "kd_d": 32.4,
+      "last_updated": "2026-04-01T10:29:30.062041",
       "data_points": 56,
       "history": [
-        {
-          "date": "2026-03-23T00:00:00",
-          "open": 9.600000381469727,
-          "high": 9.619999885559082,
-          "low": 9.539999961853027,
-          "close": 9.5600004196167,
-          "volume": 27148600,
-          "kd_k": 52.96,
-          "kd_d": 66.48
-        },
         {
           "date": "2026-03-24T00:00:00",
           "open": 9.649999618530273,
@@ -2696,52 +2848,52 @@
           "volume": 33358960,
           "kd_k": 20.44,
           "kd_d": 33.65
+        },
+        {
+          "date": "2026-04-01T00:00:00",
+          "open": 9.539999961853027,
+          "high": 9.600000381469727,
+          "low": 9.539999961853027,
+          "close": 9.579999923706055,
+          "volume": 14547457,
+          "kd_k": 29.89,
+          "kd_d": 32.4
         }
       ],
       "patterns": {
         "patterns_detected": 1,
         "patterns": [
           {
-            "pattern_id": "縮量下跌",
-            "pattern_name": "繼續看跌",
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
             "signal": "AVOID",
-            "description": "縮量下跌3.3%",
+            "description": "縮量至0.5倍",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:10"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00946.TW",
       "name": "群益科技高息成長",
       "market": "TW",
-      "current_price": 9.92,
-      "change_pct": -1.78,
+      "current_price": 10.1,
+      "change_pct": 1.81,
       "extra_data": {
-        "regular_market_price": 9.92,
+        "regular_market_price": 10.1,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 10.1
+        "prev_close": 9.92
       },
-      "kd_k": 43.94,
-      "kd_d": 56.07,
-      "last_updated": "2026-04-01T07:32:58.321257",
+      "kd_k": 47.63,
+      "kd_d": 53.25,
+      "last_updated": "2026-04-01T10:29:30.620162",
       "data_points": 56,
       "history": [
-        {
-          "date": "2026-03-23T00:00:00",
-          "open": 9.989999771118164,
-          "high": 10.050000190734863,
-          "low": 9.920000076293945,
-          "close": 9.949999809265137,
-          "volume": 4864937,
-          "kd_k": 59.91,
-          "kd_d": 70.95
-        },
         {
           "date": "2026-03-24T00:00:00",
           "open": 10.0600004196167,
@@ -2801,41 +2953,51 @@
           "volume": 6943917,
           "kd_k": 43.94,
           "kd_d": 56.07
+        },
+        {
+          "date": "2026-04-01T00:00:00",
+          "open": 10.119999885559082,
+          "high": 10.149999618530273,
+          "low": 10.09000015258789,
+          "close": 10.100000381469727,
+          "volume": 2343542,
+          "kd_k": 47.63,
+          "kd_d": 53.25
         }
       ],
       "patterns": {
         "patterns_detected": 1,
         "patterns": [
           {
-            "pattern_id": "縮量下跌",
-            "pattern_name": "繼續看跌",
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
             "signal": "AVOID",
-            "description": "縮量下跌2.7%",
+            "description": "縮量至0.7倍",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:10"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00635U.TW",
       "name": "期元大S&P黃金",
       "market": "TW",
-      "current_price": 48.24,
-      "change_pct": 1.11,
+      "current_price": 49.51,
+      "change_pct": 2.63,
       "extra_data": {
-        "regular_market_price": 48.24,
+        "regular_market_price": 49.51,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 47.71
+        "prev_close": 48.24
       },
-      "kd_k": 30.62,
-      "kd_d": 21.96,
-      "last_updated": "2026-04-01T07:32:58.558224",
-      "data_points": 56,
+      "kd_k": 35.54,
+      "kd_d": 23.59,
+      "last_updated": "2026-04-01T10:29:31.120444",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -2898,40 +3060,57 @@
           "kd_d": 17.62
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 8113928,
-          "kd_k": 30.62,
-          "kd_d": 21.96
+          "date": "2026-04-01T00:00:00",
+          "open": 49.61000061035156,
+          "high": 49.689998626708984,
+          "low": 49.400001525878906,
+          "close": 49.5099983215332,
+          "volume": 4422080,
+          "kd_k": 35.54,
+          "kd_d": 23.59
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 2,
+        "patterns": [
+          {
+            "pattern_id": "快跌慢漲",
+            "pattern_name": "主力吸籌",
+            "signal": "BUY",
+            "description": "快跌12.9%後緩漲2.6%",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          },
+          {
+            "pattern_id": "縮量上漲",
+            "pattern_name": "趨勢健康",
+            "signal": "HOLD",
+            "description": "縮量上漲2.6%",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "BUY",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00830.TW",
       "name": "國泰費城半導體",
       "market": "TW",
-      "current_price": 51.55,
-      "change_pct": -3.1,
+      "current_price": 53.9,
+      "change_pct": 4.56,
       "extra_data": {
-        "regular_market_price": 51.55,
+        "regular_market_price": 53.9,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 53.2
+        "prev_close": 51.55
       },
-      "kd_k": 43.43,
-      "kd_d": 48.31,
-      "last_updated": "2026-04-01T07:32:59.356012",
-      "data_points": 56,
+      "kd_k": 38.29,
+      "kd_d": 46.59,
+      "last_updated": "2026-04-01T10:29:32.716454",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -2994,40 +3173,49 @@
           "kd_d": 50.74
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 16387286,
-          "kd_k": 43.43,
-          "kd_d": 48.31
+          "date": "2026-04-01T00:00:00",
+          "open": 53.650001525878906,
+          "high": 54.099998474121094,
+          "low": 53.599998474121094,
+          "close": 53.900001525878906,
+          "volume": 5148467,
+          "kd_k": 38.29,
+          "kd_d": 46.59
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌4.3%",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00911.TW",
       "name": "兆豐洲際半導體",
       "market": "TW",
-      "current_price": 34.5,
-      "change_pct": -2.54,
+      "current_price": 35.77,
+      "change_pct": 3.68,
       "extra_data": {
-        "regular_market_price": 34.5,
+        "regular_market_price": 35.77,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 35.4
+        "prev_close": 34.5
       },
-      "kd_k": 42.37,
-      "kd_d": 49.92,
-      "last_updated": "2026-04-01T07:32:59.581238",
-      "data_points": 56,
+      "kd_k": 36.98,
+      "kd_d": 48.13,
+      "last_updated": "2026-04-01T10:29:33.260803",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -3090,14 +3278,14 @@
           "kd_d": 53.7
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 516446,
-          "kd_k": 42.37,
-          "kd_d": 49.92
+          "date": "2026-04-01T00:00:00",
+          "open": 35.70000076293945,
+          "high": 35.9900016784668,
+          "low": 35.70000076293945,
+          "close": 35.77000045776367,
+          "volume": 38182,
+          "kd_k": 36.98,
+          "kd_d": 48.13
         }
       ],
       "patterns": {
@@ -3105,25 +3293,25 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00910.TW",
       "name": "復華航太衛星",
       "market": "TW",
-      "current_price": 54.5,
-      "change_pct": -4.8,
+      "current_price": 57.35,
+      "change_pct": 5.23,
       "extra_data": {
-        "regular_market_price": 54.5,
+        "regular_market_price": 57.35,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 57.25
+        "prev_close": 54.5
       },
-      "kd_k": 57.41,
-      "kd_d": 66.75,
-      "last_updated": "2026-04-01T07:32:59.838566",
-      "data_points": 56,
+      "kd_k": 49.93,
+      "kd_d": 64.26,
+      "last_updated": "2026-04-01T10:29:33.779967",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -3186,14 +3374,14 @@
           "kd_d": 71.42
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 4425153,
-          "kd_k": 57.41,
-          "kd_d": 66.75
+          "date": "2026-04-01T00:00:00",
+          "open": 56.95000076293945,
+          "high": 57.400001525878906,
+          "low": 56.849998474121094,
+          "close": 57.349998474121094,
+          "volume": 1278286,
+          "kd_k": 49.93,
+          "kd_d": 64.26
         }
       ],
       "patterns": {
@@ -3201,25 +3389,25 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
       "symbol": "00909.TW",
       "name": "國泰數位支付服務",
       "market": "TW",
-      "current_price": 35.56,
-      "change_pct": -3.08,
+      "current_price": 36.5,
+      "change_pct": 2.64,
       "extra_data": {
-        "regular_market_price": 35.56,
+        "regular_market_price": 36.5,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 36.69
+        "prev_close": 35.56
       },
-      "kd_k": 35.67,
-      "kd_d": 38.28,
-      "last_updated": "2026-04-01T07:33:00.075678",
-      "data_points": 56,
+      "kd_k": 24.87,
+      "kd_d": 34.68,
+      "last_updated": "2026-04-01T10:29:34.362736",
+      "data_points": 55,
       "history": [
         {
           "date": "2026-03-23T00:00:00",
@@ -3282,22 +3470,31 @@
           "kd_d": 39.58
         },
         {
-          "date": "2026-03-31T00:00:00",
-          "open": NaN,
-          "high": NaN,
-          "low": NaN,
-          "close": NaN,
-          "volume": 7911222,
-          "kd_k": 35.67,
-          "kd_d": 38.28
+          "date": "2026-04-01T00:00:00",
+          "open": 36.58000183105469,
+          "high": 36.68000030517578,
+          "low": 36.369998931884766,
+          "close": 36.5,
+          "volume": 1168753,
+          "kd_k": 24.87,
+          "kd_d": 34.68
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "縮量下跌",
+            "pattern_name": "繼續看跌",
+            "signal": "AVOID",
+            "description": "縮量下跌7.9%",
+            "confidence": 100.0,
+            "detected_at": "2026-04-01 10:29:55"
+          }
+        ],
+        "dominant_signal": "AVOID",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-01 10:29:55"
       }
     }
   ],
@@ -3311,12 +3508,12 @@
       "extra_data": {
         "regular_market_price": 253.79,
         "pre_market_price": null,
-        "post_market_price": 254.11,
+        "post_market_price": 254.51,
         "prev_close": 246.63
       },
       "kd_k": 44.14,
       "kd_d": 37.76,
-      "last_updated": "2026-04-01T07:33:00.457589",
+      "last_updated": "2026-04-01T10:29:35.019749",
       "data_points": 61,
       "history": [
         {
@@ -3381,7 +3578,7 @@
         },
         {
           "date": "2026-03-31T00:00:00",
-          "open": 247.91000366210938,
+          "open": 247.88999938964844,
           "high": 255.47999572753906,
           "low": 247.1009979248047,
           "close": 253.7899932861328,
@@ -3395,7 +3592,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -3407,12 +3604,12 @@
       "extra_data": {
         "regular_market_price": 371.75,
         "pre_market_price": null,
-        "post_market_price": 373.69,
+        "post_market_price": 374.9997,
         "prev_close": 355.28
       },
       "kd_k": 26.64,
       "kd_d": 26.1,
-      "last_updated": "2026-04-01T07:33:00.789338",
+      "last_updated": "2026-04-01T10:29:35.585916",
       "data_points": 61,
       "history": [
         {
@@ -3491,7 +3688,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -3503,12 +3700,12 @@
       "extra_data": {
         "regular_market_price": 370.17,
         "pre_market_price": null,
-        "post_market_price": 372.2282,
+        "post_market_price": 373.0,
         "prev_close": 358.96
       },
       "kd_k": 16.06,
       "kd_d": 10.68,
-      "last_updated": "2026-04-01T07:33:01.095309",
+      "last_updated": "2026-04-01T10:29:36.220420",
       "data_points": 61,
       "history": [
         {
@@ -3587,7 +3784,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -3599,12 +3796,12 @@
       "extra_data": {
         "regular_market_price": 287.56,
         "pre_market_price": null,
-        "post_market_price": 288.8,
+        "post_market_price": 289.4983,
         "prev_close": 273.5
       },
       "kd_k": 20.4,
       "kd_d": 20.1,
-      "last_updated": "2026-04-01T07:33:01.375708",
+      "last_updated": "2026-04-01T10:29:36.851166",
       "data_points": 61,
       "history": [
         {
@@ -3683,7 +3880,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -3695,12 +3892,12 @@
       "extra_data": {
         "regular_market_price": 174.4,
         "pre_market_price": null,
-        "post_market_price": 174.36,
+        "post_market_price": 174.9613,
         "prev_close": 165.17
       },
       "kd_k": 27.28,
       "kd_d": 21.72,
-      "last_updated": "2026-04-01T07:33:01.714503",
+      "last_updated": "2026-04-01T10:29:37.483000",
       "data_points": 61,
       "history": [
         {
@@ -3779,7 +3976,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -3791,12 +3988,12 @@
       "extra_data": {
         "regular_market_price": 208.27,
         "pre_market_price": null,
-        "post_market_price": 208.94,
+        "post_market_price": 209.5072,
         "prev_close": 200.95
       },
       "kd_k": 35.73,
       "kd_d": 31.57,
-      "last_updated": "2026-04-01T07:33:02.022528",
+      "last_updated": "2026-04-01T10:29:37.992951",
       "data_points": 61,
       "history": [
         {
@@ -3875,7 +4072,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -3887,12 +4084,12 @@
       "extra_data": {
         "regular_market_price": 572.13,
         "pre_market_price": null,
-        "post_market_price": 574.45,
+        "post_market_price": 577.0018,
         "prev_close": 536.38
       },
       "kd_k": 26.26,
       "kd_d": 17.37,
-      "last_updated": "2026-04-01T07:33:02.291574",
+      "last_updated": "2026-04-01T10:29:38.565601",
       "data_points": 61,
       "history": [
         {
@@ -3957,7 +4154,7 @@
         },
         {
           "date": "2026-03-31T00:00:00",
-          "open": 549.97998046875,
+          "open": 549.760009765625,
           "high": 573.6900024414062,
           "low": 546.77001953125,
           "close": 572.1300048828125,
@@ -3975,12 +4172,12 @@
             "signal": "SELL",
             "description": "放量2.0倍大漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:10"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -3992,12 +4189,12 @@
       "extra_data": {
         "regular_market_price": 203.43,
         "pre_market_price": null,
-        "post_market_price": 203.7507,
+        "post_market_price": 204.9,
         "prev_close": 196.04
       },
       "kd_k": 38.24,
       "kd_d": 47.7,
-      "last_updated": "2026-04-01T07:33:02.554918",
+      "last_updated": "2026-04-01T10:29:39.047291",
       "data_points": 61,
       "history": [
         {
@@ -4076,7 +4273,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:10"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4088,12 +4285,12 @@
       "extra_data": {
         "regular_market_price": 309.51,
         "pre_market_price": null,
-        "post_market_price": 310.2055,
+        "post_market_price": 311.89,
         "prev_close": 293.41
       },
       "kd_k": 27.74,
       "kd_d": 23.16,
-      "last_updated": "2026-04-01T07:33:02.824700",
+      "last_updated": "2026-04-01T10:29:39.622478",
       "data_points": 61,
       "history": [
         {
@@ -4158,7 +4355,7 @@
         },
         {
           "date": "2026-03-31T00:00:00",
-          "open": 299.3900146484375,
+          "open": 299.4949951171875,
           "high": 310.3099060058594,
           "low": 296.3349914550781,
           "close": 309.510009765625,
@@ -4176,12 +4373,12 @@
             "signal": "AVOID",
             "description": "縮量下跌2.9%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:10"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4193,12 +4390,12 @@
       "extra_data": {
         "regular_market_price": 96.15,
         "pre_market_price": null,
-        "post_market_price": 95.99,
+        "post_market_price": 96.0475,
         "prev_close": 92.97
       },
       "kd_k": 58.4,
       "kd_d": 40.68,
-      "last_updated": "2026-04-01T07:33:03.103620",
+      "last_updated": "2026-04-01T10:29:40.132033",
       "data_points": 61,
       "history": [
         {
@@ -4281,12 +4478,12 @@
             "signal": "HOLD",
             "description": "縮量上漲4.2%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4298,12 +4495,12 @@
       "extra_data": {
         "regular_market_price": 146.28,
         "pre_market_price": null,
-        "post_market_price": 146.99,
+        "post_market_price": 147.42,
         "prev_close": 137.55
       },
       "kd_k": 25.61,
       "kd_d": 31.27,
-      "last_updated": "2026-04-01T07:33:03.335804",
+      "last_updated": "2026-04-01T10:29:40.658459",
       "data_points": 61,
       "history": [
         {
@@ -4386,12 +4583,12 @@
             "signal": "AVOID",
             "description": "縮量下跌5.6%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4403,12 +4600,12 @@
       "extra_data": {
         "regular_market_price": 390.41,
         "pre_market_price": null,
-        "post_market_price": 393.5,
+        "post_market_price": 394.825,
         "prev_close": 380.06
       },
       "kd_k": 23.58,
       "kd_d": 21.87,
-      "last_updated": "2026-04-01T07:33:03.566878",
+      "last_updated": "2026-04-01T10:29:41.195308",
       "data_points": 61,
       "history": [
         {
@@ -4491,12 +4688,12 @@
             "signal": "BUY",
             "description": "快跌9.8%後緩漲1.2%",
             "confidence": 70.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "BUY",
         "signal_strength": 70.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4508,12 +4705,12 @@
       "extra_data": {
         "regular_market_price": 337.84,
         "pre_market_price": null,
-        "post_market_price": 340.6062,
+        "post_market_price": 342.52,
         "prev_close": 321.8
       },
       "kd_k": 13.21,
       "kd_d": 20.14,
-      "last_updated": "2026-04-01T07:33:03.894558",
+      "last_updated": "2026-04-01T10:29:41.925200",
       "data_points": 61,
       "history": [
         {
@@ -4578,7 +4775,7 @@
         },
         {
           "date": "2026-03-31T00:00:00",
-          "open": 321.6700134277344,
+          "open": 321.7250061035156,
           "high": 337.8399963378906,
           "low": 311.489990234375,
           "close": 337.8399963378906,
@@ -4596,12 +4793,12 @@
             "signal": "SELL",
             "description": "放量1.5倍大漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4613,12 +4810,12 @@
       "extra_data": {
         "regular_market_price": 337.95,
         "pre_market_price": null,
-        "post_market_price": 339.38,
+        "post_market_price": 340.55,
         "prev_close": 316.5
       },
       "kd_k": 38.64,
       "kd_d": 36.85,
-      "last_updated": "2026-04-01T07:33:04.214489",
+      "last_updated": "2026-04-01T10:29:42.451702",
       "data_points": 61,
       "history": [
         {
@@ -4697,7 +4894,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4709,12 +4906,12 @@
       "extra_data": {
         "regular_market_price": 138.32,
         "pre_market_price": null,
-        "post_market_price": 138.65,
+        "post_market_price": 138.6,
         "prev_close": 134.19
       },
       "kd_k": 34.71,
       "kd_d": 26.77,
-      "last_updated": "2026-04-01T07:33:04.592482",
+      "last_updated": "2026-04-01T10:29:43.140269",
       "data_points": 61,
       "history": [
         {
@@ -4793,7 +4990,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4805,12 +5002,12 @@
       "extra_data": {
         "regular_market_price": 597.55,
         "pre_market_price": null,
-        "post_market_price": 598.25,
+        "post_market_price": 599.65,
         "prev_close": 580.93
       },
       "kd_k": 28.88,
       "kd_d": 21.63,
-      "last_updated": "2026-04-01T07:33:04.919054",
+      "last_updated": "2026-04-01T10:29:43.698650",
       "data_points": 61,
       "history": [
         {
@@ -4889,7 +5086,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4901,12 +5098,12 @@
       "extra_data": {
         "regular_market_price": 650.34,
         "pre_market_price": null,
-        "post_market_price": 650.86,
+        "post_market_price": 652.24,
         "prev_close": 631.97
       },
       "kd_k": 29.19,
       "kd_d": 21.77,
-      "last_updated": "2026-04-01T07:33:05.217734",
+      "last_updated": "2026-04-01T10:29:44.313561",
       "data_points": 61,
       "history": [
         {
@@ -4985,7 +5182,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -4997,12 +5194,12 @@
       "extra_data": {
         "regular_market_price": 577.18,
         "pre_market_price": null,
-        "post_market_price": 578.855,
+        "post_market_price": 580.22,
         "prev_close": 558.28
       },
       "kd_k": 25.64,
       "kd_d": 20.73,
-      "last_updated": "2026-04-01T07:33:05.508026",
+      "last_updated": "2026-04-01T10:29:44.912448",
       "data_points": 61,
       "history": [
         {
@@ -5081,7 +5278,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -5093,12 +5290,12 @@
       "extra_data": {
         "regular_market_price": 463.19,
         "pre_market_price": null,
-        "post_market_price": 463.005,
+        "post_market_price": 463.76,
         "prev_close": 452.06
       },
       "kd_k": 37.36,
       "kd_d": 27.86,
-      "last_updated": "2026-04-01T07:33:05.886343",
+      "last_updated": "2026-04-01T10:29:45.535324",
       "data_points": 61,
       "history": [
         {
@@ -5177,7 +5374,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -5189,12 +5386,12 @@
       "extra_data": {
         "regular_market_price": 383.4,
         "pre_market_price": null,
-        "post_market_price": 384.42,
+        "post_market_price": 386.0,
         "prev_close": 362.53
       },
       "kd_k": 33.5,
       "kd_d": 36.38,
-      "last_updated": "2026-04-01T07:33:06.155372",
+      "last_updated": "2026-04-01T10:29:46.134675",
       "data_points": 61,
       "history": [
         {
@@ -5259,7 +5456,7 @@
         },
         {
           "date": "2026-03-31T00:00:00",
-          "open": 368.7349853515625,
+          "open": 368.7200012207031,
           "high": 383.5,
           "low": 368.20001220703125,
           "close": 383.3999938964844,
@@ -5273,7 +5470,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -5285,12 +5482,12 @@
       "extra_data": {
         "regular_market_price": 47.95,
         "pre_market_price": null,
-        "post_market_price": 48.227,
+        "post_market_price": 48.52,
         "prev_close": 43.19
       },
       "kd_k": 26.68,
       "kd_d": 25.49,
-      "last_updated": "2026-04-01T07:33:06.464261",
+      "last_updated": "2026-04-01T10:29:46.685500",
       "data_points": 61,
       "history": [
         {
@@ -5369,7 +5566,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -5386,7 +5583,7 @@
       },
       "kd_k": 33.27,
       "kd_d": 29.16,
-      "last_updated": "2026-04-01T07:33:06.712721",
+      "last_updated": "2026-04-01T10:29:47.241287",
       "data_points": 61,
       "history": [
         {
@@ -5469,12 +5666,12 @@
             "signal": "AVOID",
             "description": "縮量下跌3.7%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -5486,12 +5683,12 @@
       "extra_data": {
         "regular_market_price": 23.01,
         "pre_market_price": null,
-        "post_market_price": 23.2483,
+        "post_market_price": 23.37,
         "prev_close": 21.66
       },
       "kd_k": 14.79,
       "kd_d": 9.85,
-      "last_updated": "2026-04-01T07:33:06.962300",
+      "last_updated": "2026-04-01T10:29:47.852285",
       "data_points": 61,
       "history": [
         {
@@ -5570,7 +5767,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -5582,12 +5779,12 @@
       "extra_data": {
         "regular_market_price": 22.96,
         "pre_market_price": null,
-        "post_market_price": 23.16,
+        "post_market_price": 23.3,
         "prev_close": 20.3
       },
       "kd_k": 23.62,
       "kd_d": 15.78,
-      "last_updated": "2026-04-01T07:33:07.202997",
+      "last_updated": "2026-04-01T10:29:48.335025",
       "data_points": 61,
       "history": [
         {
@@ -5670,12 +5867,12 @@
             "signal": "SELL",
             "description": "放量2.5倍大漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -5687,12 +5884,12 @@
       "extra_data": {
         "regular_market_price": 78.05,
         "pre_market_price": null,
-        "post_market_price": 78.81,
+        "post_market_price": 79.49,
         "prev_close": 70.81
       },
       "kd_k": 18.62,
       "kd_d": 18.96,
-      "last_updated": "2026-04-01T07:33:07.517097",
+      "last_updated": "2026-04-01T10:29:48.878767",
       "data_points": 61,
       "history": [
         {
@@ -5775,12 +5972,12 @@
             "signal": "AVOID",
             "description": "縮量下跌3.0%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -5792,12 +5989,12 @@
       "extra_data": {
         "regular_market_price": 72.57,
         "pre_market_price": null,
-        "post_market_price": 72.57,
+        "post_market_price": 73.03,
         "prev_close": 65.27
       },
       "kd_k": 25.53,
       "kd_d": 20.59,
-      "last_updated": "2026-04-01T07:33:07.797163",
+      "last_updated": "2026-04-01T10:29:49.382954",
       "data_points": 61,
       "history": [
         {
@@ -5880,12 +6077,12 @@
             "signal": "AVOID",
             "description": "縮量下跌5.4%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -5897,12 +6094,12 @@
       "extra_data": {
         "regular_market_price": 30.07,
         "pre_market_price": null,
-        "post_market_price": 30.0,
+        "post_market_price": 30.1854,
         "prev_close": 28.15
       },
       "kd_k": 56.47,
       "kd_d": 38.67,
-      "last_updated": "2026-04-01T07:33:08.026444",
+      "last_updated": "2026-04-01T10:29:49.951660",
       "data_points": 61,
       "history": [
         {
@@ -5985,12 +6182,12 @@
             "signal": "HOLD",
             "description": "縮量上漲8.1%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -6002,12 +6199,12 @@
       "extra_data": {
         "regular_market_price": 106.36,
         "pre_market_price": null,
-        "post_market_price": 108.09,
+        "post_market_price": 108.94,
         "prev_close": 96.71
       },
       "kd_k": 10.91,
       "kd_d": 18.02,
-      "last_updated": "2026-04-01T07:33:08.358582",
+      "last_updated": "2026-04-01T10:29:50.551896",
       "data_points": 61,
       "history": [
         {
@@ -6090,12 +6287,12 @@
             "signal": "SELL",
             "description": "放量1.6倍大漲",
             "confidence": 80.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:55"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 80.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:55"
       }
     },
     {
@@ -6107,12 +6304,12 @@
       "extra_data": {
         "regular_market_price": 12.21,
         "pre_market_price": null,
-        "post_market_price": 12.27,
+        "post_market_price": 12.45,
         "prev_close": 11.36
       },
       "kd_k": 35.11,
       "kd_d": 44.55,
-      "last_updated": "2026-04-01T07:33:08.620643",
+      "last_updated": "2026-04-01T10:29:51.053195",
       "data_points": 61,
       "history": [
         {
@@ -6195,12 +6392,12 @@
             "signal": "AVOID",
             "description": "縮量下跌15.6%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:56"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:56"
       }
     },
     {
@@ -6212,12 +6409,12 @@
       "extra_data": {
         "regular_market_price": 57.12,
         "pre_market_price": null,
-        "post_market_price": 57.47,
+        "post_market_price": 57.9,
         "prev_close": 50.19
       },
       "kd_k": 36.16,
       "kd_d": 34.37,
-      "last_updated": "2026-04-01T07:33:08.900933",
+      "last_updated": "2026-04-01T10:29:51.568827",
       "data_points": 61,
       "history": [
         {
@@ -6300,12 +6497,12 @@
             "signal": "AVOID",
             "description": "縮量下跌6.4%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:56"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:56"
       }
     },
     {
@@ -6317,12 +6514,12 @@
       "extra_data": {
         "regular_market_price": 34.99,
         "pre_market_price": null,
-        "post_market_price": 35.2,
+        "post_market_price": 35.0605,
         "prev_close": 31.54
       },
       "kd_k": 24.84,
       "kd_d": 20.25,
-      "last_updated": "2026-04-01T07:33:09.150096",
+      "last_updated": "2026-04-01T10:29:52.272974",
       "data_points": 61,
       "history": [
         {
@@ -6405,12 +6602,12 @@
             "signal": "AVOID",
             "description": "縮量下跌6.4%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:56"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:56"
       }
     },
     {
@@ -6422,12 +6619,12 @@
       "extra_data": {
         "regular_market_price": 59.61,
         "pre_market_price": null,
-        "post_market_price": 59.99,
+        "post_market_price": 59.0001,
         "prev_close": 56.94
       },
       "kd_k": 19.99,
       "kd_d": 14.39,
-      "last_updated": "2026-04-01T07:33:09.373277",
+      "last_updated": "2026-04-01T10:29:52.842460",
       "data_points": 61,
       "history": [
         {
@@ -6506,7 +6703,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:56"
       }
     },
     {
@@ -6523,7 +6720,7 @@
       },
       "kd_k": 17.67,
       "kd_d": 12.28,
-      "last_updated": "2026-04-01T07:33:09.632568",
+      "last_updated": "2026-04-01T10:29:53.378907",
       "data_points": 61,
       "history": [
         {
@@ -6602,7 +6799,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:56"
       }
     },
     {
@@ -6614,12 +6811,12 @@
       "extra_data": {
         "regular_market_price": 95.41,
         "pre_market_price": null,
-        "post_market_price": 96.92,
+        "post_market_price": 97.51,
         "prev_close": 89.91
       },
       "kd_k": 14.72,
       "kd_d": 24.85,
-      "last_updated": "2026-04-01T07:33:09.862806",
+      "last_updated": "2026-04-01T10:29:53.912045",
       "data_points": 61,
       "history": [
         {
@@ -6702,14 +6899,14 @@
             "signal": "AVOID",
             "description": "縮量下跌8.1%",
             "confidence": 100.0,
-            "detected_at": "2026-04-01 07:33:11"
+            "detected_at": "2026-04-01 10:29:56"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-01 07:33:11"
+        "last_updated": "2026-04-01 10:29:56"
       }
     }
   ],
-  "last_updated": "2026-04-01T07:33:10.749202"
+  "last_updated": "2026-04-01T10:29:55.642220"
 }
