@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-01T13:23:25.578758",
+  "timestamp": "2026-04-01T15:19:23.211024",
   "date": "2026-04-01",
   "macro": {
     "us10y": {
@@ -7,27 +7,27 @@
       "change": -0.031
     },
     "dxy": {
-      "value": 99.78,
-      "change": -0.18
+      "value": 99.58,
+      "change": -0.38
     },
     "fear_greed": {
       "value": 25.25,
-      "change": -5.36,
+      "change": 0.0,
       "label": "VIX Index",
-      "timestamp": "2026-04-01T13:23:24.938123"
+      "timestamp": "2026-04-01T15:19:22.582878"
     },
     "btc": {
-      "value": 68403.0,
-      "change_pct": 0
+      "value": 69140.0,
+      "change_pct": 1.33
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 1,
+  "new_alerts": 0,
   "overbought_count": 0,
-  "oversold_count": 13,
-  "normal_count": 55,
+  "oversold_count": 14,
+  "normal_count": 54,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
@@ -47,30 +47,44 @@
     {
       "symbol": "2454.TW",
       "name": "聯發科",
-      "current_price": 1485.0,
-      "change_pct": -0.34,
+      "current_price": 1465.0,
+      "change_pct": -1.68,
       "extra_data": {
-        "regular_market_price": 1485.0,
+        "regular_market_price": 1465.0,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 1490.0
       },
-      "kd_k": 5.64,
-      "kd_d": 11.42
+      "kd_k": 5.59,
+      "kd_d": 11.4
     },
     {
       "symbol": "00757.TW",
       "name": "統一FANG+",
-      "current_price": 105.05,
-      "change_pct": 3.86,
+      "current_price": 105.1,
+      "change_pct": 3.91,
       "extra_data": {
-        "regular_market_price": 105.05,
+        "regular_market_price": 105.1,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 101.15
       },
-      "kd_k": 23.79,
-      "kd_d": 19.36
+      "kd_k": 23.98,
+      "kd_d": 19.42
+    },
+    {
+      "symbol": "00934.TW",
+      "name": "中信成長高股息",
+      "current_price": 20.91,
+      "change_pct": 2.8,
+      "extra_data": {
+        "regular_market_price": 20.91,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 20.34
+      },
+      "kd_k": 19.82,
+      "kd_d": 24.25
     },
     {
       "symbol": "MSFT",
