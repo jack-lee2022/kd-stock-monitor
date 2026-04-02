@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-04-02T22:55:13.409295",
-  "date": "2026-04-02",
+  "timestamp": "2026-04-03T00:00:17.552958",
+  "date": "2026-04-03",
   "macro": {
     "us10y": {
-      "value": 4.291,
-      "change": -0.028
+      "value": 4.299,
+      "change": -0.02
     },
     "dxy": {
-      "value": 99.9,
-      "change": 0.25
+      "value": 99.95,
+      "change": 0.3
     },
     "fear_greed": {
-      "value": 24.96,
-      "change": 0.42,
+      "value": 25.25,
+      "change": 0.71,
       "label": "VIX Index",
-      "timestamp": "2026-04-02T22:55:12.770396"
+      "timestamp": "2026-04-03T00:00:16.917965"
     },
     "btc": {
-      "value": 66801.0,
-      "change_pct": -1.88
+      "value": 66784.0,
+      "change_pct": -1.9
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 0,
+  "new_alerts": 3,
   "overbought_count": 0,
-  "oversold_count": 5,
-  "normal_count": 63,
+  "oversold_count": 3,
+  "normal_count": 65,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
@@ -45,60 +45,32 @@
       "kd_d": 9.85
     },
     {
-      "symbol": "00929.TW",
-      "name": "復華台灣科技優息",
-      "current_price": 18.73,
-      "change_pct": -1.42,
-      "extra_data": {
-        "regular_market_price": 18.73,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 19.0
-      },
-      "kd_k": 18.76,
-      "kd_d": 26.55
-    },
-    {
-      "symbol": "00934.TW",
-      "name": "中信成長高股息",
-      "current_price": 20.53,
-      "change_pct": -1.82,
-      "extra_data": {
-        "regular_market_price": 20.53,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 20.91
-      },
-      "kd_k": 18.68,
-      "kd_d": 22.39
-    },
-    {
       "symbol": "MSFU",
       "name": "Direxion Daily MSFT Bull 2X Shares",
-      "current_price": 22.86,
-      "change_pct": -0.26,
+      "current_price": 22.99,
+      "change_pct": 0.31,
       "extra_data": {
-        "regular_market_price": 22.86,
+        "regular_market_price": 22.99,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 22.92
       },
-      "kd_k": 28.18,
-      "kd_d": 18.91
+      "kd_k": 29.28,
+      "kd_d": 19.27
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 87.35,
-      "change_pct": -3.74,
+      "current_price": 88.9,
+      "change_pct": -2.03,
       "extra_data": {
-        "regular_market_price": 87.35,
+        "regular_market_price": 88.9,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 90.74
       },
-      "kd_k": 10.16,
-      "kd_d": 17.03
+      "kd_k": 11.36,
+      "kd_d": 17.42
     }
   ],
   "errors": []
