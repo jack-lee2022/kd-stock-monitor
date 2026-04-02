@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-04-02T21:11:29.714169",
+  "timestamp": "2026-04-02T22:55:13.409295",
   "date": "2026-04-02",
   "macro": {
     "us10y": {
-      "value": 4.354,
-      "change": 0.035
+      "value": 4.291,
+      "change": -0.028
     },
     "dxy": {
-      "value": 100.13,
-      "change": 0.48
+      "value": 99.9,
+      "change": 0.25
     },
     "fear_greed": {
-      "value": 27.54,
-      "change": 3.0,
+      "value": 24.96,
+      "change": 0.42,
       "label": "VIX Index",
-      "timestamp": "2026-04-02T21:11:29.069175"
+      "timestamp": "2026-04-02T22:55:12.770396"
     },
     "btc": {
-      "value": 66074.0,
-      "change_pct": -2.94
+      "value": 66801.0,
+      "change_pct": -1.88
     }
   },
   "stocks_processed": 68,
@@ -26,8 +26,8 @@
   "stocks_failed": 0,
   "new_alerts": 0,
   "overbought_count": 0,
-  "oversold_count": 8,
-  "normal_count": 60,
+  "oversold_count": 5,
+  "normal_count": 63,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
@@ -73,74 +73,32 @@
       "kd_d": 22.39
     },
     {
-      "symbol": "MSFT",
-      "name": "Microsoft Corp.",
-      "current_price": 369.37,
-      "change_pct": -0.22,
-      "extra_data": {
-        "regular_market_price": 369.37,
-        "pre_market_price": 365.12,
-        "post_market_price": null,
-        "prev_close": 370.17
-      },
-      "kd_k": 24.82,
-      "kd_d": 15.39
-    },
-    {
       "symbol": "MSFU",
       "name": "Direxion Daily MSFT Bull 2X Shares",
-      "current_price": 22.92,
-      "change_pct": -0.39,
+      "current_price": 22.86,
+      "change_pct": -0.26,
       "extra_data": {
-        "regular_market_price": 22.92,
-        "pre_market_price": 22.37,
+        "regular_market_price": 22.86,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 23.01
+        "prev_close": 22.92
       },
-      "kd_k": 23.11,
-      "kd_d": 14.27
-    },
-    {
-      "symbol": "MULL",
-      "name": "GraniteShares 2x Long MU Daily ETF",
-      "current_price": 125.66,
-      "change_pct": 18.15,
-      "extra_data": {
-        "regular_market_price": 125.66,
-        "pre_market_price": 111.0,
-        "post_market_price": null,
-        "prev_close": 106.36
-      },
-      "kd_k": 18.66,
-      "kd_d": 18.23
-    },
-    {
-      "symbol": "FNGG",
-      "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
-      "current_price": 157.89,
-      "change_pct": 3.06,
-      "extra_data": {
-        "regular_market_price": 157.89,
-        "pre_market_price": 150.97,
-        "post_market_price": null,
-        "prev_close": 153.208
-      },
-      "kd_k": 31.98,
-      "kd_d": 18.84
+      "kd_k": 28.18,
+      "kd_d": 18.91
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 90.74,
-      "change_pct": -4.89,
+      "current_price": 87.35,
+      "change_pct": -3.74,
       "extra_data": {
-        "regular_market_price": 90.74,
-        "pre_market_price": 87.2,
+        "regular_market_price": 87.35,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 95.41
+        "prev_close": 90.74
       },
-      "kd_k": 11.68,
-      "kd_d": 20.46
+      "kd_k": 10.16,
+      "kd_d": 17.03
     }
   ],
   "errors": []
