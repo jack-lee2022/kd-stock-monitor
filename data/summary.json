@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-04-03T02:55:59.943251",
+  "timestamp": "2026-04-03T03:51:15.196446",
   "date": "2026-04-03",
   "macro": {
     "us10y": {
-      "value": 4.309,
-      "change": -0.01
+      "value": 4.313,
+      "change": -0.006
     },
     "dxy": {
-      "value": 100.02,
-      "change": 0.37
+      "value": 100.01,
+      "change": 0.36
     },
     "fear_greed": {
-      "value": 25.24,
-      "change": 0.7,
+      "value": 24.79,
+      "change": 0.25,
       "label": "VIX Index",
-      "timestamp": "2026-04-03T02:55:59.304798"
+      "timestamp": "2026-04-03T03:51:14.614354"
     },
     "btc": {
-      "value": 66982.0,
-      "change_pct": -1.61
+      "value": 66975.0,
+      "change_pct": -1.62
     }
   },
   "stocks_processed": 68,
@@ -26,8 +26,8 @@
   "stocks_failed": 0,
   "new_alerts": 0,
   "overbought_count": 0,
-  "oversold_count": 3,
-  "normal_count": 65,
+  "oversold_count": 2,
+  "normal_count": 66,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
@@ -45,32 +45,18 @@
       "kd_d": 9.85
     },
     {
-      "symbol": "MSFU",
-      "name": "Direxion Daily MSFT Bull 2X Shares",
-      "current_price": 23.135,
-      "change_pct": 0.94,
-      "extra_data": {
-        "regular_market_price": 23.135,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 22.92
-      },
-      "kd_k": 30.5,
-      "kd_d": 19.68
-    },
-    {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 89.43,
-      "change_pct": -1.44,
+      "current_price": 88.83,
+      "change_pct": -2.1,
       "extra_data": {
-        "regular_market_price": 89.43,
+        "regular_market_price": 88.83,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 90.74
       },
-      "kd_k": 11.77,
-      "kd_d": 17.56
+      "kd_k": 11.3,
+      "kd_d": 17.41
     }
   ],
   "errors": []
