@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-03T13:04:19.165305",
+  "timestamp": "2026-04-03T15:06:53.473062",
   "date": "2026-04-03",
   "macro": {
     "us10y": {
@@ -7,27 +7,27 @@
       "change": -0.006
     },
     "dxy": {
-      "value": 100.04,
-      "change": 0.01
+      "value": 100.01,
+      "change": -0.02
     },
     "fear_greed": {
       "value": 23.87,
-      "change": -0.67,
+      "change": 0.0,
       "label": "VIX Index",
-      "timestamp": "2026-04-03T13:04:18.544225"
+      "timestamp": "2026-04-03T15:06:52.810028"
     },
     "btc": {
-      "value": 66604.0,
-      "change_pct": 0
+      "value": 66801.0,
+      "change_pct": -0.13
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 0,
+  "new_alerts": 2,
   "overbought_count": 0,
-  "oversold_count": 2,
-  "normal_count": 66,
+  "oversold_count": 4,
+  "normal_count": 64,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
@@ -43,6 +43,34 @@
       },
       "kd_k": 6.75,
       "kd_d": 9.85
+    },
+    {
+      "symbol": "00929.TW",
+      "name": "復華台灣科技優息",
+      "current_price": 18.73,
+      "change_pct": -1.42,
+      "extra_data": {
+        "regular_market_price": 18.73,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 19.0
+      },
+      "kd_k": 18.76,
+      "kd_d": 26.55
+    },
+    {
+      "symbol": "00934.TW",
+      "name": "中信成長高股息",
+      "current_price": 20.53,
+      "change_pct": -1.82,
+      "extra_data": {
+        "regular_market_price": 20.53,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 20.91
+      },
+      "kd_k": 18.68,
+      "kd_d": 22.39
     },
     {
       "symbol": "CRCL",
