@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-07T07:34:45.315719",
+  "timestamp": "2026-04-07T10:13:28.392673",
   "date": "2026-04-07",
   "macro": {
     "us10y": {
@@ -7,18 +7,18 @@
       "change": 0.0
     },
     "dxy": {
-      "value": 99.99,
+      "value": 100.12,
       "change": 0.0
     },
     "fear_greed": {
       "value": 24.17,
       "change": 0.0,
       "label": "VIX Index",
-      "timestamp": "2026-04-07T07:34:44.672048"
+      "timestamp": "2026-04-07T10:13:27.745098"
     },
     "btc": {
-      "value": 68575.0,
-      "change_pct": -0.59
+      "value": 68419.0,
+      "change_pct": 0
     }
   },
   "stocks_processed": 68,
@@ -26,51 +26,23 @@
   "stocks_failed": 0,
   "new_alerts": 0,
   "overbought_count": 0,
-  "oversold_count": 4,
-  "normal_count": 64,
+  "oversold_count": 2,
+  "normal_count": 66,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
       "symbol": "2454.TW",
       "name": "聯發科",
-      "current_price": 1465.0,
-      "change_pct": 0.0,
+      "current_price": 1435.0,
+      "change_pct": -2.05,
       "extra_data": {
-        "regular_market_price": 1465.0,
+        "regular_market_price": 1435.0,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 1465.0
       },
-      "kd_k": 6.75,
-      "kd_d": 9.85
-    },
-    {
-      "symbol": "00929.TW",
-      "name": "復華台灣科技優息",
-      "current_price": 18.73,
-      "change_pct": -1.42,
-      "extra_data": {
-        "regular_market_price": 18.73,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 19.0
-      },
-      "kd_k": 18.76,
-      "kd_d": 26.55
-    },
-    {
-      "symbol": "00934.TW",
-      "name": "中信成長高股息",
-      "current_price": 20.53,
-      "change_pct": -1.82,
-      "extra_data": {
-        "regular_market_price": 20.53,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 20.91
-      },
-      "kd_k": 18.68,
-      "kd_d": 22.39
+      "kd_k": 4.5,
+      "kd_d": 8.07
     },
     {
       "symbol": "CRCL",
@@ -80,7 +52,7 @@
       "extra_data": {
         "regular_market_price": 92.15,
         "pre_market_price": null,
-        "post_market_price": 91.5882,
+        "post_market_price": 91.73,
         "prev_close": 90.26
       },
       "kd_k": 14.41,
