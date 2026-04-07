@@ -1,5 +1,21 @@
 [
   {
+    "id": "VT_20260408_overbought",
+    "symbol": "VT",
+    "name": "Vanguard Total World Stock ETF",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.4,
+    "kd_d": 62.88,
+    "current_price": 140.13,
+    "threshold": 80,
+    "message": "⚠️ VT (Vanguard Total World Stock ETF) is OVERBOUGHT! KD-K: 80.4, KD-D: 62.88 (>= 80)",
+    "timestamp": "2026-04-08T04:46:07.169067",
+    "date": "2026-04-08",
+    "acknowledged": false
+  },
+  {
     "id": "2454.TW_20260408_oversold",
     "symbol": "2454.TW",
     "name": "聯發科",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ 009800.TW (中信NASDAQ) is OVERSOLD! KD-K: 15.18, KD-D: 24.97 (<= 20)",
     "timestamp": "2026-03-30T10:24:44.819128",
-    "date": "2026-03-30",
-    "acknowledged": false
-  },
-  {
-    "id": "00770.TW_20260330_oversold",
-    "symbol": "00770.TW",
-    "name": "國泰北美科技",
-    "market": "TW",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 16.49,
-    "kd_d": 28.33,
-    "current_price": 48.24,
-    "threshold": 20,
-    "message": "✅ 00770.TW (國泰北美科技) is OVERSOLD! KD-K: 16.49, KD-D: 28.33 (<= 20)",
-    "timestamp": "2026-03-30T10:24:44.819206",
     "date": "2026-03-30",
     "acknowledged": false
   }

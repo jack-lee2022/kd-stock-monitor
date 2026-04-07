@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-08T03:18:46.895476",
+  "timestamp": "2026-04-08T04:46:07.571109",
   "date": "2026-04-08",
   "macro": {
     "us10y": {
@@ -7,28 +7,43 @@
       "change": 0.008
     },
     "dxy": {
-      "value": 99.86,
-      "change": -0.12
+      "value": 99.65,
+      "change": -0.33
     },
     "fear_greed": {
-      "value": 27.75,
-      "change": 3.58,
+      "value": 25.78,
+      "change": 1.61,
       "label": "VIX Index",
-      "timestamp": "2026-04-08T03:18:46.323298"
+      "timestamp": "2026-04-08T04:46:06.924435"
     },
     "btc": {
-      "value": 68536.0,
-      "change_pct": -0.47
+      "value": 69299.0,
+      "change_pct": 0.64
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 0,
+  "new_alerts": 1,
+  "overbought_count": 1,
   "oversold_count": 2,
-  "normal_count": 66,
-  "overbought_stocks": [],
+  "normal_count": 65,
+  "overbought_stocks": [
+    {
+      "symbol": "VT",
+      "name": "Vanguard Total World Stock ETF",
+      "current_price": 140.13,
+      "change_pct": 0.04,
+      "extra_data": {
+        "regular_market_price": 140.13,
+        "pre_market_price": null,
+        "post_market_price": 140.4,
+        "prev_close": 140.07
+      },
+      "kd_k": 80.4,
+      "kd_d": 62.88
+    }
+  ],
   "oversold_stocks": [
     {
       "symbol": "2454.TW",
@@ -47,16 +62,16 @@
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 93.45,
-      "change_pct": 1.41,
+      "current_price": 94.12,
+      "change_pct": 2.14,
       "extra_data": {
-        "regular_market_price": 93.45,
+        "regular_market_price": 94.12,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 95.1,
         "prev_close": 92.15
       },
-      "kd_k": 21.38,
-      "kd_d": 18.23
+      "kd_k": 22.24,
+      "kd_d": 18.52
     }
   ],
   "errors": []
