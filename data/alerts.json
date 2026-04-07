@@ -1,5 +1,21 @@
 [
   {
+    "id": "TSLA_20260407_oversold",
+    "symbol": "TSLA",
+    "name": "Tesla Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 17.63,
+    "kd_d": 25.63,
+    "current_price": 337.75,
+    "threshold": 20,
+    "message": "✅ TSLA (Tesla Inc.) is OVERSOLD! KD-K: 17.63, KD-D: 25.63 (<= 20)",
+    "timestamp": "2026-04-07T23:07:30.094979",
+    "date": "2026-04-07",
+    "acknowledged": false
+  },
+  {
     "id": "2454.TW_20260407_oversold",
     "symbol": "2454.TW",
     "name": "聯發科",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ 2317.TW (鴻海) is OVERSOLD! KD-K: 20.92, KD-D: 18.08 (<= 20)",
     "timestamp": "2026-03-30T00:34:31.361688",
-    "date": "2026-03-30",
-    "acknowledged": false
-  },
-  {
-    "id": "2454.TW_20260330_oversold",
-    "symbol": "2454.TW",
-    "name": "聯發科",
-    "market": "TW",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 15.61,
-    "kd_d": 21.1,
-    "current_price": 1585.0,
-    "threshold": 20,
-    "message": "✅ 2454.TW (聯發科) is OVERSOLD! KD-K: 15.61, KD-D: 21.1 (<= 20)",
-    "timestamp": "2026-03-30T00:34:31.361772",
     "date": "2026-03-30",
     "acknowledged": false
   }

@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-04-07T21:17:10.084092",
+  "timestamp": "2026-04-07T23:07:30.497632",
   "date": "2026-04-07",
   "macro": {
     "us10y": {
-      "value": 4.333,
-      "change": -0.002
+      "value": 4.364,
+      "change": 0.029
     },
     "dxy": {
-      "value": 99.91,
-      "change": -0.07
+      "value": 99.88,
+      "change": -0.1
     },
     "fear_greed": {
-      "value": 25.3,
-      "change": 1.13,
+      "value": 26.53,
+      "change": 2.36,
       "label": "VIX Index",
-      "timestamp": "2026-04-07T21:17:09.420992"
+      "timestamp": "2026-04-07T23:07:29.851254"
     },
     "btc": {
-      "value": 68541.0,
-      "change_pct": -0.46
+      "value": 67863.0,
+      "change_pct": -1.45
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 0,
+  "new_alerts": 1,
   "overbought_count": 0,
-  "oversold_count": 2,
-  "normal_count": 66,
+  "oversold_count": 3,
+  "normal_count": 65,
   "overbought_stocks": [],
   "oversold_stocks": [
     {
@@ -45,18 +45,32 @@
       "kd_d": 9.96
     },
     {
+      "symbol": "TSLA",
+      "name": "Tesla Inc.",
+      "current_price": 337.75,
+      "change_pct": -4.27,
+      "extra_data": {
+        "regular_market_price": 337.75,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 352.82
+      },
+      "kd_k": 17.63,
+      "kd_d": 25.63
+    },
+    {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 92.15,
-      "change_pct": 2.09,
+      "current_price": 88.69,
+      "change_pct": -3.75,
       "extra_data": {
-        "regular_market_price": 92.15,
-        "pre_market_price": 90.7397,
+        "regular_market_price": 88.69,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 90.26
+        "prev_close": 92.15
       },
-      "kd_k": 14.41,
-      "kd_d": 16.65
+      "kd_k": 15.28,
+      "kd_d": 16.19
     }
   ],
   "errors": []
