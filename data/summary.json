@@ -1,47 +1,103 @@
 {
-  "timestamp": "2026-04-08T21:22:07.237177",
+  "timestamp": "2026-04-08T23:09:41.521165",
   "date": "2026-04-08",
   "macro": {
     "us10y": {
-      "value": 4.246,
-      "change": -0.097
+      "value": 4.266,
+      "change": -0.077
     },
     "dxy": {
-      "value": 98.6,
-      "change": -1.04
+      "value": 98.77,
+      "change": -0.87
     },
     "fear_greed": {
-      "value": 20.21,
-      "change": -5.57,
+      "value": 21.69,
+      "change": -4.09,
       "label": "VIX Index",
-      "timestamp": "2026-04-08T21:22:06.600537"
+      "timestamp": "2026-04-08T23:09:40.878732"
     },
     "btc": {
-      "value": 72739.0,
-      "change_pct": 1.11
+      "value": 70958.0,
+      "change_pct": -1.37
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 1,
-  "oversold_count": 2,
-  "normal_count": 65,
+  "new_alerts": 4,
+  "overbought_count": 5,
+  "oversold_count": 1,
+  "normal_count": 62,
   "overbought_stocks": [
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc.",
+      "current_price": 316.775,
+      "change_pct": 3.7,
+      "extra_data": {
+        "regular_market_price": 316.775,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 305.46
+      },
+      "kd_k": 80.91,
+      "kd_d": 63.67
+    },
     {
       "symbol": "VT",
       "name": "Vanguard Total World Stock ETF",
-      "current_price": 140.13,
-      "change_pct": 0.04,
+      "current_price": 144.02,
+      "change_pct": 2.78,
       "extra_data": {
-        "regular_market_price": 140.13,
-        "pre_market_price": 145.322,
+        "regular_market_price": 144.02,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 140.07
+        "prev_close": 140.13
       },
-      "kd_k": 80.4,
-      "kd_d": 62.88
+      "kd_k": 83.3,
+      "kd_d": 69.68
+    },
+    {
+      "symbol": "VOO",
+      "name": "Vanguard S&P 500 ETF",
+      "current_price": 618.4,
+      "change_pct": 2.04,
+      "extra_data": {
+        "regular_market_price": 618.4,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 606.04
+      },
+      "kd_k": 82.09,
+      "kd_d": 66.3
+    },
+    {
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "current_price": 672.71,
+      "change_pct": 2.05,
+      "extra_data": {
+        "regular_market_price": 672.71,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 659.22
+      },
+      "kd_k": 82.08,
+      "kd_d": 66.33
+    },
+    {
+      "symbol": "DIA",
+      "name": "SPDR Dow Jones Industrial Average ETF",
+      "current_price": 476.29,
+      "change_pct": 2.23,
+      "extra_data": {
+        "regular_market_price": 476.29,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 465.88
+      },
+      "kd_k": 81.32,
+      "kd_d": 68.96
     }
   ],
   "oversold_stocks": [
@@ -58,20 +114,6 @@
       },
       "kd_k": 28.06,
       "kd_d": 15.99
-    },
-    {
-      "symbol": "CRCL",
-      "name": "Circle Internet Group, Inc.",
-      "current_price": 94.12,
-      "change_pct": 2.14,
-      "extra_data": {
-        "regular_market_price": 94.12,
-        "pre_market_price": 101.09,
-        "post_market_price": null,
-        "prev_close": 92.15
-      },
-      "kd_k": 22.24,
-      "kd_d": 18.52
     }
   ],
   "errors": []
