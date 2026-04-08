@@ -1,5 +1,21 @@
 [
   {
+    "id": "TSLA_20260409_oversold",
+    "symbol": "TSLA",
+    "name": "Tesla Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.11,
+    "kd_d": 24.59,
+    "current_price": 342.8555,
+    "threshold": 20,
+    "message": "✅ TSLA (Tesla Inc.) is OVERSOLD! KD-K: 19.11, KD-D: 24.59 (<= 20)",
+    "timestamp": "2026-04-09T03:58:47.027611",
+    "date": "2026-04-09",
+    "acknowledged": false
+  },
+  {
     "id": "2454.TW_20260409_oversold",
     "symbol": "2454.TW",
     "name": "聯發科",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ VOO (Vanguard S&P 500 ETF) is OVERSOLD! KD-K: 11.89, KD-D: 17.91 (<= 20)",
     "timestamp": "2026-03-31T00:54:57.434898",
-    "date": "2026-03-31",
-    "acknowledged": false
-  },
-  {
-    "id": "SPY_20260331_oversold",
-    "symbol": "SPY",
-    "name": "SPDR S&P 500 ETF Trust",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 11.92,
-    "kd_d": 17.97,
-    "current_price": 635.24,
-    "threshold": 20,
-    "message": "✅ SPY (SPDR S&P 500 ETF Trust) is OVERSOLD! KD-K: 11.92, KD-D: 17.97 (<= 20)",
-    "timestamp": "2026-03-31T00:54:57.434947",
     "date": "2026-03-31",
     "acknowledged": false
   }
