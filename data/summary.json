@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-04-08T10:13:40.143175",
+  "timestamp": "2026-04-08T13:10:21.171771",
   "date": "2026-04-08",
   "macro": {
     "us10y": {
-      "value": 4.343,
-      "change": 0.008
+      "value": 4.335,
+      "change": 0.0
     },
     "dxy": {
       "value": 98.91,
-      "change": -1.07
+      "change": 0.0
     },
     "fear_greed": {
-      "value": 25.78,
-      "change": 1.61,
+      "value": 24.17,
+      "change": 0.0,
       "label": "VIX Index",
-      "timestamp": "2026-04-08T10:13:39.499889"
+      "timestamp": "2026-04-08T13:10:20.530435"
     },
     "btc": {
-      "value": 71644.0,
+      "value": 71609.0,
       "change_pct": 0
     }
   },
@@ -25,39 +25,24 @@
   "stocks_successful": 68,
   "stocks_failed": 0,
   "new_alerts": 0,
-  "overbought_count": 1,
+  "overbought_count": 0,
   "oversold_count": 2,
-  "normal_count": 65,
-  "overbought_stocks": [
-    {
-      "symbol": "VT",
-      "name": "Vanguard Total World Stock ETF",
-      "current_price": 140.13,
-      "change_pct": 0.04,
-      "extra_data": {
-        "regular_market_price": 140.13,
-        "pre_market_price": null,
-        "post_market_price": 143.94,
-        "prev_close": 140.07
-      },
-      "kd_k": 80.4,
-      "kd_d": 62.88
-    }
-  ],
+  "normal_count": 66,
+  "overbought_stocks": [],
   "oversold_stocks": [
     {
       "symbol": "2454.TW",
       "name": "聯發科",
-      "current_price": 1550.0,
-      "change_pct": 5.44,
+      "current_price": 1565.0,
+      "change_pct": 6.46,
       "extra_data": {
-        "regular_market_price": 1550.0,
+        "regular_market_price": 1565.0,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 1470.0
       },
-      "kd_k": 23.81,
-      "kd_d": 14.58
+      "kd_k": 25.93,
+      "kd_d": 15.29
     },
     {
       "symbol": "CRCL",
@@ -70,8 +55,8 @@
         "post_market_price": 99.3,
         "prev_close": 92.15
       },
-      "kd_k": 22.24,
-      "kd_d": 18.52
+      "kd_k": 26.27,
+      "kd_d": 19.86
     }
   ],
   "errors": []
