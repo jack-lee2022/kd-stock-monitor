@@ -1,103 +1,187 @@
 {
-  "timestamp": "2026-04-08T23:09:41.521165",
-  "date": "2026-04-08",
+  "timestamp": "2026-04-09T01:00:42.702249",
+  "date": "2026-04-09",
   "macro": {
     "us10y": {
-      "value": 4.266,
-      "change": -0.077
+      "value": 4.283,
+      "change": -0.06
     },
     "dxy": {
-      "value": 98.77,
-      "change": -0.87
+      "value": 98.9,
+      "change": -0.74
     },
     "fear_greed": {
-      "value": 21.69,
-      "change": -4.09,
+      "value": 20.75,
+      "change": -5.03,
       "label": "VIX Index",
-      "timestamp": "2026-04-08T23:09:40.878732"
+      "timestamp": "2026-04-09T01:00:42.056389"
     },
     "btc": {
-      "value": 70958.0,
-      "change_pct": -1.37
+      "value": 71637.0,
+      "change_pct": -0.42
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 4,
-  "overbought_count": 5,
+  "new_alerts": 12,
+  "overbought_count": 11,
   "oversold_count": 1,
-  "normal_count": 62,
+  "normal_count": 56,
   "overbought_stocks": [
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "current_price": 316.775,
-      "change_pct": 3.7,
+      "current_price": 319.26,
+      "change_pct": 4.52,
       "extra_data": {
-        "regular_market_price": 316.775,
+        "regular_market_price": 319.26,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 305.46
       },
-      "kd_k": 80.91,
-      "kd_d": 63.67
+      "kd_k": 82.57,
+      "kd_d": 64.23
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon.com Inc.",
+      "current_price": 222.17,
+      "change_pct": 3.93,
+      "extra_data": {
+        "regular_market_price": 222.17,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 213.77
+      },
+      "kd_k": 81.69,
+      "kd_d": 68.53
+    },
+    {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices Inc.",
+      "current_price": 233.33,
+      "change_pct": 5.33,
+      "extra_data": {
+        "regular_market_price": 233.33,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 221.53
+      },
+      "kd_k": 81.53,
+      "kd_d": 68.48
     },
     {
       "symbol": "VT",
       "name": "Vanguard Total World Stock ETF",
-      "current_price": 144.02,
-      "change_pct": 2.78,
+      "current_price": 144.715,
+      "change_pct": 3.27,
       "extra_data": {
-        "regular_market_price": 144.02,
+        "regular_market_price": 144.715,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 140.13
       },
-      "kd_k": 83.3,
-      "kd_d": 69.68
+      "kd_k": 85.29,
+      "kd_d": 70.35
     },
     {
       "symbol": "VOO",
       "name": "Vanguard S&P 500 ETF",
-      "current_price": 618.4,
-      "change_pct": 2.04,
+      "current_price": 621.5034,
+      "change_pct": 2.55,
       "extra_data": {
-        "regular_market_price": 618.4,
+        "regular_market_price": 621.5034,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 606.04
       },
-      "kd_k": 82.09,
-      "kd_d": 66.3
+      "kd_k": 84.38,
+      "kd_d": 67.06
     },
     {
       "symbol": "SPY",
       "name": "SPDR S&P 500 ETF Trust",
-      "current_price": 672.71,
-      "change_pct": 2.05,
+      "current_price": 676.0711,
+      "change_pct": 2.56,
       "extra_data": {
-        "regular_market_price": 672.71,
+        "regular_market_price": 676.0711,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 659.22
       },
-      "kd_k": 82.08,
-      "kd_d": 66.33
+      "kd_k": 84.41,
+      "kd_d": 67.11
+    },
+    {
+      "symbol": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "current_price": 607.3683,
+      "change_pct": 3.19,
+      "extra_data": {
+        "regular_market_price": 607.3683,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 588.59
+      },
+      "kd_k": 81.42,
+      "kd_d": 64.02
     },
     {
       "symbol": "DIA",
       "name": "SPDR Dow Jones Industrial Average ETF",
-      "current_price": 476.29,
-      "change_pct": 2.23,
+      "current_price": 478.205,
+      "change_pct": 2.65,
       "extra_data": {
-        "regular_market_price": 476.29,
+        "regular_market_price": 478.205,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 465.88
       },
-      "kd_k": 81.32,
-      "kd_d": 68.96
+      "kd_k": 83.47,
+      "kd_d": 69.67
+    },
+    {
+      "symbol": "SMH",
+      "name": "VanEck Semiconductor ETF",
+      "current_price": 422.05,
+      "change_pct": 5.54,
+      "extra_data": {
+        "regular_market_price": 422.05,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 399.9
+      },
+      "kd_k": 82.13,
+      "kd_d": 67.5
+    },
+    {
+      "symbol": "AMZU",
+      "name": "Direxion Daily AMZN Bull 2X Shares",
+      "current_price": 30.42,
+      "change_pct": 7.8,
+      "extra_data": {
+        "regular_market_price": 30.42,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 28.22
+      },
+      "kd_k": 81.12,
+      "kd_d": 67.16
+    },
+    {
+      "symbol": "GGLL",
+      "name": "Direxion Daily GOOGL Bull 2X Shares",
+      "current_price": 95.77,
+      "change_pct": 9.1,
+      "extra_data": {
+        "regular_market_price": 95.77,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 87.78
+      },
+      "kd_k": 80.73,
+      "kd_d": 61.76
     }
   ],
   "oversold_stocks": [
@@ -112,8 +196,8 @@
         "post_market_price": null,
         "prev_close": 1470.0
       },
-      "kd_k": 28.06,
-      "kd_d": 15.99
+      "kd_k": 23.45,
+      "kd_d": 14.46
     }
   ],
   "errors": []
