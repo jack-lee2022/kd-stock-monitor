@@ -1,34 +1,49 @@
 {
-  "timestamp": "2026-04-08T15:17:46.318836",
+  "timestamp": "2026-04-08T16:59:49.061736",
   "date": "2026-04-08",
   "macro": {
     "us10y": {
-      "value": 4.335,
-      "change": 0.0
+      "value": 4.343,
+      "change": 0.008
     },
     "dxy": {
-      "value": 98.86,
-      "change": 0.0
+      "value": 98.89,
+      "change": -0.75
     },
     "fear_greed": {
-      "value": 25.78,
-      "change": 0.0,
+      "value": 20.72,
+      "change": -5.06,
       "label": "VIX Index",
-      "timestamp": "2026-04-08T15:17:45.689333"
+      "timestamp": "2026-04-08T16:59:48.498942"
     },
     "btc": {
-      "value": 71752.0,
-      "change_pct": -0.26
+      "value": 71759.0,
+      "change_pct": -0.25
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
   "new_alerts": 0,
-  "overbought_count": 0,
+  "overbought_count": 1,
   "oversold_count": 2,
-  "normal_count": 66,
-  "overbought_stocks": [],
+  "normal_count": 65,
+  "overbought_stocks": [
+    {
+      "symbol": "VT",
+      "name": "Vanguard Total World Stock ETF",
+      "current_price": 140.13,
+      "change_pct": 0.04,
+      "extra_data": {
+        "regular_market_price": 140.13,
+        "pre_market_price": 144.47,
+        "post_market_price": null,
+        "prev_close": 140.07
+      },
+      "kd_k": 80.4,
+      "kd_d": 62.88
+    }
+  ],
   "oversold_stocks": [
     {
       "symbol": "2454.TW",
@@ -51,12 +66,12 @@
       "change_pct": 2.14,
       "extra_data": {
         "regular_market_price": 94.12,
-        "pre_market_price": null,
-        "post_market_price": 99.3,
+        "pre_market_price": 101.0,
+        "post_market_price": null,
         "prev_close": 92.15
       },
-      "kd_k": 26.27,
-      "kd_d": 19.86
+      "kd_k": 22.24,
+      "kd_d": 18.52
     }
   ],
   "errors": []
