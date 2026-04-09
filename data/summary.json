@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-04-09T15:21:05.644502",
+  "timestamp": "2026-04-09T17:06:25.487911",
   "date": "2026-04-09",
   "macro": {
     "us10y": {
-      "value": 4.343,
-      "change": 0.0
+      "value": 4.291,
+      "change": -0.052
     },
     "dxy": {
-      "value": 99.03,
-      "change": 0.0
+      "value": 98.99,
+      "change": -0.04
     },
     "fear_greed": {
-      "value": 21.04,
-      "change": 0.0,
+      "value": 21.53,
+      "change": 0.49,
       "label": "VIX Index",
-      "timestamp": "2026-04-09T15:21:05.073970"
+      "timestamp": "2026-04-09T17:06:24.846498"
     },
     "btc": {
-      "value": 70991.0,
-      "change_pct": -0.19
+      "value": 71152.0,
+      "change_pct": 0.04
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 1,
-  "overbought_count": 3,
-  "oversold_count": 0,
-  "normal_count": 65,
+  "new_alerts": 0,
+  "overbought_count": 12,
+  "oversold_count": 1,
+  "normal_count": 55,
   "overbought_stocks": [
     {
       "symbol": "00646.TW",
@@ -70,8 +70,149 @@
       },
       "kd_k": 80.22,
       "kd_d": 64.52
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc.",
+      "current_price": 317.32,
+      "change_pct": 3.88,
+      "extra_data": {
+        "regular_market_price": 317.32,
+        "pre_market_price": 315.3,
+        "post_market_price": null,
+        "prev_close": 305.46
+      },
+      "kd_k": 81.25,
+      "kd_d": 63.79
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon.com Inc.",
+      "current_price": 221.25,
+      "change_pct": 3.5,
+      "extra_data": {
+        "regular_market_price": 221.25,
+        "pre_market_price": 219.4,
+        "post_market_price": null,
+        "prev_close": 213.77
+      },
+      "kd_k": 80.45,
+      "kd_d": 68.11
+    },
+    {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices Inc.",
+      "current_price": 231.82,
+      "change_pct": 4.64,
+      "extra_data": {
+        "regular_market_price": 231.82,
+        "pre_market_price": 229.74,
+        "post_market_price": null,
+        "prev_close": 221.53
+      },
+      "kd_k": 80.31,
+      "kd_d": 68.08
+    },
+    {
+      "symbol": "VT",
+      "name": "Vanguard Total World Stock ETF",
+      "current_price": 144.58,
+      "change_pct": 3.18,
+      "extra_data": {
+        "regular_market_price": 144.58,
+        "pre_market_price": 143.0,
+        "post_market_price": null,
+        "prev_close": 140.13
+      },
+      "kd_k": 84.9,
+      "kd_d": 70.22
+    },
+    {
+      "symbol": "VOO",
+      "name": "Vanguard S&P 500 ETF",
+      "current_price": 621.34,
+      "change_pct": 2.52,
+      "extra_data": {
+        "regular_market_price": 621.34,
+        "pre_market_price": 618.69,
+        "post_market_price": null,
+        "prev_close": 606.04
+      },
+      "kd_k": 84.25,
+      "kd_d": 67.01
+    },
+    {
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "current_price": 676.01,
+      "change_pct": 2.55,
+      "extra_data": {
+        "regular_market_price": 676.01,
+        "pre_market_price": 672.979,
+        "post_market_price": null,
+        "prev_close": 659.22
+      },
+      "kd_k": 84.37,
+      "kd_d": 67.1
+    },
+    {
+      "symbol": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "current_price": 606.09,
+      "change_pct": 2.97,
+      "extra_data": {
+        "regular_market_price": 606.09,
+        "pre_market_price": 603.3496,
+        "post_market_price": null,
+        "prev_close": 588.59
+      },
+      "kd_k": 80.63,
+      "kd_d": 63.76
+    },
+    {
+      "symbol": "DIA",
+      "name": "SPDR Dow Jones Industrial Average ETF",
+      "current_price": 479.16,
+      "change_pct": 2.85,
+      "extra_data": {
+        "regular_market_price": 479.16,
+        "pre_market_price": 477.21,
+        "post_market_price": null,
+        "prev_close": 465.88
+      },
+      "kd_k": 84.54,
+      "kd_d": 70.03
+    },
+    {
+      "symbol": "SMH",
+      "name": "VanEck Semiconductor ETF",
+      "current_price": 422.92,
+      "change_pct": 5.76,
+      "extra_data": {
+        "regular_market_price": 422.92,
+        "pre_market_price": 419.21,
+        "post_market_price": null,
+        "prev_close": 399.9
+      },
+      "kd_k": 82.58,
+      "kd_d": 67.65
     }
   ],
-  "oversold_stocks": [],
+  "oversold_stocks": [
+    {
+      "symbol": "TSLA",
+      "name": "Tesla Inc.",
+      "current_price": 343.25,
+      "change_pct": -0.98,
+      "extra_data": {
+        "regular_market_price": 343.25,
+        "pre_market_price": 340.86,
+        "post_market_price": null,
+        "prev_close": 346.65
+      },
+      "kd_k": 19.38,
+      "kd_d": 24.68
+    }
+  ],
   "errors": []
 }
