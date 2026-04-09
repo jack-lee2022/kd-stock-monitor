@@ -1,5 +1,21 @@
 [
   {
+    "id": "FNGS_20260409_overbought",
+    "symbol": "FNGS",
+    "name": "MicroSectors FANG+ Index ETN",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.21,
+    "kd_d": 66.55,
+    "current_price": 63.455,
+    "threshold": 80,
+    "message": "⚠️ FNGS (MicroSectors FANG+ Index ETN) is OVERBOUGHT! KD-K: 80.21, KD-D: 66.55 (>= 80)",
+    "timestamp": "2026-04-09T23:21:57.336460",
+    "date": "2026-04-09",
+    "acknowledged": false
+  },
+  {
     "id": "AVGO_20260409_overbought",
     "symbol": "AVGO",
     "name": "Broadcom Inc.",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ GOOGL (Alphabet Inc.) is OVERSOLD! KD-K: 8.94, KD-D: 19.9 (<= 20)",
     "timestamp": "2026-03-31T00:54:57.434471",
-    "date": "2026-03-31",
-    "acknowledged": false
-  },
-  {
-    "id": "NVDA_20260331_oversold",
-    "symbol": "NVDA",
-    "name": "NVIDIA Corp.",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 10.56,
-    "kd_d": 18.78,
-    "current_price": 166.77,
-    "threshold": 20,
-    "message": "✅ NVDA (NVIDIA Corp.) is OVERSOLD! KD-K: 10.56, KD-D: 18.78 (<= 20)",
-    "timestamp": "2026-03-31T00:54:57.434533",
     "date": "2026-03-31",
     "acknowledged": false
   }
