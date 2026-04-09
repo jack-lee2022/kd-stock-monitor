@@ -1,5 +1,21 @@
 [
   {
+    "id": "2330.TW_20260409_overbought",
+    "symbol": "2330.TW",
+    "name": "台積電",
+    "market": "TW",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.2,
+    "kd_d": 60.45,
+    "current_price": 1955.0,
+    "threshold": 80,
+    "message": "⚠️ 2330.TW (台積電) is OVERBOUGHT! KD-K: 80.2, KD-D: 60.45 (>= 80)",
+    "timestamp": "2026-04-09T15:21:05.309002",
+    "date": "2026-04-09",
+    "acknowledged": false
+  },
+  {
     "id": "00646.TW_20260409_overbought",
     "symbol": "00646.TW",
     "name": "元大S&P500",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ CRWD (CrowdStrike Holdings Inc.) is OVERSOLD! KD-K: 19.9, KD-D: 21.9 (<= 20)",
     "timestamp": "2026-03-31T00:54:57.434747",
-    "date": "2026-03-31",
-    "acknowledged": false
-  },
-  {
-    "id": "MU_20260331_oversold",
-    "symbol": "MU",
-    "name": "Micron Technology Inc.",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 10.28,
-    "kd_d": 23.45,
-    "current_price": 330.3605,
-    "threshold": 20,
-    "message": "✅ MU (Micron Technology Inc.) is OVERSOLD! KD-K: 10.28, KD-D: 23.45 (<= 20)",
-    "timestamp": "2026-03-31T00:54:57.434797",
     "date": "2026-03-31",
     "acknowledged": false
   }

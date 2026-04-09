@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-09T13:09:02.623684",
+  "timestamp": "2026-04-09T15:21:05.644502",
   "date": "2026-04-09",
   "macro": {
     "us10y": {
@@ -11,51 +11,65 @@
       "change": 0.0
     },
     "fear_greed": {
-      "value": 25.78,
+      "value": 21.04,
       "change": 0.0,
       "label": "VIX Index",
-      "timestamp": "2026-04-09T13:09:02.047150"
+      "timestamp": "2026-04-09T15:21:05.073970"
     },
     "btc": {
-      "value": 70845.0,
-      "change_pct": 0
+      "value": 70991.0,
+      "change_pct": -0.19
     }
   },
   "stocks_processed": 68,
   "stocks_successful": 68,
   "stocks_failed": 0,
-  "new_alerts": 2,
-  "overbought_count": 2,
+  "new_alerts": 1,
+  "overbought_count": 3,
   "oversold_count": 0,
-  "normal_count": 66,
+  "normal_count": 65,
   "overbought_stocks": [
     {
       "symbol": "00646.TW",
       "name": "元大S&P500",
-      "current_price": 67.7,
-      "change_pct": -0.22,
+      "current_price": 67.65,
+      "change_pct": -0.29,
       "extra_data": {
-        "regular_market_price": 67.7,
+        "regular_market_price": 67.65,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 67.85
       },
-      "kd_k": 82.32,
-      "kd_d": 64.19
+      "kd_k": 81.92,
+      "kd_d": 64.06
+    },
+    {
+      "symbol": "2330.TW",
+      "name": "台積電",
+      "current_price": 1955.0,
+      "change_pct": 0.26,
+      "extra_data": {
+        "regular_market_price": 1955.0,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 1950.0
+      },
+      "kd_k": 80.2,
+      "kd_d": 60.45
     },
     {
       "symbol": "00911.TW",
       "name": "兆豐洲際半導體",
-      "current_price": 38.77,
-      "change_pct": 1.04,
+      "current_price": 38.79,
+      "change_pct": 1.09,
       "extra_data": {
-        "regular_market_price": 38.77,
+        "regular_market_price": 38.79,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 38.37
       },
-      "kd_k": 80.08,
-      "kd_d": 64.48
+      "kd_k": 80.22,
+      "kd_d": 64.52
     }
   ],
   "oversold_stocks": [],
