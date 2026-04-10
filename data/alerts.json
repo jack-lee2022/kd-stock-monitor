@@ -1,5 +1,21 @@
 [
   {
+    "id": "2330.TW_20260411_overbought",
+    "symbol": "2330.TW",
+    "name": "台積電",
+    "market": "TW",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 86.8,
+    "kd_d": 69.23,
+    "current_price": 2000.0,
+    "threshold": 80,
+    "message": "⚠️ 2330.TW (台積電) is OVERBOUGHT! KD-K: 86.8, KD-D: 69.23 (>= 80)",
+    "timestamp": "2026-04-11T02:54:58.011737",
+    "date": "2026-04-11",
+    "acknowledged": false
+  },
+  {
     "id": "009800.TW_20260411_overbought",
     "symbol": "009800.TW",
     "name": "中信NASDAQ",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ SMH (VanEck Semiconductor ETF) is OVERBOUGHT! KD-K: 82.13, KD-D: 67.5 (>= 80)",
     "timestamp": "2026-04-09T01:00:42.302035",
-    "date": "2026-04-09",
-    "acknowledged": false
-  },
-  {
-    "id": "AMZU_20260409_overbought",
-    "symbol": "AMZU",
-    "name": "Direxion Daily AMZN Bull 2X Shares",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 81.12,
-    "kd_d": 67.16,
-    "current_price": 30.42,
-    "threshold": 80,
-    "message": "⚠️ AMZU (Direxion Daily AMZN Bull 2X Shares) is OVERBOUGHT! KD-K: 81.12, KD-D: 67.16 (>= 80)",
-    "timestamp": "2026-04-09T01:00:42.302090",
     "date": "2026-04-09",
     "acknowledged": false
   }
