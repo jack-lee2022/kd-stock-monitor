@@ -1,5 +1,21 @@
 [
   {
+    "id": "AAPL_20260414_overbought",
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 81.28,
+    "kd_d": 75.45,
+    "current_price": 259.2,
+    "threshold": 80,
+    "message": "⚠️ AAPL (Apple Inc.) is OVERBOUGHT! KD-K: 81.28, KD-D: 75.45 (>= 80)",
+    "timestamp": "2026-04-14T04:54:30.510547",
+    "date": "2026-04-14",
+    "acknowledged": false
+  },
+  {
     "id": "2330.TW_20260414_overbought",
     "symbol": "2330.TW",
     "name": "台積電",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00646.TW (元大S&P500) is OVERBOUGHT! KD-K: 87.58, KD-D: 71.9 (>= 80)",
     "timestamp": "2026-04-12T00:36:32.341498",
-    "date": "2026-04-12",
-    "acknowledged": false
-  },
-  {
-    "id": "2330.TW_20260412_overbought",
-    "symbol": "2330.TW",
-    "name": "台積電",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 86.8,
-    "kd_d": 69.23,
-    "current_price": 2000.0,
-    "threshold": 80,
-    "message": "⚠️ 2330.TW (台積電) is OVERBOUGHT! KD-K: 86.8, KD-D: 69.23 (>= 80)",
-    "timestamp": "2026-04-12T00:36:32.341570",
     "date": "2026-04-12",
     "acknowledged": false
   }
