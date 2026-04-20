@@ -14,7 +14,7 @@
       },
       "kd_k": 92.72,
       "kd_d": 90.3,
-      "last_updated": "2026-04-20T22:49:29.422008",
+      "last_updated": "2026-04-21T00:08:05.951638",
       "data_points": 55,
       "history": [
         {
@@ -83,7 +83,7 @@
           "high": 85.0999984741211,
           "low": 84.44999694824219,
           "close": 84.55000305175781,
-          "volume": 100551500,
+          "volume": 95994589,
           "kd_k": 92.72,
           "kd_d": 90.3
         }
@@ -97,12 +97,12 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -117,9 +117,9 @@
         "post_market_price": null,
         "prev_close": 40.8
       },
-      "kd_k": 93.57,
-      "kd_d": 89.18,
-      "last_updated": "2026-04-20T22:49:29.811678",
+      "kd_k": 78.18,
+      "kd_d": 84.05,
+      "last_updated": "2026-04-21T00:08:06.239132",
       "data_points": 55,
       "history": [
         {
@@ -184,13 +184,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 41.310001373291016,
-          "high": 41.58000183105469,
-          "low": 41.310001373291016,
-          "close": 41.470001220703125,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 72627550,
-          "kd_k": 93.57,
-          "kd_d": 89.18
+          "kd_k": 78.18,
+          "kd_d": 84.05
         }
       ],
       "patterns": {
@@ -198,7 +198,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -213,9 +213,9 @@
         "post_market_price": null,
         "prev_close": 69.7
       },
-      "kd_k": 95.16,
-      "kd_d": 92.34,
-      "last_updated": "2026-04-20T22:49:30.060962",
+      "kd_k": 80.38,
+      "kd_d": 87.42,
+      "last_updated": "2026-04-21T00:08:06.491757",
       "data_points": 55,
       "history": [
         {
@@ -280,30 +280,21 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 70.0,
-          "high": 70.19999694824219,
-          "low": 70.0,
-          "close": 70.05000305175781,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 2653080,
-          "kd_k": 95.16,
-          "kd_d": 92.34
+          "kd_k": 80.38,
+          "kd_d": 87.42
         }
       ],
       "patterns": {
-        "patterns_detected": 1,
-        "patterns": [
-          {
-            "pattern_id": "縮量上漲",
-            "pattern_name": "趨勢健康",
-            "signal": "HOLD",
-            "description": "縮量上漲2.3%",
-            "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
-          }
-        ],
+        "patterns_detected": 0,
+        "patterns": [],
         "dominant_signal": "HOLD",
-        "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "signal_strength": 0,
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -318,9 +309,9 @@
         "post_market_price": null,
         "prev_close": 2085.0
       },
-      "kd_k": 77.08,
-      "kd_d": 84.29,
-      "last_updated": "2026-04-20T22:49:30.370056",
+      "kd_k": 74.7,
+      "kd_d": 83.5,
+      "last_updated": "2026-04-21T00:08:06.836124",
       "data_points": 55,
       "history": [
         {
@@ -385,30 +376,21 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 2030.0,
-          "high": 2055.0,
-          "low": 2025.0,
-          "close": 2025.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 27165172,
-          "kd_k": 77.08,
-          "kd_d": 84.29
+          "kd_k": 74.7,
+          "kd_d": 83.5
         }
       ],
       "patterns": {
-        "patterns_detected": 1,
-        "patterns": [
-          {
-            "pattern_id": "快漲慢跌",
-            "pattern_name": "主力出貨",
-            "signal": "SELL",
-            "description": "快漲7.0%後緩跌1.5%",
-            "confidence": 70.0,
-            "detected_at": "2026-04-20 22:49:57"
-          }
-        ],
-        "dominant_signal": "SELL",
-        "signal_strength": 70.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "patterns_detected": 0,
+        "patterns": [],
+        "dominant_signal": "HOLD",
+        "signal_strength": 0,
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -423,9 +405,9 @@
         "post_market_price": null,
         "prev_close": 207.0
       },
-      "kd_k": 76.56,
-      "kd_d": 74.79,
-      "last_updated": "2026-04-20T22:49:30.708859",
+      "kd_k": 68.78,
+      "kd_d": 72.19,
+      "last_updated": "2026-04-21T00:08:07.221730",
       "data_points": 55,
       "history": [
         {
@@ -490,13 +472,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 206.0,
-          "high": 209.5,
-          "low": 204.5,
-          "close": 207.5,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 39106365,
-          "kd_k": 76.56,
-          "kd_d": 74.79
+          "kd_k": 68.78,
+          "kd_d": 72.19
         }
       ],
       "patterns": {
@@ -504,7 +486,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -519,9 +501,9 @@
         "post_market_price": null,
         "prev_close": 1895.0
       },
-      "kd_k": 86.4,
-      "kd_d": 78.71,
-      "last_updated": "2026-04-20T22:49:31.044279",
+      "kd_k": 74.44,
+      "kd_d": 74.72,
+      "last_updated": "2026-04-21T00:08:07.686449",
       "data_points": 55,
       "history": [
         {
@@ -586,13 +568,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 1960.0,
-          "high": 1965.0,
-          "low": 1895.0,
-          "close": 1900.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 11656022,
-          "kd_k": 86.4,
-          "kd_d": 78.71
+          "kd_k": 74.44,
+          "kd_d": 74.72
         }
       ],
       "patterns": {
@@ -600,7 +582,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -615,9 +597,9 @@
         "post_market_price": null,
         "prev_close": 106.55
       },
-      "kd_k": 94.97,
-      "kd_d": 91.87,
-      "last_updated": "2026-04-20T22:49:31.397511",
+      "kd_k": 80.32,
+      "kd_d": 86.98,
+      "last_updated": "2026-04-21T00:08:07.996424",
       "data_points": 55,
       "history": [
         {
@@ -682,13 +664,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 107.4000015258789,
-          "high": 107.80000305175781,
-          "low": 107.25,
-          "close": 107.4000015258789,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 4536645,
-          "kd_k": 94.97,
-          "kd_d": 91.87
+          "kd_k": 80.32,
+          "kd_d": 86.98
         }
       ],
       "patterns": {
@@ -696,7 +678,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -713,7 +695,7 @@
       },
       "kd_k": 93.79,
       "kd_d": 90.53,
-      "last_updated": "2026-04-20T22:49:31.657891",
+      "last_updated": "2026-04-21T00:08:08.323301",
       "data_points": 55,
       "history": [
         {
@@ -796,12 +778,12 @@
             "signal": "HOLD",
             "description": "縮量上漲3.6%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -818,7 +800,7 @@
       },
       "kd_k": 95.25,
       "kd_d": 91.48,
-      "last_updated": "2026-04-20T22:49:32.034768",
+      "last_updated": "2026-04-21T00:08:08.589600",
       "data_points": 55,
       "history": [
         {
@@ -887,7 +869,7 @@
           "high": 57.04999923706055,
           "low": 56.79999923706055,
           "close": 56.79999923706055,
-          "volume": 839338,
+          "volume": 790435,
           "kd_k": 95.25,
           "kd_d": 91.48
         }
@@ -897,7 +879,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -914,7 +896,7 @@
       },
       "kd_k": 91.07,
       "kd_d": 89.29,
-      "last_updated": "2026-04-20T22:49:33.058540",
+      "last_updated": "2026-04-21T00:08:09.488296",
       "data_points": 55,
       "history": [
         {
@@ -983,7 +965,7 @@
           "high": 118.30000305175781,
           "low": 117.6500015258789,
           "close": 118.0999984741211,
-          "volume": 3254918,
+          "volume": 2998012,
           "kd_k": 91.07,
           "kd_d": 89.29
         }
@@ -993,7 +975,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1008,9 +990,9 @@
         "post_market_price": null,
         "prev_close": 37.26
       },
-      "kd_k": 96.23,
-      "kd_d": 92.45,
-      "last_updated": "2026-04-20T22:49:33.368842",
+      "kd_k": 80.7,
+      "kd_d": 87.28,
+      "last_updated": "2026-04-21T00:08:09.727828",
       "data_points": 55,
       "history": [
         {
@@ -1075,30 +1057,21 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 37.939998626708984,
-          "high": 38.40999984741211,
-          "low": 37.939998626708984,
-          "close": 38.2599983215332,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 1237450,
-          "kd_k": 96.23,
-          "kd_d": 92.45
+          "kd_k": 80.7,
+          "kd_d": 87.28
         }
       ],
       "patterns": {
-        "patterns_detected": 1,
-        "patterns": [
-          {
-            "pattern_id": "縮量上漲",
-            "pattern_name": "趨勢健康",
-            "signal": "HOLD",
-            "description": "縮量上漲6.3%",
-            "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
-          }
-        ],
+        "patterns_detected": 0,
+        "patterns": [],
         "dominant_signal": "HOLD",
-        "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "signal_strength": 0,
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1115,7 +1088,7 @@
       },
       "kd_k": 95.65,
       "kd_d": 92.22,
-      "last_updated": "2026-04-20T22:49:33.662648",
+      "last_updated": "2026-04-21T00:08:09.997294",
       "data_points": 55,
       "history": [
         {
@@ -1184,7 +1157,7 @@
           "high": 44.099998474121094,
           "low": 43.900001525878906,
           "close": 43.93000030517578,
-          "volume": 721327,
+          "volume": 686116,
           "kd_k": 95.65,
           "kd_d": 92.22
         }
@@ -1194,7 +1167,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1209,9 +1182,9 @@
         "post_market_price": null,
         "prev_close": 196.8
       },
-      "kd_k": 92.35,
-      "kd_d": 89.86,
-      "last_updated": "2026-04-20T22:49:33.960623",
+      "kd_k": 78.26,
+      "kd_d": 85.16,
+      "last_updated": "2026-04-21T00:08:10.283634",
       "data_points": 55,
       "history": [
         {
@@ -1276,13 +1249,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 195.5500030517578,
-          "high": 197.3000030517578,
-          "low": 195.5500030517578,
-          "close": 196.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 3711812,
-          "kd_k": 92.35,
-          "kd_d": 89.86
+          "kd_k": 78.26,
+          "kd_d": 85.16
         }
       ],
       "patterns": {
@@ -1290,7 +1263,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1305,9 +1278,9 @@
         "post_market_price": null,
         "prev_close": 74.4
       },
-      "kd_k": 92.41,
-      "kd_d": 90.3,
-      "last_updated": "2026-04-20T22:49:34.242395",
+      "kd_k": 78.63,
+      "kd_d": 85.71,
+      "last_updated": "2026-04-21T00:08:10.532498",
       "data_points": 55,
       "history": [
         {
@@ -1372,13 +1345,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 74.1500015258789,
-          "high": 74.9000015258789,
-          "low": 74.1500015258789,
-          "close": 74.3499984741211,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 962852,
-          "kd_k": 92.41,
-          "kd_d": 90.3
+          "kd_k": 78.63,
+          "kd_d": 85.71
         }
       ],
       "patterns": {
@@ -1386,7 +1359,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1403,7 +1376,7 @@
       },
       "kd_k": 94.52,
       "kd_d": 90.92,
-      "last_updated": "2026-04-20T22:49:34.557439",
+      "last_updated": "2026-04-21T00:08:10.807151",
       "data_points": 55,
       "history": [
         {
@@ -1472,7 +1445,7 @@
           "high": 31.8799991607666,
           "low": 31.510000228881836,
           "close": 31.729999542236328,
-          "volume": 21161233,
+          "volume": 20935576,
           "kd_k": 94.52,
           "kd_d": 90.92
         }
@@ -1482,7 +1455,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1499,7 +1472,7 @@
       },
       "kd_k": 94.44,
       "kd_d": 91.28,
-      "last_updated": "2026-04-20T22:49:34.844133",
+      "last_updated": "2026-04-21T00:08:11.114764",
       "data_points": 55,
       "history": [
         {
@@ -1568,7 +1541,7 @@
           "high": 33.029998779296875,
           "low": 32.630001068115234,
           "close": 32.81999969482422,
-          "volume": 7697062,
+          "volume": 7601401,
           "kd_k": 94.44,
           "kd_d": 91.28
         }
@@ -1578,7 +1551,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1593,9 +1566,9 @@
         "post_market_price": null,
         "prev_close": 22.13
       },
-      "kd_k": 90.82,
-      "kd_d": 90.82,
-      "last_updated": "2026-04-20T22:49:35.195485",
+      "kd_k": 80.6,
+      "kd_d": 87.41,
+      "last_updated": "2026-04-21T00:08:11.360831",
       "data_points": 55,
       "history": [
         {
@@ -1660,13 +1633,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 21.889999389648438,
-          "high": 21.950000762939453,
-          "low": 21.690000534057617,
-          "close": 21.850000381469727,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 4452761,
-          "kd_k": 90.82,
-          "kd_d": 90.82
+          "kd_k": 80.6,
+          "kd_d": 87.41
         }
       ],
       "patterns": {
@@ -1674,7 +1647,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1689,9 +1662,9 @@
         "post_market_price": null,
         "prev_close": 61.35
       },
-      "kd_k": 87.39,
-      "kd_d": 83.81,
-      "last_updated": "2026-04-20T22:49:35.549367",
+      "kd_k": 72.99,
+      "kd_d": 79.01,
+      "last_updated": "2026-04-21T00:08:11.685301",
       "data_points": 55,
       "history": [
         {
@@ -1756,13 +1729,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 62.400001525878906,
-          "high": 63.0,
-          "low": 62.20000076293945,
-          "close": 62.75,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 1400448,
-          "kd_k": 87.39,
-          "kd_d": 83.81
+          "kd_k": 72.99,
+          "kd_d": 79.01
         }
       ],
       "patterns": {
@@ -1770,7 +1743,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1785,9 +1758,9 @@
         "post_market_price": null,
         "prev_close": 53.6
       },
-      "kd_k": 92.96,
-      "kd_d": 89.48,
-      "last_updated": "2026-04-20T22:49:36.102123",
+      "kd_k": 79.13,
+      "kd_d": 84.87,
+      "last_updated": "2026-04-21T00:08:11.981654",
       "data_points": 55,
       "history": [
         {
@@ -1852,13 +1825,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 54.150001525878906,
-          "high": 54.400001525878906,
-          "low": 54.099998474121094,
-          "close": 54.20000076293945,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 18578758,
-          "kd_k": 92.96,
-          "kd_d": 89.48
+          "kd_k": 79.13,
+          "kd_d": 84.87
         }
       ],
       "patterns": {
@@ -1866,7 +1839,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1881,9 +1854,9 @@
         "post_market_price": null,
         "prev_close": 23.8
       },
-      "kd_k": 94.8,
-      "kd_d": 90.05,
-      "last_updated": "2026-04-20T22:49:36.571814",
+      "kd_k": 79.34,
+      "kd_d": 84.9,
+      "last_updated": "2026-04-21T00:08:12.264244",
       "data_points": 55,
       "history": [
         {
@@ -1948,13 +1921,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 24.420000076293945,
-          "high": 24.579999923706055,
-          "low": 24.3799991607666,
-          "close": 24.510000228881836,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 133064978,
-          "kd_k": 94.8,
-          "kd_d": 90.05
+          "kd_k": 79.34,
+          "kd_d": 84.9
         }
       ],
       "patterns": {
@@ -1962,7 +1935,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -1977,9 +1950,9 @@
         "post_market_price": null,
         "prev_close": 24.4
       },
-      "kd_k": 92.94,
-      "kd_d": 89.57,
-      "last_updated": "2026-04-20T22:49:36.871250",
+      "kd_k": 79.47,
+      "kd_d": 85.07,
+      "last_updated": "2026-04-21T00:08:12.563347",
       "data_points": 55,
       "history": [
         {
@@ -2044,13 +2017,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 24.729999542236328,
-          "high": 24.979999542236328,
-          "low": 24.709999084472656,
-          "close": 24.84000015258789,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 14592137,
-          "kd_k": 92.94,
-          "kd_d": 89.57
+          "kd_k": 79.47,
+          "kd_d": 85.07
         }
       ],
       "patterns": {
@@ -2058,7 +2031,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2075,7 +2048,7 @@
       },
       "kd_k": 93.39,
       "kd_d": 88.04,
-      "last_updated": "2026-04-20T22:49:37.098086",
+      "last_updated": "2026-04-21T00:08:12.807630",
       "data_points": 55,
       "history": [
         {
@@ -2144,7 +2117,7 @@
           "high": 23.600000381469727,
           "low": 23.479999542236328,
           "close": 23.540000915527344,
-          "volume": 41892581,
+          "volume": 41671531,
           "kd_k": 93.39,
           "kd_d": 88.04
         }
@@ -2154,7 +2127,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2171,7 +2144,7 @@
       },
       "kd_k": 91.68,
       "kd_d": 86.32,
-      "last_updated": "2026-04-20T22:49:37.420143",
+      "last_updated": "2026-04-21T00:08:13.141524",
       "data_points": 55,
       "history": [
         {
@@ -2240,7 +2213,7 @@
           "high": 23.75,
           "low": 23.6200008392334,
           "close": 23.670000076293945,
-          "volume": 160669545,
+          "volume": 159307667,
           "kd_k": 91.68,
           "kd_d": 86.32
         }
@@ -2250,7 +2223,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2265,9 +2238,9 @@
         "post_market_price": null,
         "prev_close": 21.05
       },
-      "kd_k": 94.17,
-      "kd_d": 88.34,
-      "last_updated": "2026-04-20T22:49:38.009338",
+      "kd_k": 79.51,
+      "kd_d": 83.46,
+      "last_updated": "2026-04-21T00:08:13.414504",
       "data_points": 55,
       "history": [
         {
@@ -2332,13 +2305,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 21.700000762939453,
-          "high": 21.93000030517578,
-          "low": 21.700000762939453,
-          "close": 21.780000686645508,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 83320301,
-          "kd_k": 94.17,
-          "kd_d": 88.34
+          "kd_k": 79.51,
+          "kd_d": 83.46
         }
       ],
       "patterns": {
@@ -2346,7 +2319,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2363,7 +2336,7 @@
       },
       "kd_k": 92.17,
       "kd_d": 86.44,
-      "last_updated": "2026-04-20T22:49:38.351498",
+      "last_updated": "2026-04-21T00:08:13.747475",
       "data_points": 55,
       "history": [
         {
@@ -2432,7 +2405,7 @@
           "high": 23.1299991607666,
           "low": 22.889999389648438,
           "close": 23.0,
-          "volume": 5644505,
+          "volume": 5608946,
           "kd_k": 92.17,
           "kd_d": 86.44
         }
@@ -2442,7 +2415,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2459,7 +2432,7 @@
       },
       "kd_k": 89.48,
       "kd_d": 83.98,
-      "last_updated": "2026-04-20T22:49:38.758180",
+      "last_updated": "2026-04-21T00:08:14.023857",
       "data_points": 55,
       "history": [
         {
@@ -2528,7 +2501,7 @@
           "high": 18.649999618530273,
           "low": 18.559999465942383,
           "close": 18.579999923706055,
-          "volume": 13584242,
+          "volume": 13531666,
           "kd_k": 89.48,
           "kd_d": 83.98
         }
@@ -2538,7 +2511,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2555,7 +2528,7 @@
       },
       "kd_k": 93.56,
       "kd_d": 88.46,
-      "last_updated": "2026-04-20T22:49:39.020538",
+      "last_updated": "2026-04-21T00:08:14.266361",
       "data_points": 55,
       "history": [
         {
@@ -2624,7 +2597,7 @@
           "high": 16.770000457763672,
           "low": 16.639999389648438,
           "close": 16.700000762939453,
-          "volume": 13472530,
+          "volume": 13423438,
           "kd_k": 93.56,
           "kd_d": 88.46
         }
@@ -2634,7 +2607,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2651,7 +2624,7 @@
       },
       "kd_k": 94.7,
       "kd_d": 90.79,
-      "last_updated": "2026-04-20T22:49:39.465093",
+      "last_updated": "2026-04-21T00:08:14.544827",
       "data_points": 55,
       "history": [
         {
@@ -2720,7 +2693,7 @@
           "high": 10.399999618530273,
           "low": 10.319999694824219,
           "close": 10.34000015258789,
-          "volume": 97125577,
+          "volume": 97125570,
           "kd_k": 94.7,
           "kd_d": 90.79
         }
@@ -2730,7 +2703,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2747,7 +2720,7 @@
       },
       "kd_k": 92.1,
       "kd_d": 89.59,
-      "last_updated": "2026-04-20T22:49:40.632051",
+      "last_updated": "2026-04-21T00:08:14.818405",
       "data_points": 55,
       "history": [
         {
@@ -2816,7 +2789,7 @@
           "high": 11.609999656677246,
           "low": 11.4399995803833,
           "close": 11.470000267028809,
-          "volume": 10448761,
+          "volume": 10448760,
           "kd_k": 92.1,
           "kd_d": 89.59
         }
@@ -2826,7 +2799,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2841,9 +2814,9 @@
         "post_market_price": null,
         "prev_close": 50.8
       },
-      "kd_k": 63.62,
-      "kd_d": 71.3,
-      "last_updated": "2026-04-20T22:49:41.414170",
+      "kd_k": 66.73,
+      "kd_d": 72.33,
+      "last_updated": "2026-04-21T00:08:15.103634",
       "data_points": 55,
       "history": [
         {
@@ -2908,30 +2881,21 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 50.20000076293945,
-          "high": 50.599998474121094,
-          "low": 50.20000076293945,
-          "close": 50.25,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 3515417,
-          "kd_k": 63.62,
-          "kd_d": 71.3
+          "kd_k": 66.73,
+          "kd_d": 72.33
         }
       ],
       "patterns": {
-        "patterns_detected": 1,
-        "patterns": [
-          {
-            "pattern_id": "縮量不跌",
-            "pattern_name": "頭部形成",
-            "signal": "AVOID",
-            "description": "縮量至0.5倍",
-            "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
-          }
-        ],
-        "dominant_signal": "AVOID",
-        "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "patterns_detected": 0,
+        "patterns": [],
+        "dominant_signal": "HOLD",
+        "signal_strength": 0,
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -2946,9 +2910,9 @@
         "post_market_price": null,
         "prev_close": 64.55
       },
-      "kd_k": 95.9,
-      "kd_d": 92.85,
-      "last_updated": "2026-04-20T22:49:42.522276",
+      "kd_k": 80.64,
+      "kd_d": 87.77,
+      "last_updated": "2026-04-21T00:08:16.057634",
       "data_points": 55,
       "history": [
         {
@@ -3013,30 +2977,21 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 66.0,
-          "high": 66.55000305175781,
-          "low": 66.0,
-          "close": 66.19999694824219,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 6943018,
-          "kd_k": 95.9,
-          "kd_d": 92.85
+          "kd_k": 80.64,
+          "kd_d": 87.77
         }
       ],
       "patterns": {
-        "patterns_detected": 1,
-        "patterns": [
-          {
-            "pattern_id": "縮量上漲",
-            "pattern_name": "趨勢健康",
-            "signal": "HOLD",
-            "description": "縮量上漲4.1%",
-            "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
-          }
-        ],
+        "patterns_detected": 0,
+        "patterns": [],
         "dominant_signal": "HOLD",
-        "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "signal_strength": 0,
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -3053,7 +3008,7 @@
       },
       "kd_k": 96.43,
       "kd_d": 93.0,
-      "last_updated": "2026-04-20T22:49:42.795339",
+      "last_updated": "2026-04-21T00:08:16.444367",
       "data_points": 55,
       "history": [
         {
@@ -3122,7 +3077,7 @@
           "high": 44.09000015258789,
           "low": 43.529998779296875,
           "close": 44.029998779296875,
-          "volume": 247119,
+          "volume": 190306,
           "kd_k": 96.43,
           "kd_d": 93.0
         }
@@ -3132,7 +3087,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -3147,9 +3102,9 @@
         "post_market_price": null,
         "prev_close": 68.05
       },
-      "kd_k": 93.01,
-      "kd_d": 90.53,
-      "last_updated": "2026-04-20T22:49:43.112356",
+      "kd_k": 79.48,
+      "kd_d": 86.02,
+      "last_updated": "2026-04-21T00:08:16.754033",
       "data_points": 55,
       "history": [
         {
@@ -3214,30 +3169,21 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 71.1500015258789,
-          "high": 71.30000305175781,
-          "low": 69.5999984741211,
-          "close": 71.25,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 3607913,
-          "kd_k": 93.01,
-          "kd_d": 90.53
+          "kd_k": 79.48,
+          "kd_d": 86.02
         }
       ],
       "patterns": {
-        "patterns_detected": 1,
-        "patterns": [
-          {
-            "pattern_id": "縮量上漲",
-            "pattern_name": "趨勢健康",
-            "signal": "HOLD",
-            "description": "縮量上漲4.4%",
-            "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
-          }
-        ],
+        "patterns_detected": 0,
+        "patterns": [],
         "dominant_signal": "HOLD",
-        "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "signal_strength": 0,
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
@@ -3252,9 +3198,9 @@
         "post_market_price": null,
         "prev_close": 43.99
       },
-      "kd_k": 82.81,
-      "kd_d": 86.42,
-      "last_updated": "2026-04-20T22:49:43.492362",
+      "kd_k": 80.58,
+      "kd_d": 85.68,
+      "last_updated": "2026-04-21T00:08:17.052958",
       "data_points": 55,
       "history": [
         {
@@ -3319,13 +3265,13 @@
         },
         {
           "date": "2026-04-20T00:00:00",
-          "open": 41.68000030517578,
-          "high": 42.060001373291016,
-          "low": 41.540000915527344,
-          "close": 42.0099983215332,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 6522426,
-          "kd_k": 82.81,
-          "kd_d": 86.42
+          "kd_k": 80.58,
+          "kd_d": 85.68
         }
       ],
       "patterns": {
@@ -3333,7 +3279,7 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     }
   ],
@@ -3342,17 +3288,17 @@
       "symbol": "AAPL",
       "name": "Apple Inc.",
       "market": "US",
-      "current_price": 273.1,
-      "change_pct": 1.06,
+      "current_price": 272.47,
+      "change_pct": 0.83,
       "extra_data": {
-        "regular_market_price": 273.1,
+        "regular_market_price": 272.47,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 270.23
       },
-      "kd_k": 89.65,
-      "kd_d": 85.87,
-      "last_updated": "2026-04-20T22:49:43.941585",
+      "kd_k": 88.52,
+      "kd_d": 85.5,
+      "last_updated": "2026-04-21T00:08:17.468559",
       "data_points": 63,
       "history": [
         {
@@ -3420,10 +3366,10 @@
           "open": 270.3299865722656,
           "high": 274.2749938964844,
           "low": 270.2900085449219,
-          "close": 273.1000061035156,
-          "volume": 11105187,
-          "kd_k": 89.65,
-          "kd_d": 85.87
+          "close": 272.4800109863281,
+          "volume": 15678761,
+          "kd_k": 88.52,
+          "kd_d": 85.5
         }
       ],
       "patterns": {
@@ -3431,24 +3377,24 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "TSLA",
       "name": "Tesla Inc.",
       "market": "US",
-      "current_price": 392.755,
-      "change_pct": -1.96,
+      "current_price": 391.81,
+      "change_pct": -2.2,
       "extra_data": {
-        "regular_market_price": 392.755,
+        "regular_market_price": 391.81,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 400.62
       },
-      "kd_k": 75.18,
-      "kd_d": 62.5,
-      "last_updated": "2026-04-20T22:49:44.309079",
+      "kd_k": 74.72,
+      "kd_d": 62.35,
+      "last_updated": "2026-04-21T00:08:17.749549",
       "data_points": 63,
       "history": [
         {
@@ -3515,11 +3461,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 402.5799865722656,
           "high": 406.79998779296875,
-          "low": 391.79998779296875,
-          "close": 392.79998779296875,
-          "volume": 25459297,
-          "kd_k": 75.18,
-          "kd_d": 62.5
+          "low": 388.3299865722656,
+          "close": 391.8077087402344,
+          "volume": 38457079,
+          "kd_k": 74.72,
+          "kd_d": 62.35
         }
       ],
       "patterns": {
@@ -3527,24 +3473,24 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "MSFT",
       "name": "Microsoft Corp.",
       "market": "US",
-      "current_price": 419.055,
-      "change_pct": -0.88,
+      "current_price": 418.06,
+      "change_pct": -1.12,
       "extra_data": {
-        "regular_market_price": 419.055,
+        "regular_market_price": 418.06,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 422.79
       },
-      "kd_k": 85.4,
-      "kd_d": 81.98,
-      "last_updated": "2026-04-20T22:49:44.783060",
+      "kd_k": 84.88,
+      "kd_d": 81.81,
+      "last_updated": "2026-04-21T00:08:18.079994",
       "data_points": 63,
       "history": [
         {
@@ -3611,11 +3557,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 421.1449890136719,
           "high": 423.3299865722656,
-          "low": 417.1099853515625,
-          "close": 419.06500244140625,
-          "volume": 7639858,
-          "kd_k": 85.4,
-          "kd_d": 81.98
+          "low": 416.29998779296875,
+          "close": 418.07000732421875,
+          "volume": 12084182,
+          "kd_k": 84.88,
+          "kd_d": 81.81
         }
       ],
       "patterns": {
@@ -3623,24 +3569,24 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
       "market": "US",
-      "current_price": 339.395,
-      "change_pct": -0.67,
+      "current_price": 338.78,
+      "change_pct": -0.85,
       "extra_data": {
-        "regular_market_price": 339.395,
+        "regular_market_price": 338.78,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 341.68
       },
-      "kd_k": 93.92,
-      "kd_d": 92.73,
-      "last_updated": "2026-04-20T22:49:45.145893",
+      "kd_k": 93.27,
+      "kd_d": 92.51,
+      "last_updated": "2026-04-21T00:08:18.352737",
       "data_points": 63,
       "history": [
         {
@@ -3707,11 +3653,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 340.8900146484375,
           "high": 341.3500061035156,
-          "low": 337.42999267578125,
-          "close": 339.3949890136719,
-          "volume": 5287118,
-          "kd_k": 93.92,
-          "kd_d": 92.73
+          "low": 336.6300048828125,
+          "close": 338.7799987792969,
+          "volume": 7978612,
+          "kd_k": 93.27,
+          "kd_d": 92.51
         }
       ],
       "patterns": {
@@ -3723,7 +3669,7 @@
             "signal": "AVOID",
             "description": "縮量至0.7倍",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           },
           {
             "pattern_id": "縮量不漲",
@@ -3731,29 +3677,29 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corp.",
       "market": "US",
-      "current_price": 199.28,
-      "change_pct": -1.19,
+      "current_price": 199.0907,
+      "change_pct": -1.28,
       "extra_data": {
-        "regular_market_price": 199.28,
+        "regular_market_price": 199.0907,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 201.68
       },
-      "kd_k": 93.08,
-      "kd_d": 91.63,
-      "last_updated": "2026-04-20T22:49:45.506085",
+      "kd_k": 92.84,
+      "kd_d": 91.55,
+      "last_updated": "2026-04-21T00:08:18.635278",
       "data_points": 63,
       "history": [
         {
@@ -3820,11 +3766,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 199.97999572753906,
           "high": 200.52000427246094,
-          "low": 198.4199981689453,
-          "close": 199.25,
-          "volume": 37000863,
-          "kd_k": 93.08,
-          "kd_d": 91.63
+          "low": 197.83970642089844,
+          "close": 199.09950256347656,
+          "volume": 59047553,
+          "kd_k": 92.84,
+          "kd_d": 91.55
         }
       ],
       "patterns": {
@@ -3836,29 +3782,29 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com Inc.",
       "market": "US",
-      "current_price": 246.8324,
-      "change_pct": -1.49,
+      "current_price": 246.947,
+      "change_pct": -1.44,
       "extra_data": {
-        "regular_market_price": 246.8324,
+        "regular_market_price": 246.947,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 250.56
       },
-      "kd_k": 85.78,
-      "kd_d": 89.0,
-      "last_updated": "2026-04-20T22:49:45.786861",
+      "kd_k": 85.88,
+      "kd_d": 89.04,
+      "last_updated": "2026-04-21T00:08:18.927198",
       "data_points": 63,
       "history": [
         {
@@ -3925,11 +3871,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 249.3800048828125,
           "high": 250.17999267578125,
-          "low": 246.4499969482422,
-          "close": 246.8300018310547,
-          "volume": 11050960,
-          "kd_k": 85.78,
-          "kd_d": 89.0
+          "low": 245.36500549316406,
+          "close": 246.94700622558594,
+          "volume": 17242642,
+          "kd_k": 85.88,
+          "kd_d": 89.04
         }
       ],
       "patterns": {
@@ -3939,31 +3885,31 @@
             "pattern_id": "快漲慢跌",
             "pattern_name": "主力出貨",
             "signal": "SELL",
-            "description": "快漲12.2%後緩跌0.9%",
+            "description": "快漲12.2%後緩跌0.8%",
             "confidence": 70.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 70.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "META",
       "name": "Meta Platforms Inc.",
       "market": "US",
-      "current_price": 673.53,
-      "change_pct": -2.18,
+      "current_price": 673.46,
+      "change_pct": -2.19,
       "extra_data": {
-        "regular_market_price": 673.53,
+        "regular_market_price": 673.46,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 688.55
       },
-      "kd_k": 90.54,
-      "kd_d": 89.52,
-      "last_updated": "2026-04-20T22:49:46.166244",
+      "kd_k": 90.51,
+      "kd_d": 89.51,
+      "last_updated": "2026-04-21T00:08:19.234129",
       "data_points": 63,
       "history": [
         {
@@ -4030,11 +3976,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 681.4500122070312,
           "high": 683.3300170898438,
-          "low": 672.0499877929688,
-          "close": 673.530029296875,
-          "volume": 3988827,
-          "kd_k": 90.54,
-          "kd_d": 89.52
+          "low": 668.0,
+          "close": 673.4400024414062,
+          "volume": 6681545,
+          "kd_k": 90.51,
+          "kd_d": 89.51
         }
       ],
       "patterns": {
@@ -4046,7 +3992,7 @@
             "signal": "AVOID",
             "description": "縮量至0.7倍",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           },
           {
             "pattern_id": "縮量不漲",
@@ -4054,29 +4000,29 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices Inc.",
       "market": "US",
-      "current_price": 276.585,
-      "change_pct": -0.65,
+      "current_price": 275.175,
+      "change_pct": -1.15,
       "extra_data": {
-        "regular_market_price": 276.585,
+        "regular_market_price": 275.175,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 278.39
       },
-      "kd_k": 91.47,
-      "kd_d": 92.68,
-      "last_updated": "2026-04-20T22:49:46.507865",
+      "kd_k": 90.68,
+      "kd_d": 92.42,
+      "last_updated": "2026-04-21T00:08:19.493313",
       "data_points": 63,
       "history": [
         {
@@ -4143,11 +4089,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 280.8800048828125,
           "high": 287.6099853515625,
-          "low": 274.7200012207031,
-          "close": 276.58819580078125,
-          "volume": 14192160,
-          "kd_k": 91.47,
-          "kd_d": 92.68
+          "low": 272.1300048828125,
+          "close": 275.1499938964844,
+          "volume": 19552158,
+          "kd_k": 90.68,
+          "kd_d": 92.42
         }
       ],
       "patterns": {
@@ -4157,31 +4103,31 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲8.4%",
+            "description": "縮量上漲7.9%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "AVGO",
       "name": "Broadcom Inc.",
       "market": "US",
-      "current_price": 399.59,
-      "change_pct": -1.71,
+      "current_price": 397.5,
+      "change_pct": -2.22,
       "extra_data": {
-        "regular_market_price": 399.59,
+        "regular_market_price": 397.5,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 406.54
       },
-      "kd_k": 94.75,
-      "kd_d": 93.75,
-      "last_updated": "2026-04-20T22:49:46.817771",
+      "kd_k": 93.62,
+      "kd_d": 93.37,
+      "last_updated": "2026-04-21T00:08:19.814039",
       "data_points": 63,
       "history": [
         {
@@ -4248,11 +4194,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 405.70001220703125,
           "high": 406.3550109863281,
-          "low": 398.20001220703125,
-          "close": 399.6600036621094,
-          "volume": 5001965,
-          "kd_k": 94.75,
-          "kd_d": 93.75
+          "low": 395.8999938964844,
+          "close": 397.4800109863281,
+          "volume": 7580964,
+          "kd_k": 93.62,
+          "kd_d": 93.37
         }
       ],
       "patterns": {
@@ -4262,31 +4208,31 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲5.0%",
+            "description": "縮量上漲4.4%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "NFLX",
       "name": "Netflix Inc.",
       "market": "US",
-      "current_price": 95.55,
-      "change_pct": -1.81,
+      "current_price": 93.835,
+      "change_pct": -3.57,
       "extra_data": {
-        "regular_market_price": 95.55,
+        "regular_market_price": 93.835,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 97.31
       },
-      "kd_k": 45.85,
-      "kd_d": 69.86,
-      "last_updated": "2026-04-20T22:49:47.184972",
+      "kd_k": 45.18,
+      "kd_d": 69.64,
+      "last_updated": "2026-04-21T00:08:20.055219",
       "data_points": 63,
       "history": [
         {
@@ -4353,11 +4299,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 97.1449966430664,
           "high": 97.5999984741211,
-          "low": 95.41999816894531,
-          "close": 95.55000305175781,
-          "volume": 16123156,
-          "kd_k": 45.85,
-          "kd_d": 69.86
+          "low": 93.6500015258789,
+          "close": 93.83999633789062,
+          "volume": 32337208,
+          "kd_k": 45.18,
+          "kd_d": 69.64
         }
       ],
       "patterns": {
@@ -4365,24 +4311,24 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "PLTR",
       "name": "Palantir Technologies Inc.",
       "market": "US",
-      "current_price": 145.02,
-      "change_pct": -0.94,
+      "current_price": 144.5,
+      "change_pct": -1.29,
       "extra_data": {
-        "regular_market_price": 145.02,
+        "regular_market_price": 144.5,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 146.39
       },
-      "kd_k": 58.32,
-      "kd_d": 47.94,
-      "last_updated": "2026-04-20T22:49:47.664773",
+      "kd_k": 57.79,
+      "kd_d": 47.77,
+      "last_updated": "2026-04-21T00:08:20.398674",
       "data_points": 63,
       "history": [
         {
@@ -4450,10 +4396,10 @@
           "open": 144.99000549316406,
           "high": 147.1999969482422,
           "low": 143.8300018310547,
-          "close": 145.02980041503906,
-          "volume": 12208057,
-          "kd_k": 58.32,
-          "kd_d": 47.94
+          "close": 144.5,
+          "volume": 18110427,
+          "kd_k": 57.79,
+          "kd_d": 47.77
         }
       ],
       "patterns": {
@@ -4463,31 +4409,31 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲6.9%",
+            "description": "縮量上漲6.5%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "CRWD",
       "name": "CrowdStrike Holdings Inc.",
       "market": "US",
-      "current_price": 427.04,
-      "change_pct": 0.73,
+      "current_price": 427.345,
+      "change_pct": 0.8,
       "extra_data": {
-        "regular_market_price": 427.04,
+        "regular_market_price": 427.345,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 423.95
       },
-      "kd_k": 63.15,
-      "kd_d": 55.88,
-      "last_updated": "2026-04-20T22:49:48.432405",
+      "kd_k": 63.27,
+      "kd_d": 55.92,
+      "last_updated": "2026-04-21T00:08:20.743493",
       "data_points": 63,
       "history": [
         {
@@ -4555,10 +4501,10 @@
           "open": 422.5400085449219,
           "high": 433.0,
           "low": 417.07000732421875,
-          "close": 427.0400085449219,
-          "volume": 642748,
-          "kd_k": 63.15,
-          "kd_d": 55.88
+          "close": 427.3450012207031,
+          "volume": 867607,
+          "kd_k": 63.27,
+          "kd_d": 55.92
         }
       ],
       "patterns": {
@@ -4570,29 +4516,29 @@
             "signal": "HOLD",
             "description": "縮量上漲7.2%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "MU",
       "name": "Micron Technology Inc.",
       "market": "US",
-      "current_price": 444.78,
-      "change_pct": -2.26,
+      "current_price": 440.56,
+      "change_pct": -3.19,
       "extra_data": {
-        "regular_market_price": 444.78,
+        "regular_market_price": 440.56,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 455.07
       },
-      "kd_k": 81.31,
-      "kd_d": 85.91,
-      "last_updated": "2026-04-20T22:49:48.945556",
+      "kd_k": 79.3,
+      "kd_d": 85.24,
+      "last_updated": "2026-04-21T00:08:21.103706",
       "data_points": 63,
       "history": [
         {
@@ -4659,11 +4605,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 458.25,
           "high": 464.55999755859375,
-          "low": 444.5,
-          "close": 444.8500061035156,
-          "volume": 9864483,
-          "kd_k": 81.31,
-          "kd_d": 85.91
+          "low": 435.8999938964844,
+          "close": 440.4700012207031,
+          "volume": 17705967,
+          "kd_k": 79.3,
+          "kd_d": 85.24
         }
       ],
       "patterns": {
@@ -4673,31 +4619,31 @@
             "pattern_id": "縮量下跌",
             "pattern_name": "繼續看跌",
             "signal": "AVOID",
-            "description": "縮量下跌4.5%",
+            "description": "縮量下跌5.4%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
       "market": "US",
-      "current_price": 368.08,
-      "change_pct": -0.65,
+      "current_price": 367.75,
+      "change_pct": -0.74,
       "extra_data": {
-        "regular_market_price": 368.08,
+        "regular_market_price": 367.75,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 370.5
       },
-      "kd_k": 64.22,
-      "kd_d": 74.6,
-      "last_updated": "2026-04-20T22:49:49.251555",
+      "kd_k": 63.72,
+      "kd_d": 74.43,
+      "last_updated": "2026-04-21T00:08:21.430558",
       "data_points": 63,
       "history": [
         {
@@ -4764,11 +4710,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 369.2200012207031,
           "high": 370.0249938964844,
-          "low": 365.5730895996094,
-          "close": 368.0799865722656,
-          "volume": 4462304,
-          "kd_k": 64.22,
-          "kd_d": 74.6
+          "low": 364.25,
+          "close": 367.73199462890625,
+          "volume": 6326962,
+          "kd_k": 63.72,
+          "kd_d": 74.43
         }
       ],
       "patterns": {
@@ -4776,24 +4722,24 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "VT",
       "name": "Vanguard Total World Stock ETF",
       "market": "US",
-      "current_price": 150.2962,
-      "change_pct": -0.36,
+      "current_price": 150.18,
+      "change_pct": -0.44,
       "extra_data": {
-        "regular_market_price": 150.2962,
+        "regular_market_price": 150.18,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 150.84
       },
-      "kd_k": 92.74,
-      "kd_d": 93.75,
-      "last_updated": "2026-04-20T22:49:49.554877",
+      "kd_k": 92.25,
+      "kd_d": 93.59,
+      "last_updated": "2026-04-21T00:08:21.758559",
       "data_points": 63,
       "history": [
         {
@@ -4860,11 +4806,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 150.25,
           "high": 150.5800018310547,
-          "low": 150.16000366210938,
-          "close": 150.29620361328125,
-          "volume": 1592754,
-          "kd_k": 92.74,
-          "kd_d": 93.75
+          "low": 149.7949981689453,
+          "close": 150.17999267578125,
+          "volume": 2263157,
+          "kd_k": 92.25,
+          "kd_d": 93.59
         }
       ],
       "patterns": {
@@ -4876,7 +4822,7 @@
             "signal": "AVOID",
             "description": "縮量至0.6倍",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           },
           {
             "pattern_id": "縮量不漲",
@@ -4884,29 +4830,29 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "VOO",
       "name": "Vanguard S&P 500 ETF",
       "market": "US",
-      "current_price": 651.52,
-      "change_pct": -0.19,
+      "current_price": 650.49,
+      "change_pct": -0.35,
       "extra_data": {
-        "regular_market_price": 651.52,
+        "regular_market_price": 650.49,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 652.78
       },
-      "kd_k": 94.9,
-      "kd_d": 94.53,
-      "last_updated": "2026-04-20T22:49:49.874689",
+      "kd_k": 93.99,
+      "kd_d": 94.22,
+      "last_updated": "2026-04-21T00:08:22.090228",
       "data_points": 63,
       "history": [
         {
@@ -4973,23 +4919,23 @@
           "date": "2026-04-20T00:00:00",
           "open": 651.6199951171875,
           "high": 652.594970703125,
-          "low": 650.7999877929688,
-          "close": 651.52001953125,
-          "volume": 2159137,
-          "kd_k": 94.9,
-          "kd_d": 94.53
+          "low": 649.1799926757812,
+          "close": 650.489990234375,
+          "volume": 3198696,
+          "kd_k": 93.99,
+          "kd_d": 94.22
         }
       ],
       "patterns": {
         "patterns_detected": 2,
         "patterns": [
           {
-            "pattern_id": "縮量上漲",
-            "pattern_name": "趨勢健康",
-            "signal": "HOLD",
-            "description": "縮量上漲2.1%",
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.5倍",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           },
           {
             "pattern_id": "縮量不漲",
@@ -4997,29 +4943,29 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "SPY",
       "name": "SPDR S&P 500 ETF Trust",
       "market": "US",
-      "current_price": 708.72,
-      "change_pct": -0.2,
+      "current_price": 707.555,
+      "change_pct": -0.36,
       "extra_data": {
-        "regular_market_price": 708.72,
+        "regular_market_price": 707.555,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 710.14
       },
-      "kd_k": 94.99,
-      "kd_d": 94.63,
-      "last_updated": "2026-04-20T22:49:50.367977",
+      "kd_k": 94.03,
+      "kd_d": 94.31,
+      "last_updated": "2026-04-21T00:08:22.477526",
       "data_points": 63,
       "history": [
         {
@@ -5086,23 +5032,23 @@
           "date": "2026-04-20T00:00:00",
           "open": 708.780029296875,
           "high": 709.9099731445312,
-          "low": 707.9100952148438,
-          "close": 708.72998046875,
-          "volume": 10987279,
-          "kd_k": 94.99,
-          "kd_d": 94.63
+          "low": 706.1400146484375,
+          "close": 707.5549926757812,
+          "volume": 19135147,
+          "kd_k": 94.03,
+          "kd_d": 94.31
         }
       ],
       "patterns": {
         "patterns_detected": 2,
         "patterns": [
           {
-            "pattern_id": "縮量上漲",
-            "pattern_name": "趨勢健康",
-            "signal": "HOLD",
-            "description": "縮量上漲2.1%",
+            "pattern_id": "縮量不跌",
+            "pattern_name": "頭部形成",
+            "signal": "AVOID",
+            "description": "縮量至0.6倍",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           },
           {
             "pattern_id": "縮量不漲",
@@ -5110,29 +5056,29 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "QQQ",
       "name": "Invesco QQQ Trust",
       "market": "US",
-      "current_price": 646.13,
-      "change_pct": -0.42,
+      "current_price": 645.04,
+      "change_pct": -0.59,
       "extra_data": {
-        "regular_market_price": 646.13,
+        "regular_market_price": 645.04,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 648.85
       },
-      "kd_k": 94.9,
-      "kd_d": 93.29,
-      "last_updated": "2026-04-20T22:49:50.779101",
+      "kd_k": 94.17,
+      "kd_d": 93.05,
+      "last_updated": "2026-04-21T00:08:22.939778",
       "data_points": 63,
       "history": [
         {
@@ -5199,11 +5145,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 648.0399780273438,
           "high": 648.760009765625,
-          "low": 645.3200073242188,
-          "close": 646.080078125,
-          "volume": 14120582,
-          "kd_k": 94.9,
-          "kd_d": 93.29
+          "low": 642.52001953125,
+          "close": 645.0399780273438,
+          "volume": 22359225,
+          "kd_k": 94.17,
+          "kd_d": 93.05
         }
       ],
       "patterns": {
@@ -5213,9 +5159,9 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲2.8%",
+            "description": "縮量上漲2.6%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           },
           {
             "pattern_id": "縮量不漲",
@@ -5223,29 +5169,29 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "DIA",
       "name": "SPDR Dow Jones Industrial Average ETF",
       "market": "US",
-      "current_price": 493.74,
-      "change_pct": -0.1,
+      "current_price": 493.58,
+      "change_pct": -0.13,
       "extra_data": {
-        "regular_market_price": 493.74,
+        "regular_market_price": 493.58,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 494.22
       },
-      "kd_k": 90.22,
-      "kd_d": 90.81,
-      "last_updated": "2026-04-20T22:49:51.228028",
+      "kd_k": 89.97,
+      "kd_d": 90.73,
+      "last_updated": "2026-04-21T00:08:23.542136",
       "data_points": 63,
       "history": [
         {
@@ -5312,11 +5258,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 493.45001220703125,
           "high": 494.7699890136719,
-          "low": 493.1050109863281,
-          "close": 493.739990234375,
-          "volume": 1749682,
-          "kd_k": 90.22,
-          "kd_d": 90.81
+          "low": 492.30999755859375,
+          "close": 493.5799865722656,
+          "volume": 2344266,
+          "kd_k": 89.97,
+          "kd_d": 90.73
         }
       ],
       "patterns": {
@@ -5326,31 +5272,31 @@
             "pattern_id": "縮量不跌",
             "pattern_name": "頭部形成",
             "signal": "AVOID",
-            "description": "縮量至0.7倍",
+            "description": "縮量至0.8倍",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "SMH",
       "name": "VanEck Semiconductor ETF",
       "market": "US",
-      "current_price": 462.36,
-      "change_pct": -0.39,
+      "current_price": 461.77,
+      "change_pct": -0.51,
       "extra_data": {
-        "regular_market_price": 462.36,
+        "regular_market_price": 461.77,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 464.16
       },
-      "kd_k": 96.23,
-      "kd_d": 95.08,
-      "last_updated": "2026-04-20T22:49:51.487487",
+      "kd_k": 95.84,
+      "kd_d": 94.95,
+      "last_updated": "2026-04-21T00:08:23.922582",
       "data_points": 63,
       "history": [
         {
@@ -5417,11 +5363,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 464.6400146484375,
           "high": 465.739990234375,
-          "low": 461.3900146484375,
-          "close": 462.3599853515625,
-          "volume": 1616634,
-          "kd_k": 96.23,
-          "kd_d": 95.08
+          "low": 458.6499938964844,
+          "close": 461.7699890136719,
+          "volume": 2296428,
+          "kd_k": 95.84,
+          "kd_d": 94.95
         }
       ],
       "patterns": {
@@ -5431,9 +5377,9 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲2.3%",
+            "description": "縮量上漲2.2%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           },
           {
             "pattern_id": "縮量不漲",
@@ -5441,29 +5387,29 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "USD",
       "name": "ProShares Ultra Semiconductors",
       "market": "US",
-      "current_price": 69.745,
-      "change_pct": -2.06,
+      "current_price": 69.39,
+      "change_pct": -2.56,
       "extra_data": {
-        "regular_market_price": 69.745,
+        "regular_market_price": 69.39,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 71.21
       },
-      "kd_k": 95.26,
-      "kd_d": 94.3,
-      "last_updated": "2026-04-20T22:49:51.845028",
+      "kd_k": 94.51,
+      "kd_d": 94.05,
+      "last_updated": "2026-04-21T00:08:24.261723",
       "data_points": 63,
       "history": [
         {
@@ -5530,11 +5476,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 70.94999694824219,
           "high": 71.19999694824219,
-          "low": 69.56009674072266,
-          "close": 69.74500274658203,
-          "volume": 260416,
-          "kd_k": 95.26,
-          "kd_d": 94.3
+          "low": 68.70999908447266,
+          "close": 69.38999938964844,
+          "volume": 422730,
+          "kd_k": 94.51,
+          "kd_d": 94.05
         }
       ],
       "patterns": {
@@ -5544,31 +5490,31 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲4.8%",
+            "description": "縮量上漲4.2%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "AMZU",
       "name": "Direxion Daily AMZN Bull 2X Shares",
       "market": "US",
-      "current_price": 37.255,
-      "change_pct": -2.96,
+      "current_price": 37.3,
+      "change_pct": -2.84,
       "extra_data": {
-        "regular_market_price": 37.255,
+        "regular_market_price": 37.3,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 38.39
       },
-      "kd_k": 84.54,
-      "kd_d": 88.13,
-      "last_updated": "2026-04-20T22:49:52.182692",
+      "kd_k": 84.69,
+      "kd_d": 88.17,
+      "last_updated": "2026-04-21T00:08:24.910778",
       "data_points": 63,
       "history": [
         {
@@ -5635,11 +5581,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 38.02000045776367,
           "high": 38.2400016784668,
-          "low": 37.165000915527344,
-          "close": 37.255001068115234,
-          "volume": 839474,
-          "kd_k": 84.54,
-          "kd_d": 88.13
+          "low": 36.820098876953125,
+          "close": 37.29999923706055,
+          "volume": 1200993,
+          "kd_k": 84.69,
+          "kd_d": 88.17
         }
       ],
       "patterns": {
@@ -5649,31 +5595,31 @@
             "pattern_id": "快漲慢跌",
             "pattern_name": "主力出貨",
             "signal": "SELL",
-            "description": "快漲25.1%後緩跌2.0%",
+            "description": "快漲25.1%後緩跌1.8%",
             "confidence": 70.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 70.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "MSFU",
       "name": "Direxion Daily MSFT Bull 2X Shares",
       "market": "US",
-      "current_price": 29.23,
-      "change_pct": -1.68,
+      "current_price": 29.06,
+      "change_pct": -2.25,
       "extra_data": {
-        "regular_market_price": 29.23,
+        "regular_market_price": 29.06,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 29.73
       },
-      "kd_k": 84.34,
-      "kd_d": 80.84,
-      "last_updated": "2026-04-20T22:49:52.477655",
+      "kd_k": 83.67,
+      "kd_d": 80.62,
+      "last_updated": "2026-04-21T00:08:25.180979",
       "data_points": 63,
       "history": [
         {
@@ -5740,11 +5686,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 29.530000686645508,
           "high": 29.790000915527344,
-          "low": 28.940000534057617,
-          "close": 29.229999542236328,
-          "volume": 3309256,
-          "kd_k": 84.34,
-          "kd_d": 80.84
+          "low": 28.81999969482422,
+          "close": 29.059999465942383,
+          "volume": 4593655,
+          "kd_k": 83.67,
+          "kd_d": 80.62
         }
       ],
       "patterns": {
@@ -5752,24 +5698,24 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "FBL",
       "name": "GraniteShares 2x Long META Daily ETF",
       "market": "US",
-      "current_price": 31.3951,
-      "change_pct": -4.49,
+      "current_price": 31.41,
+      "change_pct": -4.44,
       "extra_data": {
-        "regular_market_price": 31.3951,
+        "regular_market_price": 31.41,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 32.87
       },
-      "kd_k": 89.65,
-      "kd_d": 88.55,
-      "last_updated": "2026-04-20T22:49:52.846633",
+      "kd_k": 89.71,
+      "kd_d": 88.57,
+      "last_updated": "2026-04-21T00:08:25.521450",
       "data_points": 63,
       "history": [
         {
@@ -5836,11 +5782,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 32.0,
           "high": 32.32500076293945,
-          "low": 31.299999237060547,
-          "close": 31.395099639892578,
-          "volume": 293373,
-          "kd_k": 89.65,
-          "kd_d": 88.55
+          "low": 30.90999984741211,
+          "close": 31.40999984741211,
+          "volume": 474715,
+          "kd_k": 89.71,
+          "kd_d": 88.57
         }
       ],
       "patterns": {
@@ -5850,31 +5796,31 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲3.0%",
+            "description": "縮量上漲3.1%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "GGLL",
       "name": "Direxion Daily GOOGL Bull 2X Shares",
       "market": "US",
-      "current_price": 107.615,
-      "change_pct": -1.42,
+      "current_price": 107.17,
+      "change_pct": -1.83,
       "extra_data": {
-        "regular_market_price": 107.615,
+        "regular_market_price": 107.17,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 109.17
       },
-      "kd_k": 93.2,
-      "kd_d": 91.93,
-      "last_updated": "2026-04-20T22:49:53.235768",
+      "kd_k": 92.4,
+      "kd_d": 91.67,
+      "last_updated": "2026-04-21T00:08:25.822736",
       "data_points": 63,
       "history": [
         {
@@ -5941,11 +5887,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 108.51000213623047,
           "high": 108.95999908447266,
-          "low": 106.5,
-          "close": 107.61499786376953,
-          "volume": 251900,
-          "kd_k": 93.2,
-          "kd_d": 91.93
+          "low": 106.0,
+          "close": 107.16999816894531,
+          "volume": 385154,
+          "kd_k": 92.4,
+          "kd_d": 91.67
         }
       ],
       "patterns": {
@@ -5955,31 +5901,31 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲3.7%",
+            "description": "縮量上漲3.2%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "NVDL",
       "name": "GraniteShares 2x Long NVDA Daily ETF",
       "market": "US",
-      "current_price": 94.03,
-      "change_pct": -2.31,
+      "current_price": 93.76,
+      "change_pct": -2.59,
       "extra_data": {
-        "regular_market_price": 94.03,
+        "regular_market_price": 93.76,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 96.25
       },
-      "kd_k": 92.65,
-      "kd_d": 90.95,
-      "last_updated": "2026-04-20T22:49:53.614655",
+      "kd_k": 92.18,
+      "kd_d": 90.79,
+      "last_updated": "2026-04-21T00:08:26.160846",
       "data_points": 63,
       "history": [
         {
@@ -6046,11 +5992,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 94.66000366210938,
           "high": 95.12999725341797,
-          "low": 93.16000366210938,
-          "close": 94.02999877929688,
-          "volume": 2152204,
-          "kd_k": 92.65,
-          "kd_d": 90.95
+          "low": 92.5999984741211,
+          "close": 93.76000213623047,
+          "volume": 3202319,
+          "kd_k": 92.18,
+          "kd_d": 90.79
         }
       ],
       "patterns": {
@@ -6060,9 +6006,9 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲2.7%",
+            "description": "縮量上漲2.4%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           },
           {
             "pattern_id": "縮量不漲",
@@ -6070,29 +6016,29 @@
             "signal": "SELL",
             "description": "高位縮量滯漲",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "SELL",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "NFXL",
       "name": "Direxion Daily NFLX Bull 2X Shares",
       "market": "US",
-      "current_price": 29.13,
-      "change_pct": -3.54,
+      "current_price": 28.1,
+      "change_pct": -6.95,
       "extra_data": {
-        "regular_market_price": 29.13,
+        "regular_market_price": 28.1,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 30.2
       },
-      "kd_k": 45.79,
-      "kd_d": 69.46,
-      "last_updated": "2026-04-20T22:49:54.027038",
+      "kd_k": 44.8,
+      "kd_d": 69.13,
+      "last_updated": "2026-04-21T00:08:26.436631",
       "data_points": 63,
       "history": [
         {
@@ -6159,36 +6105,45 @@
           "date": "2026-04-20T00:00:00",
           "open": 30.0,
           "high": 30.3700008392334,
-          "low": 29.09000015258789,
-          "close": 29.1299991607666,
-          "volume": 638260,
-          "kd_k": 45.79,
-          "kd_d": 69.46
+          "low": 27.950000762939453,
+          "close": 28.100000381469727,
+          "volume": 1438818,
+          "kd_k": 44.8,
+          "kd_d": 69.13
         }
       ],
       "patterns": {
-        "patterns_detected": 0,
-        "patterns": [],
-        "dominant_signal": "HOLD",
-        "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "patterns_detected": 1,
+        "patterns": [
+          {
+            "pattern_id": "放量下跌",
+            "pattern_name": "恐慌殺跌",
+            "signal": "BUY",
+            "description": "連跌後放量1.7倍殺跌",
+            "confidence": 100.0,
+            "detected_at": "2026-04-21 00:08:29"
+          }
+        ],
+        "dominant_signal": "BUY",
+        "signal_strength": 100.0,
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "MULL",
       "name": "GraniteShares 2x Long MU Daily ETF",
       "market": "US",
-      "current_price": 178.84,
-      "change_pct": -4.28,
+      "current_price": 174.4234,
+      "change_pct": -6.64,
       "extra_data": {
-        "regular_market_price": 178.84,
+        "regular_market_price": 174.4234,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 186.83
       },
-      "kd_k": 78.91,
-      "kd_d": 83.86,
-      "last_updated": "2026-04-20T22:49:54.312159",
+      "kd_k": 76.24,
+      "kd_d": 82.97,
+      "last_updated": "2026-04-21T00:08:26.725483",
       "data_points": 63,
       "history": [
         {
@@ -6255,11 +6210,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 190.3800048828125,
           "high": 194.7718048095703,
-          "low": 178.8300018310547,
-          "close": 178.83999633789062,
-          "volume": 116252,
-          "kd_k": 78.91,
-          "kd_d": 83.86
+          "low": 171.67999267578125,
+          "close": 174.42340087890625,
+          "volume": 219077,
+          "kd_k": 76.24,
+          "kd_d": 82.97
         }
       ],
       "patterns": {
@@ -6269,31 +6224,31 @@
             "pattern_id": "縮量下跌",
             "pattern_name": "繼續看跌",
             "signal": "AVOID",
-            "description": "縮量下跌8.9%",
+            "description": "縮量下跌11.1%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "AMDL",
       "name": "GraniteShares 2x Long AMD Daily ETF",
       "market": "US",
-      "current_price": 22.22,
-      "change_pct": -1.24,
+      "current_price": 21.965,
+      "change_pct": -2.38,
       "extra_data": {
-        "regular_market_price": 22.22,
+        "regular_market_price": 21.965,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 22.5
       },
-      "kd_k": 91.08,
-      "kd_d": 92.31,
-      "last_updated": "2026-04-20T22:49:54.714630",
+      "kd_k": 90.11,
+      "kd_d": 91.99,
+      "last_updated": "2026-04-21T00:08:26.970727",
       "data_points": 63,
       "history": [
         {
@@ -6360,11 +6315,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 22.940000534057617,
           "high": 23.979900360107422,
-          "low": 21.90999984741211,
-          "close": 22.219999313354492,
-          "volume": 6693860,
-          "kd_k": 91.08,
-          "kd_d": 92.31
+          "low": 21.489999771118164,
+          "close": 21.96500015258789,
+          "volume": 8044925,
+          "kd_k": 90.11,
+          "kd_d": 91.99
         }
       ],
       "patterns": {
@@ -6374,31 +6329,31 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲16.9%",
+            "description": "縮量上漲15.6%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "TSMX",
       "name": "Direxion Daily TSM Bull 2X Shares",
       "market": "US",
-      "current_price": 66.8,
-      "change_pct": -1.29,
+      "current_price": 66.71,
+      "change_pct": -1.42,
       "extra_data": {
-        "regular_market_price": 66.8,
+        "regular_market_price": 66.71,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 67.67
       },
-      "kd_k": 60.9,
-      "kd_d": 72.39,
-      "last_updated": "2026-04-20T22:49:55.062362",
+      "kd_k": 60.53,
+      "kd_d": 72.27,
+      "last_updated": "2026-04-21T00:08:27.268520",
       "data_points": 63,
       "history": [
         {
@@ -6465,11 +6420,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 67.31999969482422,
           "high": 67.5,
-          "low": 65.95999908447266,
-          "close": 66.80000305175781,
-          "volume": 367735,
-          "kd_k": 60.9,
-          "kd_d": 72.39
+          "low": 65.45999908447266,
+          "close": 66.70999908447266,
+          "volume": 509965,
+          "kd_k": 60.53,
+          "kd_d": 72.27
         }
       ],
       "patterns": {
@@ -6477,24 +6432,24 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "AVGX",
       "name": "Defiance Daily Target 2X Long AVGO ETF",
       "market": "US",
-      "current_price": 57.25,
-      "change_pct": -3.38,
+      "current_price": 56.67,
+      "change_pct": -4.35,
       "extra_data": {
-        "regular_market_price": 57.25,
+        "regular_market_price": 56.67,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 59.25
       },
-      "kd_k": 93.95,
-      "kd_d": 93.05,
-      "last_updated": "2026-04-20T22:49:55.424834",
+      "kd_k": 92.8,
+      "kd_d": 92.67,
+      "last_updated": "2026-04-21T00:08:27.543655",
       "data_points": 63,
       "history": [
         {
@@ -6561,11 +6516,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 58.900001525878906,
           "high": 59.25,
-          "low": 56.93000030517578,
-          "close": 57.25,
-          "volume": 200156,
-          "kd_k": 93.95,
-          "kd_d": 93.05
+          "low": 56.29999923706055,
+          "close": 56.66999816894531,
+          "volume": 270471,
+          "kd_k": 92.8,
+          "kd_d": 92.67
         }
       ],
       "patterns": {
@@ -6575,31 +6530,31 @@
             "pattern_id": "縮量上漲",
             "pattern_name": "趨勢健康",
             "signal": "HOLD",
-            "description": "縮量上漲9.6%",
+            "description": "縮量上漲8.5%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "HOLD",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "FNGS",
       "name": "MicroSectors FANG+ Index ETN",
       "market": "US",
-      "current_price": 68.3,
-      "change_pct": -1.1,
+      "current_price": 67.9241,
+      "change_pct": -1.64,
       "extra_data": {
-        "regular_market_price": 68.3,
+        "regular_market_price": 67.9241,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 69.06
       },
-      "kd_k": 91.4,
-      "kd_d": 92.31,
-      "last_updated": "2026-04-20T22:49:55.793154",
+      "kd_k": 89.55,
+      "kd_d": 91.7,
+      "last_updated": "2026-04-21T00:08:27.876421",
       "data_points": 63,
       "history": [
         {
@@ -6666,11 +6621,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 69.0,
           "high": 68.92500305175781,
-          "low": 68.30000305175781,
-          "close": 68.30000305175781,
-          "volume": 16909,
-          "kd_k": 91.4,
-          "kd_d": 92.31
+          "low": 67.91000366210938,
+          "close": 67.92410278320312,
+          "volume": 28624,
+          "kd_k": 89.55,
+          "kd_d": 91.7
         }
       ],
       "patterns": {
@@ -6678,24 +6633,24 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "FNGG",
       "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
       "market": "US",
-      "current_price": 201.05,
-      "change_pct": -1.55,
+      "current_price": 197.54,
+      "change_pct": -3.27,
       "extra_data": {
-        "regular_market_price": 201.05,
+        "regular_market_price": 197.54,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 204.212
+        "prev_close": 204.2122
       },
-      "kd_k": 93.69,
-      "kd_d": 93.2,
-      "last_updated": "2026-04-20T22:49:56.172413",
+      "kd_k": 90.39,
+      "kd_d": 92.1,
+      "last_updated": "2026-04-21T00:08:28.161851",
       "data_points": 63,
       "history": [
         {
@@ -6761,12 +6716,12 @@
         {
           "date": "2026-04-20T00:00:00",
           "open": 203.42999267578125,
-          "high": 201.35000610351562,
-          "low": 200.466796875,
-          "close": 201.0500030517578,
-          "volume": 3226,
-          "kd_k": 93.69,
-          "kd_d": 93.2
+          "high": 203.42999267578125,
+          "low": 196.58999633789062,
+          "close": 197.5399932861328,
+          "volume": 8565,
+          "kd_k": 90.39,
+          "kd_d": 92.1
         }
       ],
       "patterns": {
@@ -6774,24 +6729,24 @@
         "patterns": [],
         "dominant_signal": "HOLD",
         "signal_strength": 0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
       "market": "US",
-      "current_price": 101.11,
-      "change_pct": -4.53,
+      "current_price": 101.71,
+      "change_pct": -3.97,
       "extra_data": {
-        "regular_market_price": 101.11,
+        "regular_market_price": 101.71,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 105.91
       },
-      "kd_k": 70.48,
-      "kd_d": 64.57,
-      "last_updated": "2026-04-20T22:49:56.532822",
+      "kd_k": 71.23,
+      "kd_d": 64.82,
+      "last_updated": "2026-04-21T00:08:28.437023",
       "data_points": 63,
       "history": [
         {
@@ -6858,11 +6813,11 @@
           "date": "2026-04-20T00:00:00",
           "open": 102.4800033569336,
           "high": 103.28929901123047,
-          "low": 99.37999725341797,
-          "close": 101.11000061035156,
-          "volume": 4260649,
-          "kd_k": 70.48,
-          "kd_d": 64.57
+          "low": 98.5,
+          "close": 101.70999908447266,
+          "volume": 6350898,
+          "kd_k": 71.23,
+          "kd_d": 64.82
         }
       ],
       "patterns": {
@@ -6872,16 +6827,16 @@
             "pattern_id": "縮量下跌",
             "pattern_name": "繼續看跌",
             "signal": "AVOID",
-            "description": "縮量下跌4.2%",
+            "description": "縮量下跌3.6%",
             "confidence": 100.0,
-            "detected_at": "2026-04-20 22:49:57"
+            "detected_at": "2026-04-21 00:08:29"
           }
         ],
         "dominant_signal": "AVOID",
         "signal_strength": 100.0,
-        "last_updated": "2026-04-20 22:49:57"
+        "last_updated": "2026-04-21 00:08:29"
       }
     }
   ],
-  "last_updated": "2026-04-20T22:49:57.587435"
+  "last_updated": "2026-04-21T00:08:29.267074"
 }
