@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-21T15:48:15.189587",
+  "timestamp": "2026-04-21T17:25:18.890411",
   "date": "2026-04-21",
   "macro": {
     "us10y": {
@@ -7,25 +7,25 @@
       "change": 0.004
     },
     "dxy": {
-      "value": 98.17,
-      "change": 0.12
+      "value": 98.29,
+      "change": 0.24
     },
     "fear_greed": {
-      "value": 19.17,
-      "change": 0.3,
+      "value": 19.09,
+      "change": 0.22,
       "label": "VIX Index",
-      "timestamp": "2026-04-21T15:48:14.738740"
+      "timestamp": "2026-04-21T17:25:18.423315"
     },
     "btc": {
-      "value": 76176.0,
-      "change_pct": 0.4
+      "value": 76447.0,
+      "change_pct": 0.76
     }
   },
   "stocks_processed": 68,
-  "stocks_successful": 43,
-  "stocks_failed": 25,
+  "stocks_successful": 47,
+  "stocks_failed": 21,
   "new_alerts": 0,
-  "overbought_count": 39,
+  "overbought_count": 43,
   "oversold_count": 0,
   "normal_count": 4,
   "overbought_stocks": [
@@ -478,14 +478,70 @@
       "kd_d": 92.95
     },
     {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "current_price": 273.05,
+      "change_pct": 1.04,
+      "extra_data": {
+        "regular_market_price": 273.05,
+        "pre_market_price": 271.54,
+        "post_market_price": null,
+        "prev_close": 270.23
+      },
+      "kd_k": 89.55,
+      "kd_d": 85.84
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corp.",
+      "current_price": 418.07,
+      "change_pct": -1.12,
+      "extra_data": {
+        "regular_market_price": 418.07,
+        "pre_market_price": 419.45,
+        "post_market_price": null,
+        "prev_close": 422.79
+      },
+      "kd_k": 84.88,
+      "kd_d": 81.81
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp.",
+      "current_price": 202.06,
+      "change_pct": 0.19,
+      "extra_data": {
+        "regular_market_price": 202.06,
+        "pre_market_price": 201.81,
+        "post_market_price": null,
+        "prev_close": 201.68
+      },
+      "kd_k": 96.73,
+      "kd_d": 92.84
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms Inc.",
+      "current_price": 670.91,
+      "change_pct": -2.56,
+      "extra_data": {
+        "regular_market_price": 670.91,
+        "pre_market_price": 674.9287,
+        "post_market_price": null,
+        "prev_close": 688.55
+      },
+      "kd_k": 89.66,
+      "kd_d": 89.23
+    },
+    {
       "symbol": "VT",
       "name": "Vanguard Total World Stock ETF",
       "current_price": 150.48,
       "change_pct": -0.24,
       "extra_data": {
         "regular_market_price": 150.48,
-        "pre_market_price": null,
-        "post_market_price": 150.7844,
+        "pre_market_price": 150.8,
+        "post_market_price": null,
         "prev_close": 150.84
       },
       "kd_k": 93.52,
@@ -498,8 +554,8 @@
       "change_pct": -0.19,
       "extra_data": {
         "regular_market_price": 651.54,
-        "pre_market_price": null,
-        "post_market_price": 652.19,
+        "pre_market_price": 652.78,
+        "post_market_price": null,
         "prev_close": 652.78
       },
       "kd_k": 94.92,
@@ -512,8 +568,8 @@
       "change_pct": -0.2,
       "extra_data": {
         "regular_market_price": 708.72,
-        "pre_market_price": null,
-        "post_market_price": 709.49,
+        "pre_market_price": 710.051,
+        "post_market_price": null,
         "prev_close": 710.14
       },
       "kd_k": 94.98,
@@ -526,8 +582,8 @@
       "change_pct": 0.02,
       "extra_data": {
         "regular_market_price": 494.33,
-        "pre_market_price": null,
-        "post_market_price": 495.03,
+        "pre_market_price": 495.1017,
+        "post_market_price": null,
         "prev_close": 494.22
       },
       "kd_k": 91.11,
@@ -540,8 +596,8 @@
       "change_pct": -0.56,
       "extra_data": {
         "regular_market_price": 70.81,
-        "pre_market_price": null,
-        "post_market_price": 70.8,
+        "pre_market_price": 71.07,
+        "post_market_price": null,
         "prev_close": 71.21
       },
       "kd_k": 97.48,
@@ -554,8 +610,8 @@
       "change_pct": -0.98,
       "extra_data": {
         "regular_market_price": 68.38,
-        "pre_market_price": null,
-        "post_market_price": 68.12,
+        "pre_market_price": 69.16,
+        "post_market_price": null,
         "prev_close": 69.06
       },
       "kd_k": 91.79,
@@ -568,8 +624,8 @@
       "change_pct": -1.83,
       "extra_data": {
         "regular_market_price": 200.48,
-        "pre_market_price": null,
-        "post_market_price": 200.48,
+        "pre_market_price": 203.87,
+        "post_market_price": null,
         "prev_close": 204.212
       },
       "kd_k": 93.15,
@@ -579,15 +635,7 @@
   "oversold_stocks": [],
   "errors": [
     {
-      "symbol": "AAPL",
-      "error": "float division by zero"
-    },
-    {
       "symbol": "TSLA",
-      "error": "float division by zero"
-    },
-    {
-      "symbol": "MSFT",
       "error": "float division by zero"
     },
     {
@@ -595,15 +643,7 @@
       "error": "float division by zero"
     },
     {
-      "symbol": "NVDA",
-      "error": "float division by zero"
-    },
-    {
       "symbol": "AMZN",
-      "error": "float division by zero"
-    },
-    {
-      "symbol": "META",
       "error": "float division by zero"
     },
     {
