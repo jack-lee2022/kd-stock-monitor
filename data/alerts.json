@@ -1,5 +1,21 @@
 [
   {
+    "id": "TSM_20260424_overbought",
+    "symbol": "TSM",
+    "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.56,
+    "kd_d": 72.52,
+    "current_price": 402.93,
+    "threshold": 80,
+    "message": "⚠️ TSM (Taiwan Semiconductor Manufacturing Company Ltd.) is OVERBOUGHT! KD-K: 80.56, KD-D: 72.52 (>= 80)",
+    "timestamp": "2026-04-24T23:07:25.211043",
+    "date": "2026-04-24",
+    "acknowledged": false
+  },
+  {
     "id": "2317.TW_20260424_overbought",
     "symbol": "2317.TW",
     "name": "鴻海",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ META (Meta Platforms Inc.) is OVERBOUGHT! KD-K: 79.51, KD-D: 84.4 (>= 80)",
     "timestamp": "2026-04-23T00:58:31.494237",
-    "date": "2026-04-23",
-    "acknowledged": false
-  },
-  {
-    "id": "AMD_20260423_overbought",
-    "symbol": "AMD",
-    "name": "Advanced Micro Devices Inc.",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 94.3,
-    "kd_d": 92.91,
-    "current_price": 297.68,
-    "threshold": 80,
-    "message": "⚠️ AMD (Advanced Micro Devices Inc.) is OVERBOUGHT! KD-K: 94.3, KD-D: 92.91 (>= 80)",
-    "timestamp": "2026-04-23T00:58:31.494302",
     "date": "2026-04-23",
     "acknowledged": false
   }
