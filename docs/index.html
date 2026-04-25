@@ -5,69 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KD Stock Monitor - 股票 KD 指標監控</title>
     <meta name="description" content="KD Stock Monitor - 台股美股 KD 指標監控系統">
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+
+    <!-- ECharts -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'kd-red': '#ef4444',
-                        'kd-green': '#22c55e',
+                        'kd-red': '#ff3333',
+                        'kd-green': '#00cc66',
                         'kd-yellow': '#eab308',
-                        'kd-blue': '#3b82f6',
+                        'kd-blue': '#4d96ff',
+                        'dark-bg': '#0a0a0a',
+                        'dark-card': '#1a1a1a',
+                        'dark-border': '#2a2a2a',
+                        'dark-text': '#e0e0e0',
+                        'dark-text2': '#888888',
+                        'accent': '#00d4ff',
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-dark-bg min-h-screen text-dark-text">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6">
-            <div class="flex items-center justify-between">
+    <header class="border-b border-dark-border" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);">
+        <div class="container mx-auto px-4 py-5">
+            <div class="flex items-center justify-between flex-wrap gap-4">
                 <div class="flex items-center space-x-3">
-                    <i class="fas fa-chart-line text-3xl"></i>
+                    <i class="fas fa-chart-line text-2xl text-accent"></i>
                     <div>
-                        <h1 class="text-2xl font-bold">KD Stock Monitor</h1>
-                        <p class="text-blue-200 text-sm">股票 KD 指標監控系統</p>
+                        <h1 class="text-xl font-bold text-white">KD Stock Monitor</h1>
+                        <p class="text-dark-text2 text-xs">股票 KD 指標監控系統</p>
                     </div>
                 </div>
-                <div class="hidden md:flex items-center space-x-6 px-4 py-2 bg-blue-800/50 rounded-lg">
+                <div class="hidden md:flex items-center space-x-6 px-4 py-2 rounded-lg" style="background: rgba(255,255,255,0.05);">
                     <div class="text-center">
-                        <p class="text-[10px] text-blue-300 uppercase tracking-wider">VIX 恐慌指數</p>
+                        <p class="text-[10px] text-dark-text2 uppercase tracking-wider">VIX 恐慌指數</p>
                         <p id="macro-fng" class="font-bold text-lg">-</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-[10px] text-blue-300 uppercase tracking-wider">美債 10Y</p>
+                        <p class="text-[10px] text-dark-text2 uppercase tracking-wider">美債 10Y</p>
                         <p id="macro-us10y" class="font-bold text-lg">-</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-[10px] text-blue-300 uppercase tracking-wider">美元指數</p>
+                        <p class="text-[10px] text-dark-text2 uppercase tracking-wider">美元指數</p>
                         <p id="macro-dxy" class="font-bold text-lg">-</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-[10px] text-blue-300 uppercase tracking-wider">比特幣 (USD)</p>
+                        <p class="text-[10px] text-dark-text2 uppercase tracking-wider">比特幣 (USD)</p>
                         <p id="macro-btc" class="font-bold text-lg">-</p>
                     </div>
                 </div>
                 <div class="text-right">
-                    <div id="last-updated" class="text-blue-200 text-sm">
+                    <div id="last-updated" class="text-dark-text2 text-sm">
                         <i class="fas fa-sync-alt mr-1"></i> 更新中...
                     </div>
-                    <div class="text-xs text-blue-300 mt-1">資料來源: Yahoo Finance</div>
+                    <div class="text-xs text-dark-text2 mt-1">資料來源: Yahoo Finance</div>
                 </div>
             </div>
         </div>
@@ -76,59 +82,59 @@
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
         <!-- Stats Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-            <div class="bg-white rounded-lg shadow p-4 border-l-4 border-gray-400">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            <div class="dark-card rounded-lg p-4 border border-dark-border">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-gray-500 text-sm">監控股票數</p>
-                        <p id="total-stocks" class="text-2xl font-bold text-gray-800">-</p>
+                        <p class="text-dark-text2 text-xs">監控股票數</p>
+                        <p id="total-stocks" class="text-2xl font-bold text-white">-</p>
                     </div>
-                    <i class="fas fa-list text-gray-400 text-2xl"></i>
+                    <i class="fas fa-list text-dark-text2 text-xl"></i>
                 </div>
             </div>
-            <div class="bg-white rounded-lg shadow p-4 border-l-4 border-red-500">
+            <div class="dark-card rounded-lg p-4 border border-dark-border">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-gray-500 text-sm">超買警告 (KD≥80)</p>
-                        <p id="overbought-count" class="text-2xl font-bold text-red-600">-</p>
+                        <p class="text-dark-text2 text-xs">超買警告 (KD≥80)</p>
+                        <p id="overbought-count" class="text-2xl font-bold text-kd-red">-</p>
                     </div>
-                    <i class="fas fa-arrow-up text-red-500 text-2xl"></i>
+                    <i class="fas fa-arrow-up text-kd-red text-xl"></i>
                 </div>
             </div>
-            <div class="bg-white rounded-lg shadow p-4 border-l-4 border-green-500">
+            <div class="dark-card rounded-lg p-4 border border-dark-border">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-gray-500 text-sm">超賣提醒 (KD≤20)</p>
-                        <p id="oversold-count" class="text-2xl font-bold text-green-600">-</p>
+                        <p class="text-dark-text2 text-xs">超賣提醒 (KD≤20)</p>
+                        <p id="oversold-count" class="text-2xl font-bold text-kd-green">-</p>
                     </div>
-                    <i class="fas fa-arrow-down text-green-500 text-2xl"></i>
+                    <i class="fas fa-arrow-down text-kd-green text-xl"></i>
                 </div>
             </div>
-            <div class="bg-white rounded-lg shadow p-4 border-l-4 border-yellow-500">
+            <div class="dark-card rounded-lg p-4 border border-dark-border">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-gray-500 text-sm">今日警示</p>
-                        <p id="today-alerts" class="text-2xl font-bold text-yellow-600">-</p>
+                        <p class="text-dark-text2 text-xs">今日警示</p>
+                        <p id="today-alerts" class="text-2xl font-bold text-kd-yellow">-</p>
                     </div>
-                    <i class="fas fa-bell text-yellow-500 text-2xl"></i>
+                    <i class="fas fa-bell text-kd-yellow text-xl"></i>
                 </div>
             </div>
         </div>
 
         <!-- Filter Tabs -->
-        <div class="bg-white rounded-lg shadow mb-6">
-            <div class="border-b border-gray-200">
+        <div class="dark-card rounded-lg border border-dark-border mb-6 overflow-hidden">
+            <div class="border-b border-dark-border">
                 <nav class="flex -mb-px">
-                    <button onclick="filterStocks('all')" id="tab-all" class="tab-btn active px-6 py-3 border-b-2 border-blue-500 text-blue-600 font-medium">
+                    <button onclick="filterStocks('all')" id="tab-all" class="tab-btn active px-5 py-3 border-b-2 border-accent text-accent font-medium text-sm">
                         全部股票
                     </button>
-                    <button onclick="filterStocks('tw')" id="tab-tw" class="tab-btn px-6 py-3 border-b-2 border-transparent text-gray-500 hover:text-gray-700">
+                    <button onclick="filterStocks('tw')" id="tab-tw" class="tab-btn px-5 py-3 border-b-2 border-transparent text-dark-text2 hover:text-dark-text text-sm">
                         台灣股市
                     </button>
-                    <button onclick="filterStocks('us')" id="tab-us" class="tab-btn px-6 py-3 border-b-2 border-transparent text-gray-500 hover:text-gray-700">
+                    <button onclick="filterStocks('us')" id="tab-us" class="tab-btn px-5 py-3 border-b-2 border-transparent text-dark-text2 hover:text-dark-text text-sm">
                         美股
                     </button>
-                    <button onclick="filterStocks('alerts')" id="tab-alerts" class="tab-btn px-6 py-3 border-b-2 border-transparent text-gray-500 hover:text-gray-700">
+                    <button onclick="filterStocks('alerts')" id="tab-alerts" class="tab-btn px-5 py-3 border-b-2 border-transparent text-dark-text2 hover:text-dark-text text-sm">
                         警示股票
                     </button>
                 </nav>
@@ -136,35 +142,41 @@
         </div>
 
         <!-- Stock Grid -->
-        <div id="stock-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <div id="stock-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
             <!-- Stock cards will be inserted here -->
         </div>
 
         <!-- Chart Section -->
-        <div class="bg-white rounded-lg shadow mb-6">
-            <div class="px-6 py-4 border-b border-gray-200">
-                <h2 class="text-lg font-bold text-gray-800">
-                    <i class="fas fa-chart-area mr-2 text-blue-600"></i>趨勢圖表
-                </h2>
-            </div>
-            <div class="p-4">
-                <div class="mb-4">
-                    <label class="text-sm text-gray-600 mr-2">選擇股票:</label>
-                    <select id="chart-stock-select" class="border border-gray-300 rounded px-3 py-1 text-sm">
+        <div id="chart-section" class="dark-card rounded-lg border border-dark-border mb-6 relative">
+            <div class="px-5 py-3 border-b border-dark-border flex items-center justify-between flex-wrap gap-3">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-chart-candlestick text-accent"></i>
+                    <h2 class="text-base font-bold text-white">趨勢圖表</h2>
+                </div>
+                <div class="flex items-center gap-2">
+                    <select id="chart-stock-select" class="bg-dark-bg border border-dark-border rounded px-3 py-1.5 text-sm text-dark-text focus:outline-none focus:border-accent">
                         <option value="">-- 選擇股票 --</option>
                     </select>
+                    <div class="flex rounded-lg overflow-hidden border border-dark-border">
+                        <button class="tf-btn active px-3 py-1.5 text-xs bg-dark-bg text-dark-text hover:bg-dark-border transition" data-tf="day" onclick="StockChart.switchTimeframe('day')">日K</button>
+                        <button class="tf-btn px-3 py-1.5 text-xs bg-dark-bg text-dark-text2 hover:bg-dark-border transition" data-tf="week" onclick="StockChart.switchTimeframe('week')">週K</button>
+                        <button class="tf-btn px-3 py-1.5 text-xs bg-dark-bg text-dark-text2 hover:bg-dark-border transition" data-tf="month" onclick="StockChart.switchTimeframe('month')">月K</button>
+                    </div>
+                    <button onclick="StockChart.toggleFullscreen()" class="px-3 py-1.5 text-xs rounded-lg border border-dark-border text-dark-text2 hover:text-accent hover:border-accent transition">
+                        <i class="fas fa-expand"></i>
+                    </button>
                 </div>
-                <div class="h-96">
-                    <canvas id="stock-chart"></canvas>
-                </div>
+            </div>
+            <div class="p-2">
+                <div id="stock-chart" style="width: 100%; height: 520px;"></div>
             </div>
         </div>
 
         <!-- Alert History Section -->
-        <div class="bg-white rounded-lg shadow mb-6">
-            <div class="px-6 py-4 border-b border-gray-200">
-                <h2 class="text-lg font-bold text-gray-800">
-                    <i class="fas fa-history mr-2 text-blue-600"></i>警示歷史
+        <div class="dark-card rounded-lg border border-dark-border mb-6">
+            <div class="px-5 py-3 border-b border-dark-border">
+                <h2 class="text-base font-bold text-white">
+                    <i class="fas fa-history mr-2 text-accent"></i>警示歷史
                 </h2>
             </div>
             <div id="alert-history" class="p-4">
@@ -174,22 +186,23 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-400 py-6">
+    <footer class="border-t border-dark-border py-6" style="background: #0d1117;">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-sm">
-                <i class="fas fa-code mr-1"></i> KD Stock Monitor 
+            <p class="text-sm text-dark-text2">
+                <i class="fas fa-code mr-1"></i> KD Stock Monitor
                 <span class="mx-2">|</span>
-                <i class="fas fa-github mr-1"></i> 
-                <a href="https://github.com" class="hover:text-white transition">GitHub</a>
+                <i class="fas fa-github mr-1"></i>
+                <a href="https://github.com/jack-lee2022/kd-stock-monitor" class="hover:text-white transition" target="_blank">GitHub</a>
             </p>
-            <p class="text-xs mt-2 text-gray-500">
+            <p class="text-xs mt-2 text-dark-text2 opacity-60">
                 免責聲明: 本系統僅供參考，不構成投資建議。投資有風險，請自行判斷。
             </p>
         </div>
     </footer>
 
-    <!-- Scripts - with version to bypass cache -->
-    <script src="js/data.js?v=202603241410"></script>
-    <script src="js/app.js?v=202603241410"></script>
+    <!-- Scripts -->
+    <script src="js/data.js?v=202604251800"></script>
+    <script src="js/chart.js?v=202604251800"></script>
+    <script src="js/app.js?v=202604251800"></script>
 </body>
 </html>
