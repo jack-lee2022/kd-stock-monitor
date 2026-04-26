@@ -132,13 +132,9 @@ const StockChart = {
      */
     _calculateMA(dayCount, data) {
         return data.map((_, i) => {
-            if (i < dayCount - 1) {
-                return '-';
-            }
+            if (i < dayCount - 1) return '-';
             let sum = 0;
-            for (let j = 0; j < dayCount; j++) {
-                sum += data[i - j].close;
-            }
+            for (let j = 0; j < dayCount; j++) sum += data[i - j].close;
             return (sum / dayCount).toFixed(2);
         });
     },
@@ -148,7 +144,6 @@ const StockChart = {
      */
     _aggregateToWeek(data) {
         if (!data || data.length === 0) return [];
-
         const weeks = [];
         let currentWeek = null;
 
@@ -161,15 +156,9 @@ const StockChart = {
             if (!currentWeek || currentWeek.weekKey !== weekKey) {
                 if (currentWeek) weeks.push(currentWeek);
                 currentWeek = {
-                    weekKey: weekKey,
-                    date: weekKey,
-                    open: day.open,
-                    high: day.high,
-                    low: day.low,
-                    close: day.close,
-                    volume: day.volume || 0,
-                    kd_k: day.kd_k,
-                    kd_d: day.kd_d
+                    weekKey, date: weekKey,
+                    open: day.open, high: day.high, low: day.low, close: day.close,
+                    volume: day.volume || 0, kd_k: day.kd_k, kd_d: day.kd_d
                 };
             } else {
                 currentWeek.high = Math.max(currentWeek.high, day.high);
@@ -180,7 +169,6 @@ const StockChart = {
                 currentWeek.kd_d = day.kd_d;
             }
         });
-
         if (currentWeek) weeks.push(currentWeek);
         return weeks;
     },
@@ -190,7 +178,6 @@ const StockChart = {
      */
     _aggregateToMonth(data) {
         if (!data || data.length === 0) return [];
-
         const months = [];
         let currentMonth = null;
 
@@ -201,15 +188,9 @@ const StockChart = {
             if (!currentMonth || currentMonth.monthKey !== monthKey) {
                 if (currentMonth) months.push(currentMonth);
                 currentMonth = {
-                    monthKey: monthKey,
-                    date: monthKey + '-01',
-                    open: day.open,
-                    high: day.high,
-                    low: day.low,
-                    close: day.close,
-                    volume: day.volume || 0,
-                    kd_k: day.kd_k,
-                    kd_d: day.kd_d
+                    monthKey, date: monthKey + '-01',
+                    open: day.open, high: day.high, low: day.low, close: day.close,
+                    volume: day.volume || 0, kd_k: day.kd_k, kd_d: day.kd_d
                 };
             } else {
                 currentMonth.high = Math.max(currentMonth.high, day.high);
@@ -220,7 +201,6 @@ const StockChart = {
                 currentMonth.kd_d = day.kd_d;
             }
         });
-
         if (currentMonth) months.push(currentMonth);
         return months;
     },
@@ -230,8 +210,6 @@ const StockChart = {
      */
     _getProcessedData() {
         let data = [...this.currentHistory];
-
-        // Sort by date ascending
         data.sort((a, b) => new Date(a.date) - new Date(b.date));
 
         if (this.currentTimeframe === 'week') {
@@ -280,7 +258,7 @@ const StockChart = {
             return d.close >= prevClose ? '#ff3333' : '#00cc66';
         });
 
-        // Latest values for info display
+        // Latest values for legend display
         const last = data[data.length - 1];
         const lastMA5 = ma5[ma5.length - 1];
         const lastMA10 = ma10[ma10.length - 1];
@@ -290,18 +268,6 @@ const StockChart = {
         const lastDIF = macdDIF[macdDIF.length - 1];
         const lastDEA = macdDEA[macdDEA.length - 1];
         const lastHist = macdHistogram[macdHistogram.length - 1];
-
-        const infoParts = [];
-        if (lastMA5 !== '-') infoParts.push(`MA5: ${Number(lastMA5).toFixed(2)}`);
-        if (lastMA10 !== '-') infoParts.push(`MA10: ${Number(lastMA10).toFixed(2)}`);
-        if (lastMA20 !== '-') infoParts.push(`MA20: ${Number(lastMA20).toFixed(2)}`);
-        if (lastKD_K != null) infoParts.push(`K: ${lastKD_K.toFixed(2)}`);
-        if (lastKD_D != null) infoParts.push(`D: ${lastKD_D.toFixed(2)}`);
-        if (lastDIF != null) infoParts.push(`DIF: ${lastDIF.toFixed(2)}`);
-        if (lastDEA != null) infoParts.push(`DEA: ${lastDEA.toFixed(2)}`);
-        if (lastHist != null) infoParts.push(`MACD: ${lastHist.toFixed(2)}`);
-
-        const subtextStr = infoParts.join('  |  ');
 
         // Dark theme colors
         const colors = {
@@ -324,8 +290,94 @@ const StockChart = {
             crosshair: '#555555'
         };
 
-        // Calculate grid positions for 4 panels
-        // Main: 40%, Volume: 15%, KD: 15%, MACD: 15%, spacing: 15%
+        // Build legend texts with matching colors
+        const mainLegendParts = [];
+        if (lastMA5 !== '-') mainLegendParts.push({ text: `MA5: ${Number(lastMA5).toFixed(2)}`, color: colors.ma5 });
+        if (lastMA10 !== '-') mainLegendParts.push({ text: `MA10: ${Number(lastMA10).toFixed(2)}`, color: colors.ma10 });
+        if (lastMA20 !== '-') mainLegendParts.push({ text: `MA20: ${Number(lastMA20).toFixed(2)}`, color: colors.ma20 });
+
+        const kdLegendParts = [];
+        if (lastKD_K != null) kdLegendParts.push({ text: `K: ${lastKD_K.toFixed(2)}`, color: colors.kdK });
+        if (lastKD_D != null) kdLegendParts.push({ text: `D: ${lastKD_D.toFixed(2)}`, color: colors.kdD });
+        kdLegendParts.push({ text: '80', color: colors.line80 });
+        kdLegendParts.push({ text: '20', color: colors.line20 });
+
+        const macdLegendParts = [];
+        if (lastDIF != null) macdLegendParts.push({ text: `DIF: ${lastDIF.toFixed(2)}`, color: colors.macdDIF });
+        if (lastDEA != null) macdLegendParts.push({ text: `DEA: ${lastDEA.toFixed(2)}`, color: colors.macdDEA });
+        if (lastHist != null) {
+            const histColor = lastHist >= 0 ? colors.up : colors.down;
+            macdLegendParts.push({ text: `MACD: ${lastHist.toFixed(2)}`, color: histColor });
+        }
+
+        // Build graphic elements for each sub-chart legend
+        const graphicElements = [];
+        let xOffset = '5%';
+
+        // Main chart legend (below main, above volume)
+        mainLegendParts.forEach((part, i) => {
+            graphicElements.push({
+                type: 'text',
+                left: `${5 + i * 16}%`,
+                top: '39%',
+                style: {
+                    text: part.text,
+                    fill: part.color,
+                    fontSize: 10,
+                    fontFamily: 'Courier New, monospace'
+                },
+                z: 100
+            });
+        });
+
+        // Volume chart legend
+        graphicElements.push({
+            type: 'text',
+            left: xOffset,
+            top: '54%',
+            style: {
+                text: '\u6210\u4ea4\u91cf',
+                fill: colors.textSecondary,
+                fontSize: 10,
+                fontFamily: 'Courier New, monospace'
+            },
+            z: 100
+        });
+
+        // KD chart legend
+        kdLegendParts.forEach((part, i) => {
+            graphicElements.push({
+                type: 'text',
+                left: `${5 + i * 14}%`,
+                top: '69%',
+                style: {
+                    text: part.text,
+                    fill: part.color,
+                    fontSize: 10,
+                    fontFamily: 'Courier New, monospace'
+                },
+                z: 100
+            });
+        });
+
+        // MACD chart legend
+        macdLegendParts.forEach((part, i) => {
+            graphicElements.push({
+                type: 'text',
+                left: `${5 + i * 18}%`,
+                top: '84%',
+                style: {
+                    text: part.text,
+                    fill: part.color,
+                    fontSize: 10,
+                    fontFamily: 'Courier New, monospace'
+                },
+                z: 100
+            });
+        });
+
+        // Grid layout (all percentages for precise legend positioning)
+        // Title: ~8%, Main: 10%~37%, Vol: 40%~52%, KD: 55%~68%, MACD: 71%~83%, DataZoom: 86%~90%
         const option = {
             backgroundColor: colors.bg,
             animation: true,
@@ -334,18 +386,20 @@ const StockChart = {
             title: {
                 text: `${this.currentSymbol}  ${this.currentName}`,
                 left: 'center',
-                top: 8,
+                top: 6,
                 textStyle: {
                     color: colors.text,
                     fontSize: 15,
                     fontWeight: 'bold'
                 },
-                subtext: subtextStr,
+                subtext: this._getTimeframeLabel(),
                 subtextStyle: {
                     color: '#00d4ff',
                     fontSize: 11
                 }
             },
+
+            graphic: graphicElements,
 
             tooltip: {
                 trigger: 'axis',
@@ -379,12 +433,11 @@ const StockChart = {
                 }
             },
 
-            // 4 grids: main, volume, KD, MACD
             grid: [
-                { left: '4%', right: '3%', top: 65, height: '38%' },      // Main candlestick
-                { left: '4%', right: '3%', top: '54%', height: '14%' },   // Volume
-                { left: '4%', right: '3%', top: '70%', height: '14%' },   // KD
-                { left: '4%', right: '3%', top: '86%', height: '10%' }    // MACD
+                { left: '4%', right: '3%', top: '11%', height: '26%' },   // Main candlestick
+                { left: '4%', right: '3%', top: '40%', height: '12%' },   // Volume
+                { left: '4%', right: '3%', top: '55%', height: '12%' },   // KD
+                { left: '4%', right: '3%', top: '70%', height: '12%' }    // MACD
             ],
 
             xAxis: [
@@ -667,6 +720,18 @@ const StockChart = {
         };
 
         this.chartInstance.setOption(option, true);
+    },
+
+    /**
+     * Get timeframe display label
+     */
+    _getTimeframeLabel() {
+        const labels = {
+            'day': '\u65e5K',
+            'week': '\u9031K',
+            'month': '\u6708K'
+        };
+        return labels[this.currentTimeframe] || '\u65e5K';
     },
 
     /**
