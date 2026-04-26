@@ -281,58 +281,101 @@ class TradingPatternAnalyzer:
         return False, "不符合縮量不跌頭部特徵", 0.0
     
     def detect_pattern_5_volume_shrink_rise(self) -> Tuple[bool, str, float]:
-        """縮量上漲 - 籌碼穩定（明顯上漲，漲幅超過門檻）"""
-        recent = self.df.tail(5)
+        """
+        縮量上漲 - 籌碼穩定（趨勢健康，排除高檔拉高出貨）
+        核心邏輯：中低檔 + 明顯上漲 + 量縮 + 斜率正 = 趨勢健康
+        """
+        recent = self.df.tail(10)
         atr_pct = self._get_latest_atr_pct()
         
-        volume_shrink = recent['Volume_Ratio'].mean() < 1.0
+        # ── 1. 嚴格量縮：近 10 天平均量比 < 0.75（非原來寬鬆的 1.0）
+        volume_shrink = recent['Volume_Ratio'].mean() < 0.75
+        
+        # ── 2. 明顯上漲：近 10 天漲幅 > max(2%, 1.5×ATR)
         price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
-        # ATR 相對閾值：上漲需超過 max(1.5%, 1.2倍ATR)
-        rise_threshold = max(1.5, atr_pct * 1.2)
+        rise_threshold = max(2.0, atr_pct * 1.5)
         price_rise = price_change * 100 > rise_threshold
         
-        # Slope 確認趨勢：需為正且穩定上漲
+        # ── 3. 排除極度高檔：股價 < MA20 × 1.15（高檔縮量上漲可能是拉高出貨）
+        price_vs_ma20 = recent['Close'].iloc[-1] / recent['MA20'].iloc[-1]
+        not_at_extreme_high = price_vs_ma20 < 1.15
+        
+        # ── 4. Slope 確認上漲趨勢：斜率 > 0.3×ATR（更嚴格）
         recent_slope = recent['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in recent.columns else 0
-        slope_positive = recent_slope > atr_pct * 0.2
+        slope_positive = recent_slope > atr_pct * 0.3
+        
+        # ── 5. 排除剛剛恐慌殺跌後的 V 轉：近 10 天內無「放量跌停」（量比 > 2.0 且跌 > 3%）
+        recent_10 = self.df.tail(10)
+        panic_days = ((recent_10['Volume_Ratio'] > 2.0) & (recent_10['Price_Change'] < -0.03)).sum()
+        no_recent_panic = panic_days == 0
         
         confidence = 0.0
         if volume_shrink:
-            confidence += 0.35
+            confidence += 0.25
         if price_rise:
-            confidence += 0.45
+            confidence += 0.35
+        if not_at_extreme_high:
+            confidence += 0.15
         if slope_positive:
-            confidence += 0.2
+            confidence += 0.15
+        if no_recent_panic:
+            confidence += 0.1
         
-        if volume_shrink and price_rise:
-            return True, f"縮量上漲{price_change*100:.1f}% (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
+        if volume_shrink and price_rise and not_at_extreme_high:
+            msg = f"籌碼穩定縮量上漲{price_change*100:.1f}%(MA20:{price_vs_ma20:.2f}倍)"
+            return True, msg, min(confidence, 1.0)
         
-        return False, "不符合縮量上漲特徵", 0.0
+        return False, "不符合籌碼穩定縮量上漲特徵", 0.0
     
     def detect_pattern_6_volume_shrink_fall(self) -> Tuple[bool, str, float]:
-        """縮量下跌 - 繼續看跌（明顯下跌，跌幅超過門檻）"""
-        recent = self.df.tail(5)
+        """
+        縮量下跌 - 繼續看跌（下跌趨勢中的無量陰跌）
+        核心邏輯：下跌趨勢 + 無量陰跌 + 無承接 = 還會繼續跌
+        注意：上漲趨勢中的縮量回檔是健康的，不會觸發此訊號
+        """
+        recent = self.df.tail(10)
         atr_pct = self._get_latest_atr_pct()
         
-        volume_shrink = recent['Volume_Ratio'].mean() < 1.0
+        # ── 1. 嚴格量縮：近 10 天平均量比 < 0.7（極度無量，非原來寬鬆的 1.0）
+        volume_shrink = recent['Volume_Ratio'].mean() < 0.7
+        
+        # ── 2. 明顯下跌：近 10 天跌幅 > max(2%, 1.5×ATR)
         price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
-        # ATR 相對閾值：下跌需超過 max(1.5%, 1.2倍ATR)
-        fall_threshold = max(1.5, atr_pct * 1.2)
+        fall_threshold = max(2.0, atr_pct * 1.5)
         price_fall = price_change * 100 < -fall_threshold
+        
+        # ── 3. 下跌趨勢確認：近 20 天已有明顯下跌（> 5% 或 3×ATR）
+        if len(self.df) >= 21:
+            prev_20_change = (self.df['Close'].iloc[-1] / self.df['Close'].iloc[-21] - 1) * 100
+        else:
+            prev_20_change = 0
+        in_downtrend = prev_20_change < -max(5.0, atr_pct * 3)
+        
+        # ── 4. Slope 確認下跌：斜率為負（非單日回檔）
+        recent_slope = recent['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in recent.columns else 0
+        slope_negative = recent_slope < -atr_pct * 0.3
+        
+        # ── 5. 排除恐慌殺跌：若有「量比 > 2.0 且跌 > 4%」的極端日，轉由口訣 8 處理
+        recent_10 = self.df.tail(10)
+        panic_days = ((recent_10['Volume_Ratio'] > 2.0) & (recent_10['Price_Change'] < -0.04)).sum()
+        not_panic = panic_days == 0
         
         confidence = 0.0
         if volume_shrink:
-            confidence += 0.35
+            confidence += 0.2
         if price_fall:
-            confidence += 0.55
-        # ATR 濾網：若波動極大，可能是恐慌拋售而非正常看跌
-        recent_move = recent['Relative_Move'].mean() if 'Relative_Move' in recent.columns else 0
-        if recent_move > 2.5:
-            confidence -= 0.1
+            confidence += 0.25
+        if in_downtrend:
+            confidence += 0.3
+        if slope_negative:
+            confidence += 0.25
         
-        if volume_shrink and price_fall:
-            return True, f"縮量下跌{abs(price_change)*100:.1f}% (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
+        # 必須同時滿足：量縮 + 跌勢 + 下跌趨勢 + 斜率負（排除上漲中的健康回檔）
+        if volume_shrink and price_fall and in_downtrend and slope_negative and not_panic:
+            msg = f"無量陰跌{abs(price_change)*100:.1f}%(20天跌{abs(prev_20_change):.1f}%)"
+            return True, msg, min(confidence, 1.0)
         
-        return False, "不符合縮量下跌特徵", 0.0
+        return False, "不符合下跌趨勢中縮量下跌特徵", 0.0
     
     def detect_pattern_7_volume_shrink_no_rise(self) -> Tuple[bool, str, float]:
         """
