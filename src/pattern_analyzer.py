@@ -230,30 +230,55 @@ class TradingPatternAnalyzer:
         return False, "未達放量上漲條件", 0.0
     
     def detect_pattern_4_volume_shrink_flat(self) -> Tuple[bool, str, float]:
-        """縮量不跌 - 頭部可能形成（價格橫盤，不漲不跌）"""
-        recent = self.df.tail(5)
+        """縮量不跌 - 頭部可能形成（價格在高檔橫盤，量縮）"""
+        # 延長觀察期到 10 天，頭部築頂通常需要較長時間
+        recent = self.df.tail(10)
         atr_pct = self._get_latest_atr_pct()
         
-        volume_shrink = recent['Volume_Ratio'].mean() < 0.8
+        # ── 1. 位置判斷：必須在相對高檔（股價 > MA20 的 1.08 倍）
+        price_vs_ma20 = recent['Close'].iloc[-1] / recent['MA20'].iloc[-1]
+        at_high = price_vs_ma20 > 1.08
+        
+        # ── 2. 前期漲幅：近 20 天需有明顯漲幅（> 8% 或 4倍ATR），排除無方向盤整
+        if len(self.df) >= 21:
+            prev_20_change = (self.df['Close'].iloc[-1] / self.df['Close'].iloc[-21] - 1) * 100
+        else:
+            prev_20_change = 0
+        has_prior_rise = prev_20_change > max(8.0, atr_pct * 4)
+        
+        # ── 3. 嚴格量縮：近 10 天平均量比 < 0.65（非寬鬆的 0.8）
+        volume_shrink = recent['Volume_Ratio'].mean() < 0.65
+        
+        # ── 4. 橫盤定義：近 10 天價格變動在 ±0.6倍ATR 以內（更嚴格）
         price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
-        # ATR 相對閾值：橫盤 = 變動在 ±0.8倍ATR 以內（取代固定 ±2%）
-        flat_threshold = max(1.5, atr_pct * 0.8)
+        flat_threshold = max(1.0, atr_pct * 0.6)
         price_flat = -flat_threshold/100 <= price_change <= flat_threshold/100
         
-        confidence = 0.0
-        if volume_shrink:
-            confidence += 0.45
-        if price_flat:
-            confidence += 0.45
-        # Slope 接近 0 確認真正橫盤
+        # ── 5. Slope 接近 0 確認真正橫盤（非緩漲或緩跌）
         recent_slope = recent['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in recent.columns else 0
-        if abs(recent_slope) < atr_pct * 0.3:
-            confidence += 0.1
+        slope_flat = abs(recent_slope) < atr_pct * 0.25
         
-        if volume_shrink and price_flat:
-            return True, f"縮量至{recent['Volume_Ratio'].mean():.1f}倍 (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
+        # ── 信心度計算（四項各 0.25，最高 1.0）
+        confidence = 0.0
+        if at_high:
+            confidence += 0.25
+        if has_prior_rise:
+            confidence += 0.25
+        if volume_shrink:
+            confidence += 0.25
+        if price_flat:
+            confidence += 0.25
+        # Slope 接近 0 為額外確認，但不加分（作為過濾條件）
         
-        return False, "不符合縮量不跌特徵", 0.0
+        # 必須同時滿足：高檔 + 前期漲幅 + 量縮 + 橫盤
+        if at_high and has_prior_rise and volume_shrink and price_flat:
+            # 若 slope 也接近 0，信心度微調至更穩健
+            if slope_flat:
+                confidence = min(confidence + 0.05, 1.0)
+            msg = f"高檔縮量橫盤{recent['Volume_Ratio'].mean():.2f}倍(漲{prev_20_change:.1f}%後) (ATR:{atr_pct:.1f}%)"
+            return True, msg, confidence
+        
+        return False, "不符合縮量不跌頭部特徵", 0.0
     
     def detect_pattern_5_volume_shrink_rise(self) -> Tuple[bool, str, float]:
         """縮量上漲 - 籌碼穩定（明顯上漲，漲幅超過門檻）"""
