@@ -84,7 +84,7 @@ class StockFetcher:
         
         return combined
     
-    def fetch_stock_data(self, symbol: str, period: str = "3mo", interval: str = "1d") -> Optional[pd.DataFrame]:
+    def fetch_stock_data(self, symbol: str, period: str = "2y", interval: str = "1d") -> Optional[pd.DataFrame]:
         """
         Fetch historical stock data from Yahoo Finance with incremental update support.
         
