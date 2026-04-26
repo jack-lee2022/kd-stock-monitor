@@ -649,8 +649,76 @@ class TradingPatternAnalyzer:
         
         return False, "不符合極度恐慌底部特徵", 0.0
     
+    def detect_pattern_10_blowoff_top(self) -> Tuple[bool, str, float]:
+        """
+        天量噴出 - 必然回落（極嚴格，短線過熱極端）
+        核心邏輯：大漲後 + 天量噴出 + 嚴重乖離 + RSI過熱 + 上影線 = 短線見頂
+        風險提示：此訊號為「短線必然回落」，建議立即出貨或開空！
+        """
+        latest = self.df.iloc[-1]
+        atr_pct = self._get_latest_atr_pct()
+        
+        # ── 1. 已大漲一段：近 20 天漲幅 > max(20%, 6×ATR)
+        if len(self.df) >= 21:
+            prev_20_change = (self.df['Close'].iloc[-1] / self.df['Close'].iloc[-21] - 1) * 100
+        else:
+            prev_20_change = 0
+        has_big_rally = prev_20_change > max(20.0, atr_pct * 6)
+        
+        # ── 2. 天量噴出：單日量比 > 3.0
+        extreme_volume = latest['Volume_Ratio'] > 3.0
+        
+        # ── 3. 明顯大漲：單日漲幅 > max(5%, 3×ATR)
+        rise_threshold = max(5.0, atr_pct * 3.0)
+        big_rise = latest['Price_Change'] * 100 > rise_threshold
+        
+        # ── 4. 嚴重乖離：股價 > MA20 × 1.15（遠離均線）
+        price_vs_ma20 = latest['Close'] / latest['MA20']
+        severe_deviation = price_vs_ma20 > 1.15
+        
+        # ── 5. 開高走低：上影線 > 2%（收盤遠離最高點）
+        upper_shadow = (latest['High'] - max(latest['Open'], latest['Close'])) / latest['Close']
+        has_upper_shadow = upper_shadow > 0.02
+        
+        # ── 6. RSI 過熱：RSI(14) > 70
+        rsi_value = self._calc_rsi(14)
+        rsi_overbought = rsi_value > 70
+        
+        # ── 7. 加速上漲：近 5 天漲幅 > 近 20 天漲幅的 50%
+        if len(self.df) >= 21:
+            prev_5_change = (self.df['Close'].iloc[-1] / self.df['Close'].iloc[-6] - 1) * 100
+            acceleration = prev_5_change > prev_20_change * 0.5
+        else:
+            acceleration = False
+        
+        confidence = 0.0
+        if has_big_rally:
+            confidence += 0.15
+        if extreme_volume:
+            confidence += 0.2
+        if big_rise:
+            confidence += 0.15
+        if severe_deviation:
+            confidence += 0.15
+        if has_upper_shadow:
+            confidence += 0.15
+        if rsi_overbought:
+            confidence += 0.15
+        if acceleration:
+            confidence += 0.05
+        
+        # 必須同時滿足：大漲 + 天量 + 大漲 + 嚴重乖離 + 上影線 + RSI過熱
+        if has_big_rally and extreme_volume and big_rise and severe_deviation and has_upper_shadow and rsi_overbought:
+            msg = (f"天量噴出必回落(漲{prev_20_change:.0f}%,"
+                   f"量{latest['Volume_Ratio']:.1f}倍,RSI{rsi_value:.0f},"
+                   f"乖離{(price_vs_ma20-1)*100:.0f}%)"
+                   f"【短線必然回落，建議立即出貨】")
+            return True, msg, min(confidence, 1.0)
+        
+        return False, "不符合天量噴出必然回落特徵", 0.0
+    
     def analyze_all_patterns(self) -> List[Dict]:
-        """分析所有8種交易模式"""
+        """分析所有10種交易模式"""
         patterns = []
         
         patterns_to_check = [
@@ -663,6 +731,7 @@ class TradingPatternAnalyzer:
             ("縮量不漲", "頭部確立", "SELL", self.detect_pattern_7_volume_shrink_no_rise),
             ("放量下跌", "恐慌殺跌", "AVOID", self.detect_pattern_8_volume_surge_fall),
             ("恐慌底部", "短線搶反彈", "BUY", self.detect_pattern_9_panic_bottom),
+            ("天量噴出", "必然回落", "SELL", self.detect_pattern_10_blowoff_top),
         ]
         
         for name, desc, signal, detect_func in patterns_to_check:
