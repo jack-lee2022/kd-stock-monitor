@@ -225,10 +225,10 @@ const StockChart = {
             macdLegendParts.push({ text: `MACD: ${lastHist.toFixed(2)}`, color: lastHist >= 0 ? colors.up : colors.down });
         }
 
-        // Build title array - legends placed ABOVE each sub-chart with ample spacing
+        // Build title array - legends placed ABOVE each sub-chart with 60px spacing
         const titles = [{
             text: `${this.currentSymbol}  ${this.currentName}`,
-            left: 'center', top: 2,
+            left: 'center', top: '1%',
             textStyle: { color: colors.text, fontSize: 15, fontWeight: 'bold' },
             subtext: this._getTimeframeLabel(),
             subtextStyle: { color: '#00d4ff', fontSize: 11 }
@@ -246,7 +246,7 @@ const StockChart = {
         if (mainLegendParts.length > 0) {
             titles.push({
                 text: buildText(mainLegendParts),
-                left: '4%', top: '5%',
+                left: '4%', top: '3%',
                 textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(mainLegendParts) }
             });
         }
@@ -254,7 +254,7 @@ const StockChart = {
         // Volume legend - above volume grid
         titles.push({
             text: '{sec|成交量}',
-            left: '4%', top: '30%',
+            left: '4%', top: '38%',
             textStyle: { fontSize: 10, fontFamily: 'monospace', rich: { sec: { color: colors.textSec } } }
         });
 
@@ -262,7 +262,7 @@ const StockChart = {
         if (kdLegendParts.length > 0) {
             titles.push({
                 text: buildText(kdLegendParts),
-                left: '4%', top: '47%',
+                left: '4%', top: '60%',
                 textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(kdLegendParts) }
             });
         }
@@ -271,7 +271,7 @@ const StockChart = {
         if (macdLegendParts.length > 0) {
             titles.push({
                 text: buildText(macdLegendParts),
-                left: '4%', top: '64%',
+                left: '4%', top: '86%',
                 textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(macdLegendParts) }
             });
         }
@@ -293,10 +293,10 @@ const StockChart = {
             },
             axisPointer: { link: [{ xAxisIndex: 'all' }], label: { backgroundColor: '#333' } },
             grid: [
-                { left: '4%', right: '3%', top: '8%', height: '20%' },    // Main
-                { left: '4%', right: '3%', top: '34%', height: '10%' },   // Volume
-                { left: '4%', right: '3%', top: '51%', height: '10%' },   // KD
-                { left: '4%', right: '3%', top: '68%', height: '10%' }    // MACD
+                { left: '4%', right: '3%', top: '8%', height: '18%' },    // Main
+                { left: '4%', right: '3%', top: '42%', height: '10%' },   // Volume
+                { left: '4%', right: '3%', top: '64%', height: '10%' },   // KD
+                { left: '4%', right: '3%', top: '90%', height: '8%' }    // MACD
             ],
             xAxis: [
                 {
@@ -360,7 +360,7 @@ const StockChart = {
                     start: Math.max(0, 100 - (60 / data.length * 100)), end: 100
                 },
                 {
-                    show: true, xAxisIndex: [0, 1, 2, 3], type: 'slider', bottom: 2,
+                    show: true, xAxisIndex: [0, 1, 2, 3], type: 'slider', bottom: 1,
                     start: Math.max(0, 100 - (60 / data.length * 100)), end: 100, height: 16,
                     borderColor: colors.gridBorder, fillerColor: 'rgba(0,212,255,0.2)',
                     handleStyle: { color: '#00d4ff' }, textStyle: { color: colors.textSec }
