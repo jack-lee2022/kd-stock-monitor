@@ -191,7 +191,7 @@ class KDCalculator:
                             "kd_d": current_kd.get("kd_d") if current_kd else None,
                             "last_updated": stock.get("last_updated"),
                             "data_points": len(df_with_kd),
-                            "history": df_with_kd[['date', 'open', 'high', 'low', 'close', 'volume', 'kd_k', 'kd_d']].to_dict('records')[-90:]  # Last 90 days
+                            "history": df_with_kd[['date', 'open', 'high', 'low', 'close', 'volume', 'kd_k', 'kd_d']].to_dict('records')[-500:]  # Last 500 days
                         })
                         
                         logger.info(f"KD calculated for {symbol}: K={current_kd.get('kd_k')}, D={current_kd.get('kd_d')}")

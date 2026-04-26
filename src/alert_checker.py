@@ -256,7 +256,7 @@ class AlertChecker:
             for market in ["TW", "US"]:
                 for stock in stocks_data.get(market, []):
                     # Convert history dates to strings to ensure JSON serialization
-                    history = stock.get("history", [])[-60:] if "history" in stock else []
+                    history = stock.get("history", [])[-500:] if "history" in stock else []
                     clean_history = []
                     for h in history:
                         clean_h = h.copy()
