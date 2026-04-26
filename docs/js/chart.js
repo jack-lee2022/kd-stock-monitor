@@ -225,7 +225,8 @@ const StockChart = {
             macdLegendParts.push({ text: `MACD: ${lastHist.toFixed(2)}`, color: lastHist >= 0 ? colors.up : colors.down });
         }
 
-        // Build title array - legends placed ABOVE each sub-chart with 60px spacing
+        // Build title array - legends placed ABOVE each sub-chart
+        // Target: ~60px (8.6%) spacing between each x-axis and the next legend
         const titles = [{
             text: `${this.currentSymbol}  ${this.currentName}`,
             left: 'center', top: '1%',
@@ -254,7 +255,7 @@ const StockChart = {
         // Volume legend - above volume grid
         titles.push({
             text: '{sec|成交量}',
-            left: '4%', top: '38%',
+            left: '4%', top: '33%',
             textStyle: { fontSize: 10, fontFamily: 'monospace', rich: { sec: { color: colors.textSec } } }
         });
 
@@ -262,7 +263,7 @@ const StockChart = {
         if (kdLegendParts.length > 0) {
             titles.push({
                 text: buildText(kdLegendParts),
-                left: '4%', top: '60%',
+                left: '4%', top: '54%',
                 textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(kdLegendParts) }
             });
         }
@@ -271,7 +272,7 @@ const StockChart = {
         if (macdLegendParts.length > 0) {
             titles.push({
                 text: buildText(macdLegendParts),
-                left: '4%', top: '86%',
+                left: '4%', top: '75%',
                 textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(macdLegendParts) }
             });
         }
@@ -293,10 +294,10 @@ const StockChart = {
             },
             axisPointer: { link: [{ xAxisIndex: 'all' }], label: { backgroundColor: '#333' } },
             grid: [
-                { left: '4%', right: '3%', top: '8%', height: '18%' },    // Main
-                { left: '4%', right: '3%', top: '42%', height: '10%' },   // Volume
-                { left: '4%', right: '3%', top: '64%', height: '10%' },   // KD
-                { left: '4%', right: '3%', top: '90%', height: '8%' }    // MACD
+                { left: '4%', right: '3%', top: '6%', height: '18%' },    // Main: x-axis bottom at 24%
+                { left: '4%', right: '3%', top: '35%', height: '10%' },   // Volume: x-axis bottom at 45%
+                { left: '4%', right: '3%', top: '56%', height: '10%' },   // KD: x-axis bottom at 66%
+                { left: '4%', right: '3%', top: '77%', height: '10%' }    // MACD: x-axis bottom at 87%
             ],
             xAxis: [
                 {
