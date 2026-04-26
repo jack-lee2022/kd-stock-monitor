@@ -3,6 +3,7 @@
 股票交易模式檢測系統
 根據8種經典量價關係進行自動分析
 整合到 KD Stock Monitor
+加入 ATR 濾網 與 Slope 趨勢強度（純 pandas，無須 TA-Lib）
 """
 
 import pandas as pd
@@ -56,6 +57,66 @@ class TradingPatternAnalyzer:
         
         # 波動率
         self.df['Volatility'] = self.df['Price_Change_Abs'].rolling(window=20).mean()
+        
+        # === ATR 濾網（純 pandas 實作）===
+        self.df['ATR'] = self._calc_atr(period=14)
+        # ATR 佔收盤價百分比，用於跨股票統一比較
+        self.df['ATR_Pct'] = (self.df['ATR'] / self.df['Close']) * 100
+        # 相對波動 = 當日漲跌幅度 / ATR%，衡量是否異常波動
+        self.df['Relative_Move'] = self.df['Price_Change_Abs'] / (self.df['ATR_Pct'] / 100 + 1e-9)
+        
+        # === Slope 趨勢強度（純 pandas 實作）===
+        self.df['Slope_5D'] = self._calc_slope(self.df['Close'], period=5)
+        # Slope 佔收盤價百分比，跨股票可比較
+        self.df['Slope_5D_Pct'] = (self.df['Slope_5D'] / self.df['Close']) * 100
+    
+    def _calc_atr(self, period: int = 14) -> pd.Series:
+        """
+        計算 Average True Range（平均真實波幅）
+        純 pandas 實作，無須 TA-Lib
+        
+        TR = max(High - Low, |High - Close_prev|, |Low - Close_prev|)
+        ATR = TR 的 N 日移動平均
+        """
+        high = self.df['High']
+        low = self.df['Low']
+        close = self.df['Close']
+        
+        tr1 = high - low
+        tr2 = (high - close.shift(1)).abs()
+        tr3 = (low - close.shift(1)).abs()
+        
+        tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
+        atr = tr.rolling(window=period, min_periods=1).mean()
+        return atr
+    
+    def _calc_slope(self, series: pd.Series, period: int = 5) -> pd.Series:
+        """
+        計算線性回歸斜率（Linear Regression Slope）
+        純 pandas + numpy 實作，無須 TA-Lib
+        
+        對最近 N 個收盤價做線性回歸，回傳每日斜率
+        """
+        x = np.arange(period)
+        
+        def _linear_slope(y):
+            if len(y) < period or np.isnan(y).any():
+                return np.nan
+            # np.polyfit(x, y, 1) 回傳 [斜率, 截距]
+            return np.polyfit(x, y, 1)[0]
+        
+        return series.rolling(window=period, min_periods=period).apply(
+            _linear_slope, raw=True
+        )
+    
+    def _get_latest_atr_pct(self) -> float:
+        """取得最新 ATR 百分比（保底值 1.0%）"""
+        return self.df['ATR_Pct'].iloc[-1] if not self.df.empty else 1.0
+    
+    def _get_recent_slope_pct(self, days: int = 5) -> float:
+        """取得最近 N 天平均 Slope 百分比"""
+        recent = self.df['Slope_5D_Pct'].tail(days)
+        return recent.mean() if not recent.empty else 0.0
     
     def detect_pattern_1_quick_rise_slow_fall(self) -> Tuple[bool, str, float]:
         """快漲慢跌 - 主力出貨信號"""
@@ -69,22 +130,31 @@ class TradingPatternAnalyzer:
         first_half_change = (first_half['Close'].iloc[-1] / first_half['Close'].iloc[0] - 1) * 100
         second_half_change = (second_half['Close'].iloc[-1] / second_half['Close'].iloc[0] - 1) * 100
         
-        # 放寬標準：從 10% 降到 5%
-        quick_rise = first_half_change > 5
-        slow_fall = -3 < second_half_change < 0
+        atr_pct = self._get_latest_atr_pct()
+        slope_first = first_half['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in first_half.columns else 0
+        
+        # ATR 相對閾值：漲幅需超過 max(3%, 2倍ATR)，適應不同波動特性股票
+        rise_threshold = max(3.0, atr_pct * 2.0)
+        fall_threshold = atr_pct * 1.0  # 回跌 < 1倍ATR 視為「慢跌」
+        
+        quick_rise = first_half_change > rise_threshold
+        slow_fall = -fall_threshold < second_half_change < 0
         volume_shrink = second_half['Volume'].mean() < first_half['Volume'].mean() * 0.85
         
         confidence = 0.0
         if quick_rise:
-            confidence += 0.4
+            confidence += 0.35
         if slow_fall:
-            confidence += 0.3
+            confidence += 0.25
         if volume_shrink:
-            confidence += 0.3
+            confidence += 0.25
+        # Slope 趨勢確認：前段上漲斜率陡峭加分
+        if slope_first > atr_pct * 1.5:
+            confidence += 0.15
         
         if quick_rise and slow_fall:
-            msg = f"快漲{first_half_change:.1f}%後緩跌{abs(second_half_change):.1f}%"
-            return True, msg, confidence
+            msg = f"快漲{first_half_change:.1f}%後緩跌{abs(second_half_change):.1f}% (ATR:{atr_pct:.1f}%)"
+            return True, msg, min(confidence, 1.0)
         
         return False, "不符合快漲慢跌特徵", 0.0
     
@@ -100,157 +170,205 @@ class TradingPatternAnalyzer:
         first_half_change = (first_half['Close'].iloc[-1] / first_half['Close'].iloc[0] - 1) * 100
         second_half_change = (second_half['Close'].iloc[-1] / second_half['Close'].iloc[0] - 1) * 100
         
-        # 放寬標準：從 -10% 降到 -5%
-        quick_fall = first_half_change < -5
-        slow_rise = 0 < second_half_change < 5
+        atr_pct = self._get_latest_atr_pct()
+        slope_second = second_half['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in second_half.columns else 0
+        
+        # ATR 相對閾值
+        fall_threshold = max(3.0, atr_pct * 2.0)
+        rise_cap = atr_pct * 1.0
+        
+        quick_fall = first_half_change < -fall_threshold
+        slow_rise = 0 < second_half_change < rise_cap
         volume_shrink = second_half['Volume'].mean() < first_half['Volume'].mean() * 0.8
         
         confidence = 0.0
         if quick_fall:
-            confidence += 0.4
+            confidence += 0.35
         if slow_rise:
-            confidence += 0.3
+            confidence += 0.25
         if volume_shrink:
-            confidence += 0.3
+            confidence += 0.25
+        # 後段緩漲斜率溫和加分
+        if 0 < slope_second < atr_pct * 1.2:
+            confidence += 0.15
         
         if quick_fall and slow_rise:
-            msg = f"快跌{abs(first_half_change):.1f}%後緩漲{second_half_change:.1f}%"
-            return True, msg, confidence
+            msg = f"快跌{abs(first_half_change):.1f}%後緩漲{second_half_change:.1f}% (ATR:{atr_pct:.1f}%)"
+            return True, msg, min(confidence, 1.0)
         
         return False, "不符合快跌慢漲特徵", 0.0
     
     def detect_pattern_3_volume_price_rise(self) -> Tuple[bool, str, float]:
         """放量上漲 - 可能短期見頂"""
         latest = self.df.iloc[-1]
+        atr_pct = self._get_latest_atr_pct()
         
-        # 放寬標準：從 2.0 倍降到 1.5 倍
+        # ATR 相對閾值：漲幅需超過 max(2%, 1.5倍ATR)
+        price_rise_threshold = max(2.0, atr_pct * 1.5)
+        
         volume_surge = latest['Volume_Ratio'] > 1.5
-        price_rise = latest['Price_Change'] > 0.03
+        price_rise = latest['Price_Change'] * 100 > price_rise_threshold
         
         confidence = 0.0
         if volume_surge:
-            confidence += 0.5
+            confidence += 0.45
         if price_rise:
-            confidence += 0.3
+            confidence += 0.35
         
         recent_3days = self.df.tail(3)
         continuous_surge = (recent_3days['Volume_Ratio'] > 1.3).sum() >= 2
         if continuous_surge:
-            confidence += 0.2
+            confidence += 0.15
+        
+        # ATR 濾網：若相對波動異常高（>3倍ATR），可能是恐慌或異常，降低信心度
+        if latest['Relative_Move'] > 3.0:
+            confidence -= 0.15
         
         if volume_surge and price_rise:
-            return True, f"放量{latest['Volume_Ratio']:.1f}倍大漲", confidence
+            return True, f"放量{latest['Volume_Ratio']:.1f}倍大漲 (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
         
         return False, "未達放量上漲條件", 0.0
     
     def detect_pattern_4_volume_shrink_flat(self) -> Tuple[bool, str, float]:
         """縮量不跌 - 頭部可能形成（價格橫盤，不漲不跌）"""
         recent = self.df.tail(5)
+        atr_pct = self._get_latest_atr_pct()
         
-        # 放寬標準
         volume_shrink = recent['Volume_Ratio'].mean() < 0.8
         price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
-        # 橫盤：變動在 -2% 到 +2% 之間
-        price_flat = -0.02 <= price_change <= 0.02
+        # ATR 相對閾值：橫盤 = 變動在 ±0.8倍ATR 以內（取代固定 ±2%）
+        flat_threshold = max(1.5, atr_pct * 0.8)
+        price_flat = -flat_threshold/100 <= price_change <= flat_threshold/100
         
         confidence = 0.0
         if volume_shrink:
-            confidence += 0.5
+            confidence += 0.45
         if price_flat:
-            confidence += 0.5
+            confidence += 0.45
+        # Slope 接近 0 確認真正橫盤
+        recent_slope = recent['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in recent.columns else 0
+        if abs(recent_slope) < atr_pct * 0.3:
+            confidence += 0.1
         
         if volume_shrink and price_flat:
-            return True, f"縮量至{recent['Volume_Ratio'].mean():.1f}倍", confidence
+            return True, f"縮量至{recent['Volume_Ratio'].mean():.1f}倍 (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
         
         return False, "不符合縮量不跌特徵", 0.0
     
     def detect_pattern_5_volume_shrink_rise(self) -> Tuple[bool, str, float]:
-        """縮量上漲 - 籌碼穩定（明顯上漲，漲幅超過 2%）"""
+        """縮量上漲 - 籌碼穩定（明顯上漲，漲幅超過門檻）"""
         recent = self.df.tail(5)
+        atr_pct = self._get_latest_atr_pct()
         
-        # 放寬標準
         volume_shrink = recent['Volume_Ratio'].mean() < 1.0
         price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
-        # 明顯上漲：漲幅超過 2%
-        price_rise = price_change > 0.02
+        # ATR 相對閾值：上漲需超過 max(1.5%, 1.2倍ATR)
+        rise_threshold = max(1.5, atr_pct * 1.2)
+        price_rise = price_change * 100 > rise_threshold
+        
+        # Slope 確認趨勢：需為正且穩定上漲
+        recent_slope = recent['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in recent.columns else 0
+        slope_positive = recent_slope > atr_pct * 0.2
         
         confidence = 0.0
         if volume_shrink:
-            confidence += 0.4
+            confidence += 0.35
         if price_rise:
-            confidence += 0.6
+            confidence += 0.45
+        if slope_positive:
+            confidence += 0.2
         
         if volume_shrink and price_rise:
-            return True, f"縮量上漲{price_change*100:.1f}%", confidence
+            return True, f"縮量上漲{price_change*100:.1f}% (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
         
         return False, "不符合縮量上漲特徵", 0.0
     
     def detect_pattern_6_volume_shrink_fall(self) -> Tuple[bool, str, float]:
-        """縮量下跌 - 繼續看跌（明顯下跌，跌幅超過 2%）"""
+        """縮量下跌 - 繼續看跌（明顯下跌，跌幅超過門檻）"""
         recent = self.df.tail(5)
+        atr_pct = self._get_latest_atr_pct()
         
-        # 放寬標準
         volume_shrink = recent['Volume_Ratio'].mean() < 1.0
         price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
-        # 明顯下跌：跌幅超過 2%
-        price_fall = price_change < -0.02
+        # ATR 相對閾值：下跌需超過 max(1.5%, 1.2倍ATR)
+        fall_threshold = max(1.5, atr_pct * 1.2)
+        price_fall = price_change * 100 < -fall_threshold
         
         confidence = 0.0
         if volume_shrink:
-            confidence += 0.4
+            confidence += 0.35
         if price_fall:
-            confidence += 0.6
+            confidence += 0.55
+        # ATR 濾網：若波動極大，可能是恐慌拋售而非正常看跌
+        recent_move = recent['Relative_Move'].mean() if 'Relative_Move' in recent.columns else 0
+        if recent_move > 2.5:
+            confidence -= 0.1
         
         if volume_shrink and price_fall:
-            return True, f"縮量下跌{abs(price_change)*100:.1f}%", confidence
+            return True, f"縮量下跌{abs(price_change)*100:.1f}% (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
         
         return False, "不符合縮量下跌特徵", 0.0
     
     def detect_pattern_7_volume_shrink_no_rise(self) -> Tuple[bool, str, float]:
         """縮量不漲 - 頭部確立"""
         recent = self.df.tail(5)
+        atr_pct = self._get_latest_atr_pct()
         
         price_vs_ma20 = recent['Close'].iloc[-1] / recent['MA20'].iloc[-1]
-        # 放寬標準：從 1.1 降到 1.05
         at_high = price_vs_ma20 > 1.05
         
         volume_shrink = recent['Volume_Ratio'].mean() < 0.9
-        price_stagnant = abs(recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) < 0.03
+        # ATR 相對閾值：滯漲 = 變動在 ±0.8倍ATR 以內
+        stagnant_threshold = max(1.5, atr_pct * 0.8)
+        price_stagnant = abs(recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) * 100 < stagnant_threshold
+        
+        # Slope 接近 0 確認滯漲
+        recent_slope = recent['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in recent.columns else 0
+        slope_stagnant = abs(recent_slope) < atr_pct * 0.3
         
         confidence = 0.0
         if at_high:
-            confidence += 0.4
+            confidence += 0.35
         if volume_shrink:
             confidence += 0.3
         if price_stagnant:
-            confidence += 0.3
+            confidence += 0.2
+        if slope_stagnant:
+            confidence += 0.15
         
         if at_high and volume_shrink and price_stagnant:
-            return True, "高位縮量滯漲", confidence
+            return True, f"高位縮量滯漲 (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
         
         return False, "不符合縮量不漲特徵", 0.0
     
     def detect_pattern_8_volume_surge_fall(self) -> Tuple[bool, str, float]:
         """放量下跌 - 恐慌殺跌"""
         latest = self.df.iloc[-1]
+        atr_pct = self._get_latest_atr_pct()
         
-        # 放寬標準：從 2.0 倍降到 1.5 倍
+        # ATR 相對閾值：跌幅需超過 max(2%, 1.5倍ATR)
+        fall_threshold = max(2.0, atr_pct * 1.5)
+        
         volume_surge = latest['Volume_Ratio'] > 1.5
-        price_fall = latest['Price_Change'] < -0.03
+        price_fall = latest['Price_Change'] * 100 < -fall_threshold
         
         confidence = 0.0
         if volume_surge:
-            confidence += 0.5
+            confidence += 0.45
         if price_fall:
-            confidence += 0.5
+            confidence += 0.4
+        
+        # 連跌後放量殺跌（原有邏輯保留）
+        recent_5days = self.df.tail(5)['Price_Change'].sum()
+        if recent_5days < -0.08:
+            confidence += 0.15
+        
+        # ATR 濾網：若跌幅異常大（>3倍ATR），可能是恐慌性拋售，視為撿便宜機會
+        if latest['Relative_Move'] > 3.0:
+            confidence += 0.1
         
         if volume_surge and price_fall:
-            recent_5days = self.df.tail(5)['Price_Change'].sum()
-            if recent_5days < -0.08:
-                confidence += 0.3
-                return True, f"連跌後放量{latest['Volume_Ratio']:.1f}倍殺跌", min(confidence, 1.0)
-            else:
-                return True, f"放量{latest['Volume_Ratio']:.1f}倍下跌", confidence
+            return True, f"放量{latest['Volume_Ratio']:.1f}倍下跌 (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
         
         return False, "不符合放量下跌特徵", 0.0
     
