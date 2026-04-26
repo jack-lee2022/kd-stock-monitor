@@ -335,36 +335,64 @@ class TradingPatternAnalyzer:
         return False, "不符合縮量下跌特徵", 0.0
     
     def detect_pattern_7_volume_shrink_no_rise(self) -> Tuple[bool, str, float]:
-        """縮量不漲 - 頭部確立"""
-        recent = self.df.tail(5)
+        """
+        縮量不漲 - 頭部確立（比口訣 4 更嚴格的確認訊號）
+        核心邏輯：大漲後 + 極端量縮 + 多次上攻失敗 = 頭部確立
+        """
+        recent = self.df.tail(10)
         atr_pct = self._get_latest_atr_pct()
         
+        # ── 1. 高檔定義：股價 > MA20 × 1.12（比口訣 4 的 1.08 更嚴）
         price_vs_ma20 = recent['Close'].iloc[-1] / recent['MA20'].iloc[-1]
-        at_high = price_vs_ma20 > 1.05
+        at_high = price_vs_ma20 > 1.12
         
-        volume_shrink = recent['Volume_Ratio'].mean() < 0.9
-        # ATR 相對閾值：滯漲 = 變動在 ±0.8倍ATR 以內
-        stagnant_threshold = max(1.5, atr_pct * 0.8)
+        # ── 2. 前期大漲：近 30 天漲幅 > 15% 或 5×ATR（確認是「漲後」滯漲）
+        if len(self.df) >= 31:
+            prev_30_change = (self.df['Close'].iloc[-1] / self.df['Close'].iloc[-31] - 1) * 100
+        else:
+            prev_30_change = 0
+        has_big_rise = prev_30_change > max(15.0, atr_pct * 5)
+        
+        # ── 3. 嚴格量縮：量比 < 0.6（比口訣 4 的 0.65 更嚴）
+        volume_shrink = recent['Volume_Ratio'].mean() < 0.6
+        
+        # ── 4. 滯漲定義：近 10 天價格變動在 ±0.5×ATR 以內（更嚴格）
+        stagnant_threshold = max(0.8, atr_pct * 0.5)
         price_stagnant = abs(recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1) * 100 < stagnant_threshold
         
-        # Slope 接近 0 確認滯漲
+        # ── 5. Slope 接近 0 確認真正滯漲
         recent_slope = recent['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in recent.columns else 0
-        slope_stagnant = abs(recent_slope) < atr_pct * 0.3
+        slope_stagnant = abs(recent_slope) < atr_pct * 0.2
         
+        # ── 6. 多次上攻失敗：近 10 天內至少 2 天出現「上影線」（開高走低）
+        # 上影線 = (High - max(Open, Close)) / Close，> 1.5% 視為上攻失敗
+        recent_10 = self.df.tail(10)
+        upper_shadow = (recent_10['High'] - recent_10[['Open', 'Close']].max(axis=1)) / recent_10['Close']
+        failed_attacks = (upper_shadow > 0.015).sum()
+        has_failed_attacks = failed_attacks >= 2
+        
+        # ── 信心度計算（五項合計，最高 1.0）
         confidence = 0.0
         if at_high:
-            confidence += 0.35
+            confidence += 0.25
+        if has_big_rise:
+            confidence += 0.25
         if volume_shrink:
-            confidence += 0.3
-        if price_stagnant:
             confidence += 0.2
-        if slope_stagnant:
+        if price_stagnant:
             confidence += 0.15
+        if has_failed_attacks:
+            confidence += 0.15
+        # Slope 接近 0 為額外確認，信心度微調
+        if slope_stagnant:
+            confidence = min(confidence + 0.05, 1.0)
         
-        if at_high and volume_shrink and price_stagnant:
-            return True, f"高位縮量滯漲 (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
+        # 必須同時滿足：高檔 + 大漲 + 量縮 + 滯漲（上攻失敗為加分項）
+        if at_high and has_big_rise and volume_shrink and price_stagnant:
+            msg = f"頭部確立：漲{prev_30_change:.1f}% 後滯漲，{failed_attacks}次上攻失敗"
+            return True, msg, min(confidence, 1.0)
         
-        return False, "不符合縮量不漲特徵", 0.0
+        return False, "不符合縮量不漲頭部確立特徵", 0.0
     
     def detect_pattern_8_volume_surge_fall(self) -> Tuple[bool, str, float]:
         """放量下跌 - 恐慌殺跌"""
