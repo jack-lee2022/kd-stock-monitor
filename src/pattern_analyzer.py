@@ -576,6 +576,79 @@ class TradingPatternAnalyzer:
         
         return False, "不符合恐慌殺跌特徵", 0.0
     
+    def _calc_rsi(self, period: int = 14) -> float:
+        """計算最新 RSI 值"""
+        if len(self.df) < period + 1:
+            return 50.0
+        closes = self.df['Close']
+        delta = closes.diff()
+        gain = delta.where(delta > 0, 0.0)
+        loss = -delta.where(delta < 0, 0.0)
+        avg_gain = gain.rolling(window=period).mean()
+        avg_loss = loss.rolling(window=period).mean()
+        rs = avg_gain / avg_loss.replace(0, 1e-9)
+        rsi = 100 - (100 / (1 + rs))
+        return rsi.iloc[-1]
+    
+    def detect_pattern_9_panic_bottom(self) -> Tuple[bool, str, float]:
+        """
+        極度恐慌底部 - 短線搶反彈（極嚴格，一年僅數次）
+        核心邏輯：跌深 + 極度恐慌 + 嚴重乖離 + 止跌訊號 = 短線反彈機會
+        風險提示：此訊號為「短線搶反彈」，必須嚴設停損！
+        """
+        latest = self.df.iloc[-1]
+        atr_pct = self._get_latest_atr_pct()
+        
+        # ── 1. 已跌深：近 20 天跌幅 > max(15%, 5×ATR)
+        if len(self.df) >= 21:
+            prev_20_change = (self.df['Close'].iloc[-1] / self.df['Close'].iloc[-21] - 1) * 100
+        else:
+            prev_20_change = 0
+        deeply_fallen = prev_20_change < -max(15.0, atr_pct * 5)
+        
+        # ── 2. 極度恐慌：單日量比 > 3.0
+        extreme_volume = latest['Volume_Ratio'] > 3.0
+        
+        # ── 3. 明顯殺跌：單日跌幅 > max(4%, 3×ATR)
+        fall_threshold = max(4.0, atr_pct * 3.0)
+        big_fall = latest['Price_Change'] * 100 < -fall_threshold
+        
+        # ── 4. 嚴重乖離：股價 < MA20 × 0.92（遠離均線）
+        price_vs_ma20 = latest['Close'] / latest['MA20']
+        severe_deviation = price_vs_ma20 < 0.92
+        
+        # ── 5. 止跌訊號：長下影線 > 2%（收盤遠離最低點）
+        lower_shadow = (min(latest['Open'], latest['Close']) - latest['Low']) / latest['Close']
+        has_bounce = lower_shadow > 0.02
+        
+        # ── 6. RSI 超賣：RSI(14) < 35
+        rsi_value = self._calc_rsi(14)
+        rsi_oversold = rsi_value < 35
+        
+        confidence = 0.0
+        if deeply_fallen:
+            confidence += 0.2
+        if extreme_volume:
+            confidence += 0.2
+        if big_fall:
+            confidence += 0.15
+        if severe_deviation:
+            confidence += 0.15
+        if has_bounce:
+            confidence += 0.15
+        if rsi_oversold:
+            confidence += 0.15
+        
+        # 必須同時滿足：跌深 + 極度放量 + 明顯跌 + 严重乖離 + 止跌 + RSI超賣
+        if deeply_fallen and extreme_volume and big_fall and severe_deviation and has_bounce and rsi_oversold:
+            msg = (f"極度恐慌底部(跌{abs(prev_20_change):.0f}%,"
+                   f"量{latest['Volume_Ratio']:.1f}倍,RSI{rsi_value:.0f},"
+                   f"乖離{(1-price_vs_ma20)*100:.0f}%)"
+                   f"【短線搶反彈，嚴設停損】")
+            return True, msg, min(confidence, 1.0)
+        
+        return False, "不符合極度恐慌底部特徵", 0.0
+    
     def analyze_all_patterns(self) -> List[Dict]:
         """分析所有8種交易模式"""
         patterns = []
@@ -589,6 +662,7 @@ class TradingPatternAnalyzer:
             ("縮量下跌", "繼續看跌", "AVOID", self.detect_pattern_6_volume_shrink_fall),
             ("縮量不漲", "頭部確立", "SELL", self.detect_pattern_7_volume_shrink_no_rise),
             ("放量下跌", "恐慌殺跌", "AVOID", self.detect_pattern_8_volume_surge_fall),
+            ("恐慌底部", "短線搶反彈", "BUY", self.detect_pattern_9_panic_bottom),
         ]
         
         for name, desc, signal, detect_func in patterns_to_check:
