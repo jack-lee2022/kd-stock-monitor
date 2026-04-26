@@ -716,11 +716,70 @@ class TradingPatternAnalyzer:
             return True, msg, min(confidence, 1.0)
         
         return False, "不符合天量噴出必然回落特徵", 0.0
-    
+
+    def detect_pattern_11_chip_lock_rally(self) -> Tuple[bool, str, float]:
+        """
+        籌碼鎖定-主升延續（極嚴格，籌碼高度鎖定的強勢主升）
+        核心邏輯：極度量縮 + 強勢上漲 + 均線多頭 + 無放量干擾 = 最強上升訊號
+        說明：籌碼被主力或長線投資人高度鎖定，賣壓極輕，趨勢極為強勁
+        """
+        recent = self.df.tail(10)
+        atr_pct = self._get_latest_atr_pct()
+
+        # ── 1. 極度量縮：近 10 天平均量比 < 0.5（不到平時一半）
+        volume_shrink = recent['Volume_Ratio'].mean() < 0.5
+
+        # ── 2. 強勢上漲：近 10 天漲幅 > max(8%, 4×ATR)
+        price_change = recent['Close'].iloc[-1] / recent['Close'].iloc[0] - 1
+        rise_threshold = max(8.0, atr_pct * 4.0)
+        strong_rise = price_change * 100 > rise_threshold
+
+        # ── 3. 均線多頭：股價 > MA20 × 1.08
+        price_vs_ma20 = recent['Close'].iloc[-1] / recent['MA20'].iloc[-1]
+        above_ma20 = price_vs_ma20 > 1.08
+
+        # ── 4. 非極度高檔：股價 < MA20 × 1.25（還有上漲空間，非泡沫）
+        not_bubble = price_vs_ma20 < 1.25
+
+        # ── 5. 無放量干擾：近 20 天無任何量比 > 1.5 的放量日
+        if len(self.df) >= 20:
+            recent_20 = self.df.tail(20)
+            has_volume_surge = (recent_20['Volume_Ratio'] > 1.5).any()
+            no_volume_surge = not has_volume_surge
+        else:
+            no_volume_surge = True
+
+        # ── 6. Slope 陡峭：上升斜率 > 0.5×ATR（加速上升）
+        recent_slope = recent['Slope_5D_Pct'].mean() if 'Slope_5D_Pct' in recent.columns else 0
+        steep_slope = recent_slope > atr_pct * 0.5
+
+        confidence = 0.0
+        if volume_shrink:
+            confidence += 0.2
+        if strong_rise:
+            confidence += 0.2
+        if above_ma20:
+            confidence += 0.15
+        if not_bubble:
+            confidence += 0.15
+        if no_volume_surge:
+            confidence += 0.15
+        if steep_slope:
+            confidence += 0.15
+
+        # 必須同時滿足：極度量縮 + 強勢上漲 + 多頭 + 非泡沫 + 無放量 + 斜率陡峭
+        if volume_shrink and strong_rise and above_ma20 and not_bubble and no_volume_surge and steep_slope:
+            msg = (f"籌碼鎖定主升(量{recent['Volume_Ratio'].mean():.2f}倍,"
+                   f"漲{price_change*100:.1f}%,MA20:{price_vs_ma20:.2f}倍)"
+                   f"【強勢主升，籌碼鎖定】")
+            return True, msg, min(confidence, 1.0)
+
+        return False, "不符合籌碼鎖定主升特徵", 0.0
+
     def analyze_all_patterns(self) -> List[Dict]:
-        """分析所有10種交易模式"""
+        """分析所有11種交易模式"""
         patterns = []
-        
+
         patterns_to_check = [
             ("快漲慢跌", "主力出貨", "SELL", self.detect_pattern_1_quick_rise_slow_fall),
             ("快跌慢漲", "主力吸籌", "BUY", self.detect_pattern_2_quick_fall_slow_rise),
@@ -732,6 +791,7 @@ class TradingPatternAnalyzer:
             ("放量下跌", "恐慌殺跌", "AVOID", self.detect_pattern_8_volume_surge_fall),
             ("恐慌底部", "短線搶反彈", "BUY", self.detect_pattern_9_panic_bottom),
             ("天量噴出", "必然回落", "SELL", self.detect_pattern_10_blowoff_top),
+            ("籌碼鎖定", "主升延續", "BUY", self.detect_pattern_11_chip_lock_rally),
         ]
         
         for name, desc, signal, detect_func in patterns_to_check:
