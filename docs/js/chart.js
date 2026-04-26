@@ -225,8 +225,7 @@ const StockChart = {
             macdLegendParts.push({ text: `MACD: ${lastHist.toFixed(2)}`, color: lastHist >= 0 ? colors.up : colors.down });
         }
 
-        // Build title array - legends placed ABOVE each sub-chart
-        // Target: ~60px (8.6%) spacing between each x-axis and the next legend
+        // Build title array - main chart title only
         const titles = [{
             text: `${this.currentSymbol}  ${this.currentName}`,
             left: 'center', top: '1%',
@@ -235,45 +234,68 @@ const StockChart = {
             subtextStyle: { color: '#00d4ff', fontSize: 11 }
         }];
 
-        // Helper to build rich config
+        // Helper to build rich config for graphic text (uses 'fill' not 'color')
         const buildRich = (parts) => {
             const rich = {};
-            parts.forEach((p, i) => { rich['r' + i] = { color: p.color }; });
+            parts.forEach((p, i) => { rich['r' + i] = { fill: p.color }; });
             return rich;
         };
         const buildText = (parts) => parts.map((p, i) => `{r${i}|${p.text}}`).join('   ');
 
+        // Build graphic elements for legends (no default padding, precise positioning)
+        const graphicElements = [];
+
         // Main legend - above main grid
         if (mainLegendParts.length > 0) {
-            titles.push({
-                text: buildText(mainLegendParts),
-                left: '4%', top: '3%',
-                textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(mainLegendParts) }
+            graphicElements.push({
+                type: 'text',
+                left: '4%', top: '4%',
+                style: {
+                    text: buildText(mainLegendParts),
+                    font: '10px monospace',
+                    fill: '#e0e0e0',
+                    rich: buildRich(mainLegendParts)
+                }
             });
         }
 
         // Volume legend - above volume grid
-        titles.push({
-            text: '{sec|成交量}',
+        graphicElements.push({
+            type: 'text',
             left: '4%', top: '33%',
-            textStyle: { fontSize: 10, fontFamily: 'monospace', rich: { sec: { color: colors.textSec } } }
+            style: {
+                text: '{sec|成交量}',
+                font: '10px monospace',
+                fill: '#888888',
+                rich: { sec: { fill: colors.textSec } }
+            }
         });
 
         // KD legend - above KD grid
         if (kdLegendParts.length > 0) {
-            titles.push({
-                text: buildText(kdLegendParts),
-                left: '4%', top: '54%',
-                textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(kdLegendParts) }
+            graphicElements.push({
+                type: 'text',
+                left: '4%', top: '55%',
+                style: {
+                    text: buildText(kdLegendParts),
+                    font: '10px monospace',
+                    fill: '#e0e0e0',
+                    rich: buildRich(kdLegendParts)
+                }
             });
         }
 
         // MACD legend - above MACD grid
         if (macdLegendParts.length > 0) {
-            titles.push({
-                text: buildText(macdLegendParts),
-                left: '4%', top: '75%',
-                textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(macdLegendParts) }
+            graphicElements.push({
+                type: 'text',
+                left: '4%', top: '77%',
+                style: {
+                    text: buildText(macdLegendParts),
+                    font: '10px monospace',
+                    fill: '#e0e0e0',
+                    rich: buildRich(macdLegendParts)
+                }
             });
         }
 
@@ -281,6 +303,7 @@ const StockChart = {
             backgroundColor: colors.bg,
             animation: true, animationDuration: 500,
             title: titles,
+            graphic: graphicElements,
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -294,10 +317,10 @@ const StockChart = {
             },
             axisPointer: { link: [{ xAxisIndex: 'all' }], label: { backgroundColor: '#333' } },
             grid: [
-                { left: '4%', right: '3%', top: '6%', height: '18%' },    // Main: x-axis bottom at 24%
-                { left: '4%', right: '3%', top: '35%', height: '10%' },   // Volume: x-axis bottom at 45%
-                { left: '4%', right: '3%', top: '56%', height: '10%' },   // KD: x-axis bottom at 66%
-                { left: '4%', right: '3%', top: '77%', height: '10%' }    // MACD: x-axis bottom at 87%
+                { left: '4%', right: '3%', top: '9%', height: '16%' },    // Main: x-axis bottom at 25%
+                { left: '4%', right: '3%', top: '37%', height: '10%' },   // Volume: x-axis bottom at 47%
+                { left: '4%', right: '3%', top: '59%', height: '10%' },   // KD: x-axis bottom at 69%
+                { left: '4%', right: '3%', top: '81%', height: '10%' }    // MACD: x-axis bottom at 91%
             ],
             xAxis: [
                 {
