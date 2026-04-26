@@ -341,5 +341,54 @@ const DataManager = {
         if (price === null || price === undefined) return '-';
         const symbol = currency === 'TWD' ? 'NT$' : '$';
         return `${symbol}${price.toFixed(2)}`;
+    },
+
+    /**
+     * Load historical data from _kd.csv for a specific stock
+     */
+    async loadStockHistory(symbol) {
+        try {
+            const fileName = symbol.replace(/\./g, '_') + '_kd.csv';
+            const timestamp = new Date().getTime();
+            const response = await fetch(`./data/${fileName}?v=${timestamp}`);
+            if (!response.ok) {
+                console.log(`History file not found for ${symbol}: ${fileName}`);
+                return null;
+            }
+            const csvText = await response.text();
+            const lines = csvText.trim().split('\n');
+            if (lines.length < 2) return null;
+
+            const headers = lines[0].split(',');
+            const history = [];
+            for (let i = 1; i < lines.length; i++) {
+                const values = lines[i].split(',');
+                if (values.length < 10) continue;
+                const row = {};
+                headers.forEach((h, idx) => { row[h.trim()] = values[idx]?.trim(); });
+
+                const item = {
+                    date: row.date,
+                    open: parseFloat(row.open),
+                    high: parseFloat(row.high),
+                    low: parseFloat(row.low),
+                    close: parseFloat(row.close),
+                    volume: parseFloat(row.volume) || 0,
+                    kd_k: parseFloat(row.kd_k),
+                    kd_d: parseFloat(row.kd_d)
+                };
+                // Skip rows with invalid data
+                if (!isNaN(item.close) && !isNaN(item.kd_k) && item.date) {
+                    history.push(item);
+                }
+            }
+            // Sort by date ascending
+            history.sort((a, b) => new Date(a.date) - new Date(b.date));
+            console.log(`Loaded ${history.length} history records for ${symbol}`);
+            return history;
+        } catch (error) {
+            console.warn(`Error loading history for ${symbol}:`, error);
+            return null;
+        }
     }
 };

@@ -548,10 +548,10 @@ function populateChartSelect() {
 /**
  * Select stock for chart (when clicking on a card)
  */
-function selectStockForChart(symbol) {
+async function selectStockForChart(symbol) {
     const select = document.getElementById('chart-stock-select');
     select.value = symbol;
-    updateChart(symbol);
+    await updateChart(symbol);
 
     // Scroll to chart
     document.getElementById('chart-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -560,15 +560,15 @@ function selectStockForChart(symbol) {
 /**
  * Update chart with stock data - ECharts
  */
-function updateChart(symbol) {
+async function updateChart(symbol) {
     const stock = DataManager.getStock(symbol);
     if (!stock) return;
 
-    // Use history from stock data, fallback to generating sample data
-    let history = stock.history || [];
+    // Try to load real history from CSV first
+    let history = await DataManager.loadStockHistory(symbol);
 
-    if (history.length === 0) {
-        // Generate sample data if no history
+    if (!history || history.length === 0) {
+        // Fallback to sample data if no real history available
         history = generateSampleHistory(stock);
     }
 
@@ -625,7 +625,7 @@ async function refreshData() {
     // Refresh chart if a stock is selected
     const select = document.getElementById('chart-stock-select');
     if (select.value) {
-        updateChart(select.value);
+        await updateChart(select.value);
     }
 }
 
