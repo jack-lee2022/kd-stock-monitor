@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-26T11:53:20.145207",
+  "timestamp": "2026-04-26T13:16:11.970638",
   "date": "2026-04-26",
   "macro": {
     "us10y": {
@@ -8,24 +8,24 @@
     },
     "dxy": {
       "value": 98.51,
-      "change": -0.29
+      "change": 0.0
     },
     "fear_greed": {
       "value": 18.71,
       "change": -0.6,
       "label": "VIX Index",
-      "timestamp": "2026-04-26T11:53:19.457502"
+      "timestamp": "2026-04-26T13:16:11.327003"
     },
     "btc": {
-      "value": 77392.0,
+      "value": 78094.0,
       "change_pct": 0
     }
   },
-  "stocks_processed": 68,
-  "stocks_successful": 68,
+  "stocks_processed": 70,
+  "stocks_successful": 70,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 52,
+  "new_alerts": 2,
+  "overbought_count": 54,
   "oversold_count": 2,
   "normal_count": 14,
   "overbought_stocks": [
@@ -420,6 +420,34 @@
       },
       "kd_k": 92.72,
       "kd_d": 93.37
+    },
+    {
+      "symbol": "00981A.TW",
+      "name": "統一台股增長",
+      "current_price": 27.8,
+      "change_pct": 4.43,
+      "extra_data": {
+        "regular_market_price": 27.8,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 26.62
+      },
+      "kd_k": 88.68,
+      "kd_d": 89.29
+    },
+    {
+      "symbol": "00992A.TW",
+      "name": "群益台灣科技創新",
+      "current_price": 16.93,
+      "change_pct": 1.62,
+      "extra_data": {
+        "regular_market_price": 16.93,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 16.66
+      },
+      "kd_k": 77.96,
+      "kd_d": 84.25
     },
     {
       "symbol": "AAPL",
