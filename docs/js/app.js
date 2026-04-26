@@ -442,7 +442,7 @@ function createPatternSection(patterns) {
         const emoji = signalEmojis[p.signal] || '⚪';
         return `
             <div class="flex items-center justify-between text-xs mb-1">
-                <span class="text-dark-text2">${emoji} ${p.pattern_id}</span>
+                <span class="text-dark-text2">${emoji} ${p.pattern_id}-${p.pattern_name}</span>
                 <span class="font-medium text-dark-text">${p.confidence}%</span>
             </div>
         `;
