@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Stock Data Fetcher - Fetches stock data from Yahoo Finance for TW and US stocks.
+Supports incremental updates to reduce API calls.
 """
 
 import yfinance as yf
@@ -16,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 
 class StockFetcher:
-    """Fetches historical stock data from Yahoo Finance."""
+    """Fetches historical stock data from Yahoo Finance with incremental update support."""
     
     def __init__(self, config_path: str = "config.json"):
         """Initialize with configuration."""
@@ -29,21 +30,119 @@ class StockFetcher:
         with open(config_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     
+    def _get_raw_filepath(self, symbol: str) -> str:
+        """Get the filepath for raw stock data CSV."""
+        return os.path.join(self.data_dir, f"{symbol.replace('.', '_')}_raw.csv")
+    
+    def _load_local_data(self, symbol: str) -> Optional[pd.DataFrame]:
+        """
+        Load existing local raw data for a symbol if available.
+        
+        Returns:
+            DataFrame with existing data or None if not found
+        """
+        filepath = self._get_raw_filepath(symbol)
+        if not os.path.exists(filepath):
+            return None
+        
+        try:
+            df = pd.read_csv(filepath)
+            if df.empty:
+                return None
+            
+            # Ensure date column is datetime
+            if 'date' in df.columns:
+                df['date'] = pd.to_datetime(df['date'])
+            
+            logger.info(f"Loaded {len(df)} local records for {symbol} (last: {df['date'].iloc[-1].date()})")
+            return df
+        except Exception as e:
+            logger.warning(f"Error loading local data for {symbol}: {e}")
+            return None
+    
+    def _merge_data(self, old_df: pd.DataFrame, new_df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Merge old and new DataFrames, removing duplicates by date.
+        New data takes precedence for overlapping dates.
+        
+        Args:
+            old_df: Existing local data
+            new_df: Freshly fetched data
+            
+        Returns:
+            Merged DataFrame sorted by date
+        """
+        # Ensure date columns are datetime
+        for df in [old_df, new_df]:
+            if 'date' in df.columns and not pd.api.types.is_datetime64_any_dtype(df['date']):
+                df['date'] = pd.to_datetime(df['date'])
+        
+        # Concatenate and drop duplicates by date, keeping new data
+        combined = pd.concat([old_df, new_df], ignore_index=True)
+        combined = combined.drop_duplicates(subset=['date'], keep='last')
+        combined = combined.sort_values('date').reset_index(drop=True)
+        
+        return combined
+    
     def fetch_stock_data(self, symbol: str, period: str = "3mo", interval: str = "1d") -> Optional[pd.DataFrame]:
         """
-        Fetch historical stock data from Yahoo Finance.
+        Fetch historical stock data from Yahoo Finance with incremental update support.
+        
+        Strategy:
+        1. Check for existing local data
+        2. If local data exists and is recent (< 30 days old), fetch incrementally
+        3. If no local data or data is stale, fetch full history
+        4. Merge and save combined data
         
         Args:
             symbol: Stock symbol (e.g., 'AAPL', '2330.TW')
-            period: Data period ('1mo', '3mo', '6mo', '1y', etc.)
+            period: Default full-fetch period if no local data exists
             interval: Data interval ('1d', '1wk', '1mo')
         
         Returns:
             DataFrame with OHLCV data or None if fetch fails
         """
+        # Step 1: Load local data if available
+        local_df = self._load_local_data(symbol)
+        
         try:
-            logger.info(f"Fetching data for {symbol}...")
             ticker = yf.Ticker(symbol)
+            
+            if local_df is not None and not local_df.empty:
+                last_local_date = local_df['date'].max()
+                days_since_update = (datetime.now() - last_local_date).days
+                
+                if days_since_update <= 35:
+                    # Incremental fetch: fetch from 7 days before last date to handle weekends/holidays
+                    fetch_start = (last_local_date - timedelta(days=7)).strftime('%Y-%m-%d')
+                    logger.info(f"[{symbol}] Incremental update: fetching from {fetch_start} (local last: {last_local_date.date()}, {days_since_update} days ago)")
+                    
+                    df_new = ticker.history(start=fetch_start, interval=interval)
+                    
+                    if df_new.empty:
+                        logger.warning(f"No new data returned for {symbol}, using local data only")
+                        return local_df
+                    
+                    # Standardize new data columns
+                    df_new = df_new.reset_index()
+                    df_new.columns = [col.replace(' ', '_').lower() for col in df_new.columns]
+                    if 'date' in df_new.columns and pd.api.types.is_datetime64_any_dtype(df_new['date']):
+                        df_new['date'] = df_new['date'].dt.tz_localize(None)
+                    
+                    # Merge with local data
+                    df_merged = self._merge_data(local_df, df_new)
+                    logger.info(f"[{symbol}] Merged: local({len(local_df)}) + new({len(df_new)}) = {len(df_merged)} records")
+                    
+                    # Save merged data
+                    self._save_raw_data(symbol, df_merged)
+                    return df_merged
+                else:
+                    logger.info(f"[{symbol}] Local data is {days_since_update} days old, performing full fetch")
+            else:
+                logger.info(f"[{symbol}] No local data found, performing full fetch")
+            
+            # Full fetch (no local data or data too stale)
+            logger.info(f"[{symbol}] Fetching full data (period={period})...")
             df = ticker.history(period=period, interval=interval)
             
             if df.empty:
@@ -60,16 +159,27 @@ class StockFetcher:
             if 'date' in df.columns and pd.api.types.is_datetime64_any_dtype(df['date']):
                 df['date'] = df['date'].dt.tz_localize(None)
             
-            logger.info(f"Successfully fetched {len(df)} records for {symbol}")
+            # If we had stale local data, merge it to preserve older history
+            if local_df is not None:
+                df = self._merge_data(local_df, df)
+            
+            # Save raw data
+            self._save_raw_data(symbol, df)
+            
+            logger.info(f"[{symbol}] Full fetch complete: {len(df)} records")
             return df
             
         except Exception as e:
             logger.error(f"Error fetching data for {symbol}: {e}")
+            # Fallback to local data if fetch fails
+            if local_df is not None:
+                logger.info(f"[{symbol}] Returning local data as fallback")
+                return local_df
             return None
     
     def fetch_all_stocks(self) -> Dict[str, List[Dict]]:
         """
-        Fetch data for all configured stocks.
+        Fetch data for all configured stocks with incremental update support.
         
         Returns:
             Dictionary with stock data organized by market
@@ -83,9 +193,6 @@ class StockFetcher:
                 df = self.fetch_stock_data(symbol)
                 
                 if df is not None and not df.empty:
-                    # Save raw data
-                    self._save_raw_data(symbol, df)
-                    
                     # Get real-time/extended hours data
                     extra_data = {}
                     try:
@@ -115,9 +222,9 @@ class StockFetcher:
     
     def _save_raw_data(self, symbol: str, df: pd.DataFrame):
         """Save raw stock data to CSV."""
-        filepath = os.path.join(self.data_dir, f"{symbol.replace('.', '_')}_raw.csv")
+        filepath = self._get_raw_filepath(symbol)
         df.to_csv(filepath, index=False)
-        logger.info(f"Saved raw data to {filepath}")
+        logger.info(f"Saved raw data to {filepath} ({len(df)} records)")
 
     def fetch_macro_indicators(self) -> Dict:
         """Fetch US10Y yield, Dollar Index, CNN Fear & Greed, and Bitcoin."""
