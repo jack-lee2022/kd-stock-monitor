@@ -438,35 +438,65 @@ class TradingPatternAnalyzer:
         return False, "不符合縮量不漲頭部確立特徵", 0.0
     
     def detect_pattern_8_volume_surge_fall(self) -> Tuple[bool, str, float]:
-        """放量下跌 - 恐慌殺跌"""
+        """
+        放量下跌 - 恐慌殺跌
+        核心邏輯：放量下跌 = 恐慌拋售，絕大多數情況下應該 AVOID，非「必然反彈」
+        只有「連續下跌後的極度恐慌 + 關鍵支撐 + 止跌訊號」才可能短線反彈
+        """
         latest = self.df.iloc[-1]
         atr_pct = self._get_latest_atr_pct()
         
-        # ATR 相對閾值：跌幅需超過 max(2%, 1.5倍ATR)
-        fall_threshold = max(2.0, atr_pct * 1.5)
+        # ── 1. 極度放量：量比 > 2.5（非原來寬鬆的 1.5）
+        volume_surge = latest['Volume_Ratio'] > 2.5
         
-        volume_surge = latest['Volume_Ratio'] > 1.5
+        # ── 2. 明顯下跌：跌幅 > max(3%, 2×ATR)
+        fall_threshold = max(3.0, atr_pct * 2.0)
         price_fall = latest['Price_Change'] * 100 < -fall_threshold
+        
+        # ── 3. 必須處於下跌趨勢：近 20 天已有明顯下跌（> 8% 或 4×ATR）
+        if len(self.df) >= 21:
+            prev_20_change = (self.df['Close'].iloc[-1] / self.df['Close'].iloc[-21] - 1) * 100
+        else:
+            prev_20_change = 0
+        in_downtrend = prev_20_change < -max(8.0, atr_pct * 4)
+        
+        # ── 4. 近 5 天已累積明顯跌幅（> 5%）：確保是「跌了一段」後的恐慌，非剛開始跌
+        recent_5days = self.df.tail(5)['Price_Change'].sum()
+        already_falling = recent_5days < -0.05
+        
+        # ── 5. 止跌訊號：長下影線 = 下方有承接
+        lower_shadow = (min(latest['Open'], latest['Close']) - latest['Low']) / latest['Close']
+        has_support = lower_shadow > 0.015
+        
+        # ── 6. 今日收盤遠離最低點：確認有買盤扛住
+        bounce_from_low = (latest['Close'] - latest['Low']) / latest['Close'] > 0.01
         
         confidence = 0.0
         if volume_surge:
-            confidence += 0.45
+            confidence += 0.2
         if price_fall:
-            confidence += 0.4
-        
-        # 連跌後放量殺跌（原有邏輯保留）
-        recent_5days = self.df.tail(5)['Price_Change'].sum()
-        if recent_5days < -0.08:
+            confidence += 0.2
+        if in_downtrend:
+            confidence += 0.2
+        if already_falling:
             confidence += 0.15
-        
-        # ATR 濾網：若跌幅異常大（>3倍ATR），可能是恐慌性拋售，視為撿便宜機會
-        if latest['Relative_Move'] > 3.0:
+        if has_support:
+            confidence += 0.15
+        if bounce_from_low:
             confidence += 0.1
         
-        if volume_surge and price_fall:
-            return True, f"放量{latest['Volume_Ratio']:.1f}倍下跌 (ATR:{atr_pct:.1f}%)", min(confidence, 1.0)
+        # 必須同時滿足：極度放量 + 明顯下跌 + 下跌趨勢 + 已累跌
+        if volume_surge and price_fall and in_downtrend and already_falling:
+            if has_support and bounce_from_low:
+                # 有止跌跡象：潛在短線反彈機會（但信號仍為 AVOID，只是消息提示）
+                msg = f"恐慌後有承接(量{latest['Volume_Ratio']:.1f}倍,下影{lower_shadow*100:.1f}%,5日跌{abs(recent_5days)*100:.1f}%)"
+                return True, msg, min(confidence, 1.0)
+            else:
+                # 無止跌跡象：繼續看跌
+                msg = f"恐慌殺跌無承接(量{latest['Volume_Ratio']:.1f}倍,5日跌{abs(recent_5days)*100:.1f}%,20日跌{abs(prev_20_change):.1f}%)"
+                return True, msg, min(confidence, 0.85)
         
-        return False, "不符合放量下跌特徵", 0.0
+        return False, "不符合恐慌殺跌特徵", 0.0
     
     def analyze_all_patterns(self) -> List[Dict]:
         """分析所有8種交易模式"""
@@ -480,7 +510,7 @@ class TradingPatternAnalyzer:
             ("縮量上漲", "趨勢健康", "HOLD", self.detect_pattern_5_volume_shrink_rise),
             ("縮量下跌", "繼續看跌", "AVOID", self.detect_pattern_6_volume_shrink_fall),
             ("縮量不漲", "頭部確立", "SELL", self.detect_pattern_7_volume_shrink_no_rise),
-            ("放量下跌", "恐慌殺跌", "BUY", self.detect_pattern_8_volume_surge_fall),
+            ("放量下跌", "恐慌殺跌", "AVOID", self.detect_pattern_8_volume_surge_fall),
         ]
         
         for name, desc, signal, detect_func in patterns_to_check:
