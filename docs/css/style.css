@@ -191,6 +191,12 @@
     height: calc(100vh - 60px) !important;
 }
 
+@media (max-width: 768px) {
+    .chart-fullscreen #stock-chart {
+        height: calc(100vh - 100px) !important;
+    }
+}
+
 /* Loading Spinner */
 .loading-spinner {
     display: inline-block;

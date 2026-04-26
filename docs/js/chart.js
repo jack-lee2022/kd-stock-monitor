@@ -1,5 +1,5 @@
 /**
- * Stock Chart Module - ECharts K-line + KD Sub-chart
+ * Stock Chart Module - ECharts K-line + Volume + KD + MACD
  * Dark theme, professional trading UI
  */
 
@@ -21,7 +21,6 @@ const StockChart = {
             return;
         }
 
-        // Dispose existing chart if any
         if (this.chartInstance) {
             this.chartInstance.dispose();
         }
@@ -30,7 +29,6 @@ const StockChart = {
             renderer: 'canvas'
         });
 
-        // Responsive resize
         window.addEventListener('resize', () => {
             if (this.chartInstance) {
                 this.chartInstance.resize();
@@ -49,9 +47,7 @@ const StockChart = {
         this.currentHistory = history || [];
         this.currentTimeframe = 'day';
 
-        // Update timeframe buttons
         this._updateTimeframeButtons();
-
         this._render();
     },
 
@@ -104,22 +100,47 @@ const StockChart = {
     },
 
     /**
+     * Calculate EMA (Exponential Moving Average)
+     */
+    _ema(data, period) {
+        const k = 2 / (period + 1);
+        const result = [];
+        let ema = data[0];
+        result.push(ema);
+        for (let i = 1; i < data.length; i++) {
+            ema = data[i] * k + ema * (1 - k);
+            result.push(ema);
+        }
+        return result;
+    },
+
+    /**
+     * Calculate MACD indicator
+     */
+    _calculateMACD(data) {
+        const closes = data.map(d => d.close);
+        const ema12 = this._ema(closes, 12);
+        const ema26 = this._ema(closes, 26);
+        const dif = ema12.map((v, i) => v - ema26[i]);
+        const dea = this._ema(dif, 9);
+        const histogram = dif.map((v, i) => (v - dea[i]) * 2);
+        return { dif, dea, histogram };
+    },
+
+    /**
      * Calculate Moving Average
      */
     _calculateMA(dayCount, data) {
-        const result = [];
-        for (let i = 0; i < data.length; i++) {
+        return data.map((_, i) => {
             if (i < dayCount - 1) {
-                result.push('-');
-                continue;
+                return '-';
             }
             let sum = 0;
             for (let j = 0; j < dayCount; j++) {
                 sum += data[i - j].close;
             }
-            result.push((sum / dayCount).toFixed(2));
-        }
-        return result;
+            return (sum / dayCount).toFixed(2);
+        });
     },
 
     /**
@@ -246,12 +267,41 @@ const StockChart = {
         const ma10 = this._calculateMA(10, data);
         const ma20 = this._calculateMA(20, data);
 
-        // Volume colors (red for up, green for down)
+        // Calculate MACD
+        const macd = this._calculateMACD(data);
+        const macdDIF = macd.dif;
+        const macdDEA = macd.dea;
+        const macdHistogram = macd.histogram;
+
+        // Volume colors (red for up, green for down - TW style)
         const volumeColors = data.map((d, i) => {
             if (i === 0) return d.close >= d.open ? '#ff3333' : '#00cc66';
             const prevClose = data[i - 1].close;
             return d.close >= prevClose ? '#ff3333' : '#00cc66';
         });
+
+        // Latest values for info display
+        const last = data[data.length - 1];
+        const lastMA5 = ma5[ma5.length - 1];
+        const lastMA10 = ma10[ma10.length - 1];
+        const lastMA20 = ma20[ma20.length - 1];
+        const lastKD_K = kdK[kdK.length - 1];
+        const lastKD_D = kdD[kdD.length - 1];
+        const lastDIF = macdDIF[macdDIF.length - 1];
+        const lastDEA = macdDEA[macdDEA.length - 1];
+        const lastHist = macdHistogram[macdHistogram.length - 1];
+
+        const infoParts = [];
+        if (lastMA5 !== '-') infoParts.push(`MA5: ${Number(lastMA5).toFixed(2)}`);
+        if (lastMA10 !== '-') infoParts.push(`MA10: ${Number(lastMA10).toFixed(2)}`);
+        if (lastMA20 !== '-') infoParts.push(`MA20: ${Number(lastMA20).toFixed(2)}`);
+        if (lastKD_K != null) infoParts.push(`K: ${lastKD_K.toFixed(2)}`);
+        if (lastKD_D != null) infoParts.push(`D: ${lastKD_D.toFixed(2)}`);
+        if (lastDIF != null) infoParts.push(`DIF: ${lastDIF.toFixed(2)}`);
+        if (lastDEA != null) infoParts.push(`DEA: ${lastDEA.toFixed(2)}`);
+        if (lastHist != null) infoParts.push(`MACD: ${lastHist.toFixed(2)}`);
+
+        const subtextStr = infoParts.join('  |  ');
 
         // Dark theme colors
         const colors = {
@@ -267,11 +317,15 @@ const StockChart = {
             ma20: '#4d96ff',
             kdK: '#ff6b6b',
             kdD: '#4ecdc4',
+            macdDIF: '#ff9500',
+            macdDEA: '#00d4ff',
             line80: '#ff4444',
             line20: '#00cc66',
             crosshair: '#555555'
         };
 
+        // Calculate grid positions for 4 panels
+        // Main: 40%, Volume: 15%, KD: 15%, MACD: 15%, spacing: 15%
         const option = {
             backgroundColor: colors.bg,
             animation: true,
@@ -280,16 +334,16 @@ const StockChart = {
             title: {
                 text: `${this.currentSymbol}  ${this.currentName}`,
                 left: 'center',
-                top: 10,
+                top: 8,
                 textStyle: {
                     color: colors.text,
-                    fontSize: 16,
+                    fontSize: 15,
                     fontWeight: 'bold'
                 },
-                subtext: this._getTimeframeLabel(),
+                subtext: subtextStr,
                 subtextStyle: {
-                    color: colors.textSecondary,
-                    fontSize: 12
+                    color: '#00d4ff',
+                    fontSize: 11
                 }
             },
 
@@ -325,25 +379,12 @@ const StockChart = {
                 }
             },
 
+            // 4 grids: main, volume, KD, MACD
             grid: [
-                {
-                    left: '5%',
-                    right: '5%',
-                    top: 70,
-                    height: '55%'
-                },
-                {
-                    left: '5%',
-                    right: '5%',
-                    top: '68%',
-                    height: '12%'
-                },
-                {
-                    left: '5%',
-                    right: '5%',
-                    top: '82%',
-                    height: '12%'
-                }
+                { left: '4%', right: '3%', top: 65, height: '38%' },      // Main candlestick
+                { left: '4%', right: '3%', top: '54%', height: '14%' },   // Volume
+                { left: '4%', right: '3%', top: '70%', height: '14%' },   // KD
+                { left: '4%', right: '3%', top: '86%', height: '10%' }    // MACD
             ],
 
             xAxis: [
@@ -384,6 +425,19 @@ const StockChart = {
                     splitLine: { show: true, lineStyle: { color: colors.grid } },
                     min: 'dataMin',
                     max: 'dataMax'
+                },
+                {
+                    type: 'category',
+                    gridIndex: 3,
+                    data: dates,
+                    scale: true,
+                    boundaryGap: false,
+                    axisLine: { onZero: false, lineStyle: { color: colors.gridBorder } },
+                    axisTick: { show: false },
+                    axisLabel: { color: colors.textSecondary, fontSize: 10 },
+                    splitLine: { show: true, lineStyle: { color: colors.grid } },
+                    min: 'dataMin',
+                    max: 'dataMax'
                 }
             ],
 
@@ -413,24 +467,32 @@ const StockChart = {
                     axisLine: { lineStyle: { color: colors.gridBorder } },
                     axisLabel: { color: colors.textSecondary, fontSize: 10 },
                     splitLine: { show: true, lineStyle: { color: colors.grid } }
+                },
+                {
+                    scale: true,
+                    gridIndex: 3,
+                    splitNumber: 3,
+                    axisLine: { lineStyle: { color: colors.gridBorder } },
+                    axisLabel: { color: colors.textSecondary, fontSize: 10 },
+                    splitLine: { show: true, lineStyle: { color: colors.grid } }
                 }
             ],
 
             dataZoom: [
                 {
                     type: 'inside',
-                    xAxisIndex: [0, 1, 2],
+                    xAxisIndex: [0, 1, 2, 3],
                     start: Math.max(0, 100 - (60 / data.length * 100)),
                     end: 100
                 },
                 {
                     show: true,
-                    xAxisIndex: [0, 1, 2],
+                    xAxisIndex: [0, 1, 2, 3],
                     type: 'slider',
-                    bottom: 5,
+                    bottom: 2,
                     start: Math.max(0, 100 - (60 / data.length * 100)),
                     end: 100,
-                    height: 20,
+                    height: 16,
                     borderColor: colors.gridBorder,
                     fillerColor: 'rgba(0, 212, 255, 0.2)',
                     handleStyle: {
@@ -443,9 +505,9 @@ const StockChart = {
             ],
 
             series: [
-                // Main candlestick
+                // Main chart - candlestick
                 {
-                    name: 'K線',
+                    name: 'K\u7dda',
                     type: 'candlestick',
                     data: candleData,
                     itemStyle: {
@@ -493,7 +555,7 @@ const StockChart = {
                 },
                 // Volume
                 {
-                    name: '成交量',
+                    name: '\u6210\u4ea4\u91cf',
                     type: 'bar',
                     xAxisIndex: 1,
                     yAxisIndex: 1,
@@ -532,7 +594,7 @@ const StockChart = {
                 },
                 // Overbought line (80)
                 {
-                    name: '超買線',
+                    name: '\u8d85\u8cb7\u7dda',
                     type: 'line',
                     xAxisIndex: 2,
                     yAxisIndex: 2,
@@ -548,7 +610,7 @@ const StockChart = {
                 },
                 // Oversold line (20)
                 {
-                    name: '超賣線',
+                    name: '\u8d85\u8ce3\u7dda',
                     type: 'line',
                     xAxisIndex: 2,
                     yAxisIndex: 2,
@@ -561,23 +623,50 @@ const StockChart = {
                         opacity: 0.5
                     },
                     silent: true
+                },
+                // MACD DIF
+                {
+                    name: 'DIF',
+                    type: 'line',
+                    xAxisIndex: 3,
+                    yAxisIndex: 3,
+                    data: macdDIF,
+                    smooth: true,
+                    symbol: 'none',
+                    lineStyle: {
+                        color: colors.macdDIF,
+                        width: 1.5
+                    }
+                },
+                // MACD DEA
+                {
+                    name: 'DEA',
+                    type: 'line',
+                    xAxisIndex: 3,
+                    yAxisIndex: 3,
+                    data: macdDEA,
+                    smooth: true,
+                    symbol: 'none',
+                    lineStyle: {
+                        color: colors.macdDEA,
+                        width: 1.5
+                    }
+                },
+                // MACD Histogram
+                {
+                    name: 'MACD',
+                    type: 'bar',
+                    xAxisIndex: 3,
+                    yAxisIndex: 3,
+                    data: macdHistogram,
+                    itemStyle: {
+                        color: (params) => params.value >= 0 ? colors.up : colors.down
+                    }
                 }
             ]
         };
 
         this.chartInstance.setOption(option, true);
-    },
-
-    /**
-     * Get timeframe display label
-     */
-    _getTimeframeLabel() {
-        const labels = {
-            'day': '日K',
-            'week': '週K',
-            'month': '月K'
-        };
-        return labels[this.currentTimeframe] || '日K';
     },
 
     /**
@@ -591,17 +680,15 @@ const StockChart = {
         const date = new Date(d.date);
         const dateStr = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
 
-        let html = `<div style="font-size:13px;font-weight:bold;margin-bottom:6px;color:${colors.text}">${dateStr}</div>`;
-
-        // Price info
         const isUp = d.close >= d.open;
         const priceColor = isUp ? colors.up : colors.down;
 
-        html += `<div style="display:grid;grid-template-columns:auto auto;gap:8px 16px;font-size:12px;">`;
-        html += `<span style="color:${colors.textSecondary}">開盤</span><span style="color:${colors.text};text-align:right">${d.open?.toFixed(2) || '-'}</span>`;
-        html += `<span style="color:${colors.textSecondary}">最高</span><span style="color:${colors.text};text-align:right">${d.high?.toFixed(2) || '-'}</span>`;
-        html += `<span style="color:${colors.textSecondary}">最低</span><span style="color:${colors.text};text-align:right">${d.low?.toFixed(2) || '-'}</span>`;
-        html += `<span style="color:${colors.textSecondary}">收盤</span><span style="color:${priceColor};text-align:right;font-weight:bold">${d.close?.toFixed(2) || '-'}</span>`;
+        let html = `<div style="font-size:13px;font-weight:bold;margin-bottom:6px;color:${colors.text}">${dateStr}</div>`;
+        html += `<div style="display:grid;grid-template-columns:auto auto;gap:6px 16px;font-size:12px;">`;
+        html += `<span style="color:${colors.textSecondary}">\u958b\u76e4</span><span style="color:${colors.text};text-align:right">${d.open?.toFixed(2) || '-'}</span>`;
+        html += `<span style="color:${colors.textSecondary}">\u6700\u9ad8</span><span style="color:${colors.text};text-align:right">${d.high?.toFixed(2) || '-'}</span>`;
+        html += `<span style="color:${colors.textSecondary}">\u6700\u4f4e</span><span style="color:${colors.text};text-align:right">${d.low?.toFixed(2) || '-'}</span>`;
+        html += `<span style="color:${colors.textSecondary}">\u6536\u76e4</span><span style="color:${priceColor};text-align:right;font-weight:bold">${d.close?.toFixed(2) || '-'}</span>`;
 
         if (d.volume) {
             const volStr = d.volume >= 1000000
@@ -609,25 +696,41 @@ const StockChart = {
                 : d.volume >= 1000
                     ? (d.volume / 1000).toFixed(1) + 'K'
                     : d.volume.toString();
-            html += `<span style="color:${colors.textSecondary}">成交量</span><span style="color:${colors.text};text-align:right">${volStr}</span>`;
-        }
-
-        if (d.kd_k !== undefined && d.kd_k !== null) {
-            html += `<span style="color:${colors.kdK}">KD-K</span><span style="color:${colors.kdK};text-align:right">${d.kd_k.toFixed(2)}</span>`;
-        }
-        if (d.kd_d !== undefined && d.kd_d !== null) {
-            html += `<span style="color:${colors.kdD}">KD-D</span><span style="color:${colors.kdD};text-align:right">${d.kd_d.toFixed(2)}</span>`;
+            html += `<span style="color:${colors.textSecondary}">\u6210\u4ea4\u91cf</span><span style="color:${colors.text};text-align:right">${volStr}</span>`;
         }
 
         html += `</div>`;
+        html += `<div style="margin-top:8px;border-top:1px solid #333;padding-top:6px;">`;
 
-        // MA values
         params.forEach(p => {
-            if (p.seriesName && p.seriesName.startsWith('MA')) {
-                html += `<div style="margin-top:4px;font-size:11px;color:${p.color}">${p.seriesName}: ${p.value}</div>`;
+            if (p.seriesName === 'MA5' && p.value !== '-') {
+                html += `<div style="font-size:11px;color:${colors.ma5}">MA5: ${Number(p.value).toFixed(2)}</div>`;
+            }
+            if (p.seriesName === 'MA10' && p.value !== '-') {
+                html += `<div style="font-size:11px;color:${colors.ma10}">MA10: ${Number(p.value).toFixed(2)}</div>`;
+            }
+            if (p.seriesName === 'MA20' && p.value !== '-') {
+                html += `<div style="font-size:11px;color:${colors.ma20}">MA20: ${Number(p.value).toFixed(2)}</div>`;
+            }
+            if (p.seriesName === 'KD-K' && p.value != null) {
+                html += `<div style="font-size:11px;color:${colors.kdK}">KD-K: ${Number(p.value).toFixed(2)}</div>`;
+            }
+            if (p.seriesName === 'KD-D' && p.value != null) {
+                html += `<div style="font-size:11px;color:${colors.kdD}">KD-D: ${Number(p.value).toFixed(2)}</div>`;
+            }
+            if (p.seriesName === 'DIF' && p.value != null) {
+                html += `<div style="font-size:11px;color:${colors.macdDIF}">DIF: ${Number(p.value).toFixed(2)}</div>`;
+            }
+            if (p.seriesName === 'DEA' && p.value != null) {
+                html += `<div style="font-size:11px;color:${colors.macdDEA}">DEA: ${Number(p.value).toFixed(2)}</div>`;
+            }
+            if (p.seriesName === 'MACD' && p.value != null) {
+                const color = p.value >= 0 ? colors.up : colors.down;
+                html += `<div style="font-size:11px;color:${color}">MACD: ${Number(p.value).toFixed(2)}</div>`;
             }
         });
 
+        html += `</div>`;
         return html;
     }
 };
