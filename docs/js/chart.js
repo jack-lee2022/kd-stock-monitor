@@ -61,8 +61,7 @@ const StockChart = {
 
     _updateTimeframeButtons() {
         document.querySelectorAll('.tf-btn').forEach(btn => {
-            const tf = btn.dataset.tf;
-            btn.classList.toggle('active', tf === this.currentTimeframe);
+            btn.classList.toggle('active', btn.dataset.tf === this.currentTimeframe);
         });
     },
 
@@ -198,14 +197,16 @@ const StockChart = {
         const lastHist = macdHistogram[macdHistogram.length - 1];
 
         const colors = {
-            text: '#e0e0e0', textSec: '#888888', grid: '#1e1e1e', gridBorder: '#2a2a2a',
+            bg: '#0a0a0a', text: '#e0e0e0', textSec: '#888888',
+            grid: '#1e1e1e', gridBorder: '#2a2a2a',
             up: '#ff3333', down: '#00cc66',
             ma5: '#ffd93d', ma10: '#6bcb77', ma20: '#4d96ff',
-            kdK: '#ff6b6b', kdD: '#4ecdc4', macdDIF: '#ff9500', macdDEA: '#00d4ff',
+            kdK: '#ff6b6b', kdD: '#4ecdc4',
+            macdDIF: '#ff9500', macdDEA: '#00d4ff',
             line80: '#ff4444', line20: '#00cc66'
         };
 
-        // Build legend texts
+        // Build legend texts with color-matched rich tags
         const mainLegendParts = [];
         if (lastMA5 !== '-') mainLegendParts.push({ text: `MA5: ${Number(lastMA5).toFixed(2)}`, color: colors.ma5 });
         if (lastMA10 !== '-') mainLegendParts.push({ text: `MA10: ${Number(lastMA10).toFixed(2)}`, color: colors.ma10 });
@@ -221,54 +222,64 @@ const StockChart = {
         if (lastDIF != null) macdLegendParts.push({ text: `DIF: ${lastDIF.toFixed(2)}`, color: colors.macdDIF });
         if (lastDEA != null) macdLegendParts.push({ text: `DEA: ${lastDEA.toFixed(2)}`, color: colors.macdDEA });
         if (lastHist != null) {
-            const histColor = lastHist >= 0 ? colors.up : colors.down;
-            macdLegendParts.push({ text: `MACD: ${lastHist.toFixed(2)}`, color: histColor });
+            macdLegendParts.push({ text: `MACD: ${lastHist.toFixed(2)}`, color: lastHist >= 0 ? colors.up : colors.down });
         }
 
-        // Graphic elements: legends ABOVE each sub-chart
-        const graphicElements = [];
+        // Build title array - legends placed ABOVE each sub-chart with ample spacing
+        const titles = [{
+            text: `${this.currentSymbol}  ${this.currentName}`,
+            left: 'center', top: 2,
+            textStyle: { color: colors.text, fontSize: 15, fontWeight: 'bold' },
+            subtext: this._getTimeframeLabel(),
+            subtextStyle: { color: '#00d4ff', fontSize: 11 }
+        }];
 
-        // Main chart legend (above main chart)
-        mainLegendParts.forEach((part, i) => {
-            graphicElements.push({
-                type: 'text', left: `${4 + i * 14}%`, top: '9%',
-                style: { text: part.text, fill: part.color, fontSize: 10, fontFamily: 'monospace' }, z: 100
+        // Helper to build rich config
+        const buildRich = (parts) => {
+            const rich = {};
+            parts.forEach((p, i) => { rich['r' + i] = { color: p.color }; });
+            return rich;
+        };
+        const buildText = (parts) => parts.map((p, i) => `{r${i}|${p.text}}`).join('   ');
+
+        // Main legend - above main grid
+        if (mainLegendParts.length > 0) {
+            titles.push({
+                text: buildText(mainLegendParts),
+                left: '4%', top: '5%',
+                textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(mainLegendParts) }
             });
+        }
+
+        // Volume legend - above volume grid
+        titles.push({
+            text: '{sec|成交量}',
+            left: '4%', top: '30%',
+            textStyle: { fontSize: 10, fontFamily: 'monospace', rich: { sec: { color: colors.textSec } } }
         });
 
-        // Volume legend (above volume chart)
-        graphicElements.push({
-            type: 'text', left: '4%', top: '37%',
-            style: { text: '\u6210\u4ea4\u91cf', fill: colors.textSec, fontSize: 10, fontFamily: 'monospace' }, z: 100
-        });
-
-        // KD legend (above KD chart)
-        kdLegendParts.forEach((part, i) => {
-            graphicElements.push({
-                type: 'text', left: `${4 + i * 12}%`, top: '53%',
-                style: { text: part.text, fill: part.color, fontSize: 10, fontFamily: 'monospace' }, z: 100
+        // KD legend - above KD grid
+        if (kdLegendParts.length > 0) {
+            titles.push({
+                text: buildText(kdLegendParts),
+                left: '4%', top: '47%',
+                textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(kdLegendParts) }
             });
-        });
+        }
 
-        // MACD legend (above MACD chart)
-        macdLegendParts.forEach((part, i) => {
-            graphicElements.push({
-                type: 'text', left: `${4 + i * 16}%`, top: '69%',
-                style: { text: part.text, fill: part.color, fontSize: 10, fontFamily: 'monospace' }, z: 100
+        // MACD legend - above MACD grid
+        if (macdLegendParts.length > 0) {
+            titles.push({
+                text: buildText(macdLegendParts),
+                left: '4%', top: '64%',
+                textStyle: { fontSize: 10, fontFamily: 'monospace', rich: buildRich(macdLegendParts) }
             });
-        });
+        }
 
         const option = {
-            backgroundColor: '#0a0a0a',
+            backgroundColor: colors.bg,
             animation: true, animationDuration: 500,
-            title: {
-                text: `${this.currentSymbol}  ${this.currentName}`,
-                left: 'center', top: 4,
-                textStyle: { color: colors.text, fontSize: 15, fontWeight: 'bold' },
-                subtext: this._getTimeframeLabel(),
-                subtextStyle: { color: '#00d4ff', fontSize: 11 }
-            },
-            graphic: graphicElements,
+            title: titles,
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -282,17 +293,17 @@ const StockChart = {
             },
             axisPointer: { link: [{ xAxisIndex: 'all' }], label: { backgroundColor: '#333' } },
             grid: [
-                { left: '4%', right: '3%', top: '12%', height: '23%' },   // Main
-                { left: '4%', right: '3%', top: '40%', height: '11%' },   // Volume
-                { left: '4%', right: '3%', top: '56%', height: '11%' },   // KD
-                { left: '4%', right: '3%', top: '72%', height: '11%' }    // MACD
+                { left: '4%', right: '3%', top: '8%', height: '20%' },    // Main
+                { left: '4%', right: '3%', top: '34%', height: '10%' },   // Volume
+                { left: '4%', right: '3%', top: '51%', height: '10%' },   // KD
+                { left: '4%', right: '3%', top: '68%', height: '10%' }    // MACD
             ],
             xAxis: [
                 {
                     type: 'category', data: dates, scale: true, boundaryGap: false,
                     axisLine: { onZero: false, lineStyle: { color: colors.gridBorder } },
                     axisTick: { show: false },
-                    axisLabel: { color: colors.textSec, fontSize: 10, interval: Math.floor(dates.length / 10) },
+                    axisLabel: { color: colors.textSec, fontSize: 10, interval: Math.floor(dates.length / 8) },
                     splitLine: { show: true, lineStyle: { color: colors.grid } },
                     min: 'dataMin', max: 'dataMax'
                 },
@@ -306,7 +317,7 @@ const StockChart = {
                     type: 'category', gridIndex: 2, data: dates, scale: true, boundaryGap: false,
                     axisLine: { onZero: false, lineStyle: { color: colors.gridBorder } },
                     axisTick: { show: false },
-                    axisLabel: { color: colors.textSec, fontSize: 10, interval: Math.floor(dates.length / 10) },
+                    axisLabel: { color: colors.textSec, fontSize: 10, interval: Math.floor(dates.length / 8) },
                     splitLine: { show: true, lineStyle: { color: colors.grid } },
                     min: 'dataMin', max: 'dataMax'
                 },
@@ -314,7 +325,7 @@ const StockChart = {
                     type: 'category', gridIndex: 3, data: dates, scale: true, boundaryGap: false,
                     axisLine: { onZero: false, lineStyle: { color: colors.gridBorder } },
                     axisTick: { show: false },
-                    axisLabel: { color: colors.textSec, fontSize: 10, interval: Math.floor(dates.length / 10) },
+                    axisLabel: { color: colors.textSec, fontSize: 10, interval: Math.floor(dates.length / 8) },
                     splitLine: { show: true, lineStyle: { color: colors.grid } },
                     min: 'dataMin', max: 'dataMax'
                 }
