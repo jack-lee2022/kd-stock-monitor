@@ -1,5 +1,21 @@
 [
   {
+    "id": "2330.TW_20260427_overbought",
+    "symbol": "2330.TW",
+    "name": "台積電",
+    "market": "TW",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 84.44,
+    "kd_d": 78.74,
+    "current_price": 2320.0,
+    "threshold": 80,
+    "message": "⚠️ 2330.TW (台積電) is OVERBOUGHT! KD-K: 84.44, KD-D: 78.74 (>= 80)",
+    "timestamp": "2026-04-27T10:38:54.281095",
+    "date": "2026-04-27",
+    "acknowledged": false
+  },
+  {
     "id": "SMH_20260426_overbought",
     "symbol": "SMH",
     "name": "VanEck Semiconductor ETF",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ AAPL (Apple Inc.) is OVERBOUGHT! KD-K: 81.43, KD-D: 83.02 (>= 80)",
     "timestamp": "2026-04-26T00:39:57.284261",
-    "date": "2026-04-26",
-    "acknowledged": false
-  },
-  {
-    "id": "MSFT_20260426_overbought",
-    "symbol": "MSFT",
-    "name": "Microsoft Corp.",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 82.92,
-    "kd_d": 84.35,
-    "current_price": 424.62,
-    "threshold": 80,
-    "message": "⚠️ MSFT (Microsoft Corp.) is OVERBOUGHT! KD-K: 82.92, KD-D: 84.35 (>= 80)",
-    "timestamp": "2026-04-26T00:39:57.284299",
     "date": "2026-04-26",
     "acknowledged": false
   }
