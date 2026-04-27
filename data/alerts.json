@@ -1,5 +1,21 @@
 [
   {
+    "id": "VT_20260428_overbought",
+    "symbol": "VT",
+    "name": "Vanguard Total World Stock ETF",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 75.49,
+    "kd_d": 80.17,
+    "current_price": 150.375,
+    "threshold": 80,
+    "message": "⚠️ VT (Vanguard Total World Stock ETF) is OVERBOUGHT! KD-K: 75.49, KD-D: 80.17 (>= 80)",
+    "timestamp": "2026-04-28T03:19:32.966906",
+    "date": "2026-04-28",
+    "acknowledged": false
+  },
+  {
     "id": "0050.TW_20260428_overbought",
     "symbol": "0050.TW",
     "name": "元大台灣50",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ AVGO (Broadcom Inc.) is OVERBOUGHT! KD-K: 90.41, KD-D: 92.47 (>= 80)",
     "timestamp": "2026-04-27T00:05:59.436535",
-    "date": "2026-04-27",
-    "acknowledged": false
-  },
-  {
-    "id": "NFLX_20260427_oversold",
-    "symbol": "NFLX",
-    "name": "Netflix Inc.",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 12.53,
-    "kd_d": 28.45,
-    "current_price": 92.44,
-    "threshold": 20,
-    "message": "✅ NFLX (Netflix Inc.) is OVERSOLD! KD-K: 12.53, KD-D: 28.45 (<= 20)",
-    "timestamp": "2026-04-27T00:05:59.436591",
     "date": "2026-04-27",
     "acknowledged": false
   }
