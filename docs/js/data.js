@@ -204,11 +204,17 @@ const DataManager = {
     stockData: null,
     alerts: null,
     summary: null,
+    loadError: false,
+    errorMessage: '',
     
     /**
-     * Load all data from JSON files or use sample data
+     * Load all data from JSON files.
+     * Does NOT fallback to sample data on failure — shows error instead.
      */
     async loadData() {
+        this.loadError = false;
+        this.errorMessage = '';
+        
         try {
             // Try to load from data files
             // Note: When deployed to GitHub Pages, data is copied to docs/data/
@@ -221,35 +227,67 @@ const DataManager = {
             if (stockResponse.ok) {
                 this.stockData = await stockResponse.json();
             } else {
-                console.log('Using sample stock data');
-                this.stockData = SAMPLE_DATA;
+                console.error(`Failed to load stock_data.json: HTTP ${stockResponse.status}`);
+                this.loadError = true;
+                this.errorMessage = `股票數據加載失敗 (HTTP ${stockResponse.status})`;
+                this.stockData = { "TW": [], "US": [], "last_updated": new Date().toISOString() };
             }
             
             if (alertsResponse.ok) {
                 this.alerts = await alertsResponse.json();
             } else {
-                console.log('Using sample alerts');
-                this.alerts = SAMPLE_ALERTS;
+                console.error(`Failed to load alerts.json: HTTP ${alertsResponse.status}`);
+                this.alerts = [];
             }
             
             if (summaryResponse.ok) {
                 this.summary = await summaryResponse.json();
             } else {
-                console.log('Using sample summary');
-                this.summary = SAMPLE_SUMMARY;
+                console.error(`Failed to load summary.json: HTTP ${summaryResponse.status}`);
+                this.summary = {
+                    "timestamp": new Date().toISOString(),
+                    "date": new Date().toISOString().split('T')[0],
+                    "stocks_processed": 0,
+                    "stocks_successful": 0,
+                    "stocks_failed": 0,
+                    "new_alerts": 0,
+                    "overbought_count": 0,
+                    "oversold_count": 0,
+                    "normal_count": 0,
+                    "overbought_stocks": [],
+                    "oversold_stocks": [],
+                    "errors": []
+                };
             }
             
         } catch (error) {
-            console.warn('Error loading data, using samples:', error);
-            this.stockData = SAMPLE_DATA;
-            this.alerts = SAMPLE_ALERTS;
-            this.summary = SAMPLE_SUMMARY;
+            console.error('Error loading data:', error);
+            this.loadError = true;
+            this.errorMessage = `數據加載異常: ${error.message}`;
+            this.stockData = { "TW": [], "US": [], "last_updated": new Date().toISOString() };
+            this.alerts = [];
+            this.summary = {
+                "timestamp": new Date().toISOString(),
+                "date": new Date().toISOString().split('T')[0],
+                "stocks_processed": 0,
+                "stocks_successful": 0,
+                "stocks_failed": 0,
+                "new_alerts": 0,
+                "overbought_count": 0,
+                "oversold_count": 0,
+                "normal_count": 0,
+                "overbought_stocks": [],
+                "oversold_stocks": [],
+                "errors": []
+            };
         }
         
         return {
             stockData: this.stockData,
             alerts: this.alerts,
-            summary: this.summary
+            summary: this.summary,
+            loadError: this.loadError,
+            errorMessage: this.errorMessage
         };
     },
     
