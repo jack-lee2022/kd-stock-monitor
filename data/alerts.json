@@ -1,5 +1,21 @@
 [
   {
+    "id": "00635U.TW_20260428_oversold",
+    "symbol": "00635U.TW",
+    "name": "期元大S&P黃金",
+    "market": "TW",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 16.11,
+    "kd_d": 29.13,
+    "current_price": 48.85,
+    "threshold": 20,
+    "message": "✅ 00635U.TW (期元大S&P黃金) is OVERSOLD! KD-K: 16.11, KD-D: 29.13 (<= 20)",
+    "timestamp": "2026-04-28T13:59:09.131794",
+    "date": "2026-04-28",
+    "acknowledged": false
+  },
+  {
     "id": "VT_20260428_overbought",
     "symbol": "VT",
     "name": "Vanguard Total World Stock ETF",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ AMD (Advanced Micro Devices Inc.) is OVERBOUGHT! KD-K: 94.21, KD-D: 93.51 (>= 80)",
     "timestamp": "2026-04-27T00:05:59.436455",
-    "date": "2026-04-27",
-    "acknowledged": false
-  },
-  {
-    "id": "AVGO_20260427_overbought",
-    "symbol": "AVGO",
-    "name": "Broadcom Inc.",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 90.41,
-    "kd_d": 92.47,
-    "current_price": 422.76,
-    "threshold": 80,
-    "message": "⚠️ AVGO (Broadcom Inc.) is OVERBOUGHT! KD-K: 90.41, KD-D: 92.47 (>= 80)",
-    "timestamp": "2026-04-27T00:05:59.436535",
     "date": "2026-04-27",
     "acknowledged": false
   }
