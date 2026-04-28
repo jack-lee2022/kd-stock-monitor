@@ -1,5 +1,21 @@
 [
   {
+    "id": "MSFU_20260429_overbought",
+    "symbol": "MSFU",
+    "name": "Direxion Daily MSFT Bull 2X Shares",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 78.39,
+    "kd_d": 80.55,
+    "current_price": 30.51,
+    "threshold": 80,
+    "message": "⚠️ MSFU (Direxion Daily MSFT Bull 2X Shares) is OVERBOUGHT! KD-K: 78.39, KD-D: 80.55 (>= 80)",
+    "timestamp": "2026-04-29T04:15:27.211808",
+    "date": "2026-04-29",
+    "acknowledged": false
+  },
+  {
     "id": "0050.TW_20260429_overbought",
     "symbol": "0050.TW",
     "name": "元大台灣50",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ NFXL (Direxion Daily NFLX Bull 2X Shares) is OVERSOLD! KD-K: 11.85, KD-D: 27.78 (<= 20)",
     "timestamp": "2026-04-26T16:28:50.668115",
-    "date": "2026-04-26",
-    "acknowledged": false
-  },
-  {
-    "id": "MULL_20260426_overbought",
-    "symbol": "MULL",
-    "name": "GraniteShares 2x Long MU Daily ETF",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 83.58,
-    "kd_d": 82.66,
-    "current_price": 219.44,
-    "threshold": 80,
-    "message": "⚠️ MULL (GraniteShares 2x Long MU Daily ETF) is OVERBOUGHT! KD-K: 83.58, KD-D: 82.66 (>= 80)",
-    "timestamp": "2026-04-26T16:28:50.668150",
     "date": "2026-04-26",
     "acknowledged": false
   }
