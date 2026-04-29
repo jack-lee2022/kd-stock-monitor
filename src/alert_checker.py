@@ -256,7 +256,8 @@ class AlertChecker:
             for market in ["TW", "US"]:
                 for stock in stocks_data.get(market, []):
                     # Convert history dates to strings to ensure JSON serialization
-                    history = stock.get("history", [])[-500:] if "history" in stock else []
+                    # Keep only last 15 records for sparkline charts (frontend uses slice(-10))
+                    history = stock.get("history", [])[-15:] if "history" in stock else []
                     clean_history = []
                     for h in history:
                         clean_h = h.copy()
@@ -279,7 +280,7 @@ class AlertChecker:
                         "kd_d": stock.get("kd_d"),
                         "last_updated": stock.get("last_updated"),
                         "data_points": stock.get("data_points"),
-                        # Include last 7 days of history for sparkline charts
+                        # Include last 15 records of history for sparkline charts
                         "history": clean_history,
                         # Add pattern analysis
                         "patterns": pattern_analysis
