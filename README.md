@@ -19,7 +19,7 @@ A GitHub-powered stock monitoring system that tracks KD (Stochastic Oscillator) 
 - 📱 **Mobile Friendly**: Responsive design works on all devices.
 
 ### 📉 Trading Patterns
-Automated analysis of 8 market patterns:
+Automated analysis of 11 market patterns:
 1. 🔴 **Quick Rise, Slow Fall** (Main force shipping): Usually a sell signal.
 2. 🟢 **Quick Fall, Slow Rise** (Main force accumulating): Usually a buy signal.
 3. 🔴 **Volume Surge on Rise** (Peak risk): Potential top forming, suggest sell.
@@ -28,6 +28,9 @@ Automated analysis of 8 market patterns:
 6. ⚫ **Shrinking Volume on Fall** (Continued bearish): Lack of buying power.
 7. 🔴 **Shrinking Volume, No Rise** (Top confirmed): Suggest sell.
 8. 🟢 **Volume Surge on Fall** (Panic selling): Potential buying opportunity.
+9. 🟢 **Panic Bottom** (Short-term rebound): Extremely strict signal, only a few times per year.
+10. 🔴 **Blowoff Top** (Inevitable pullback): Extremely strict signal, extreme short-term overheating.
+11. 🟢 **Chip Lock Rally** (Main uptrend continuation): Extremely strict signal, highly concentrated chips in a strong uptrend.
 
 ### 🌐 Macro Indicators | 宏觀指標
 1. **VIX (Fear Index) | VIX 恐慌指數**: Measures market volatility and fear levels. High VIX (>30) indicates high fear and potential buying opportunities.
@@ -56,7 +59,7 @@ Automated analysis of 8 market patterns:
 - 📱 **行動裝置優化**：響應式設計，適合手機查看。
 
 ### 📉 交易模式分析
-系統自動分析以下 8 種市場模式：
+系統自動分析以下 11 種市場模式：
 1. 🔴 **快漲慢跌** (主力出貨)：通常為賣出訊號。
 2. 🟢 **快跌慢漲** (主力吸籌)：通常為買入訊號。
 3. 🔴 **放量上漲** (見頂風險)：可能是見頂風險，建議賣出。
@@ -65,6 +68,9 @@ Automated analysis of 8 market patterns:
 6. ⚫ **縮量下跌** (繼續看跌)：代表買盤不足，建議繼續看跌。
 7. 🔴 **縮量不漲** (頭部確立)：通常是頭部確立，建議賣出。
 8. 🟢 **放量下跌** (恐慌殺跌)：可能是分批買入機會。
+9. 🟢 **恐慌底部** (短線搶反彈)：極嚴格信號，一年僅數次。
+10. 🔴 **天量噴出** (必然回落)：極嚴格信號，短線過熱極端。
+11. 🟢 **籌碼鎖定** (主升延續)：極嚴格信號，籌碼高度鎖定的強勢主升。
 
 ### 🌐 宏觀指標
 1. **VIX 恐慌指數**: 衡量市場波動度與恐慌情緒。高 VIX (>30) 通常代表恐慌，可能是分批買點。
