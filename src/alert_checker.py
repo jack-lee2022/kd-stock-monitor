@@ -260,6 +260,16 @@ class AlertChecker:
                     history = stock.get("history", [])[-15:] if "history" in stock else []
                     clean_history = []
                     for h in history:
+                        # Skip records with NaN values (JavaScript JSON.parse cannot handle NaN)
+                        has_nan = False
+                        for key in ['open', 'high', 'low', 'close', 'volume', 'kd_k', 'kd_d']:
+                            val = h.get(key)
+                            if val != val:  # NaN check: NaN != NaN
+                                has_nan = True
+                                break
+                        if has_nan:
+                            continue
+                        
                         clean_h = h.copy()
                         # Convert any Timestamp objects to ISO format strings
                         if "date" in clean_h and hasattr(clean_h["date"], "isoformat"):
