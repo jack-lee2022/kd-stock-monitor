@@ -63,19 +63,21 @@ class StockFetcher:
     def _merge_data(self, old_df: pd.DataFrame, new_df: pd.DataFrame) -> pd.DataFrame:
         """
         Merge old and new DataFrames, removing duplicates by date.
-        New data takes precedence for overlapping dates.
-        
-        Args:
-            old_df: Existing local data
-            new_df: Freshly fetched data
-            
-        Returns:
-            Merged DataFrame sorted by date
+        Also drops rows with NaN in any OHLC price column.
         """
         # Ensure date columns are datetime
         for df in [old_df, new_df]:
             if 'date' in df.columns and not pd.api.types.is_datetime64_any_dtype(df['date']):
                 df['date'] = pd.to_datetime(df['date'])
+        
+        # Drop rows with NaN in any price column (OHLC)
+        price_cols = ['open', 'high', 'low', 'close']
+        for df in [old_df, new_df]:
+            mask = df[price_cols].notna().all(axis=1)
+            dropped = (~mask).sum()
+            if dropped > 0:
+                logger.warning(f"Dropped {dropped} rows with NaN prices before merge")
+            df.drop(df[~mask].index, inplace=True)
         
         # Concatenate and drop duplicates by date, keeping new data
         combined = pd.concat([old_df, new_df], ignore_index=True)

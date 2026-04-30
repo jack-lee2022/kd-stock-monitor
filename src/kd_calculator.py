@@ -36,21 +36,7 @@ class KDCalculator:
     def calculate_kd(self, df: pd.DataFrame) -> pd.DataFrame:
         """
         Calculate KD (Stochastic Oscillator) for the given DataFrame.
-        
-        The KD indicator consists of:
-        - %K (Fast Stochastic): Shows where the current close is relative to the high-low range
-        - %D (Slow Stochastic): A moving average of %K (signal line)
-        
-        Formula:
-        - RSV = 100 * (Close - Lowest Low) / (Highest High - Lowest Low)
-        - K = (2/3) * Previous K + (1/3) * RSV
-        - D = (2/3) * Previous D + (1/3) * K
-        
-        Args:
-            df: DataFrame with columns: open, high, low, close, volume
-        
-        Returns:
-            DataFrame with additional 'kd_k' and 'kd_d' columns
+        Drops rows with NaN in required price columns before calculation.
         """
         if df is None or df.empty:
             raise ValueError("DataFrame is empty or None")
@@ -60,8 +46,13 @@ class KDCalculator:
             if col not in df.columns:
                 raise ValueError(f"Required column '{col}' not found in DataFrame")
         
-        # Make a copy to avoid modifying original
-        result_df = df.copy()
+        # Drop rows with NaN in price columns to prevent KD contamination
+        result_df = df.dropna(subset=required_cols).copy()
+        if len(result_df) < len(df):
+            logger.warning(f"Dropped {len(df) - len(result_df)} rows with NaN prices before KD calculation")
+        
+        if result_df.empty:
+            raise ValueError("No valid price data after dropping NaN rows")
         
         # Get settings
         k_period = self.kd_settings.get("k_period", 9)
