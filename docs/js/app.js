@@ -142,17 +142,38 @@ function filterStocks(category) {
 /**
  * Get filtered stocks based on current filter
  */
+let currentScoreFilter = 'all';
+
 function getFilteredStocks() {
+    let stocks;
     switch (currentFilter) {
         case 'tw':
-            return DataManager.getStocksByMarket('TW');
+            stocks = DataManager.getStocksByMarket('TW');
+            break;
         case 'us':
-            return DataManager.getStocksByMarket('US');
+            stocks = DataManager.getStocksByMarket('US');
+            break;
         case 'alerts':
-            return DataManager.getAlertStocks();
+            stocks = DataManager.getAlertStocks();
+            break;
         default:
-            return DataManager.getAllStocks();
+            stocks = DataManager.getAllStocks();
     }
+    // Apply score filter
+    if (currentScoreFilter !== 'all') {
+        stocks = stocks.filter(s => {
+            const score = (s.score || {}).total || 50;
+            switch (currentScoreFilter) {
+                case 'strong_buy': return score >= 90;
+                case 'buy': return score >= 70 && score < 90;
+                case 'hold': return score >= 50 && score < 70;
+                case 'reduce': return score >= 30 && score < 50;
+                case 'sell': return score < 30;
+                default: return true;
+            }
+        });
+    }
+    return stocks;
 }
 
 /**
@@ -203,6 +224,18 @@ function createStockCard(stock) {
     const currency = stock.market === 'TW' ? 'TWD' : 'USD';
     const marketClass = stock.market === 'TW' ? 'tw' : 'us';
 
+    // Score badge
+    const score = stock.score || { total: 50, recommendation: '觀望' };
+    const scoreTotal = score.total || 50;
+    let scoreColorClass = 'bg-gray-600';
+    let scoreTextClass = 'text-white';
+    let scoreLabel = score.recommendation || '觀望';
+    if (scoreTotal >= 90) { scoreColorClass = 'bg-emerald-600'; scoreTextClass = 'text-white'; }
+    else if (scoreTotal >= 70) { scoreColorClass = 'bg-emerald-500/80'; scoreTextClass = 'text-white'; }
+    else if (scoreTotal >= 50) { scoreColorClass = 'bg-yellow-500/80'; scoreTextClass = 'text-black'; }
+    else if (scoreTotal >= 30) { scoreColorClass = 'bg-orange-500/80'; scoreTextClass = 'text-white'; }
+    else { scoreColorClass = 'bg-red-500/80'; scoreTextClass = 'text-white'; }
+
     const changePct = stock.change_pct || 0;
     const changeClass = changePct >= 0 ? 'text-kd-red' : 'text-kd-green';
     const changeIcon = changePct >= 0 ? '▲' : '▼';
@@ -234,6 +267,9 @@ function createStockCard(stock) {
                 <div class="text-right">
                     <span class="market-badge ${marketClass}">${stock.market}</span>
                     <span class="status-badge ${statusBadgeClass} ml-1">${statusText}</span>
+                    <div class="mt-1 inline-flex items-center px-2 py-0.5 rounded text-xs font-bold ${scoreColorClass} ${scoreTextClass}" title="${scoreLabel}">
+                        ${scoreTotal}分
+                    </div>
                 </div>
             </div>
 
@@ -269,6 +305,12 @@ function createStockCard(stock) {
             </div>
 
             ${createPatternSection(stock.patterns)}
+            <div class="mt-3 pt-2 border-t border-dark-border flex justify-between items-center">
+                <span class="text-[10px] text-dark-text2 opacity-60">點擊卡片查看K線</span>
+                <button onclick="event.stopPropagation(); showScoreModal('${stock.symbol}')" class="text-xs px-2 py-1 rounded border border-accent/30 text-accent hover:bg-accent/10 transition">
+                    <i class="fas fa-chart-pie mr-1"></i>評分明細
+                </button>
+            </div>
         </div>
     `;
 }
@@ -635,3 +677,192 @@ setInterval(() => {
         refreshData();
     }
 }, 5 * 60 * 1000);
+
+// ── Score Filter ──────────────────────────────────────────
+function filterByScore(scoreFilter) {
+    currentScoreFilter = scoreFilter;
+    document.querySelectorAll('.score-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-accent/20', 'text-accent', 'border-accent/30');
+        btn.classList.add('bg-dark-bg', 'text-dark-text2', 'border-dark-border');
+    });
+    const activeBtn = document.getElementById('score-' + scoreFilter);
+    if (activeBtn) {
+        activeBtn.classList.remove('bg-dark-bg', 'text-dark-text2', 'border-dark-border');
+        activeBtn.classList.add('active', 'bg-accent/20', 'text-accent', 'border-accent/30');
+    }
+    renderStockGrid();
+}
+
+// ── Score Modal ──────────────────────────────────────────
+function showScoreModal(symbol) {
+    const stock = DataManager.getStock(symbol);
+    if (!stock || !stock.score) return;
+    const score = stock.score;
+    const details = score.details || {};
+    const raw = score.raw || {};
+
+    document.getElementById('modal-title').textContent = stock.symbol;
+    document.getElementById('modal-subtitle').textContent = stock.name + ' - ' + DataManager.formatPrice(stock.current_price, stock.market === 'TW' ? 'TWD' : 'USD');
+
+    const recEl = document.getElementById('modal-recommendation');
+    recEl.textContent = score.recommendation + ' (' + score.total + '分)';
+    let recColor = 'text-yellow-400';
+    if (score.total >= 70) recColor = 'text-emerald-400';
+    else if (score.total < 30) recColor = 'text-red-400';
+    else if (score.total < 50) recColor = 'text-orange-400';
+    recEl.className = 'text-lg font-bold mt-2 ' + recColor;
+
+    renderScoreBars(details);
+    renderScoreGauge(score.total);
+    renderScoreRadar(details);
+    renderRawMetrics(raw);
+
+    document.getElementById('score-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeScoreModal() {
+    document.getElementById('score-modal').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+function renderScoreBars(details) {
+    const dims = [
+        { key: 'kd', label: 'KD 動能', weight: 20 },
+        { key: 'rsi', label: 'RSI 強弱', weight: 15 },
+        { key: 'ma_bias', label: '均線乖離', weight: 15 },
+        { key: 'macd', label: 'MACD 趨勢', weight: 15 },
+        { key: 'volume_price', label: '量價結構', weight: 15 },
+        { key: 'trend', label: '趨勢動能', weight: 20 },
+    ];
+    let html = '';
+    dims.forEach(d => {
+        const s = (details[d.key] || {}).score || 50;
+        let barColor = '#eab308';
+        if (s >= 70) barColor = '#10b981';
+        else if (s < 30) barColor = '#ef4444';
+        else if (s < 50) barColor = '#f97316';
+        html += `
+            <div class="flex items-center gap-2">
+                <span class="text-xs text-dark-text2 w-20 text-right">${d.label}</span>
+                <div class="flex-1 h-2 bg-dark-bg rounded-full overflow-hidden border border-dark-border">
+                    <div class="h-full rounded-full transition-all duration-500" style="width:${s}%; background:${barColor}"></div>
+                </div>
+                <span class="text-xs font-mono w-8 text-right" style="color:${barColor}">${s}</span>
+            </div>
+        `;
+    });
+    document.getElementById('score-bars').innerHTML = html;
+}
+
+function renderScoreGauge(total) {
+    const el = document.getElementById('gauge-chart');
+    let chart = echarts.getInstanceByDom(el);
+    if (chart) chart.dispose();
+    chart = echarts.init(el, 'dark', { renderer: 'canvas' });
+
+    let color = '#eab308';
+    if (total >= 70) color = '#10b981';
+    else if (total < 30) color = '#ef4444';
+    else if (total < 50) color = '#f97316';
+
+    const option = {
+        backgroundColor: 'transparent',
+        series: [{
+            type: 'gauge',
+            startAngle: 200,
+            endAngle: -20,
+            min: 0,
+            max: 100,
+            splitNumber: 10,
+            radius: '90%',
+            itemStyle: { color: color },
+            progress: { show: true, width: 18 },
+            pointer: { show: false },
+            axisLine: { lineStyle: { width: 18, color: [[1, '#1e293b']] } },
+            axisTick: { show: false },
+            splitLine: { show: false },
+            axisLabel: { show: false },
+            anchor: { show: false },
+            title: { show: false },
+            detail: {
+                valueAnimation: true,
+                fontSize: 36,
+                fontWeight: 'bold',
+                color: color,
+                offsetCenter: [0, '10%'],
+                formatter: '{value}'
+            },
+            data: [{ value: total }]
+        }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', () => chart.resize());
+}
+
+function renderScoreRadar(details) {
+    const el = document.getElementById('radar-chart');
+    let chart = echarts.getInstanceByDom(el);
+    if (chart) chart.dispose();
+    chart = echarts.init(el, 'dark', { renderer: 'canvas' });
+
+    const dims = [
+        { name: 'KD動能', key: 'kd' },
+        { name: 'RSI', key: 'rsi' },
+        { name: '均線乖離', key: 'ma_bias' },
+        { name: 'MACD', key: 'macd' },
+        { name: '量價', key: 'volume_price' },
+        { name: '趨勢', key: 'trend' },
+    ];
+    const values = dims.map(d => (details[d.key] || {}).score || 50);
+
+    const option = {
+        backgroundColor: 'transparent',
+        tooltip: { trigger: 'item' },
+        radar: {
+            indicator: dims.map(d => ({ name: d.name, max: 100 })),
+            shape: 'polygon',
+            splitNumber: 4,
+            axisName: { color: '#94a3b8', fontSize: 11 },
+            splitLine: { lineStyle: { color: '#334155' } },
+            splitArea: { show: true, areaStyle: { color: ['#0f172a', '#1e293b'] } },
+            axisLine: { lineStyle: { color: '#334155' } }
+        },
+        series: [{
+            type: 'radar',
+            data: [{
+                value: values,
+                name: '綜合評分',
+                areaStyle: { color: 'rgba(99, 102, 241, 0.3)' },
+                lineStyle: { color: '#6366f1', width: 2 },
+                itemStyle: { color: '#6366f1' },
+                symbol: 'circle',
+                symbolSize: 6
+            }]
+        }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', () => chart.resize());
+}
+
+function renderRawMetrics(raw) {
+    const metrics = [
+        { key: 'rsi', label: 'RSI', fmt: v => v !== null && v !== undefined ? v.toFixed(1) : '-' },
+        { key: 'ma20', label: 'MA20', fmt: v => v !== null && v !== undefined ? v.toFixed(2) : '-' },
+        { key: 'ma60', label: 'MA60', fmt: v => v !== null && v !== undefined ? v.toFixed(2) : '-' },
+        { key: 'macd_hist', label: 'MACD', fmt: v => v !== null && v !== undefined ? v.toFixed(3) : '-' },
+        { key: 'volume_ratio', label: '量比', fmt: v => v !== null && v !== undefined ? v.toFixed(2) + 'x' : '-' },
+        { key: 'slope_20d', label: '20日斜率', fmt: v => v !== null && v !== undefined ? v.toFixed(2) + '%' : '-' },
+    ];
+    let html = '';
+    metrics.forEach(m => {
+        const val = raw[m.key];
+        html += `
+            <div class="dark-card rounded p-2 border border-dark-border text-center">
+                <p class="text-[10px] text-dark-text2">${m.label}</p>
+                <p class="text-sm font-mono font-bold text-white">${m.fmt(val)}</p>
+            </div>
+        `;
+    });
+    document.getElementById('raw-metrics').innerHTML = html;
+}

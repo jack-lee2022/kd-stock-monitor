@@ -195,6 +195,17 @@ class AlertChecker:
             "all_alerts": all_alerts
         }
     
+    def _serialize_score(self, score: Optional[Dict]) -> Optional[Dict]:
+        """Serialize score dict, converting numpy types to native Python types."""
+        if score is None:
+            return None
+        import json
+        # Round-trip through JSON to convert numpy types
+        try:
+            return json.loads(json.dumps(score, default=lambda x: float(x) if hasattr(x, '__float__') else str(x)))
+        except Exception:
+            return None
+    
     def _analyze_stock_pattern(self, stock_data: Dict) -> Dict:
         """Analyze trading patterns for a single stock."""
         if not PATTERN_ANALYSIS_AVAILABLE:
@@ -293,7 +304,9 @@ class AlertChecker:
                         # Include last 15 records of history for sparkline charts
                         "history": clean_history,
                         # Add pattern analysis
-                        "patterns": pattern_analysis
+                        "patterns": pattern_analysis,
+                        # Add multi-dimensional score
+                        "score": self._serialize_score(stock.get("score"))
                     }
                     
                     dashboard_data[market].append(stock_entry)

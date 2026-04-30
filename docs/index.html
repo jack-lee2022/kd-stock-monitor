@@ -139,6 +139,30 @@
                     </button>
                 </nav>
             </div>
+            <!-- Score Filter -->
+            <div class="px-4 py-2 bg-dark-bg/50 border-b border-dark-border">
+                <div class="flex items-center gap-2 flex-wrap">
+                    <span class="text-xs text-dark-text2 mr-1">評分篩選:</span>
+                    <button onclick="filterByScore('all')" id="score-all" class="score-btn active px-3 py-1 rounded-full text-xs font-medium transition bg-accent/20 text-accent border border-accent/30">
+                        全部
+                    </button>
+                    <button onclick="filterByScore('strong_buy')" id="score-strong_buy" class="score-btn px-3 py-1 rounded-full text-xs font-medium transition bg-dark-bg text-dark-text2 border border-dark-border hover:border-kd-green hover:text-kd-green">
+                        ⭐ 強烈加碼
+                    </button>
+                    <button onclick="filterByScore('buy')" id="score-buy" class="score-btn px-3 py-1 rounded-full text-xs font-medium transition bg-dark-bg text-dark-text2 border border-dark-border hover:border-kd-green/70 hover:text-kd-green/70">
+                        🟢 加碼買進
+                    </button>
+                    <button onclick="filterByScore('hold')" id="score-hold" class="score-btn px-3 py-1 rounded-full text-xs font-medium transition bg-dark-bg text-dark-text2 border border-dark-border hover:border-kd-yellow hover:text-kd-yellow">
+                        🟡 持有觀望
+                    </button>
+                    <button onclick="filterByScore('reduce')" id="score-reduce" class="score-btn px-3 py-1 rounded-full text-xs font-medium transition bg-dark-bg text-dark-text2 border border-dark-border hover:border-kd-red/70 hover:text-kd-red/70">
+                        🔴 減碼獲利
+                    </button>
+                    <button onclick="filterByScore('sell')" id="score-sell" class="score-btn px-3 py-1 rounded-full text-xs font-medium transition bg-dark-bg text-dark-text2 border border-dark-border hover:border-kd-red hover:text-kd-red">
+                        🚨 出清避險
+                    </button>
+                </div>
+            </div>
         </div>
 
         <!-- Stock Grid -->
@@ -186,6 +210,50 @@
     </main>
 
     <!-- Footer -->
+    <!-- Score Detail Modal -->
+    <div id="score-modal" class="fixed inset-0 z-50 hidden" style="background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);">
+        <div class="flex items-center justify-center min-h-screen px-4 py-8">
+            <div class="dark-card rounded-xl border border-dark-border w-full max-w-4xl max-h-[90vh] overflow-y-auto" style="background: linear-gradient(180deg, #0d1b2a 0%, #0a0a0a 100%);">
+                <!-- Modal Header -->
+                <div class="sticky top-0 z-10 px-6 py-4 border-b border-dark-border flex items-center justify-between" style="background: linear-gradient(180deg, #0d1b2a 0%, #0a0a0a 100%);">
+                    <div>
+                        <h2 id="modal-title" class="text-xl font-bold text-white">--</h2>
+                        <p id="modal-subtitle" class="text-sm text-dark-text2">--</p>
+                    </div>
+                    <button onclick="closeScoreModal()" class="text-dark-text2 hover:text-white transition text-2xl leading-none">×</button>
+                </div>
+                <!-- Modal Body -->
+                <div class="p-6 space-y-6">
+                    <!-- Score Gauge + Recommendation -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div id="gauge-chart" style="width: 100%; height: 220px;"></div>
+                            <div id="modal-recommendation" class="text-lg font-bold mt-2">--</div>
+                        </div>
+                        <div class="flex flex-col justify-center space-y-3">
+                            <h3 class="text-sm font-semibold text-dark-text2 uppercase tracking-wider mb-2">六維度評分</h3>
+                            <div id="score-bars" class="space-y-2">
+                                <!-- Bars injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Radar Chart -->
+                    <div class="border-t border-dark-border pt-4">
+                        <h3 class="text-sm font-semibold text-dark-text2 uppercase tracking-wider mb-3">綜合能力雷達圖</h3>
+                        <div id="radar-chart" style="width: 100%; height: 320px;"></div>
+                    </div>
+                    <!-- Raw Metrics -->
+                    <div class="border-t border-dark-border pt-4">
+                        <h3 class="text-sm font-semibold text-dark-text2 uppercase tracking-wider mb-3">原始指標</h3>
+                        <div id="raw-metrics" class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <!-- Metrics injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="border-t border-dark-border py-6" style="background: #0d1117;">
         <div class="container mx-auto px-4 text-center">
             <p class="text-sm text-dark-text2">

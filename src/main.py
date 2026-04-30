@@ -23,6 +23,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetcher import StockFetcher
 from kd_calculator import KDCalculator
 from alert_checker import AlertChecker
+from scoring_engine import ScoringEngine
 
 # Configure logging
 logging.basicConfig(
@@ -44,6 +45,7 @@ class KDStockMonitor:
         self.fetcher = StockFetcher(config_path)
         self.calculator = KDCalculator(config_path)
         self.checker = AlertChecker(config_path)
+        self.scorer = ScoringEngine()
         
         # Ensure data directory exists
         self.data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
@@ -88,6 +90,15 @@ class KDStockMonitor:
             
             stocks_calculated = sum(len(stocks) for stocks in stocks_with_kd.values())
             logger.info(f"Calculated KD for {stocks_calculated} stocks")
+            
+            # Step 2.5: Calculate multi-dimensional scores
+            logger.info("\n[Step 2.5/4] Calculating multi-dimensional scores...")
+            for market in stocks_with_kd:
+                for stock in stocks_with_kd[market]:
+                    if "error" not in stock:
+                        score_result = self.scorer.calculate(stock)
+                        stock["score"] = score_result
+            logger.info("Multi-dimensional scoring complete")
             
             # Step 3: Check for alerts
             logger.info("\n[Step 3/4] Checking for alerts...")
