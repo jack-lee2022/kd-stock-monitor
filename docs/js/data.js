@@ -296,10 +296,15 @@ const DataManager = {
      */
     getAllStocks() {
         if (!this.stockData) return [];
-        return [
+        const stocks = [
             ...(this.stockData.TW || []),
             ...(this.stockData.US || [])
         ];
+        return stocks.sort((a, b) => {
+            const aVal = a.kd_k !== null && a.kd_k !== undefined ? a.kd_k : Infinity;
+            const bVal = b.kd_k !== null && b.kd_k !== undefined ? b.kd_k : Infinity;
+            return aVal - bVal;
+        });
     },
     
     /**
@@ -307,7 +312,12 @@ const DataManager = {
      */
     getStocksByMarket(market) {
         if (!this.stockData) return [];
-        return this.stockData[market] || [];
+        const stocks = this.stockData[market] || [];
+        return stocks.sort((a, b) => {
+            const aVal = a.kd_k !== null && a.kd_k !== undefined ? a.kd_k : Infinity;
+            const bVal = b.kd_k !== null && b.kd_k !== undefined ? b.kd_k : Infinity;
+            return aVal - bVal;
+        });
     },
     
     /**
