@@ -716,6 +716,7 @@ function showScoreModal(symbol) {
     renderScoreGauge(score.total);
     renderScoreRadar(details);
     renderRawMetrics(raw);
+    renderScoreSummary(score);
 
     document.getElementById('score-modal').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -865,4 +866,89 @@ function renderRawMetrics(raw) {
         `;
     });
     document.getElementById('raw-metrics').innerHTML = html;
+}
+
+function renderScoreSummary(score) {
+    const total = score.total || 50;
+    const rec = score.recommendation || '\u89c0\u671b';
+    const d = score.details || {};
+    const kd = d.kd || {};
+    const rsi = d.rsi || {};
+    const macd = d.macd || {};
+    const trend = d.trend || {};
+    const vp = d.volume_price || {};
+    const ma = d.ma_bias || {};
+
+    // Identify strengths (>=70)
+    const strengths = [];
+    if ((kd.score || 0) >= 70) strengths.push({ label: 'KD\u52d5\u80fd', score: kd.score, detail: `K=${fmt(kd.k)} / D=${fmt(kd.d)}` });
+    if ((rsi.score || 0) >= 70) strengths.push({ label: 'RSI\u5f37\u5f31', score: rsi.score, detail: `RSI=${fmt(rsi.value)}` });
+    if ((macd.score || 0) >= 70) strengths.push({ label: 'MACD\u8da8\u52e2', score: macd.score, detail: `\u67f1\u72c0\u9ad4=${fmt(macd.macd_hist)}` });
+    if ((vp.score || 0) >= 70) strengths.push({ label: '\u91cf\u50f9\u7d50\u69cb', score: vp.score, detail: `\u91cf\u6bd4=${fmt(vp.volume_ratio)}x / \u6f32\u8dcc=${fmt(vp.price_change)}%` });
+    if ((trend.score || 0) >= 70) strengths.push({ label: '\u8da8\u52e2\u52d5\u80fd', score: trend.score, detail: `20\u65e5\u659c\u7387=${fmt(trend.slope_20d)}%` });
+    if ((ma.score || 0) >= 70) strengths.push({ label: '\u5747\u7dda\u4e56\u96e2', score: ma.score, detail: `MA20\u4e56\u96e2=${fmt(ma.bias20)}%` });
+
+    // Identify weaknesses (<50)
+    const weaknesses = [];
+    if ((kd.score || 50) < 50) weaknesses.push({ label: 'KD\u52d5\u80fd', score: kd.score, detail: `K=${fmt(kd.k)} / D=${fmt(kd.d)}` });
+    if ((rsi.score || 50) < 50) weaknesses.push({ label: 'RSI\u5f37\u5f31', score: rsi.score, detail: `RSI=${fmt(rsi.value)}` });
+    if ((macd.score || 50) < 50) weaknesses.push({ label: 'MACD\u8da8\u52e2', score: macd.score, detail: `\u67f1\u72c0\u9ad4=${fmt(macd.macd_hist)}` });
+    if ((vp.score || 50) < 50) weaknesses.push({ label: '\u91cf\u50f9\u7d50\u69cb', score: vp.score, detail: `\u91cf\u6bd4=${fmt(vp.volume_ratio)}x / \u6f32\u8dcc=${fmt(vp.price_change)}%` });
+    if ((trend.score || 50) < 50) weaknesses.push({ label: '\u8da8\u52e2\u52d5\u80fd', score: trend.score, detail: `20\u65e5\u659c\u7387=${fmt(trend.slope_20d)}%` });
+    if ((ma.score || 50) < 50) weaknesses.push({ label: '\u5747\u7dda\u4e56\u96e2', score: ma.score, detail: `MA20\u4e56\u96e2=${fmt(ma.bias20)}%` });
+
+    // Recommendation color
+    let recColor = 'text-yellow-400';
+    if (total >= 70) recColor = 'text-emerald-400';
+    else if (total < 30) recColor = 'text-red-400';
+    else if (total < 50) recColor = 'text-orange-400';
+
+    // Build narrative
+    let narrative = '';
+    if (total >= 80) {
+        narrative = '\u591a\u500b\u6280\u8853\u6307\u6a19\u540c\u6b65\u767c\u51fa\u5f37\u52e3\u8cb7\u5165\u8a0a\u865f\uff0c\u4e0b\u884c\u98a8\u96aa\u8f03\u4f4e\uff0c\u9069\u5408\u7a4d\u6975\u4f48\u5c40\u3002';
+    } else if (total >= 60) {
+        narrative = '\u90e8\u5206\u6307\u6a19\u986f\u793a\u8cb7\u9032\u6a5f\u6703\uff0c\u4f46\u4ecd\u6709\u4e0d\u78ba\u5b9a\u56e0\u7d20\uff0c\u5efa\u8b70\u5206\u6279\u9032\u5834\u3002';
+    } else if (total >= 40) {
+        narrative = '\u591a\u7a7a\u96d9\u65b9\u52d5\u80fd\u5e73\u8861\uff0c\u5e02\u5834\u65b9\u5411\u4e0d\u660e\uff0c\u5efa\u8b70\u7e7c\u7e8c\u89c0\u5bdf\u3002';
+    } else if (total >= 20) {
+        narrative = '\u90e8\u5206\u6307\u6a19\u986f\u793a\u8ce6\u50f9\u58d3\u529b\uff0c\u4e0b\u884c\u98a8\u96aa\u8f03\u5927\uff0c\u5efa\u8b70\u964d\u4f4e\u5009\u4f4d\u6216\u7b49\u5f85\u66f4\u660e\u78ba\u8a0a\u865f\u3002';
+    } else {
+        narrative = '\u591a\u500b\u6280\u8853\u6307\u6a19\u540c\u6b65\u767c\u51fa\u8ce6\u50f9\u8a0a\u865f\uff0c\u4e0b\u884c\u98a8\u96aa\u9ad8\uff0c\u5efa\u8b70\u56b4\u683c\u63a7\u7ba1\u98a8\u96aa\u3002';
+    }
+
+    let html = `
+        <div class="dark-card rounded-lg border border-dark-border p-4">
+            <p class="text-base font-bold ${recColor} mb-2">${rec}（${total}\u5206）</p>
+            <p class="text-dark-text mb-3">${narrative}</p>
+    `;
+
+    if (strengths.length > 0) {
+        html += `<div class="mb-3"><p class="text-xs font-semibold text-emerald-400 mb-1"><i class="fas fa-arrow-up mr-1"></i>\u5f37\u9805</p><div class="space-y-1">`;
+        strengths.forEach(s => {
+            html += `<div class="flex justify-between text-xs"><span class="text-dark-text2">${s.label} <span class="text-dark-text3 opacity-60">(${s.detail})</span></span><span class="font-mono font-bold text-emerald-400">${s.score}</span></div>`;
+        });
+        html += `</div></div>`;
+    }
+
+    if (weaknesses.length > 0) {
+        html += `<div><p class="text-xs font-semibold text-red-400 mb-1"><i class="fas fa-arrow-down mr-1"></i>\u5f31\u9805</p><div class="space-y-1">`;
+        weaknesses.forEach(w => {
+            html += `<div class="flex justify-between text-xs"><span class="text-dark-text2">${w.label} <span class="text-dark-text3 opacity-60">(${w.detail})</span></span><span class="font-mono font-bold text-red-400">${w.score}</span></div>`;
+        });
+        html += `</div></div>`;
+    }
+
+    html += `</div>`;
+    document.getElementById('score-summary').innerHTML = html;
+}
+
+function fmt(v) {
+    if (v === null || v === undefined) return '-';
+    if (typeof v === 'number') {
+        if (Math.abs(v) >= 100) return v.toFixed(1);
+        if (Math.abs(v) >= 1) return v.toFixed(2);
+        return v.toFixed(3);
+    }
+    return v;
 }
