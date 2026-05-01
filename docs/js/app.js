@@ -905,22 +905,77 @@ function renderScoreSummary(score) {
 
     // Build narrative
     let narrative = '';
+    let strategy = '';
+    let strategyColor = 'text-dark-text2';
+
+    // Determine pattern type based on strengths/weaknesses
+    const hasKD = strengths.some(s => s.label === 'KD\u52d5\u80fd');
+    const hasRSI = strengths.some(s => s.label === 'RSI\u5f37\u5f31');
+    const hasMACD = strengths.some(s => s.label === 'MACD\u8da8\u52e2');
+    const hasTrend = strengths.some(s => s.label === '\u8da8\u52e2\u52d5\u80fd');
+    const hasMA = strengths.some(s => s.label === '\u5747\u7dda\u4e56\u96e2');
+    const hasVP = strengths.some(s => s.label === '\u91cf\u50f9\u7d50\u69cb');
+    const weakTrend = weaknesses.some(w => w.label === '\u8da8\u52e2\u52d5\u80fd');
+    const weakKD = weaknesses.some(w => w.label === 'KD\u52d5\u80fd');
+    const weakMACD = weaknesses.some(w => w.label === 'MACD\u8da8\u52e2');
+    const weakRSI = weaknesses.some(w => w.label === 'RSI\u5f37\u5f31');
+    const weakMA = weaknesses.some(w => w.label === '\u5747\u7dda\u4e56\u96e2');
+
+    // Pattern-based narrative and strategy
     if (total >= 80) {
         narrative = '\u591a\u500b\u6280\u8853\u6307\u6a19\u540c\u6b65\u767c\u51fa\u5f37\u52e3\u8cb7\u5165\u8a0a\u865f\uff0c\u4e0b\u884c\u98a8\u96aa\u8f03\u4f4e\uff0c\u9069\u5408\u7a4d\u6975\u4f48\u5c40\u3002';
+        strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u8d95\u52e2\u6301\u6709\uff0c\u56de\u8abf\u6642\u53ef\u8003\u616e\u52a0\u78bc\u3002\u5efa\u8b70\u7528\u5747\u7dda\u6216\u524d\u4f4e\u505c\u5229\u591a\u55ae\u4fdd\u8b77\u5229\u76ca\u3002';
+        strategyColor = 'text-emerald-400';
     } else if (total >= 60) {
-        narrative = '\u90e8\u5206\u6307\u6a19\u986f\u793a\u8cb7\u9032\u6a5f\u6703\uff0c\u4f46\u4ecd\u6709\u4e0d\u78ba\u5b9a\u56e0\u7d20\uff0c\u5efa\u8b70\u5206\u6279\u9032\u5834\u3002';
+        if ((hasKD || hasRSI) && weakTrend) {
+            // Oversold bounce
+            narrative = '\u6280\u8853\u6307\u6a19\u986f\u793a\u56b4\u91cd\u8d85\u8ce3\uff0c\u77ed\u7dda\u53cd\u5f48\u6a5f\u6703\u9ad8\uff0c\u4f46\u4e2d\u9577\u671f\u8da8\u52e2\u4ecd\u5f31\u3002';
+            strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u5206\u6279\u4f4e\u63a5\u8a66\u55ae\uff0c\u55ae\u7b46\u5009\u4f4d\u4e0d\u8d85\u904e 20%\u3002\u8a2d\u5b9a\u7dca\u8cbc\u7684\u505c\u640d\u9ede\uff08\u524d\u4f4e -5% ~ -7%\uff09\uff0c\u53cd\u5f48\u81f3\u5747\u7dda\u9644\u8fd1\u82e5\u7121\u529b\u7a7f\u8d8a\u53ef\u7372\u5229\u4e86\u7d50\u3002';
+            strategyColor = 'text-emerald-400';
+        } else if (hasTrend && (hasMACD || hasKD)) {
+            narrative = '\u8da8\u52e2\u8f49\u5f37\uff0c\u6280\u8853\u6307\u6a19\u540c\u6b65\u6539\u5584\uff0c\u9032\u5834\u8f03\u70ba\u5b89\u5168\u3002';
+            strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u56de\u8abf\u81f3\u652f\u6490\u5340\u53ef\u52a0\u78bc\uff0c\u4ee5 20 \u65e5\u5747\u7dda\u70ba\u6b62\u640d\u53c3\u8003\u3002';
+            strategyColor = 'text-emerald-400';
+        } else {
+            narrative = '\u90e8\u5206\u6307\u6a19\u986f\u793a\u8cb7\u9032\u6a5f\u6703\uff0c\u4f46\u4ecd\u6709\u4e0d\u78ba\u5b9a\u56e0\u7d20\uff0c\u5efa\u8b70\u5206\u6279\u9032\u5834\u3002';
+            strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u5c0f\u5009\u8a66\u55ae\uff0c\u7b49\u5f85\u66f4\u591a\u6307\u6a19\u8f49\u5f37\u5f8c\u518d\u52a0\u78bc\u3002';
+            strategyColor = 'text-yellow-400';
+        }
     } else if (total >= 40) {
-        narrative = '\u591a\u7a7a\u96d9\u65b9\u52d5\u80fd\u5e73\u8861\uff0c\u5e02\u5834\u65b9\u5411\u4e0d\u660e\uff0c\u5efa\u8b70\u7e7c\u7e8c\u89c0\u5bdf\u3002';
+        if (weakTrend && weakMACD) {
+            narrative = '\u8da8\u52e2\u8207 MACD \u540c\u6b65\u8f49\u5f31\uff0c\u591a\u7a7a\u96d9\u65b9\u6301\u7e8c\u62c9\u92f2\uff0c\u5e02\u5834\u65b9\u5411\u4e0d\u660e\u3002';
+            strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u7e7c\u7e8c\u89c0\u5bdf\uff0c\u907f\u514d\u91cd\u5009\u9032\u5834\u3002\u53ef\u8003\u616e\u7528\u5c11\u91cf\u8cc7\u91d1\u9032\u884c\u77ed\u7dda\u64cd\u4f5c\uff0c\u8a2d\u5b9a\u6b62\u640d\u6b62\u76c8\u3002';
+            strategyColor = 'text-yellow-400';
+        } else {
+            narrative = '\u591a\u7a7a\u96d9\u65b9\u52d5\u80fd\u5e73\u8861\uff0c\u5e02\u5834\u65b9\u5411\u4e0d\u660e\uff0c\u5efa\u8b70\u7e7c\u7e8c\u89c0\u5bdf\u3002';
+            strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u6301\u7e8c\u95dc\u6ce8\uff0c\u7b49\u5f85\u660e\u78ba\u8a0a\u865f\u51fa\u73fe\u3002';
+            strategyColor = 'text-yellow-400';
+        }
     } else if (total >= 20) {
-        narrative = '\u90e8\u5206\u6307\u6a19\u986f\u793a\u8ce6\u50f9\u58d3\u529b\uff0c\u4e0b\u884c\u98a8\u96aa\u8f03\u5927\uff0c\u5efa\u8b70\u964d\u4f4e\u5009\u4f4d\u6216\u7b49\u5f85\u66f4\u660e\u78ba\u8a0a\u865f\u3002';
+        if (weakKD && weakRSI && weakTrend) {
+            narrative = '\u591a\u500b\u6307\u6a19\u540c\u6b65\u8f49\u5f31\uff0c\u4e0a\u884c\u58d3\u529b\u5927\uff0c\u4e0b\u884c\u98a8\u96aa\u8f03\u9ad8\u3002';
+            strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u964d\u4f4e\u5009\u4f4d\u81f3 50% \u4ee5\u4e0b\uff0c\u6216\u7b49\u5f85\u66f4\u660e\u78ba\u7684\u8cb7\u9ede\u51fa\u73fe\u3002\u82e5\u5df2\u6301\u6709\uff0c\u53ef\u8003\u616e\u5229\u7528\u9078\u64c7\u6b0a\u6216\u8f49\u63db\u8cc7\u7522\u9032\u884c\u6aa2\u6e2c\u3002';
+            strategyColor = 'text-orange-400';
+        } else if (weakTrend) {
+            narrative = '\u8da8\u52e2\u8f49\u5f31\uff0c\u90e8\u5206\u6307\u6a19\u986f\u793a\u8ce6\u50f9\u58d3\u529b\uff0c\u4e0b\u884c\u98a8\u96aa\u8f03\u5927\u3002';
+            strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u964d\u4f4e\u5009\u4f4d\uff0c\u907f\u514d\u8ffd\u6f32\u3002\u7b49\u5f85 KD \u6216 RSI \u9032\u5165\u8d85\u8ce3\u5340\u5f8c\u518d\u8003\u616e\u9032\u5834\u3002';
+            strategyColor = 'text-orange-400';
+        } else {
+            narrative = '\u90e8\u5206\u6307\u6a19\u986f\u793a\u8ce6\u50f9\u58d3\u529b\uff0c\u4e0b\u884c\u98a8\u96aa\u8f03\u5927\uff0c\u5efa\u8b70\u964d\u4f4e\u5009\u4f4d\u6216\u7b49\u5f85\u66f4\u660e\u78ba\u8a0a\u865f\u3002';
+            strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u6e1b\u5c11\u6301\u80a1\uff0c\u4fdd\u6301\u73fe\u91d1\u6c34\u4f4d\u3002';
+            strategyColor = 'text-orange-400';
+        }
     } else {
         narrative = '\u591a\u500b\u6280\u8853\u6307\u6a19\u540c\u6b65\u767c\u51fa\u8ce6\u50f9\u8a0a\u865f\uff0c\u4e0b\u884c\u98a8\u96aa\u9ad8\uff0c\u5efa\u8b70\u56b4\u683c\u63a7\u7ba1\u98a8\u96aa\u3002';
+        strategy = '\u64cd\u4f5c\u7b56\u7565\uff1a\u7a7a\u5009\u89c0\u671b\u70ba\u4e3b\uff0c\u6216\u8003\u616e\u9006\u5411\u64cd\u4f5c\u5de5\u5177\uff08\u5982\u653e\u7a7a\u3001\u8cb7\u8ce4\u9078\u64c7\u6b0a\uff09\u3002\u5df2\u6301\u6709\u8005\u61c9\u8a55\u4f30\u505c\u640d\u6216\u9000\u5834\u6a5f\u5236\u3002';
+        strategyColor = 'text-red-400';
     }
 
     let html = `
         <div class="dark-card rounded-lg border border-dark-border p-4">
-            <p class="text-base font-bold ${recColor} mb-2">${rec}（${total}\u5206）</p>
-            <p class="text-dark-text mb-3">${narrative}</p>
+            <p class="text-base font-bold ${recColor} mb-2">${rec}\uff08${total}\u5206\uff09</p>
+            <p class="text-dark-text mb-2">${narrative}</p>
+            <p class="${strategyColor} mb-3 border-l-2 pl-3" style="border-color: currentColor;">${strategy}</p>
     `;
 
     if (strengths.length > 0) {
