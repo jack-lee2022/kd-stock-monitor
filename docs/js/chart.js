@@ -96,6 +96,47 @@ const StockChart = {
         });
     },
 
+    _calculateKD(data) {
+        /**
+         * Calculate 9K/3D KD indicator from OHLC data (client-side).
+         * Uses Taiwan-style formula: K=(2/3)*prevK + (1/3)*RSV, D=(2/3)*prevD + (1/3)*K
+         */
+        const kPeriod = 9;
+        const kValues = [];
+        const dValues = [];
+        let prevK = 50.0;
+        let prevD = 50.0;
+
+        for (let i = 0; i < data.length; i++) {
+            // RSV: 9-period Raw Stochastic Value
+            const start = Math.max(0, i - kPeriod + 1);
+            let lowest = Infinity;
+            let highest = -Infinity;
+            for (let j = start; j <= i; j++) {
+                lowest = Math.min(lowest, data[j].low);
+                highest = Math.max(highest, data[j].high);
+            }
+            const close = data[i].close;
+            let rsv = 50.0;
+            if (highest !== lowest && highest !== Infinity) {
+                rsv = 100.0 * (close - lowest) / (highest - lowest);
+            }
+
+            if (i < kPeriod - 1) {
+                kValues.push(null); // Not enough data yet
+                dValues.push(null);
+            } else {
+                const k = (2 / 3) * prevK + (1 / 3) * rsv;
+                const d = (2 / 3) * prevD + (1 / 3) * k;
+                kValues.push(parseFloat(k.toFixed(2)));
+                dValues.push(parseFloat(d.toFixed(2)));
+                prevK = k;
+                prevD = d;
+            }
+        }
+        return { k: kValues, d: dValues };
+    },
+
     _aggregateToWeek(data) {
         if (!data || data.length === 0) return [];
         const weeks = [];
@@ -110,18 +151,19 @@ const StockChart = {
                 currentWeek = {
                     weekKey, date: weekKey,
                     open: day.open, high: day.high, low: day.low, close: day.close,
-                    volume: day.volume || 0, kd_k: day.kd_k, kd_d: day.kd_d
+                    volume: day.volume || 0
                 };
             } else {
                 currentWeek.high = Math.max(currentWeek.high, day.high);
                 currentWeek.low = Math.min(currentWeek.low, day.low);
                 currentWeek.close = day.close;
                 currentWeek.volume += (day.volume || 0);
-                currentWeek.kd_k = day.kd_k;
-                currentWeek.kd_d = day.kd_d;
             }
         });
         if (currentWeek) weeks.push(currentWeek);
+        // Recalculate KD from aggregated weekly OHLC
+        const kd = this._calculateKD(weeks);
+        weeks.forEach((w, i) => { w.kd_k = kd.k[i]; w.kd_d = kd.d[i]; });
         return weeks;
     },
 
@@ -137,18 +179,19 @@ const StockChart = {
                 currentMonth = {
                     monthKey, date: monthKey + '-01',
                     open: day.open, high: day.high, low: day.low, close: day.close,
-                    volume: day.volume || 0, kd_k: day.kd_k, kd_d: day.kd_d
+                    volume: day.volume || 0
                 };
             } else {
                 currentMonth.high = Math.max(currentMonth.high, day.high);
                 currentMonth.low = Math.min(currentMonth.low, day.low);
                 currentMonth.close = day.close;
                 currentMonth.volume += (day.volume || 0);
-                currentMonth.kd_k = day.kd_k;
-                currentMonth.kd_d = day.kd_d;
             }
         });
         if (currentMonth) months.push(currentMonth);
+        // Recalculate KD from aggregated monthly OHLC
+        const kd = this._calculateKD(months);
+        months.forEach((m, i) => { m.kd_k = kd.k[i]; m.kd_d = kd.d[i]; });
         return months;
     },
 
