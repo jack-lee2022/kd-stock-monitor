@@ -60,15 +60,44 @@ class StockFetcher:
             logger.warning(f"Error loading local data for {symbol}: {e}")
             return None
     
-    def _merge_data(self, old_df: pd.DataFrame, new_df: pd.DataFrame) -> pd.DataFrame:
+    def _merge_data(self, old_df: pd.DataFrame, new_df: pd.DataFrame, symbol: str = "") -> pd.DataFrame:
         """
         Merge old and new DataFrames, removing duplicates by date.
         Also drops rows with NaN in any OHLC price column.
+        If the latest row in new_df has NaN prices, attempts to fill from ticker.info.
         """
         # Ensure date columns are datetime
         for df in [old_df, new_df]:
             if 'date' in df.columns and not pd.api.types.is_datetime64_any_dtype(df['date']):
                 df['date'] = pd.to_datetime(df['date'])
+        
+        # Attempt to repair NaN rows in new_df using ticker.info before dropping
+        if not new_df.empty and symbol:
+            last_idx = new_df.index[-1]
+            price_cols = ['open', 'high', 'low', 'close']
+            if new_df.loc[last_idx, price_cols].isna().all():
+                try:
+                    ticker = yf.Ticker(symbol)
+                    info = ticker.info
+                    # Build a repair map from info fields
+                    repair = {}
+                    if info.get('regularMarketOpen') is not None:
+                        repair['open'] = info['regularMarketOpen']
+                    if info.get('regularMarketDayHigh') is not None:
+                        repair['high'] = info['regularMarketDayHigh']
+                    if info.get('regularMarketDayLow') is not None:
+                        repair['low'] = info['regularMarketDayLow']
+                    if info.get('regularMarketPrice') is not None:
+                        repair['close'] = info['regularMarketPrice']
+                    if info.get('regularMarketVolume') is not None:
+                        repair['volume'] = info['regularMarketVolume']
+                    if repair:
+                        for col, val in repair.items():
+                            if col in new_df.columns:
+                                new_df.loc[last_idx, col] = val
+                        logger.info(f"[{symbol}] Repaired NaN latest row from info: {repair}")
+                except Exception as e:
+                    logger.warning(f"[{symbol}] Failed to repair NaN latest row from info: {e}")
         
         # Drop rows with NaN in any price column (OHLC)
         price_cols = ['open', 'high', 'low', 'close']
@@ -132,7 +161,7 @@ class StockFetcher:
                         df_new['date'] = df_new['date'].dt.tz_localize(None)
                     
                     # Merge with local data
-                    df_merged = self._merge_data(local_df, df_new)
+                    df_merged = self._merge_data(local_df, df_new, symbol)
                     logger.info(f"[{symbol}] Merged: local({len(local_df)}) + new({len(df_new)}) = {len(df_merged)} records")
                     
                     # Save merged data
@@ -163,7 +192,7 @@ class StockFetcher:
             
             # If we had stale local data, merge it to preserve older history
             if local_df is not None:
-                df = self._merge_data(local_df, df)
+                df = self._merge_data(local_df, df, symbol)
             
             # Save raw data
             self._save_raw_data(symbol, df)
