@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-01T08:01:05.863758",
+  "timestamp": "2026-05-01T08:54:08.880933",
   "date": "2026-05-01",
   "macro": {
     "us10y": {
@@ -7,27 +7,27 @@
       "change": -0.028
     },
     "dxy": {
-      "value": 98.13,
-      "change": -0.79
+      "value": 98.17,
+      "change": -0.75
     },
     "fear_greed": {
       "value": 16.89,
       "change": -1.92,
       "label": "VIX Index",
-      "timestamp": "2026-05-01T08:01:02.479544"
+      "timestamp": "2026-05-01T08:54:05.222392"
     },
     "btc": {
-      "value": 76337.0,
+      "value": 76441.0,
       "change_pct": 0
     }
   },
-  "stocks_processed": 78,
-  "stocks_successful": 78,
+  "stocks_processed": 84,
+  "stocks_successful": 84,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 38,
+  "new_alerts": 3,
+  "overbought_count": 41,
   "oversold_count": 3,
-  "normal_count": 37,
+  "normal_count": 40,
   "overbought_stocks": [
     {
       "symbol": "0050.TW",
@@ -352,6 +352,48 @@
       "kd_d": 68.91
     },
     {
+      "symbol": "00735.TW",
+      "name": "國泰臺韓科技",
+      "current_price": 84.9,
+      "change_pct": -0.06,
+      "extra_data": {
+        "regular_market_price": 84.9,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 84.95
+      },
+      "kd_k": 87.16,
+      "kd_d": 88.72
+    },
+    {
+      "symbol": "00881.TW",
+      "name": "國泰台灣5G+",
+      "current_price": 46.79,
+      "change_pct": 0.84,
+      "extra_data": {
+        "regular_market_price": 46.79,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 46.4
+      },
+      "kd_k": 85.49,
+      "kd_d": 89.38
+    },
+    {
+      "symbol": "00935.TW",
+      "name": "野村臺灣創新科技50",
+      "current_price": 50.0,
+      "change_pct": 1.07,
+      "extra_data": {
+        "regular_market_price": 50.0,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 49.47
+      },
+      "kd_k": 86.62,
+      "kd_d": 89.53
+    },
+    {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
       "current_price": 384.8,
@@ -429,7 +471,7 @@
       "extra_data": {
         "regular_market_price": 718.66,
         "pre_market_price": null,
-        "post_market_price": 719.865,
+        "post_market_price": 719.87,
         "prev_close": 711.58
       },
       "kd_k": 86.16,
@@ -471,7 +513,7 @@
       "extra_data": {
         "regular_market_price": 77.76,
         "pre_market_price": null,
-        "post_market_price": 77.17,
+        "post_market_price": 77.169,
         "prev_close": 78.91
       },
       "kd_k": 77.19,
