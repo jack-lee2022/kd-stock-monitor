@@ -1,5 +1,21 @@
 [
   {
+    "id": "NFXL_20260508_oversold",
+    "symbol": "NFXL",
+    "name": "Direxion Daily NFLX Bull 2X Shares",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.62,
+    "kd_d": 20.61,
+    "current_price": 24.8,
+    "threshold": 20,
+    "message": "✅ NFXL (Direxion Daily NFLX Bull 2X Shares) is OVERSOLD! KD-K: 19.62, KD-D: 20.61 (<= 20)",
+    "timestamp": "2026-05-08T02:23:28.263368",
+    "date": "2026-05-08",
+    "acknowledged": false
+  },
+  {
     "id": "0050.TW_20260508_overbought",
     "symbol": "0050.TW",
     "name": "元大台灣50",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00911.TW (兆豐洲際半導體) is OVERBOUGHT! KD-K: 92.27, KD-D: 89.21 (>= 80)",
     "timestamp": "2026-05-07T00:27:32.303656",
-    "date": "2026-05-07",
-    "acknowledged": false
-  },
-  {
-    "id": "00909.TW_20260507_overbought",
-    "symbol": "00909.TW",
-    "name": "國泰數位支付服務",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 82.79,
-    "kd_d": 74.32,
-    "current_price": 46.28,
-    "threshold": 80,
-    "message": "⚠️ 00909.TW (國泰數位支付服務) is OVERBOUGHT! KD-K: 82.79, KD-D: 74.32 (>= 80)",
-    "timestamp": "2026-05-07T00:27:32.303691",
     "date": "2026-05-07",
     "acknowledged": false
   }
