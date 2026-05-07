@@ -1,5 +1,21 @@
 [
   {
+    "id": "NFLX_20260508_oversold",
+    "symbol": "NFLX",
+    "name": "Netflix Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.75,
+    "kd_d": 21.44,
+    "current_price": 88.263,
+    "threshold": 20,
+    "message": "✅ NFLX (Netflix Inc.) is OVERSOLD! KD-K: 19.75, KD-D: 21.44 (<= 20)",
+    "timestamp": "2026-05-08T04:14:26.279725",
+    "date": "2026-05-08",
+    "acknowledged": false
+  },
+  {
     "id": "NFXL_20260508_oversold",
     "symbol": "NFXL",
     "name": "Direxion Daily NFLX Bull 2X Shares",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00830.TW (國泰費城半導體) is OVERBOUGHT! KD-K: 91.82, KD-D: 88.67 (>= 80)",
     "timestamp": "2026-05-07T00:27:32.303622",
-    "date": "2026-05-07",
-    "acknowledged": false
-  },
-  {
-    "id": "00911.TW_20260507_overbought",
-    "symbol": "00911.TW",
-    "name": "兆豐洲際半導體",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 92.27,
-    "kd_d": 89.21,
-    "current_price": 53.25,
-    "threshold": 80,
-    "message": "⚠️ 00911.TW (兆豐洲際半導體) is OVERBOUGHT! KD-K: 92.27, KD-D: 89.21 (>= 80)",
-    "timestamp": "2026-05-07T00:27:32.303656",
     "date": "2026-05-07",
     "acknowledged": false
   }
