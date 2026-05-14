@@ -1,5 +1,21 @@
 [
   {
+    "id": "NFLX_20260515_oversold",
+    "symbol": "NFLX",
+    "name": "Netflix Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 21.83,
+    "kd_d": 19.3,
+    "current_price": 86.97,
+    "threshold": 20,
+    "message": "✅ NFLX (Netflix Inc.) is OVERSOLD! KD-K: 21.83, KD-D: 19.3 (<= 20)",
+    "timestamp": "2026-05-15T03:01:13.733221",
+    "date": "2026-05-15",
+    "acknowledged": false
+  },
+  {
     "id": "0056.TW_20260515_overbought",
     "symbol": "0056.TW",
     "name": "元大高股息",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00640L.TW (富邦日本正2) is OVERBOUGHT! KD-K: 88.0, KD-D: 75.42 (>= 80)",
     "timestamp": "2026-05-14T00:19:26.808165",
-    "date": "2026-05-14",
-    "acknowledged": false
-  },
-  {
-    "id": "00637L.TW_20260514_overbought",
-    "symbol": "00637L.TW",
-    "name": "元大滜深300正2",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 83.81,
-    "kd_d": 76.33,
-    "current_price": 22.46,
-    "threshold": 80,
-    "message": "⚠️ 00637L.TW (元大滜深300正2) is OVERBOUGHT! KD-K: 83.81, KD-D: 76.33 (>= 80)",
-    "timestamp": "2026-05-14T00:19:26.808217",
     "date": "2026-05-14",
     "acknowledged": false
   }
