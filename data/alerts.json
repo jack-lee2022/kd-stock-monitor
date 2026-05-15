@@ -1,5 +1,21 @@
 [
   {
+    "id": "NFXL_20260516_oversold",
+    "symbol": "NFXL",
+    "name": "Direxion Daily NFLX Bull 2X Shares",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 23.05,
+    "kd_d": 19.55,
+    "current_price": 23.9174,
+    "threshold": 20,
+    "message": "✅ NFXL (Direxion Daily NFLX Bull 2X Shares) is OVERSOLD! KD-K: 23.05, KD-D: 19.55 (<= 20)",
+    "timestamp": "2026-05-16T02:23:16.903691",
+    "date": "2026-05-16",
+    "acknowledged": false
+  },
+  {
     "id": "0056.TW_20260516_overbought",
     "symbol": "0056.TW",
     "name": "元大高股息",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00895.TW (富邦未來車) is OVERBOUGHT! KD-K: 94.79, KD-D: 93.64 (>= 80)",
     "timestamp": "2026-05-15T01:01:08.154357",
-    "date": "2026-05-15",
-    "acknowledged": false
-  },
-  {
-    "id": "006208.TW_20260515_overbought",
-    "symbol": "006208.TW",
-    "name": "富邦台50",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 72.74,
-    "kd_d": 80.31,
-    "current_price": 222.5,
-    "threshold": 80,
-    "message": "⚠️ 006208.TW (富邦台50) is OVERBOUGHT! KD-K: 72.74, KD-D: 80.31 (>= 80)",
-    "timestamp": "2026-05-15T01:01:08.154406",
     "date": "2026-05-15",
     "acknowledged": false
   }
