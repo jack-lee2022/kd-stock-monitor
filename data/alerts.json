@@ -1,5 +1,21 @@
 [
   {
+    "id": "00652.TW_20260518_oversold",
+    "symbol": "00652.TW",
+    "name": "富邦印度",
+    "market": "TW",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 18.61,
+    "kd_d": 20.08,
+    "current_price": 32.07,
+    "threshold": 20,
+    "message": "✅ 00652.TW (富邦印度) is OVERSOLD! KD-K: 18.61, KD-D: 20.08 (<= 20)",
+    "timestamp": "2026-05-18T11:52:09.095017",
+    "date": "2026-05-18",
+    "acknowledged": false
+  },
+  {
     "id": "0056.TW_20260518_overbought",
     "symbol": "0056.TW",
     "name": "元大高股息",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ AMDL (GraniteShares 2x Long AMD Daily ETF) is OVERBOUGHT! KD-K: 74.66, KD-D: 81.75 (>= 80)",
     "timestamp": "2026-05-17T01:02:09.575004",
-    "date": "2026-05-17",
-    "acknowledged": false
-  },
-  {
-    "id": "FNGS_20260517_overbought",
-    "symbol": "FNGS",
-    "name": "MicroSectors FANG+ Index ETN",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 80.69,
-    "kd_d": 86.94,
-    "current_price": 74.11,
-    "threshold": 80,
-    "message": "⚠️ FNGS (MicroSectors FANG+ Index ETN) is OVERBOUGHT! KD-K: 80.69, KD-D: 86.94 (>= 80)",
-    "timestamp": "2026-05-17T01:02:09.575090",
     "date": "2026-05-17",
     "acknowledged": false
   }
