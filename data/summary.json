@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-05-23T00:25:01.027852",
+  "timestamp": "2026-05-23T02:53:28.147440",
   "date": "2026-05-23",
   "macro": {
     "us10y": {
-      "value": 4.578,
-      "change": -0.008
+      "value": 4.558,
+      "change": -0.028
     },
     "dxy": {
-      "value": 99.28,
-      "change": 0.09
+      "value": 99.24,
+      "change": 0.05
     },
     "fear_greed": {
-      "value": 16.59,
-      "change": -0.17,
+      "value": 16.61,
+      "change": -0.15,
       "label": "VIX Index",
-      "timestamp": "2026-05-23T00:24:57.640801"
+      "timestamp": "2026-05-23T02:53:24.051815"
     },
     "btc": {
-      "value": 76761.0,
-      "change_pct": -1.0
+      "value": 76374.0,
+      "change_pct": -1.5
     }
   },
   "stocks_processed": 96,
   "stocks_successful": 96,
   "stocks_failed": 0,
-  "new_alerts": 10,
-  "overbought_count": 8,
+  "new_alerts": 0,
+  "overbought_count": 7,
   "oversold_count": 2,
-  "normal_count": 86,
+  "normal_count": 87,
   "overbought_stocks": [
     {
       "symbol": "00915.TW",
@@ -88,58 +88,44 @@
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "current_price": 310.34,
-      "change_pct": 1.75,
+      "current_price": 309.35,
+      "change_pct": 1.43,
       "extra_data": {
-        "regular_market_price": 310.34,
+        "regular_market_price": 309.35,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 304.99
       },
-      "kd_k": 91.06,
-      "kd_d": 88.39
+      "kd_k": 89.31,
+      "kd_d": 87.81
     },
     {
       "symbol": "CRWD",
       "name": "CrowdStrike Holdings Inc.",
-      "current_price": 671.7,
-      "change_pct": 3.62,
+      "current_price": 664.7999,
+      "change_pct": 2.56,
       "extra_data": {
-        "regular_market_price": 671.7,
+        "regular_market_price": 664.7999,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 648.23
       },
-      "kd_k": 95.55,
-      "kd_d": 94.96
+      "kd_k": 93.93,
+      "kd_d": 94.42
     },
     {
       "symbol": "RKLB",
       "name": "Rocket Lab USA, Inc.",
-      "current_price": 137.8,
-      "change_pct": 9.84,
+      "current_price": 135.843,
+      "change_pct": 8.28,
       "extra_data": {
-        "regular_market_price": 137.8,
+        "regular_market_price": 135.843,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 125.45
       },
-      "kd_k": 83.8,
-      "kd_d": 83.27
-    },
-    {
-      "symbol": "RKLX",
-      "name": "Defiance Daily Target 2X Long RKLB ETF",
-      "current_price": 96.38,
-      "change_pct": 19.98,
-      "extra_data": {
-        "regular_market_price": 96.38,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 80.33
-      },
-      "kd_k": 81.09,
-      "kd_d": 80.02
+      "kd_k": 81.42,
+      "kd_d": 82.48
     }
   ],
   "oversold_stocks": [
