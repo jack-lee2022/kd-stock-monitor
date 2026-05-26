@@ -1,5 +1,21 @@
 [
   {
+    "id": "QQQ_20260527_overbought",
+    "symbol": "QQQ",
+    "name": "Invesco QQQ Trust",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.32,
+    "kd_d": 74.15,
+    "current_price": 730.28,
+    "threshold": 80,
+    "message": "⚠️ QQQ (Invesco QQQ Trust) is OVERBOUGHT! KD-K: 80.32, KD-D: 74.15 (>= 80)",
+    "timestamp": "2026-05-27T05:43:50.146012",
+    "date": "2026-05-27",
+    "acknowledged": false
+  },
+  {
     "id": "SMH_20260527_overbought",
     "symbol": "SMH",
     "name": "VanEck Semiconductor ETF",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00918.TW (大華優利高填息30) is OVERBOUGHT! KD-K: 78.25, KD-D: 81.8 (>= 80)",
     "timestamp": "2026-05-21T00:25:07.521835",
-    "date": "2026-05-21",
-    "acknowledged": false
-  },
-  {
-    "id": "00910.TW_20260521_overbought",
-    "symbol": "00910.TW",
-    "name": "復華航太衛星",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 87.67,
-    "kd_d": 85.11,
-    "current_price": 75.1,
-    "threshold": 80,
-    "message": "⚠️ 00910.TW (復華航太衛星) is OVERBOUGHT! KD-K: 87.67, KD-D: 85.11 (>= 80)",
-    "timestamp": "2026-05-21T00:25:07.521921",
     "date": "2026-05-21",
     "acknowledged": false
   }
