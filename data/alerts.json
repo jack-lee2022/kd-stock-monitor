@@ -1,5 +1,21 @@
 [
   {
+    "id": "SMH_20260527_overbought",
+    "symbol": "SMH",
+    "name": "VanEck Semiconductor ETF",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.47,
+    "kd_d": 72.27,
+    "current_price": 601.44,
+    "threshold": 80,
+    "message": "⚠️ SMH (VanEck Semiconductor ETF) is OVERBOUGHT! KD-K: 80.47, KD-D: 72.27 (>= 80)",
+    "timestamp": "2026-05-27T03:21:30.314662",
+    "date": "2026-05-27",
+    "acknowledged": false
+  },
+  {
     "id": "0056.TW_20260527_overbought",
     "symbol": "0056.TW",
     "name": "元大高股息",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00910.TW (復華航太衛星) is OVERBOUGHT! KD-K: 87.67, KD-D: 85.11 (>= 80)",
     "timestamp": "2026-05-21T00:25:07.521921",
-    "date": "2026-05-21",
-    "acknowledged": false
-  },
-  {
-    "id": "00981A.TW_20260521_oversold",
-    "symbol": "00981A.TW",
-    "name": "統一台股增長",
-    "market": "TW",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 19.47,
-    "kd_d": 37.66,
-    "current_price": 27.23,
-    "threshold": 20,
-    "message": "✅ 00981A.TW (統一台股增長) is OVERSOLD! KD-K: 19.47, KD-D: 37.66 (<= 20)",
-    "timestamp": "2026-05-21T00:25:07.521973",
     "date": "2026-05-21",
     "acknowledged": false
   }
