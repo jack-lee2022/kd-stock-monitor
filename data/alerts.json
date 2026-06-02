@@ -1,5 +1,21 @@
 [
   {
+    "id": "TSMX_20260603_overbought",
+    "symbol": "TSMX",
+    "name": "Direxion Daily TSM Bull 2X Shares",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 81.75,
+    "kd_d": 72.11,
+    "current_price": 95.45,
+    "threshold": 80,
+    "message": "⚠️ TSMX (Direxion Daily TSM Bull 2X Shares) is OVERBOUGHT! KD-K: 81.75, KD-D: 72.11 (>= 80)",
+    "timestamp": "2026-06-03T05:47:43.277274",
+    "date": "2026-06-03",
+    "acknowledged": false
+  },
+  {
     "id": "0050.TW_20260603_overbought",
     "symbol": "0050.TW",
     "name": "元大台灣50",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ 00955.TWO (中信日本商社) is OVERSOLD! KD-K: 10.8, KD-D: 13.56 (<= 20)",
     "timestamp": "2026-06-02T02:37:24.341391",
-    "date": "2026-06-02",
-    "acknowledged": false
-  },
-  {
-    "id": "00735.TW_20260602_overbought",
-    "symbol": "00735.TW",
-    "name": "國泰臺韓科技",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 88.37,
-    "kd_d": 81.37,
-    "current_price": 116.35,
-    "threshold": 80,
-    "message": "⚠️ 00735.TW (國泰臺韓科技) is OVERBOUGHT! KD-K: 88.37, KD-D: 81.37 (>= 80)",
-    "timestamp": "2026-06-02T02:37:24.341422",
     "date": "2026-06-02",
     "acknowledged": false
   }
