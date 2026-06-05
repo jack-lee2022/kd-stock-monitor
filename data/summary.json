@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-06-06T01:53:53.634937",
+  "timestamp": "2026-06-06T03:52:59.770805",
   "date": "2026-06-06",
   "macro": {
     "us10y": {
-      "value": 4.538,
-      "change": 0.061
+      "value": 4.536,
+      "change": 0.059
     },
     "dxy": {
       "value": 100.07,
       "change": 0.66
     },
     "fear_greed": {
-      "value": 18.02,
-      "change": 2.62,
+      "value": 20.53,
+      "change": 5.13,
       "label": "VIX Index",
-      "timestamp": "2026-06-06T01:53:49.341899"
+      "timestamp": "2026-06-06T03:52:55.294821"
     },
     "btc": {
-      "value": 60782.0,
-      "change_pct": -4.73
+      "value": 60275.0,
+      "change_pct": -5.53
     }
   },
   "stocks_processed": 102,
   "stocks_successful": 102,
   "stocks_failed": 0,
-  "new_alerts": 41,
+  "new_alerts": 2,
   "overbought_count": 32,
-  "oversold_count": 9,
-  "normal_count": 61,
+  "oversold_count": 11,
+  "normal_count": 59,
   "overbought_stocks": [
     {
       "symbol": "0050.TW",
@@ -424,58 +424,58 @@
     {
       "symbol": "MU",
       "name": "Micron Technology Inc.",
-      "current_price": 903.459,
-      "change_pct": -9.29,
+      "current_price": 888.2,
+      "change_pct": -10.82,
       "extra_data": {
-        "regular_market_price": 903.459,
+        "regular_market_price": 888.2,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 996.0
       },
-      "kd_k": 68.08,
-      "kd_d": 80.95
+      "kd_k": 66.29,
+      "kd_d": 80.36
     },
     {
       "symbol": "DIA",
       "name": "SPDR Dow Jones Industrial Average ETF",
-      "current_price": 512.255,
-      "change_pct": -0.86,
+      "current_price": 510.46,
+      "change_pct": -1.21,
       "extra_data": {
-        "regular_market_price": 512.255,
+        "regular_market_price": 510.46,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 516.7
       },
-      "kd_k": 78.32,
-      "kd_d": 83.53
+      "kd_k": 74.07,
+      "kd_d": 82.11
     },
     {
       "symbol": "ARM",
       "name": "Arm Holdings plc",
-      "current_price": 346.585,
-      "change_pct": -11.91,
+      "current_price": 344.48,
+      "change_pct": -12.44,
       "extra_data": {
-        "regular_market_price": 346.585,
+        "regular_market_price": 344.48,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 393.44
       },
-      "kd_k": 68.97,
-      "kd_d": 81.37
+      "kd_k": 68.42,
+      "kd_d": 81.19
     },
     {
       "symbol": "DELL",
       "name": "Dell Technologies Inc.",
-      "current_price": 396.88,
-      "change_pct": -5.96,
+      "current_price": 398.2,
+      "change_pct": -5.65,
       "extra_data": {
-        "regular_market_price": 396.88,
+        "regular_market_price": 398.2,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 422.05
       },
-      "kd_k": 74.48,
-      "kd_d": 81.46
+      "kd_k": 74.7,
+      "kd_d": 81.54
     }
   ],
   "oversold_stocks": [
@@ -522,88 +522,116 @@
       "kd_d": 25.38
     },
     {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc.",
+      "current_price": 367.015,
+      "change_pct": -1.39,
+      "extra_data": {
+        "regular_market_price": 367.015,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 372.19
+      },
+      "kd_k": 21.9,
+      "kd_d": 19.77
+    },
+    {
       "symbol": "NFLX",
       "name": "Netflix Inc.",
-      "current_price": 81.135,
-      "change_pct": -0.52,
+      "current_price": 82.065,
+      "change_pct": 0.62,
       "extra_data": {
-        "regular_market_price": 81.135,
+        "regular_market_price": 82.065,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 81.56
       },
-      "kd_k": 5.71,
-      "kd_d": 11.73
+      "kd_k": 9.89,
+      "kd_d": 13.12
+    },
+    {
+      "symbol": "AMZU",
+      "name": "Direxion Daily AMZN Bull 2X Shares",
+      "current_price": 36.44,
+      "change_pct": -5.69,
+      "extra_data": {
+        "regular_market_price": 36.44,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 38.64
+      },
+      "kd_k": 19.46,
+      "kd_d": 35.14
     },
     {
       "symbol": "GGLL",
       "name": "Direxion Daily GOOGL Bull 2X Shares",
-      "current_price": 123.34,
-      "change_pct": -2.07,
+      "current_price": 122.35,
+      "change_pct": -2.86,
       "extra_data": {
-        "regular_market_price": 123.34,
+        "regular_market_price": 122.35,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 125.95
       },
-      "kd_k": 22.06,
-      "kd_d": 19.42
+      "kd_k": 20.75,
+      "kd_d": 18.98
     },
     {
       "symbol": "NFXL",
       "name": "Direxion Daily NFLX Bull 2X Shares",
-      "current_price": 20.55,
-      "change_pct": -1.34,
+      "current_price": 21.045,
+      "change_pct": 1.03,
       "extra_data": {
-        "regular_market_price": 20.55,
+        "regular_market_price": 21.045,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 20.83
       },
-      "kd_k": 5.05,
-      "kd_d": 10.73
+      "kd_k": 9.03,
+      "kd_d": 12.06
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 80.88,
-      "change_pct": -10.67,
+      "current_price": 80.38,
+      "change_pct": -11.22,
       "extra_data": {
-        "regular_market_price": 80.88,
+        "regular_market_price": 80.38,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 90.54
       },
-      "kd_k": 10.28,
-      "kd_d": 19.08
+      "kd_k": 11.85,
+      "kd_d": 19.61
     },
     {
       "symbol": "SNXX",
       "name": "Tradr 2X Long Sndk Daily ETF",
-      "current_price": 22.96,
-      "change_pct": -22.41,
+      "current_price": 23.28,
+      "change_pct": -21.32,
       "extra_data": {
-        "regular_market_price": 22.96,
+        "regular_market_price": 23.28,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 29.59
       },
-      "kd_k": 4.95,
-      "kd_d": 11.55
+      "kd_k": 5.23,
+      "kd_d": 11.64
     },
     {
       "symbol": "RKLX",
       "name": "Defiance Daily Target 2X Long RKLB ETF",
-      "current_price": 57.51,
-      "change_pct": -16.89,
+      "current_price": 57.7101,
+      "change_pct": -16.6,
       "extra_data": {
-        "regular_market_price": 57.51,
+        "regular_market_price": 57.7101,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 69.2
       },
-      "kd_k": 17.44,
-      "kd_d": 34.61
+      "kd_k": 18.74,
+      "kd_d": 35.04
     }
   ],
   "errors": []
