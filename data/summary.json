@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-06-05T23:53:34.018112",
-  "date": "2026-06-05",
+  "timestamp": "2026-06-06T01:53:53.634937",
+  "date": "2026-06-06",
   "macro": {
     "us10y": {
       "value": 4.538,
       "change": 0.061
     },
     "dxy": {
-      "value": 99.97,
-      "change": 0.56
+      "value": 100.07,
+      "change": 0.66
     },
     "fear_greed": {
-      "value": 16.85,
-      "change": 1.45,
+      "value": 18.02,
+      "change": 2.62,
       "label": "VIX Index",
-      "timestamp": "2026-06-05T23:53:30.444848"
+      "timestamp": "2026-06-06T01:53:49.341899"
     },
     "btc": {
-      "value": 60499.0,
-      "change_pct": -5.18
+      "value": 60782.0,
+      "change_pct": -4.73
     }
   },
   "stocks_processed": 102,
   "stocks_successful": 102,
   "stocks_failed": 0,
-  "new_alerts": 1,
-  "overbought_count": 33,
+  "new_alerts": 41,
+  "overbought_count": 32,
   "oversold_count": 9,
-  "normal_count": 60,
+  "normal_count": 61,
   "overbought_stocks": [
     {
       "symbol": "0050.TW",
@@ -424,72 +424,58 @@
     {
       "symbol": "MU",
       "name": "Micron Technology Inc.",
-      "current_price": 928.62,
-      "change_pct": -6.77,
+      "current_price": 903.459,
+      "change_pct": -9.29,
       "extra_data": {
-        "regular_market_price": 928.62,
+        "regular_market_price": 903.459,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 996.0
       },
-      "kd_k": 71.27,
-      "kd_d": 82.02
+      "kd_k": 68.08,
+      "kd_d": 80.95
     },
     {
       "symbol": "DIA",
       "name": "SPDR Dow Jones Industrial Average ETF",
-      "current_price": 513.72,
-      "change_pct": -0.58,
+      "current_price": 512.255,
+      "change_pct": -0.86,
       "extra_data": {
-        "regular_market_price": 513.72,
+        "regular_market_price": 512.255,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 516.7
       },
-      "kd_k": 81.78,
-      "kd_d": 84.68
-    },
-    {
-      "symbol": "DRAM",
-      "name": "Roundhill Memory ETF",
-      "current_price": 59.3,
-      "change_pct": -9.74,
-      "extra_data": {
-        "regular_market_price": 59.3,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 65.7
-      },
-      "kd_k": 64.22,
-      "kd_d": 80.47
+      "kd_k": 78.32,
+      "kd_d": 83.53
     },
     {
       "symbol": "ARM",
       "name": "Arm Holdings plc",
-      "current_price": 358.7251,
-      "change_pct": -8.82,
+      "current_price": 346.585,
+      "change_pct": -11.91,
       "extra_data": {
-        "regular_market_price": 358.7251,
+        "regular_market_price": 346.585,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 393.44
       },
-      "kd_k": 72.13,
-      "kd_d": 82.43
+      "kd_k": 68.97,
+      "kd_d": 81.37
     },
     {
       "symbol": "DELL",
       "name": "Dell Technologies Inc.",
-      "current_price": 404.235,
-      "change_pct": -4.22,
+      "current_price": 396.88,
+      "change_pct": -5.96,
       "extra_data": {
-        "regular_market_price": 404.235,
+        "regular_market_price": 396.88,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 422.05
       },
-      "kd_k": 75.93,
-      "kd_d": 81.95
+      "kd_k": 74.48,
+      "kd_d": 81.46
     }
   ],
   "oversold_stocks": [
@@ -538,86 +524,86 @@
     {
       "symbol": "NFLX",
       "name": "Netflix Inc.",
-      "current_price": 81.24,
-      "change_pct": -0.39,
+      "current_price": 81.135,
+      "change_pct": -0.52,
       "extra_data": {
-        "regular_market_price": 81.24,
+        "regular_market_price": 81.135,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 81.56
       },
-      "kd_k": 5.91,
-      "kd_d": 11.79
+      "kd_k": 5.71,
+      "kd_d": 11.73
     },
     {
       "symbol": "GGLL",
       "name": "Direxion Daily GOOGL Bull 2X Shares",
-      "current_price": 123.64,
-      "change_pct": -1.83,
+      "current_price": 123.34,
+      "change_pct": -2.07,
       "extra_data": {
-        "regular_market_price": 123.64,
+        "regular_market_price": 123.34,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 125.95
       },
-      "kd_k": 22.46,
-      "kd_d": 19.55
+      "kd_k": 22.06,
+      "kd_d": 19.42
     },
     {
       "symbol": "NFXL",
       "name": "Direxion Daily NFLX Bull 2X Shares",
-      "current_price": 20.615,
-      "change_pct": -1.03,
+      "current_price": 20.55,
+      "change_pct": -1.34,
       "extra_data": {
-        "regular_market_price": 20.615,
+        "regular_market_price": 20.55,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 20.83
       },
-      "kd_k": 5.25,
-      "kd_d": 10.8
+      "kd_k": 5.05,
+      "kd_d": 10.73
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 82.07,
-      "change_pct": -9.35,
+      "current_price": 80.88,
+      "change_pct": -10.67,
       "extra_data": {
-        "regular_market_price": 82.07,
+        "regular_market_price": 80.88,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 90.54
       },
-      "kd_k": 10.54,
-      "kd_d": 19.17
+      "kd_k": 10.28,
+      "kd_d": 19.08
     },
     {
       "symbol": "SNXX",
       "name": "Tradr 2X Long Sndk Daily ETF",
-      "current_price": 25.53,
-      "change_pct": -13.72,
+      "current_price": 22.96,
+      "change_pct": -22.41,
       "extra_data": {
-        "regular_market_price": 25.53,
+        "regular_market_price": 22.96,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 29.59
       },
-      "kd_k": 5.41,
-      "kd_d": 11.7
+      "kd_k": 4.95,
+      "kd_d": 11.55
     },
     {
       "symbol": "RKLX",
       "name": "Defiance Daily Target 2X Long RKLB ETF",
-      "current_price": 60.66,
-      "change_pct": -12.34,
+      "current_price": 57.51,
+      "change_pct": -16.89,
       "extra_data": {
-        "regular_market_price": 60.66,
+        "regular_market_price": 57.51,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 69.2
       },
-      "kd_k": 17.66,
-      "kd_d": 34.68
+      "kd_k": 17.44,
+      "kd_d": 34.61
     }
   ],
   "errors": []
