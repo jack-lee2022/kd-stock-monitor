@@ -12,6 +12,9 @@ const SAMPLE_DATA = {
             "current_price": 145.5,
             "kd_k": 75.5,
             "kd_d": 72.3,
+            "bias_5": 1.2,
+            "bias_10": -0.5,
+            "bias_20": -2.1,
             "last_updated": new Date().toISOString(),
             "history": []
         },
@@ -423,7 +426,10 @@ const DataManager = {
                     close: parseFloat(row.close),
                     volume: parseFloat(row.volume) || 0,
                     kd_k: parseFloat(row.kd_k),
-                    kd_d: parseFloat(row.kd_d)
+                    kd_d: parseFloat(row.kd_d),
+                    bias_5: parseFloat(row.bias_5) || null,
+                    bias_10: parseFloat(row.bias_10) || null,
+                    bias_20: parseFloat(row.bias_20) || null
                 };
                 // Skip rows with invalid data
                 if (!isNaN(item.close) && !isNaN(item.kd_k) && item.date) {
