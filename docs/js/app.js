@@ -304,6 +304,21 @@ function createStockCard(stock) {
                 </div>
             </div>
 
+            <div class="border-t border-dark-border pt-3 mt-2">
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-xs text-dark-text2">乖離率(5日)</span>
+                    <span class="text-xs font-bold ${getBiasColorClass(stock.bias_5)}">${stock.bias_5 !== null ? stock.bias_5.toFixed(2) : '-'}%</span>
+                </div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-xs text-dark-text2">乖離率(10日)</span>
+                    <span class="text-xs font-bold ${getBiasColorClass(stock.bias_10)}">${stock.bias_10 !== null ? stock.bias_10.toFixed(2) : '-'}%</span>
+                </div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-xs text-dark-text2">乖離率(20日)</span>
+                    <span class="text-xs font-bold ${getBiasColorClass(stock.bias_20)}">${stock.bias_20 !== null ? stock.bias_20.toFixed(2) : '-'}%</span>
+                </div>
+            </div>
+
             ${createPatternSection(stock.patterns)}
             <div class="mt-3 pt-2 border-t border-dark-border flex justify-between items-center">
                 <span class="text-[10px] text-dark-text2 opacity-60">點擊卡片查看K線</span>
@@ -514,6 +529,19 @@ function getSignalColorClass(signal) {
         'AVOID': 'text-dark-text2'
     };
     return classes[signal] || 'text-dark-text2';
+}
+
+/**
+ * Get CSS color class for BIAS value
+ * Taiwan convention: positive (above MA) = red, negative (below MA) = green
+ */
+function getBiasColorClass(bias) {
+    if (bias === null || bias === undefined) return 'text-dark-text2';
+    if (bias > 5) return 'text-kd-red';
+    if (bias > 0) return 'text-kd-red/70';
+    if (bias < -5) return 'text-kd-green';
+    if (bias < 0) return 'text-kd-green/70';
+    return 'text-dark-text2';
 }
 
 /**

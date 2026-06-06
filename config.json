@@ -612,8 +612,13 @@
   },
   "kd_settings": {
     "k_period": 9,
-    "d_period": 3,
-    "smooth": 3
+    "d_period": 9,
+    "smooth": 9
+  },
+  "bias_settings": {
+    "periods": [5, 10, 20],
+    "overbought_threshold": 5,
+    "oversold_threshold": -5
   },
   "alert_thresholds": {
     "overbought": 80,

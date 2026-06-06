@@ -107,6 +107,40 @@ class KDCalculator:
         logger.info("KD calculated using Taiwan style formula")
         return result_df
     
+    def calculate_bias(self, df: pd.DataFrame, period: int) -> pd.Series:
+        """
+        Calculate Bias (乖離率) for the given DataFrame.
+        
+        Bias = (Close - MA) / MA * 100%
+        """
+        if df is None or df.empty or 'close' not in df.columns:
+            return pd.Series()
+        
+        ma = df['close'].rolling(window=period, min_periods=1).mean()
+        bias = (df['close'] - ma) / ma * 100
+        return bias.round(2)
+    
+    def get_current_bias(self, df: pd.DataFrame) -> Optional[Dict]:
+        """
+        Get the most recent BIAS values from a DataFrame.
+        
+        Returns:
+            Dictionary with current bias_5, bias_10, bias_20 values, or None
+        """
+        if df is None or df.empty:
+            return None
+        
+        result = {}
+        for period in [5, 10, 20]:
+            col = f'bias_{period}'
+            if col in df.columns:
+                latest = df[col].iloc[-1]
+                result[col] = float(latest) if pd.notna(latest) else None
+            else:
+                result[col] = None
+        
+        return result if result else None
+    
     def get_current_kd(self, df: pd.DataFrame) -> Optional[Dict]:
         """
         Get the most recent KD values from a DataFrame.
@@ -152,6 +186,11 @@ class KDCalculator:
                         df_with_kd = self.calculate_kd(df)
                         current_kd = self.get_current_kd(df_with_kd)
                         
+                        # Calculate BIAS (乖離率)
+                        for period in [5, 10, 20]:
+                            df_with_kd[f'bias_{period}'] = self.calculate_bias(df_with_kd, period)
+                        current_bias = self.get_current_bias(df_with_kd)
+                        
                         # Calculate daily change percentage
                         extra_data = stock.get("extra_data", {})
                         change_pct = 0.0
@@ -171,6 +210,12 @@ class KDCalculator:
                         # Save processed data
                         self._save_processed_data(symbol, df_with_kd)
                         
+                        # Build history columns
+                        hist_cols = ['date', 'open', 'high', 'low', 'close', 'volume', 'kd_k', 'kd_d']
+                        for p in [5, 10, 20]:
+                            if f'bias_{p}' in df_with_kd.columns:
+                                hist_cols.append(f'bias_{p}')
+                        
                         results[market].append({
                             "symbol": symbol,
                             "name": stock["name"],
@@ -180,12 +225,15 @@ class KDCalculator:
                             "extra_data": extra_data,
                             "kd_k": current_kd.get("kd_k") if current_kd else None,
                             "kd_d": current_kd.get("kd_d") if current_kd else None,
+                            "bias_5": current_bias.get("bias_5") if current_bias else None,
+                            "bias_10": current_bias.get("bias_10") if current_bias else None,
+                            "bias_20": current_bias.get("bias_20") if current_bias else None,
                             "last_updated": stock.get("last_updated"),
                             "data_points": len(df_with_kd),
-                            "history": df_with_kd[['date', 'open', 'high', 'low', 'close', 'volume', 'kd_k', 'kd_d']].to_dict('records')[-500:]  # Last 500 days
+                            "history": df_with_kd[hist_cols].to_dict('records')[-500:]  # Last 500 days
                         })
                         
-                        logger.info(f"KD calculated for {symbol}: K={current_kd.get('kd_k')}, D={current_kd.get('kd_d')}")
+                        logger.info(f"KD calculated for {symbol}: K={current_kd.get('kd_k')}, D={current_kd.get('kd_d')}, BIAS5={current_bias.get('bias_5') if current_bias else None}")
                         
                     except Exception as e:
                         logger.error(f"Error calculating KD for {symbol}: {e}")

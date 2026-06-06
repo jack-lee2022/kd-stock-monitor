@@ -273,7 +273,7 @@ class AlertChecker:
                     for h in history:
                         # Skip records with NaN values (JavaScript JSON.parse cannot handle NaN)
                         has_nan = False
-                        for key in ['open', 'high', 'low', 'close', 'volume', 'kd_k', 'kd_d']:
+                        for key in ['open', 'high', 'low', 'close', 'volume', 'kd_k', 'kd_d', 'bias_5', 'bias_10', 'bias_20']:
                             val = h.get(key)
                             if val != val:  # NaN check: NaN != NaN
                                 has_nan = True
@@ -299,6 +299,9 @@ class AlertChecker:
                         "extra_data": stock.get("extra_data"),
                         "kd_k": stock.get("kd_k"),
                         "kd_d": stock.get("kd_d"),
+                        "bias_5": stock.get("bias_5"),
+                        "bias_10": stock.get("bias_10"),
+                        "bias_20": stock.get("bias_20"),
                         "last_updated": stock.get("last_updated"),
                         "data_points": stock.get("data_points"),
                         # Include last 15 records of history for sparkline charts
