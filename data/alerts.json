@@ -1,5 +1,21 @@
 [
   {
+    "id": "QCOM_20260611_oversold",
+    "symbol": "QCOM",
+    "name": "QUALCOMM Incorporated",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.96,
+    "kd_d": 36.59,
+    "current_price": 191.2,
+    "threshold": 20,
+    "message": "✅ QCOM (QUALCOMM Incorporated) is OVERSOLD! KD-K: 19.96, KD-D: 36.59 (<= 20)",
+    "timestamp": "2026-06-11T06:01:35.817833",
+    "date": "2026-06-11",
+    "acknowledged": false
+  },
+  {
     "id": "NVDA_20260611_oversold",
     "symbol": "NVDA",
     "name": "NVIDIA Corp.",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 006208.TW (富邦台50) is OVERBOUGHT! KD-K: 75.03, KD-D: 81.68 (>= 80)",
     "timestamp": "2026-06-08T00:14:42.872973",
-    "date": "2026-06-08",
-    "acknowledged": false
-  },
-  {
-    "id": "00631L.TW_20260608_overbought",
-    "symbol": "00631L.TW",
-    "name": "元大台灣50正2",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 74.8,
-    "kd_d": 81.72,
-    "current_price": 36.67,
-    "threshold": 80,
-    "message": "⚠️ 00631L.TW (元大台灣50正2) is OVERBOUGHT! KD-K: 74.8, KD-D: 81.72 (>= 80)",
-    "timestamp": "2026-06-08T00:14:42.873023",
     "date": "2026-06-08",
     "acknowledged": false
   }
