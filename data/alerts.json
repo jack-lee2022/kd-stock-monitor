@@ -1,5 +1,21 @@
 [
   {
+    "id": "RKLB_20260613_oversold",
+    "symbol": "RKLB",
+    "name": "Rocket Lab USA, Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 18.59,
+    "kd_d": 21.61,
+    "current_price": 102.39,
+    "threshold": 20,
+    "message": "✅ RKLB (Rocket Lab USA, Inc.) is OVERSOLD! KD-K: 18.59, KD-D: 21.61 (<= 20)",
+    "timestamp": "2026-06-13T05:43:02.907532",
+    "date": "2026-06-13",
+    "acknowledged": false
+  },
+  {
     "id": "AAPL_20260613_oversold",
     "symbol": "AAPL",
     "name": "Apple Inc.",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ TSLA (Tesla Inc.) is OVERSOLD! KD-K: 19.24, KD-D: 29.63 (<= 20)",
     "timestamp": "2026-06-11T00:37:26.841157",
-    "date": "2026-06-11",
-    "acknowledged": false
-  },
-  {
-    "id": "MSFT_20260611_oversold",
-    "symbol": "MSFT",
-    "name": "Microsoft Corp.",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 16.12,
-    "kd_d": 29.28,
-    "current_price": 403.025,
-    "threshold": 20,
-    "message": "✅ MSFT (Microsoft Corp.) is OVERSOLD! KD-K: 16.12, KD-D: 29.28 (<= 20)",
-    "timestamp": "2026-06-11T00:37:26.841200",
     "date": "2026-06-11",
     "acknowledged": false
   }
