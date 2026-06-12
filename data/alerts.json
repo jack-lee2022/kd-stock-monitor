@@ -1,5 +1,21 @@
 [
   {
+    "id": "AAPL_20260613_oversold",
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.92,
+    "kd_d": 29.28,
+    "current_price": 290.85,
+    "threshold": 20,
+    "message": "✅ AAPL (Apple Inc.) is OVERSOLD! KD-K: 19.92, KD-D: 29.28 (<= 20)",
+    "timestamp": "2026-06-13T03:04:02.207437",
+    "date": "2026-06-13",
+    "acknowledged": false
+  },
+  {
     "id": "00635U.TW_20260613_oversold",
     "symbol": "00635U.TW",
     "name": "期元大S&P黃金",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ MSFT (Microsoft Corp.) is OVERSOLD! KD-K: 16.12, KD-D: 29.28 (<= 20)",
     "timestamp": "2026-06-11T00:37:26.841200",
-    "date": "2026-06-11",
-    "acknowledged": false
-  },
-  {
-    "id": "GOOGL_20260611_oversold",
-    "symbol": "GOOGL",
-    "name": "Alphabet Inc.",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 15.43,
-    "kd_d": 18.68,
-    "current_price": 358.855,
-    "threshold": 20,
-    "message": "✅ GOOGL (Alphabet Inc.) is OVERSOLD! KD-K: 15.43, KD-D: 18.68 (<= 20)",
-    "timestamp": "2026-06-11T00:37:26.841238",
     "date": "2026-06-11",
     "acknowledged": false
   }
