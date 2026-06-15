@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-06-15T21:12:21.726407",
-  "date": "2026-06-15",
+  "timestamp": "2026-06-16T02:24:19.814632",
+  "date": "2026-06-16",
   "macro": {
     "us10y": {
-      "value": 4.449,
-      "change": -0.038
+      "value": 4.469,
+      "change": -0.018
     },
     "dxy": {
-      "value": 99.49,
+      "value": 99.58,
       "change": 0.0
     },
     "fear_greed": {
-      "value": 16.43,
-      "change": -1.25,
+      "value": 16.25,
+      "change": -1.43,
       "label": "VIX Index",
-      "timestamp": "2026-06-15T21:12:15.883599"
+      "timestamp": "2026-06-16T02:24:14.056908"
     },
     "btc": {
-      "value": 66565.0,
-      "change_pct": 1.3
+      "value": 66852.0,
+      "change_pct": 1.74
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 4,
-  "oversold_count": 23,
-  "normal_count": 98,
+  "new_alerts": 21,
+  "overbought_count": 5,
+  "oversold_count": 16,
+  "normal_count": 104,
   "overbought_stocks": [
     {
       "symbol": "00713.TW",
@@ -84,6 +84,20 @@
       },
       "kd_k": 80.42,
       "kd_d": 78.56
+    },
+    {
+      "symbol": "SNDK",
+      "name": "Sandisk Corporation",
+      "current_price": 2103.84,
+      "change_pct": 6.25,
+      "extra_data": {
+        "regular_market_price": 2103.84,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 1980.1
+      },
+      "kd_k": 80.18,
+      "kd_d": 68.09
     }
   ],
   "oversold_stocks": [
@@ -118,296 +132,198 @@
     {
       "symbol": "MSFT",
       "name": "Microsoft Corp.",
-      "current_price": 390.74,
-      "change_pct": 0.1,
+      "current_price": 399.035,
+      "change_pct": 2.12,
       "extra_data": {
-        "regular_market_price": 390.74,
-        "pre_market_price": 396.58,
+        "regular_market_price": 399.035,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 390.34
+        "prev_close": 390.74
       },
-      "kd_k": 11.69,
-      "kd_d": 19.1
-    },
-    {
-      "symbol": "NVDA",
-      "name": "NVIDIA Corp.",
-      "current_price": 205.19,
-      "change_pct": 0.16,
-      "extra_data": {
-        "regular_market_price": 205.19,
-        "pre_market_price": 208.3899,
-        "post_market_price": null,
-        "prev_close": 204.87
-      },
-      "kd_k": 17.57,
-      "kd_d": 20.9
-    },
-    {
-      "symbol": "AMZN",
-      "name": "Amazon.com Inc.",
-      "current_price": 238.55,
-      "change_pct": -1.23,
-      "extra_data": {
-        "regular_market_price": 238.55,
-        "pre_market_price": 243.68,
-        "post_market_price": null,
-        "prev_close": 241.51001
-      },
-      "kd_k": 14.81,
-      "kd_d": 16.49
-    },
-    {
-      "symbol": "META",
-      "name": "Meta Platforms Inc.",
-      "current_price": 566.98,
-      "change_pct": -0.26,
-      "extra_data": {
-        "regular_market_price": 566.98,
-        "pre_market_price": 576.71,
-        "post_market_price": null,
-        "prev_close": 568.43
-      },
-      "kd_k": 13.71,
-      "kd_d": 20.59
+      "kd_k": 17.41,
+      "kd_d": 18.54
     },
     {
       "symbol": "AVGO",
       "name": "Broadcom Inc.",
-      "current_price": 382.07,
-      "change_pct": -0.91,
+      "current_price": 394.55,
+      "change_pct": 3.27,
       "extra_data": {
-        "regular_market_price": 382.07,
-        "pre_market_price": 393.14,
+        "regular_market_price": 394.55,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 385.57
+        "prev_close": 382.07
       },
-      "kd_k": 13.64,
-      "kd_d": 22.65
+      "kd_k": 15.57,
+      "kd_d": 20.29
     },
     {
       "symbol": "NFLX",
       "name": "Netflix Inc.",
-      "current_price": 80.34,
-      "change_pct": -1.14,
+      "current_price": 81.425,
+      "change_pct": 1.35,
       "extra_data": {
-        "regular_market_price": 80.34,
-        "pre_market_price": 80.58,
+        "regular_market_price": 81.425,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 81.27
+        "prev_close": 80.34
       },
-      "kd_k": 14.82,
-      "kd_d": 13.92
+      "kd_k": 26.06,
+      "kd_d": 17.96
     },
     {
       "symbol": "PLTR",
       "name": "Palantir Technologies Inc.",
-      "current_price": 127.99,
-      "change_pct": -2.36,
+      "current_price": 133.88,
+      "change_pct": 4.6,
       "extra_data": {
-        "regular_market_price": 127.99,
-        "pre_market_price": 130.07,
+        "regular_market_price": 133.88,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 131.08
+        "prev_close": 127.99
       },
-      "kd_k": 12.24,
-      "kd_d": 22.3
+      "kd_k": 17.79,
+      "kd_d": 20.8
     },
     {
       "symbol": "AMZU",
       "name": "Direxion Daily AMZN Bull 2X Shares",
-      "current_price": 33.94,
-      "change_pct": -2.47,
+      "current_price": 36.1401,
+      "change_pct": 6.48,
       "extra_data": {
-        "regular_market_price": 33.94,
-        "pre_market_price": 35.38,
+        "regular_market_price": 36.1401,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 34.8
+        "prev_close": 33.94
       },
-      "kd_k": 13.62,
-      "kd_d": 15.5
+      "kd_k": 25.89,
+      "kd_d": 18.97
     },
     {
       "symbol": "MSFU",
       "name": "Direxion Daily MSFT Bull 2X Shares",
-      "current_price": 24.77,
-      "change_pct": 0.28,
+      "current_price": 25.8,
+      "change_pct": 4.16,
       "extra_data": {
-        "regular_market_price": 24.77,
-        "pre_market_price": 25.5161,
+        "regular_market_price": 25.8,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 24.7
+        "prev_close": 24.77
       },
-      "kd_k": 10.62,
-      "kd_d": 17.64
-    },
-    {
-      "symbol": "FBL",
-      "name": "GraniteShares 2x Long META Daily ETF",
-      "current_price": 21.44,
-      "change_pct": -0.74,
-      "extra_data": {
-        "regular_market_price": 21.44,
-        "pre_market_price": 22.25,
-        "post_market_price": null,
-        "prev_close": 21.6
-      },
-      "kd_k": 12.45,
-      "kd_d": 18.9
-    },
-    {
-      "symbol": "NVDL",
-      "name": "GraniteShares 2x Long NVDA Daily ETF",
-      "current_price": 95.49,
-      "change_pct": 0.37,
-      "extra_data": {
-        "regular_market_price": 95.49,
-        "pre_market_price": 98.34,
-        "post_market_price": null,
-        "prev_close": 95.14
-      },
-      "kd_k": 15.68,
-      "kd_d": 19.23
+      "kd_k": 15.97,
+      "kd_d": 17.09
     },
     {
       "symbol": "NFXL",
       "name": "Direxion Daily NFLX Bull 2X Shares",
-      "current_price": 20.12,
-      "change_pct": -2.33,
+      "current_price": 20.62,
+      "change_pct": 2.49,
       "extra_data": {
-        "regular_market_price": 20.12,
-        "pre_market_price": 20.19,
+        "regular_market_price": 20.62,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 20.6
+        "prev_close": 20.12
       },
-      "kd_k": 13.69,
-      "kd_d": 12.76
+      "kd_k": 24.05,
+      "kd_d": 16.52
     },
     {
       "symbol": "AVGX",
       "name": "Defiance Daily Target 2X Long AVGO ETF",
-      "current_price": 48.48,
-      "change_pct": -1.88,
+      "current_price": 51.7101,
+      "change_pct": 6.47,
       "extra_data": {
-        "regular_market_price": 48.48,
-        "pre_market_price": 51.3564,
+        "regular_market_price": 51.7101,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 49.41
+        "prev_close": 48.57
       },
-      "kd_k": 11.64,
-      "kd_d": 20.93
+      "kd_k": 12.9,
+      "kd_d": 18.26
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 77.84,
-      "change_pct": -5.8,
+      "current_price": 84.735,
+      "change_pct": 8.86,
       "extra_data": {
-        "regular_market_price": 77.84,
-        "pre_market_price": 82.5,
+        "regular_market_price": 84.735,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 82.63
+        "prev_close": 77.84
       },
-      "kd_k": 7.24,
-      "kd_d": 10.34
+      "kd_k": 15.84,
+      "kd_d": 12.17
     },
     {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
-      "current_price": 165.89,
-      "change_pct": -0.34,
+      "current_price": 165.2225,
+      "change_pct": -0.4,
       "extra_data": {
-        "regular_market_price": 165.89,
-        "pre_market_price": 167.5,
+        "regular_market_price": 165.2225,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 166.45
+        "prev_close": 165.89
       },
-      "kd_k": 14.45,
-      "kd_d": 25.21
+      "kd_k": 13.15,
+      "kd_d": 21.19
     },
     {
       "symbol": "CRMG",
       "name": "Leverage Shares 2X Long CRM Daily ETF",
-      "current_price": 4.65,
-      "change_pct": -0.85,
+      "current_price": 4.6099,
+      "change_pct": -0.86,
       "extra_data": {
-        "regular_market_price": 4.65,
-        "pre_market_price": 4.7399,
+        "regular_market_price": 4.6099,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 4.69
+        "prev_close": 4.65
       },
-      "kd_k": 13.1,
-      "kd_d": 23.05
+      "kd_k": 11.84,
+      "kd_d": 19.31
     },
     {
       "symbol": "ADBE",
       "name": "Adobe Inc.",
-      "current_price": 204.02,
-      "change_pct": -6.76,
+      "current_price": 207.69,
+      "change_pct": 1.8,
       "extra_data": {
-        "regular_market_price": 204.02,
-        "pre_market_price": 205.7,
+        "regular_market_price": 207.69,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 218.8
+        "prev_close": 204.02
       },
-      "kd_k": 13.25,
-      "kd_d": 24.05
+      "kd_k": 14.04,
+      "kd_d": 20.71
     },
     {
       "symbol": "ADBG",
       "name": "Leverage Shares 2X Long ADBE Daily ETF",
-      "current_price": 3.0,
-      "change_pct": -13.29,
+      "current_price": 3.105,
+      "change_pct": 3.5,
       "extra_data": {
-        "regular_market_price": 3.0,
-        "pre_market_price": 3.0493,
+        "regular_market_price": 3.105,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 3.46
+        "prev_close": 3.0
       },
-      "kd_k": 11.64,
-      "kd_d": 21.61
-    },
-    {
-      "symbol": "ORCX",
-      "name": "Defiance Daily Target 2X Long ORCL ETF",
-      "current_price": 37.32,
-      "change_pct": 0.19,
-      "extra_data": {
-        "regular_market_price": 37.32,
-        "pre_market_price": 38.9277,
-        "post_market_price": null,
-        "prev_close": 37.25
-      },
-      "kd_k": 18.72,
-      "kd_d": 32.18
-    },
-    {
-      "symbol": "RKLB",
-      "name": "Rocket Lab USA, Inc.",
-      "current_price": 102.39,
-      "change_pct": -10.79,
-      "extra_data": {
-        "regular_market_price": 102.39,
-        "pre_market_price": 107.25,
-        "post_market_price": null,
-        "prev_close": 114.78
-      },
-      "kd_k": 18.59,
-      "kd_d": 21.61
+      "kd_k": 12.27,
+      "kd_d": 18.5
     },
     {
       "symbol": "RKLX",
       "name": "Defiance Daily Target 2X Long RKLB ETF",
-      "current_price": 48.3,
-      "change_pct": -21.68,
+      "current_price": 55.0301,
+      "change_pct": 13.93,
       "extra_data": {
-        "regular_market_price": 48.3,
-        "pre_market_price": 52.8,
+        "regular_market_price": 55.0301,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 61.67
+        "prev_close": 48.3
       },
-      "kd_k": 15.15,
-      "kd_d": 18.21
+      "kd_k": 21.75,
+      "kd_d": 19.39
     }
   ],
   "errors": []
