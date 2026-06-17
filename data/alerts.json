@@ -1,5 +1,21 @@
 [
   {
+    "id": "ORCL_20260618_oversold",
+    "symbol": "ORCL",
+    "name": "Oracle Corporation",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.65,
+    "kd_d": 25.44,
+    "current_price": 183.53,
+    "threshold": 20,
+    "message": "✅ ORCL (Oracle Corporation) is OVERSOLD! KD-K: 19.65, KD-D: 25.44 (<= 20)",
+    "timestamp": "2026-06-18T05:04:29.760571",
+    "date": "2026-06-18",
+    "acknowledged": false
+  },
+  {
     "id": "00652.TW_20260618_overbought",
     "symbol": "00652.TW",
     "name": "富邦印度",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ NFXL (Direxion Daily NFLX Bull 2X Shares) is OVERSOLD! KD-K: 13.69, KD-D: 12.76 (<= 20)",
     "timestamp": "2026-06-15T00:20:42.104288",
-    "date": "2026-06-15",
-    "acknowledged": false
-  },
-  {
-    "id": "AVGX_20260615_oversold",
-    "symbol": "AVGX",
-    "name": "Defiance Daily Target 2X Long AVGO ETF",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 11.64,
-    "kd_d": 20.93,
-    "current_price": 48.48,
-    "threshold": 20,
-    "message": "✅ AVGX (Defiance Daily Target 2X Long AVGO ETF) is OVERSOLD! KD-K: 11.64, KD-D: 20.93 (<= 20)",
-    "timestamp": "2026-06-15T00:20:42.104333",
     "date": "2026-06-15",
     "acknowledged": false
   }
