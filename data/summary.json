@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-27T08:06:12.250209",
+  "timestamp": "2026-06-27T12:53:35.345386",
   "date": "2026-06-27",
   "macro": {
     "us10y": {
@@ -7,27 +7,27 @@
       "change": 0.0
     },
     "dxy": {
-      "value": 101.37,
-      "change": -0.06
+      "value": 101.36,
+      "change": -0.07
     },
     "fear_greed": {
       "value": 18.41,
       "change": -0.48,
       "label": "VIX Index",
-      "timestamp": "2026-06-27T08:06:06.417184"
+      "timestamp": "2026-06-27T12:53:29.499963"
     },
     "btc": {
-      "value": 60016.0,
+      "value": 60208.0,
       "change_pct": 0
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 0,
+  "new_alerts": 2,
   "overbought_count": 4,
-  "oversold_count": 32,
-  "normal_count": 89,
+  "oversold_count": 33,
+  "normal_count": 88,
   "overbought_stocks": [
     {
       "symbol": "00652.TW",
@@ -350,8 +350,8 @@
         "post_market_price": 27.8,
         "prev_close": 28.716639
       },
-      "kd_k": 15.33,
-      "kd_d": 25.03
+      "kd_k": 6.52,
+      "kd_d": 14.6
     },
     {
       "symbol": "NFXL",
@@ -368,6 +368,20 @@
       "kd_d": 10.77
     },
     {
+      "symbol": "MULL",
+      "name": "GraniteShares 2x Long MU Daily ETF",
+      "current_price": 35.26,
+      "change_pct": -14.47,
+      "extra_data": {
+        "regular_market_price": 35.26,
+        "pre_market_price": null,
+        "post_market_price": 35.82,
+        "prev_close": 41.2236
+      },
+      "kd_k": 10.13,
+      "kd_d": 24.1
+    },
+    {
       "symbol": "AVGX",
       "name": "Defiance Daily Target 2X Long AVGO ETF",
       "current_price": 43.55,
@@ -380,20 +394,6 @@
       },
       "kd_k": 17.22,
       "kd_d": 26.53
-    },
-    {
-      "symbol": "FNGG",
-      "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
-      "current_price": 212.612,
-      "change_pct": 1.83,
-      "extra_data": {
-        "regular_market_price": 212.612,
-        "pre_market_price": null,
-        "post_market_price": 210.0,
-        "prev_close": 208.792
-      },
-      "kd_k": 18.88,
-      "kd_d": 28.83
     },
     {
       "symbol": "CRCL",
@@ -417,7 +417,7 @@
       "extra_data": {
         "regular_market_price": 158.37,
         "pre_market_price": null,
-        "post_market_price": 158.33,
+        "post_market_price": 158.32,
         "prev_close": 150.19
       },
       "kd_k": 28.68,
@@ -490,7 +490,7 @@
         "post_market_price": 23.9,
         "prev_close": 25.24
       },
-      "kd_k": 4.55,
+      "kd_k": 4.57,
       "kd_d": 8.43
     },
     {
@@ -504,8 +504,8 @@
         "post_market_price": 11.54,
         "prev_close": 11.38
       },
-      "kd_k": 18.7,
-      "kd_d": 24.27
+      "kd_k": 18.74,
+      "kd_d": 24.28
     },
     {
       "symbol": "RKLB",
@@ -534,6 +534,20 @@
       },
       "kd_k": 8.86,
       "kd_d": 12.26
+    },
+    {
+      "symbol": "DLLL",
+      "name": "GraniteShares 2x Long DELL Daily ETF",
+      "current_price": 20.89,
+      "change_pct": -7.52,
+      "extra_data": {
+        "regular_market_price": 20.89,
+        "pre_market_price": null,
+        "post_market_price": 21.06,
+        "prev_close": 22.58875
+      },
+      "kd_k": 9.17,
+      "kd_d": 21.57
     }
   ],
   "errors": []
