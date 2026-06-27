@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-27T18:07:16.425182",
+  "timestamp": "2026-06-27T20:09:06.463773",
   "date": "2026-06-27",
   "macro": {
     "us10y": {
@@ -7,18 +7,18 @@
       "change": 0.0
     },
     "dxy": {
-      "value": 101.36,
-      "change": -0.07
+      "value": 101.43,
+      "change": 0.0
     },
     "fear_greed": {
-      "value": 18.41,
-      "change": -0.48,
+      "value": 18.89,
+      "change": 0.0,
       "label": "VIX Index",
-      "timestamp": "2026-06-27T18:07:10.696637"
+      "timestamp": "2026-06-27T20:09:00.687870"
     },
     "btc": {
-      "value": 60328.0,
-      "change_pct": 0.52
+      "value": 60225.0,
+      "change_pct": 0.35
     }
   },
   "stocks_processed": 125,
@@ -26,8 +26,8 @@
   "stocks_failed": 0,
   "new_alerts": 0,
   "overbought_count": 4,
-  "oversold_count": 33,
-  "normal_count": 88,
+  "oversold_count": 34,
+  "normal_count": 87,
   "overbought_stocks": [
     {
       "symbol": "00652.TW",
@@ -396,6 +396,20 @@
       "kd_d": 26.53
     },
     {
+      "symbol": "FNGG",
+      "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
+      "current_price": 212.612,
+      "change_pct": 1.83,
+      "extra_data": {
+        "regular_market_price": 212.612,
+        "pre_market_price": null,
+        "post_market_price": 210.0,
+        "prev_close": 208.792
+      },
+      "kd_k": 18.88,
+      "kd_d": 28.83
+    },
+    {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
       "current_price": 73.57,
@@ -490,7 +504,7 @@
         "post_market_price": 23.9,
         "prev_close": 25.24
       },
-      "kd_k": 4.57,
+      "kd_k": 4.55,
       "kd_d": 8.43
     },
     {
@@ -504,8 +518,8 @@
         "post_market_price": 11.54,
         "prev_close": 11.38
       },
-      "kd_k": 18.74,
-      "kd_d": 24.28
+      "kd_k": 18.7,
+      "kd_d": 24.27
     },
     {
       "symbol": "RKLB",
