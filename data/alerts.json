@@ -1,5 +1,21 @@
 [
   {
+    "id": "QCOM_20260630_oversold",
+    "symbol": "QCOM",
+    "name": "QUALCOMM Incorporated",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 16.23,
+    "kd_d": 27.05,
+    "current_price": 186.35,
+    "threshold": 20,
+    "message": "✅ QCOM (QUALCOMM Incorporated) is OVERSOLD! KD-K: 16.23, KD-D: 27.05 (<= 20)",
+    "timestamp": "2026-06-30T23:26:58.170165",
+    "date": "2026-06-30",
+    "acknowledged": false
+  },
+  {
     "id": "00635U.TW_20260630_oversold",
     "symbol": "00635U.TW",
     "name": "期元大S&P黃金",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ CRM (Salesforce, Inc.) is OVERSOLD! KD-K: 28.68, KD-D: 19.49 (<= 20)",
     "timestamp": "2026-06-28T00:04:16.423647",
-    "date": "2026-06-28",
-    "acknowledged": false
-  },
-  {
-    "id": "CRMG_20260628_oversold",
-    "symbol": "CRMG",
-    "name": "Leverage Shares 2X Long CRM Daily ETF",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 23.07,
-    "kd_d": 15.4,
-    "current_price": 4.18,
-    "threshold": 20,
-    "message": "✅ CRMG (Leverage Shares 2X Long CRM Daily ETF) is OVERSOLD! KD-K: 23.07, KD-D: 15.4 (<= 20)",
-    "timestamp": "2026-06-28T00:04:16.423712",
     "date": "2026-06-28",
     "acknowledged": false
   }
