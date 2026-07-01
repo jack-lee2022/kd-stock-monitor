@@ -1,5 +1,21 @@
 [
   {
+    "id": "CRWD_20260701_overbought",
+    "symbol": "CRWD",
+    "name": "CrowdStrike Holdings Inc.",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 84.2,
+    "kd_d": 72.03,
+    "current_price": 781.0,
+    "threshold": 80,
+    "message": "⚠️ CRWD (CrowdStrike Holdings Inc.) is OVERBOUGHT! KD-K: 84.2, KD-D: 72.03 (>= 80)",
+    "timestamp": "2026-07-01T23:40:46.196764",
+    "date": "2026-07-01",
+    "acknowledged": false
+  },
+  {
     "id": "00919.TW_20260701_oversold",
     "symbol": "00919.TW",
     "name": "群益台灣精選高息",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00653L.TW (富邦印度正2) is OVERBOUGHT! KD-K: 74.49, KD-D: 81.34 (>= 80)",
     "timestamp": "2026-06-28T00:04:16.421925",
-    "date": "2026-06-28",
-    "acknowledged": false
-  },
-  {
-    "id": "00665L.TW_20260628_oversold",
-    "symbol": "00665L.TW",
-    "name": "富邦恒生國企正2",
-    "market": "TW",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 5.57,
-    "kd_d": 9.18,
-    "current_price": 7.38,
-    "threshold": 20,
-    "message": "✅ 00665L.TW (富邦恒生國企正2) is OVERSOLD! KD-K: 5.57, KD-D: 9.18 (<= 20)",
-    "timestamp": "2026-06-28T00:04:16.421997",
     "date": "2026-06-28",
     "acknowledged": false
   }
