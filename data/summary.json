@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-02T11:25:34.870769",
+  "timestamp": "2026-07-02T15:31:13.202401",
   "date": "2026-07-02",
   "macro": {
     "us10y": {
@@ -7,55 +7,55 @@
       "change": 0.0
     },
     "dxy": {
-      "value": 101.39,
-      "change": 0.2
+      "value": 101.2,
+      "change": -0.19
     },
     "fear_greed": {
-      "value": 16.59,
-      "change": 0.14,
+      "value": 17.02,
+      "change": 0.43,
       "label": "VIX Index",
-      "timestamp": "2026-07-02T11:25:28.870325"
+      "timestamp": "2026-07-02T15:31:08.136425"
     },
     "btc": {
-      "value": 60299.0,
-      "change_pct": 0
+      "value": 60063.0,
+      "change_pct": 0.1
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 2,
-  "overbought_count": 3,
+  "new_alerts": 4,
+  "overbought_count": 6,
   "oversold_count": 15,
-  "normal_count": 107,
+  "normal_count": 104,
   "overbought_stocks": [
     {
       "symbol": "00646.TW",
       "name": "元大S&P500",
-      "current_price": 75.05,
-      "change_pct": 0.13,
+      "current_price": 75.0,
+      "change_pct": 0.07,
       "extra_data": {
-        "regular_market_price": 75.05,
+        "regular_market_price": 75.0,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 74.95
       },
-      "kd_k": 81.58,
-      "kd_d": 68.34
+      "kd_k": 83.04,
+      "kd_d": 69.05
     },
     {
       "symbol": "00852L.TW",
       "name": "國泰美國道瓊正2",
-      "current_price": 34.78,
-      "change_pct": 0.58,
+      "current_price": 34.81,
+      "change_pct": 0.67,
       "extra_data": {
-        "regular_market_price": 34.78,
+        "regular_market_price": 34.81,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 34.58
       },
-      "kd_k": 92.47,
-      "kd_d": 86.5
+      "kd_k": 92.22,
+      "kd_d": 86.42
     },
     {
       "symbol": "00858.TWO",
@@ -70,64 +70,92 @@
       },
       "kd_k": 82.12,
       "kd_d": 70.09
+    },
+    {
+      "symbol": "00885.TW",
+      "name": "富邦越南",
+      "current_price": 18.95,
+      "change_pct": -0.05,
+      "extra_data": {
+        "regular_market_price": 18.95,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 18.96
+      },
+      "kd_k": 89.1,
+      "kd_d": 82.36
+    },
+    {
+      "symbol": "00918.TW",
+      "name": "大華優利高填息30",
+      "current_price": 31.82,
+      "change_pct": -0.06,
+      "extra_data": {
+        "regular_market_price": 31.82,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 31.84
+      },
+      "kd_k": 82.95,
+      "kd_d": 75.6
+    },
+    {
+      "symbol": "00936.TW",
+      "name": "台新永續高息中小",
+      "current_price": 21.05,
+      "change_pct": -0.52,
+      "extra_data": {
+        "regular_market_price": 21.05,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 21.16
+      },
+      "kd_k": 88.11,
+      "kd_d": 78.56
     }
   ],
   "oversold_stocks": [
     {
       "symbol": "00665L.TW",
       "name": "富邦恒生國企正2",
-      "current_price": 7.76,
-      "change_pct": 3.05,
+      "current_price": 7.74,
+      "change_pct": 2.79,
       "extra_data": {
-        "regular_market_price": 7.76,
+        "regular_market_price": 7.74,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 7.53
       },
-      "kd_k": 22.43,
-      "kd_d": 14.88
+      "kd_k": 21.88,
+      "kd_d": 14.7
     },
     {
       "symbol": "00715L.TW",
       "name": "期街口布蘭特正2",
-      "current_price": 31.26,
-      "change_pct": -6.77,
+      "current_price": 31.38,
+      "change_pct": -6.41,
       "extra_data": {
-        "regular_market_price": 31.26,
+        "regular_market_price": 31.38,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 33.53
       },
-      "kd_k": 5.2,
-      "kd_d": 6.2
-    },
-    {
-      "symbol": "00919.TW",
-      "name": "群益台灣精選高息",
-      "current_price": 29.24,
-      "change_pct": -0.44,
-      "extra_data": {
-        "regular_market_price": 29.24,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 29.37
-      },
-      "kd_k": 13.74,
-      "kd_d": 27.86
+      "kd_k": 5.85,
+      "kd_d": 6.42
     },
     {
       "symbol": "2317.TW",
       "name": "鴻海",
-      "current_price": 240.5,
-      "change_pct": -3.02,
+      "current_price": 239.0,
+      "change_pct": -3.63,
       "extra_data": {
-        "regular_market_price": 240.5,
+        "regular_market_price": 239.0,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 248.0
       },
-      "kd_k": 8.29,
-      "kd_d": 13.36
+      "kd_k": 7.4,
+      "kd_d": 13.07
     },
     {
       "symbol": "NFLX",
@@ -142,6 +170,20 @@
       },
       "kd_k": 24.42,
       "kd_d": 17.39
+    },
+    {
+      "symbol": "CRWD",
+      "name": "CrowdStrike Holdings Inc.",
+      "current_price": 772.74,
+      "change_pct": 1.26,
+      "extra_data": {
+        "regular_market_price": 772.74,
+        "pre_market_price": null,
+        "post_market_price": 768.37,
+        "prev_close": 763.14
+      },
+      "kd_k": 8.64,
+      "kd_d": 17.85
     },
     {
       "symbol": "NVDL",
@@ -210,8 +252,8 @@
         "post_market_price": 62.33,
         "prev_close": 62.63
       },
-      "kd_k": 12.88,
-      "kd_d": 17.66
+      "kd_k": 12.92,
+      "kd_d": 17.67
     },
     {
       "symbol": "ORCL",
