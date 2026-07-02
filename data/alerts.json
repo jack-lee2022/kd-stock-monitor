@@ -1,5 +1,21 @@
 [
   {
+    "id": "ARM_20260703_oversold",
+    "symbol": "ARM",
+    "name": "Arm Holdings plc",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.94,
+    "kd_d": 28.9,
+    "current_price": 310.942,
+    "threshold": 20,
+    "message": "✅ ARM (Arm Holdings plc) is OVERSOLD! KD-K: 19.94, KD-D: 28.9 (<= 20)",
+    "timestamp": "2026-07-03T03:22:41.133879",
+    "date": "2026-07-03",
+    "acknowledged": false
+  },
+  {
     "id": "00646.TW_20260703_overbought",
     "symbol": "00646.TW",
     "name": "元大S&P500",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ NFXL (Direxion Daily NFLX Bull 2X Shares) is OVERSOLD! KD-K: 17.77, KD-D: 13.1 (<= 20)",
     "timestamp": "2026-06-30T01:36:02.615756",
-    "date": "2026-06-30",
-    "acknowledged": false
-  },
-  {
-    "id": "MULL_20260630_oversold",
-    "symbol": "MULL",
-    "name": "GraniteShares 2x Long MU Daily ETF",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 6.98,
-    "kd_d": 18.4,
-    "current_price": 34.38,
-    "threshold": 20,
-    "message": "✅ MULL (GraniteShares 2x Long MU Daily ETF) is OVERSOLD! KD-K: 6.98, KD-D: 18.4 (<= 20)",
-    "timestamp": "2026-06-30T01:36:02.615779",
     "date": "2026-06-30",
     "acknowledged": false
   }
