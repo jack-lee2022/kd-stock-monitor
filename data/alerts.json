@@ -1,5 +1,21 @@
 [
   {
+    "id": "FNGS_20260710_overbought",
+    "symbol": "FNGS",
+    "name": "MicroSectors FANG+ Index ETN",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 81.85,
+    "kd_d": 68.16,
+    "current_price": 75.265,
+    "threshold": 80,
+    "message": "⚠️ FNGS (MicroSectors FANG+ Index ETN) is OVERBOUGHT! KD-K: 81.85, KD-D: 68.16 (>= 80)",
+    "timestamp": "2026-07-10T02:50:08.098170",
+    "date": "2026-07-10",
+    "acknowledged": false
+  },
+  {
     "id": "00646.TW_20260710_overbought",
     "symbol": "00646.TW",
     "name": "元大S&P500",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ ARM (Arm Holdings plc) is OVERSOLD! KD-K: 17.25, KD-D: 23.45 (<= 20)",
     "timestamp": "2026-07-08T01:13:20.432263",
-    "date": "2026-07-08",
-    "acknowledged": false
-  },
-  {
-    "id": "ARMG_20260708_oversold",
-    "symbol": "ARMG",
-    "name": "Leverage Shares 2X Long ARM Daily ETF",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 14.35,
-    "kd_d": 19.77,
-    "current_price": 28.73,
-    "threshold": 20,
-    "message": "✅ ARMG (Leverage Shares 2X Long ARM Daily ETF) is OVERSOLD! KD-K: 14.35, KD-D: 19.77 (<= 20)",
-    "timestamp": "2026-07-08T01:13:20.432304",
     "date": "2026-07-08",
     "acknowledged": false
   }
