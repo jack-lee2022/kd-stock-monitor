@@ -1,5 +1,21 @@
 [
   {
+    "id": "CRCL_20260711_oversold",
+    "symbol": "CRCL",
+    "name": "Circle Internet Group, Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 21.36,
+    "kd_d": 19.72,
+    "current_price": 66.09,
+    "threshold": 20,
+    "message": "✅ CRCL (Circle Internet Group, Inc.) is OVERSOLD! KD-K: 21.36, KD-D: 19.72 (<= 20)",
+    "timestamp": "2026-07-11T02:23:08.616747",
+    "date": "2026-07-11",
+    "acknowledged": false
+  },
+  {
     "id": "00646.TW_20260711_overbought",
     "symbol": "00646.TW",
     "name": "元大S&P500",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ CRCL (Circle Internet Group, Inc.) is OVERSOLD! KD-K: 22.3, KD-D: 19.54 (<= 20)",
     "timestamp": "2026-07-08T03:53:20.602678",
-    "date": "2026-07-08",
-    "acknowledged": false
-  },
-  {
-    "id": "00646.TW_20260708_overbought",
-    "symbol": "00646.TW",
-    "name": "元大S&P500",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 91.83,
-    "kd_d": 83.64,
-    "current_price": 75.9,
-    "threshold": 80,
-    "message": "⚠️ 00646.TW (元大S&P500) is OVERBOUGHT! KD-K: 91.83, KD-D: 83.64 (>= 80)",
-    "timestamp": "2026-07-08T01:13:20.430690",
     "date": "2026-07-08",
     "acknowledged": false
   }
