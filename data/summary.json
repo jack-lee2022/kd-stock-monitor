@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-13T05:50:10.518477",
+  "timestamp": "2026-07-13T06:45:48.646079",
   "date": "2026-07-13",
   "macro": {
     "us10y": {
@@ -7,18 +7,18 @@
       "change": 0.03
     },
     "dxy": {
-      "value": 100.97,
-      "change": 0.0
+      "value": 101.14,
+      "change": 0.17
     },
     "fear_greed": {
       "value": 15.03,
       "change": -0.81,
       "label": "VIX Index",
-      "timestamp": "2026-07-13T05:50:04.734375"
+      "timestamp": "2026-07-13T06:45:42.803311"
     },
     "btc": {
-      "value": 63911.0,
-      "change_pct": 0.17
+      "value": 63713.0,
+      "change_pct": -0.14
     }
   },
   "stocks_processed": 125,
@@ -286,9 +286,14 @@
     {
       "symbol": "00911.TW",
       "name": "兆豐洲際半導體",
-      "current_price": 61.45000076293945,
-      "change_pct": 0.0,
-      "extra_data": {},
+      "current_price": 61.45,
+      "change_pct": 1.4,
+      "extra_data": {
+        "regular_market_price": 61.45,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 60.6
+      },
       "kd_k": 11.71,
       "kd_d": 19.24
     },
