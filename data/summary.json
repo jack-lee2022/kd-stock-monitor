@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-14T04:13:53.749060",
+  "timestamp": "2026-07-14T05:55:14.358578",
   "date": "2026-07-14",
   "macro": {
     "us10y": {
@@ -11,22 +11,22 @@
       "change": 0.0
     },
     "fear_greed": {
-      "value": 17.0,
-      "change": 1.97,
+      "value": 17.16,
+      "change": 2.13,
       "label": "VIX Index",
-      "timestamp": "2026-07-14T04:13:47.903573"
+      "timestamp": "2026-07-14T05:55:08.252681"
     },
     "btc": {
-      "value": 62160.0,
-      "change_pct": -2.51
+      "value": 63736.0,
+      "change_pct": -0.03
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
   "new_alerts": 0,
-  "overbought_count": 14,
-  "oversold_count": 18,
+  "overbought_count": 15,
+  "oversold_count": 17,
   "normal_count": 93,
   "overbought_stocks": [
     {
@@ -135,7 +135,7 @@
       "extra_data": {
         "regular_market_price": 317.31,
         "pre_market_price": null,
-        "post_market_price": 317.45,
+        "post_market_price": 317.3282,
         "prev_close": 315.32
       },
       "kd_k": 89.68,
@@ -149,7 +149,7 @@
       "extra_data": {
         "regular_market_price": 656.73,
         "pre_market_price": null,
-        "post_market_price": 656.6,
+        "post_market_price": 656.3001,
         "prev_close": 669.21
       },
       "kd_k": 82.79,
@@ -158,16 +158,16 @@
     {
       "symbol": "SPY",
       "name": "SPDR S&P 500 ETF Trust",
-      "current_price": 749.08,
-      "change_pct": -0.78,
+      "current_price": 749.17,
+      "change_pct": -0.77,
       "extra_data": {
-        "regular_market_price": 749.08,
+        "regular_market_price": 749.17,
         "pre_market_price": null,
-        "post_market_price": 748.79,
+        "post_market_price": 748.34,
         "prev_close": 754.95
       },
-      "kd_k": 80.7,
-      "kd_d": 82.68
+      "kd_k": 80.89,
+      "kd_d": 82.74
     },
     {
       "symbol": "FBL",
@@ -177,25 +177,39 @@
       "extra_data": {
         "regular_market_price": 27.92,
         "pre_market_price": null,
-        "post_market_price": 27.92,
+        "post_market_price": 27.8056,
         "prev_close": 28.99
       },
       "kd_k": 81.15,
       "kd_d": 71.65
     },
     {
+      "symbol": "FNGS",
+      "name": "MicroSectors FANG+ Index ETN",
+      "current_price": 75.12,
+      "change_pct": -0.5,
+      "extra_data": {
+        "regular_market_price": 75.12,
+        "pre_market_price": null,
+        "post_market_price": 75.1,
+        "prev_close": 75.5
+      },
+      "kd_k": 81.72,
+      "kd_d": 76.15
+    },
+    {
       "symbol": "FNGG",
       "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
-      "current_price": 234.2498,
-      "change_pct": -1.43,
+      "current_price": 233.806,
+      "change_pct": -1.75,
       "extra_data": {
-        "regular_market_price": 234.2498,
+        "regular_market_price": 233.806,
         "pre_market_price": null,
         "post_market_price": 233.8057,
-        "prev_close": 237.65
+        "prev_close": 237.963
       },
-      "kd_k": 83.53,
-      "kd_d": 78.92
+      "kd_k": 82.87,
+      "kd_d": 78.7
     },
     {
       "symbol": "ADBE",
@@ -205,7 +219,7 @@
       "extra_data": {
         "regular_market_price": 230.61,
         "pre_market_price": null,
-        "post_market_price": 230.23,
+        "post_market_price": 230.33,
         "prev_close": 223.64
       },
       "kd_k": 82.85,
@@ -356,16 +370,16 @@
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
-      "current_price": 421.6,
-      "change_pct": -2.88,
+      "current_price": 421.58,
+      "change_pct": -2.89,
       "extra_data": {
-        "regular_market_price": 421.6,
+        "regular_market_price": 421.58,
         "pre_market_price": null,
-        "post_market_price": 422.6078,
+        "post_market_price": 423.2158,
         "prev_close": 434.11
       },
-      "kd_k": 18.59,
-      "kd_d": 30.29
+      "kd_k": 18.58,
+      "kd_d": 30.28
     },
     {
       "symbol": "MULL",
@@ -375,7 +389,7 @@
       "extra_data": {
         "regular_market_price": 23.52,
         "pre_market_price": null,
-        "post_market_price": 23.2486,
+        "post_market_price": 23.3,
         "prev_close": 25.81
       },
       "kd_k": 17.57,
@@ -389,7 +403,7 @@
       "extra_data": {
         "regular_market_price": 80.92,
         "pre_market_price": null,
-        "post_market_price": 80.92,
+        "post_market_price": 81.63,
         "prev_close": 85.93
       },
       "kd_k": 15.61,
@@ -398,30 +412,30 @@
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 62.985,
-      "change_pct": -4.77,
+      "current_price": 63.0,
+      "change_pct": -4.75,
       "extra_data": {
-        "regular_market_price": 62.985,
+        "regular_market_price": 63.0,
         "pre_market_price": null,
-        "post_market_price": 62.92,
+        "post_market_price": 62.6,
         "prev_close": 66.14
       },
-      "kd_k": 18.13,
-      "kd_d": 19.22
+      "kd_k": 18.17,
+      "kd_d": 19.23
     },
     {
       "symbol": "ORCL",
       "name": "Oracle Corporation",
-      "current_price": 131.69,
-      "change_pct": -6.36,
+      "current_price": 131.54,
+      "change_pct": -6.47,
       "extra_data": {
-        "regular_market_price": 131.69,
+        "regular_market_price": 131.54,
         "pre_market_price": null,
-        "post_market_price": 131.85,
+        "post_market_price": 132.09,
         "prev_close": 140.64
       },
-      "kd_k": 13.97,
-      "kd_d": 14.4
+      "kd_k": 13.71,
+      "kd_d": 14.31
     },
     {
       "symbol": "ORCX",
@@ -431,7 +445,7 @@
       "extra_data": {
         "regular_market_price": 18.62,
         "pre_market_price": null,
-        "post_market_price": 18.6251,
+        "post_market_price": 18.68,
         "prev_close": 21.33
       },
       "kd_k": 13.34,
@@ -445,7 +459,7 @@
       "extra_data": {
         "regular_market_price": 76.73,
         "pre_market_price": null,
-        "post_market_price": 76.8,
+        "post_market_price": 76.9,
         "prev_close": 81.04
       },
       "kd_k": 12.9,
@@ -464,20 +478,6 @@
       },
       "kd_k": 9.95,
       "kd_d": 18.4
-    },
-    {
-      "symbol": "DRAM",
-      "name": "Roundhill Memory ETF",
-      "current_price": 57.21,
-      "change_pct": -9.25,
-      "extra_data": {
-        "regular_market_price": 57.21,
-        "pre_market_price": null,
-        "post_market_price": 57.15,
-        "prev_close": 63.04
-      },
-      "kd_k": 19.87,
-      "kd_d": 24.64
     }
   ],
   "errors": []
