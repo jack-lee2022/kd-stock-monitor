@@ -1,5 +1,21 @@
 [
   {
+    "id": "VOO_20260714_overbought",
+    "symbol": "VOO",
+    "name": "Vanguard S&P 500 ETF",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.05,
+    "kd_d": 78.8,
+    "current_price": 689.22,
+    "threshold": 80,
+    "message": "⚠️ VOO (Vanguard S&P 500 ETF) is OVERBOUGHT! KD-K: 80.05, KD-D: 78.8 (>= 80)",
+    "timestamp": "2026-07-14T02:43:04.175913",
+    "date": "2026-07-14",
+    "acknowledged": false
+  },
+  {
     "id": "00646.TW_20260714_overbought",
     "symbol": "00646.TW",
     "name": "元大S&P500",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ 00830.TW (國泰費城半導體) is OVERSOLD! KD-K: 15.58, KD-D: 24.1 (<= 20)",
     "timestamp": "2026-07-11T00:55:16.236547",
-    "date": "2026-07-11",
-    "acknowledged": false
-  },
-  {
-    "id": "00852L.TW_20260711_overbought",
-    "symbol": "00852L.TW",
-    "name": "國泰美國道瓊正2",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 72.45,
-    "kd_d": 83.86,
-    "current_price": 34.99,
-    "threshold": 80,
-    "message": "⚠️ 00852L.TW (國泰美國道瓊正2) is OVERBOUGHT! KD-K: 72.45, KD-D: 83.86 (>= 80)",
-    "timestamp": "2026-07-11T00:55:16.236596",
     "date": "2026-07-11",
     "acknowledged": false
   }
