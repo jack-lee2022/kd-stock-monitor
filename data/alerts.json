@@ -1,5 +1,21 @@
 [
   {
+    "id": "VOO_20260715_overbought",
+    "symbol": "VOO",
+    "name": "Vanguard S&P 500 ETF",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 81.14,
+    "kd_d": 79.21,
+    "current_price": 692.575,
+    "threshold": 80,
+    "message": "⚠️ VOO (Vanguard S&P 500 ETF) is OVERBOUGHT! KD-K: 81.14, KD-D: 79.21 (>= 80)",
+    "timestamp": "2026-07-15T22:48:58.723729",
+    "date": "2026-07-15",
+    "acknowledged": false
+  },
+  {
     "id": "00910.TW_20260715_oversold",
     "symbol": "00910.TW",
     "name": "第一金太空衛星",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ 00685L.TW (群益臺灣加權正2) is OVERSOLD! KD-K: 10.62, KD-D: 9.13 (<= 20)",
     "timestamp": "2026-07-13T01:05:20.873727",
-    "date": "2026-07-13",
-    "acknowledged": false
-  },
-  {
-    "id": "00735.TW_20260713_oversold",
-    "symbol": "00735.TW",
-    "name": "國泰臺韓科技",
-    "market": "TW",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 12.18,
-    "kd_d": 19.46,
-    "current_price": 106.55,
-    "threshold": 20,
-    "message": "✅ 00735.TW (國泰臺韓科技) is OVERSOLD! KD-K: 12.18, KD-D: 19.46 (<= 20)",
-    "timestamp": "2026-07-13T01:05:20.873827",
     "date": "2026-07-13",
     "acknowledged": false
   }
