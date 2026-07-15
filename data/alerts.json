@@ -1,5 +1,21 @@
 [
   {
+    "id": "NVDL_20260716_overbought",
+    "symbol": "NVDL",
+    "name": "GraniteShares 2x Long NVDA Daily ETF",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 83.49,
+    "kd_d": 70.83,
+    "current_price": 33.37,
+    "threshold": 80,
+    "message": "⚠️ NVDL (GraniteShares 2x Long NVDA Daily ETF) is OVERBOUGHT! KD-K: 83.49, KD-D: 70.83 (>= 80)",
+    "timestamp": "2026-07-16T04:08:22.949450",
+    "date": "2026-07-16",
+    "acknowledged": false
+  },
+  {
     "id": "NVDA_20260716_overbought",
     "symbol": "NVDA",
     "name": "NVIDIA Corp.",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ 00735.TW (國泰臺韓科技) is OVERSOLD! KD-K: 8.12, KD-D: 15.68 (<= 20)",
     "timestamp": "2026-07-14T00:31:32.784745",
-    "date": "2026-07-14",
-    "acknowledged": false
-  },
-  {
-    "id": "00757.TW_20260714_overbought",
-    "symbol": "00757.TW",
-    "name": "統一FANG+",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 85.34,
-    "kd_d": 82.55,
-    "current_price": 130.8,
-    "threshold": 80,
-    "message": "⚠️ 00757.TW (統一FANG+) is OVERBOUGHT! KD-K: 85.34, KD-D: 82.55 (>= 80)",
-    "timestamp": "2026-07-14T00:31:32.784804",
     "date": "2026-07-14",
     "acknowledged": false
   }
