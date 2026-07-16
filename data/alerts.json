@@ -1,5 +1,21 @@
 [
   {
+    "id": "NVDA_20260717_overbought",
+    "symbol": "NVDA",
+    "name": "NVIDIA Corp.",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.7,
+    "kd_d": 76.65,
+    "current_price": 207.4,
+    "threshold": 80,
+    "message": "⚠️ NVDA (NVIDIA Corp.) is OVERBOUGHT! KD-K: 80.7, KD-D: 76.65 (>= 80)",
+    "timestamp": "2026-07-17T04:02:53.903298",
+    "date": "2026-07-17",
+    "acknowledged": false
+  },
+  {
     "id": "00646.TW_20260717_overbought",
     "symbol": "00646.TW",
     "name": "元大S&P500",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ 00988A.TW (主動統一全球創新) is OVERSOLD! KD-K: 8.03, KD-D: 10.59 (<= 20)",
     "timestamp": "2026-07-15T00:13:25.996782",
-    "date": "2026-07-15",
-    "acknowledged": false
-  },
-  {
-    "id": "2454.TW_20260715_oversold",
-    "symbol": "2454.TW",
-    "name": "聯發科",
-    "market": "TW",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 15.44,
-    "kd_d": 22.6,
-    "current_price": 3660.0,
-    "threshold": 20,
-    "message": "✅ 2454.TW (聯發科) is OVERSOLD! KD-K: 15.44, KD-D: 22.6 (<= 20)",
-    "timestamp": "2026-07-15T00:13:25.996820",
     "date": "2026-07-15",
     "acknowledged": false
   }
