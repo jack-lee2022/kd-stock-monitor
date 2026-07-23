@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-23T10:35:41.056794",
+  "timestamp": "2026-07-23T13:52:28.122289",
   "date": "2026-07-23",
   "macro": {
     "us10y": {
@@ -7,69 +7,69 @@
       "change": 0.029
     },
     "dxy": {
-      "value": 101.04,
-      "change": -0.14
+      "value": 100.99,
+      "change": -0.15
     },
     "fear_greed": {
       "value": 16.64,
       "change": -0.41,
       "label": "VIX Index",
-      "timestamp": "2026-07-23T10:35:36.239102"
+      "timestamp": "2026-07-23T13:52:23.614873"
     },
     "btc": {
-      "value": 65792.0,
+      "value": 65626.0,
       "change_pct": 0
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 2,
+  "new_alerts": 0,
   "overbought_count": 4,
   "oversold_count": 10,
   "normal_count": 111,
   "overbought_stocks": [
     {
+      "symbol": "00665L.TW",
+      "name": "富邦恒生國企正2",
+      "current_price": 9.31,
+      "change_pct": 2.42,
+      "extra_data": {
+        "regular_market_price": 9.31,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 9.09
+      },
+      "kd_k": 79.96,
+      "kd_d": 80.59
+    },
+    {
       "symbol": "00715L.TW",
       "name": "期街口布蘭特正2",
-      "current_price": 52.4,
-      "change_pct": 4.38,
+      "current_price": 52.55,
+      "change_pct": 4.68,
       "extra_data": {
-        "regular_market_price": 52.4,
+        "regular_market_price": 52.55,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 50.2
       },
-      "kd_k": 93.88,
-      "kd_d": 91.37
-    },
-    {
-      "symbol": "00926.TW",
-      "name": "凱基全球菁英55",
-      "current_price": 25.73,
-      "change_pct": 0.04,
-      "extra_data": {
-        "regular_market_price": 25.73,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 25.72
-      },
-      "kd_k": 80.08,
-      "kd_d": 79.66
+      "kd_k": 94.23,
+      "kd_d": 91.49
     },
     {
       "symbol": "00955.TWO",
       "name": "中信日本商社",
-      "current_price": 14.9,
-      "change_pct": -0.2,
+      "current_price": 14.95,
+      "change_pct": 0.13,
       "extra_data": {
-        "regular_market_price": 14.9,
+        "regular_market_price": 14.95,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 14.93
       },
-      "kd_k": 80.83,
-      "kd_d": 70.49
+      "kd_k": 82.26,
+      "kd_d": 70.97
     },
     {
       "symbol": "AAPL",
@@ -90,16 +90,16 @@
     {
       "symbol": "00885.TW",
       "name": "富邦越南",
-      "current_price": 17.22,
-      "change_pct": -1.71,
+      "current_price": 17.16,
+      "change_pct": -2.05,
       "extra_data": {
-        "regular_market_price": 17.22,
+        "regular_market_price": 17.16,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 17.52
       },
-      "kd_k": 5.37,
-      "kd_d": 9.41
+      "kd_k": 5.74,
+      "kd_d": 9.54
     },
     {
       "symbol": "TSLA",
