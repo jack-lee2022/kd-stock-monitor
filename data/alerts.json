@@ -1,5 +1,21 @@
 [
   {
+    "id": "AAPL_20260812_oversold",
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 16.96,
+    "kd_d": 24.71,
+    "current_price": 301.19,
+    "threshold": 20,
+    "message": "✅ AAPL (Apple Inc.) is OVERSOLD! KD-K: 16.96, KD-D: 24.71 (<= 20)",
+    "timestamp": "2026-08-12T23:57:55.931847",
+    "date": "2026-08-12",
+    "acknowledged": false
+  },
+  {
     "id": "SMH_20260812_overbought",
     "symbol": "SMH",
     "name": "VanEck Semiconductor ETF",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00635U.TW (期元大S&P黃金) is OVERBOUGHT! KD-K: 82.58, KD-D: 68.19 (>= 80)",
     "timestamp": "2026-08-11T00:00:06.416581",
-    "date": "2026-08-11",
-    "acknowledged": false
-  },
-  {
-    "id": "00640L.TW_20260811_overbought",
-    "symbol": "00640L.TW",
-    "name": "富邦日本正2",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 86.07,
-    "kd_d": 72.28,
-    "current_price": 108.85,
-    "threshold": 80,
-    "message": "⚠️ 00640L.TW (富邦日本正2) is OVERBOUGHT! KD-K: 86.07, KD-D: 72.28 (>= 80)",
-    "timestamp": "2026-08-11T00:00:06.416630",
     "date": "2026-08-11",
     "acknowledged": false
   }
