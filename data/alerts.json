@@ -1,5 +1,21 @@
 [
   {
+    "id": "NFLX_20260818_overbought",
+    "symbol": "NFLX",
+    "name": "Netflix Inc.",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.42,
+    "kd_d": 78.48,
+    "current_price": 78.815,
+    "threshold": 80,
+    "message": "⚠️ NFLX (Netflix Inc.) is OVERBOUGHT! KD-K: 80.42, KD-D: 78.48 (>= 80)",
+    "timestamp": "2026-08-18T23:30:02.185325",
+    "date": "2026-08-18",
+    "acknowledged": false
+  },
+  {
     "id": "00665L.TW_20260818_oversold",
     "symbol": "00665L.TW",
     "name": "富邦恒生國企正2",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00708L.TW (期元大S&P黃金正2) is OVERBOUGHT! KD-K: 80.52, KD-D: 81.08 (>= 80)",
     "timestamp": "2026-08-17T00:21:46.388294",
-    "date": "2026-08-17",
-    "acknowledged": false
-  },
-  {
-    "id": "00733.TW_20260817_overbought",
-    "symbol": "00733.TW",
-    "name": "富邦臺灣中小",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 86.39,
-    "kd_d": 82.91,
-    "current_price": 66.45,
-    "threshold": 80,
-    "message": "⚠️ 00733.TW (富邦臺灣中小) is OVERBOUGHT! KD-K: 86.39, KD-D: 82.91 (>= 80)",
-    "timestamp": "2026-08-17T00:21:46.388334",
     "date": "2026-08-17",
     "acknowledged": false
   }
