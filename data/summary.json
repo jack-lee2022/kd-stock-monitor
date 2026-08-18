@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-08-18T21:42:55.540683",
+  "timestamp": "2026-08-18T22:32:02.528966",
   "date": "2026-08-18",
   "macro": {
     "us10y": {
-      "value": 4.744,
+      "value": 4.716,
       "change": 0.0
     },
     "dxy": {
-      "value": 99.62,
+      "value": 99.55,
       "change": 0.0
     },
     "fear_greed": {
-      "value": 15.84,
+      "value": 15.82,
       "change": 0.0,
       "label": "VIX Index",
-      "timestamp": "2026-08-18T21:42:51.832694"
+      "timestamp": "2026-08-18T22:31:57.472148"
     },
     "btc": {
-      "value": 64145.0,
-      "change_pct": -0.56
+      "value": 64816.0,
+      "change_pct": 0.48
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
   "new_alerts": 0,
-  "overbought_count": 34,
+  "overbought_count": 32,
   "oversold_count": 7,
-  "normal_count": 84,
+  "normal_count": 86,
   "overbought_stocks": [
     {
       "symbol": "00403A.TW",
@@ -438,72 +438,44 @@
     {
       "symbol": "PLTR",
       "name": "Palantir Technologies Inc.",
-      "current_price": 174.55,
-      "change_pct": 1.16,
+      "current_price": 173.08,
+      "change_pct": 0.31,
       "extra_data": {
-        "regular_market_price": 174.55,
+        "regular_market_price": 173.08,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 172.55
       },
-      "kd_k": 81.71,
-      "kd_d": 83.44
-    },
-    {
-      "symbol": "VT",
-      "name": "Vanguard Total World Stock ETF",
-      "current_price": 160.95,
-      "change_pct": -0.54,
-      "extra_data": {
-        "regular_market_price": 160.95,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 161.83
-      },
-      "kd_k": 69.04,
-      "kd_d": 80.35
+      "kd_k": 79.94,
+      "kd_d": 82.85
     },
     {
       "symbol": "QQQ",
       "name": "Invesco QQQ Trust",
-      "current_price": 721.84,
-      "change_pct": -1.1,
+      "current_price": 719.59,
+      "change_pct": -1.41,
       "extra_data": {
-        "regular_market_price": 721.84,
+        "regular_market_price": 719.59,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 729.87
       },
-      "kd_k": 74.52,
-      "kd_d": 81.4
+      "kd_k": 71.62,
+      "kd_d": 80.43
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 73.16,
-      "change_pct": -2.02,
+      "current_price": 73.96,
+      "change_pct": -0.84,
       "extra_data": {
-        "regular_market_price": 73.16,
+        "regular_market_price": 73.96,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 74.67
+        "prev_close": 74.59
       },
-      "kd_k": 84.48,
-      "kd_d": 81.37
-    },
-    {
-      "symbol": "SNDK",
-      "name": "Sandisk Corporation",
-      "current_price": 1705.675,
-      "change_pct": -4.54,
-      "extra_data": {
-        "regular_market_price": 1705.675,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 1786.85
-      },
-      "kd_k": 81.86,
-      "kd_d": 73.24
+      "kd_k": 86.18,
+      "kd_d": 81.93
     }
   ],
   "oversold_stocks": [
@@ -552,58 +524,58 @@
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "current_price": 342.91,
-      "change_pct": -0.32,
+      "current_price": 343.65,
+      "change_pct": -0.1,
       "extra_data": {
-        "regular_market_price": 342.91,
+        "regular_market_price": 343.65,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 344.0
       },
-      "kd_k": 15.04,
-      "kd_d": 24.29
+      "kd_k": 16.01,
+      "kd_d": 24.62
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com Inc.",
-      "current_price": 259.97,
-      "change_pct": -0.51,
+      "current_price": 261.04,
+      "change_pct": -0.1,
       "extra_data": {
-        "regular_market_price": 259.97,
+        "regular_market_price": 261.04,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 261.31
       },
-      "kd_k": 17.78,
-      "kd_d": 31.93
+      "kd_k": 19.44,
+      "kd_d": 32.48
     },
     {
       "symbol": "AMZU",
       "name": "Direxion Daily AMZN Bull 2X Shares",
-      "current_price": 37.96,
-      "change_pct": -1.02,
+      "current_price": 38.28,
+      "change_pct": -0.18,
       "extra_data": {
-        "regular_market_price": 37.96,
+        "regular_market_price": 38.28,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 38.35
       },
-      "kd_k": 16.58,
-      "kd_d": 29.89
+      "kd_k": 18.13,
+      "kd_d": 30.41
     },
     {
       "symbol": "GGLL",
       "name": "Direxion Daily GOOGL Bull 2X Shares",
-      "current_price": 100.9,
-      "change_pct": -0.9,
+      "current_price": 101.7,
+      "change_pct": -0.12,
       "extra_data": {
-        "regular_market_price": 100.9,
+        "regular_market_price": 101.7,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 101.82
       },
-      "kd_k": 13.11,
-      "kd_d": 22.03
+      "kd_k": 14.88,
+      "kd_d": 22.63
     }
   ],
   "errors": []
