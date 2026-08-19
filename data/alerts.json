@@ -1,5 +1,21 @@
 [
   {
+    "id": "00852L.TW_20260819_oversold",
+    "symbol": "00852L.TW",
+    "name": "國泰美國道瓊正2",
+    "market": "TW",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 16.8,
+    "kd_d": 37.1,
+    "current_price": 35.55,
+    "threshold": 20,
+    "message": "✅ 00852L.TW (國泰美國道瓊正2) is OVERSOLD! KD-K: 16.8, KD-D: 37.1 (<= 20)",
+    "timestamp": "2026-08-19T10:55:50.231619",
+    "date": "2026-08-19",
+    "acknowledged": false
+  },
+  {
     "id": "00403A.TW_20260819_overbought",
     "symbol": "00403A.TW",
     "name": "主動統一升級50",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ SPY (SPDR S&P 500 ETF Trust) is OVERBOUGHT! KD-K: 80.84, KD-D: 84.38 (>= 80)",
     "timestamp": "2026-08-18T00:25:52.407624",
-    "date": "2026-08-18",
-    "acknowledged": false
-  },
-  {
-    "id": "QQQ_20260818_overbought",
-    "symbol": "QQQ",
-    "name": "Invesco QQQ Trust",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 89.73,
-    "kd_d": 86.01,
-    "current_price": 732.6139,
-    "threshold": 80,
-    "message": "⚠️ QQQ (Invesco QQQ Trust) is OVERBOUGHT! KD-K: 89.73, KD-D: 86.01 (>= 80)",
-    "timestamp": "2026-08-18T00:25:52.407646",
     "date": "2026-08-18",
     "acknowledged": false
   }
