@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-08-19T23:29:33.046351",
-  "date": "2026-08-19",
+  "timestamp": "2026-08-20T00:29:15.546720",
+  "date": "2026-08-20",
   "macro": {
     "us10y": {
-      "value": 4.653,
-      "change": -0.053
+      "value": 4.657,
+      "change": -0.049
     },
     "dxy": {
-      "value": 98.92,
-      "change": -0.73
+      "value": 98.89,
+      "change": -0.76
     },
     "fear_greed": {
-      "value": 15.13,
-      "change": -0.71,
+      "value": 15.08,
+      "change": -0.76,
       "label": "VIX Index",
-      "timestamp": "2026-08-19T23:29:26.974029"
+      "timestamp": "2026-08-20T00:29:09.623585"
     },
     "btc": {
-      "value": 68430.0,
-      "change_pct": 5.8
+      "value": 68872.0,
+      "change_pct": 6.48
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 9,
-  "oversold_count": 6,
-  "normal_count": 110,
+  "new_alerts": 12,
+  "overbought_count": 8,
+  "oversold_count": 4,
+  "normal_count": 113,
   "overbought_stocks": [
     {
       "symbol": "00403A.TW",
@@ -68,8 +68,8 @@
         "post_market_price": null,
         "prev_close": 17.07
       },
-      "kd_k": 82.67,
-      "kd_d": 72.14
+      "kd_k": 81.88,
+      "kd_d": 71.88
     },
     {
       "symbol": "00981A.TW",
@@ -102,58 +102,44 @@
     {
       "symbol": "NFLX",
       "name": "Netflix Inc.",
-      "current_price": 80.64,
-      "change_pct": 3.69,
+      "current_price": 80.51,
+      "change_pct": 3.52,
       "extra_data": {
-        "regular_market_price": 80.64,
+        "regular_market_price": 80.51,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 77.77
       },
-      "kd_k": 80.93,
-      "kd_d": 78.01
+      "kd_k": 80.4,
+      "kd_d": 77.83
     },
     {
       "symbol": "PLTR",
       "name": "Palantir Technologies Inc.",
-      "current_price": 175.26,
-      "change_pct": 2.17,
+      "current_price": 176.12,
+      "change_pct": 2.67,
       "extra_data": {
-        "regular_market_price": 175.26,
+        "regular_market_price": 176.12,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 171.54
       },
-      "kd_k": 77.27,
-      "kd_d": 80.57
-    },
-    {
-      "symbol": "NFXL",
-      "name": "Direxion Daily NFLX Bull 2X Shares",
-      "current_price": 19.2,
-      "change_pct": 7.26,
-      "extra_data": {
-        "regular_market_price": 19.2,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 17.9
-      },
-      "kd_k": 80.19,
-      "kd_d": 77.06
+      "kd_k": 78.69,
+      "kd_d": 81.05
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 79.81,
-      "change_pct": 11.26,
+      "current_price": 80.92,
+      "change_pct": 12.81,
       "extra_data": {
-        "regular_market_price": 79.81,
+        "regular_market_price": 80.92,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 71.73
       },
-      "kd_k": 86.88,
-      "kd_d": 82.54
+      "kd_k": 87.56,
+      "kd_d": 82.77
     }
   ],
   "oversold_stocks": [
@@ -200,46 +186,18 @@
       "kd_d": 37.1
     },
     {
-      "symbol": "GOOGL",
-      "name": "Alphabet Inc.",
-      "current_price": 345.08,
-      "change_pct": 0.26,
-      "extra_data": {
-        "regular_market_price": 345.08,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 344.2
-      },
-      "kd_k": 19.92,
-      "kd_d": 23.23
-    },
-    {
-      "symbol": "AMZU",
-      "name": "Direxion Daily AMZN Bull 2X Shares",
-      "current_price": 39.0671,
-      "change_pct": 3.32,
-      "extra_data": {
-        "regular_market_price": 39.0671,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 37.81
-      },
-      "kd_k": 19.12,
-      "kd_d": 26.14
-    },
-    {
       "symbol": "GGLL",
       "name": "Direxion Daily GOOGL Bull 2X Shares",
-      "current_price": 102.335,
-      "change_pct": 0.57,
+      "current_price": 102.74,
+      "change_pct": 0.96,
       "extra_data": {
-        "regular_market_price": 102.335,
+        "regular_market_price": 102.74,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 101.76
       },
-      "kd_k": 18.09,
-      "kd_d": 21.14
+      "kd_k": 19.25,
+      "kd_d": 21.53
     }
   ],
   "errors": []
