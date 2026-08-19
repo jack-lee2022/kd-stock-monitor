@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-08-19T22:31:05.854485",
+  "timestamp": "2026-08-19T23:29:33.046351",
   "date": "2026-08-19",
   "macro": {
     "us10y": {
-      "value": 4.645,
-      "change": -0.061
+      "value": 4.653,
+      "change": -0.053
     },
     "dxy": {
-      "value": 98.87,
-      "change": -0.78
+      "value": 98.92,
+      "change": -0.73
     },
     "fear_greed": {
-      "value": 15.39,
-      "change": -0.45,
+      "value": 15.13,
+      "change": -0.71,
       "label": "VIX Index",
-      "timestamp": "2026-08-19T22:30:59.930600"
+      "timestamp": "2026-08-19T23:29:26.974029"
     },
     "btc": {
-      "value": 65330.0,
-      "change_pct": 1.0
+      "value": 68430.0,
+      "change_pct": 5.8
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
   "new_alerts": 0,
-  "overbought_count": 8,
-  "oversold_count": 9,
-  "normal_count": 108,
+  "overbought_count": 9,
+  "oversold_count": 6,
+  "normal_count": 110,
   "overbought_stocks": [
     {
       "symbol": "00403A.TW",
@@ -68,8 +68,8 @@
         "post_market_price": null,
         "prev_close": 17.07
       },
-      "kd_k": 81.88,
-      "kd_d": 71.88
+      "kd_k": 82.67,
+      "kd_d": 72.14
     },
     {
       "symbol": "00981A.TW",
@@ -102,44 +102,58 @@
     {
       "symbol": "NFLX",
       "name": "Netflix Inc.",
-      "current_price": 80.2901,
-      "change_pct": 3.24,
+      "current_price": 80.64,
+      "change_pct": 3.69,
       "extra_data": {
-        "regular_market_price": 80.2901,
+        "regular_market_price": 80.64,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 77.77
       },
-      "kd_k": 81.76,
-      "kd_d": 78.28
+      "kd_k": 80.93,
+      "kd_d": 78.01
+    },
+    {
+      "symbol": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "current_price": 175.26,
+      "change_pct": 2.17,
+      "extra_data": {
+        "regular_market_price": 175.26,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 171.54
+      },
+      "kd_k": 77.27,
+      "kd_d": 80.57
     },
     {
       "symbol": "NFXL",
       "name": "Direxion Daily NFLX Bull 2X Shares",
-      "current_price": 19.03,
-      "change_pct": 6.31,
+      "current_price": 19.2,
+      "change_pct": 7.26,
       "extra_data": {
-        "regular_market_price": 19.03,
+        "regular_market_price": 19.2,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 17.9
       },
-      "kd_k": 80.94,
-      "kd_d": 77.31
+      "kd_k": 80.19,
+      "kd_d": 77.06
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 77.2452,
-      "change_pct": 7.69,
+      "current_price": 79.81,
+      "change_pct": 11.26,
       "extra_data": {
-        "regular_market_price": 77.2452,
+        "regular_market_price": 79.81,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 71.73
       },
-      "kd_k": 85.33,
-      "kd_d": 82.02
+      "kd_k": 86.88,
+      "kd_d": 82.54
     }
   ],
   "oversold_stocks": [
@@ -188,86 +202,44 @@
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "current_price": 343.5,
-      "change_pct": -0.2,
+      "current_price": 345.08,
+      "change_pct": 0.26,
       "extra_data": {
-        "regular_market_price": 343.5,
+        "regular_market_price": 345.08,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 344.2
       },
-      "kd_k": 17.11,
-      "kd_d": 22.29
-    },
-    {
-      "symbol": "AMZN",
-      "name": "Amazon.com Inc.",
-      "current_price": 261.5,
-      "change_pct": 0.79,
-      "extra_data": {
-        "regular_market_price": 261.5,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 259.45
-      },
-      "kd_k": 16.99,
-      "kd_d": 26.79
-    },
-    {
-      "symbol": "AVGO",
-      "name": "Broadcom Inc.",
-      "current_price": 359.57,
-      "change_pct": -5.33,
-      "extra_data": {
-        "regular_market_price": 359.57,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 379.83
-      },
-      "kd_k": 19.37,
-      "kd_d": 39.24
+      "kd_k": 19.92,
+      "kd_d": 23.23
     },
     {
       "symbol": "AMZU",
       "name": "Direxion Daily AMZN Bull 2X Shares",
-      "current_price": 38.37,
-      "change_pct": 1.48,
+      "current_price": 39.0671,
+      "change_pct": 3.32,
       "extra_data": {
-        "regular_market_price": 38.37,
+        "regular_market_price": 39.0671,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 37.81
       },
-      "kd_k": 15.75,
-      "kd_d": 25.02
+      "kd_k": 19.12,
+      "kd_d": 26.14
     },
     {
       "symbol": "GGLL",
       "name": "Direxion Daily GOOGL Bull 2X Shares",
-      "current_price": 101.3536,
-      "change_pct": -0.4,
+      "current_price": 102.335,
+      "change_pct": 0.57,
       "extra_data": {
-        "regular_market_price": 101.3536,
+        "regular_market_price": 102.335,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 101.76
       },
-      "kd_k": 15.29,
-      "kd_d": 20.21
-    },
-    {
-      "symbol": "AVGX",
-      "name": "Defiance Daily Target 2X Long AVGO ETF",
-      "current_price": 40.4464,
-      "change_pct": -10.81,
-      "extra_data": {
-        "regular_market_price": 40.4464,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 45.35
-      },
-      "kd_k": 18.69,
-      "kd_d": 38.1
+      "kd_k": 18.09,
+      "kd_d": 21.14
     }
   ],
   "errors": []
