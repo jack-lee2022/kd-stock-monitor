@@ -1,5 +1,21 @@
 [
   {
+    "id": "00907.TW_20260819_overbought",
+    "symbol": "00907.TW",
+    "name": "永豐優息存股",
+    "market": "TW",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 82.6,
+    "kd_d": 72.12,
+    "current_price": 17.05,
+    "threshold": 80,
+    "message": "⚠️ 00907.TW (永豐優息存股) is OVERBOUGHT! KD-K: 82.6, KD-D: 72.12 (>= 80)",
+    "timestamp": "2026-08-19T12:35:22.306175",
+    "date": "2026-08-19",
+    "acknowledged": false
+  },
+  {
     "id": "00852L.TW_20260819_oversold",
     "symbol": "00852L.TW",
     "name": "國泰美國道瓊正2",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ VOO (Vanguard S&P 500 ETF) is OVERBOUGHT! KD-K: 80.81, KD-D: 84.33 (>= 80)",
     "timestamp": "2026-08-18T00:25:52.407603",
-    "date": "2026-08-18",
-    "acknowledged": false
-  },
-  {
-    "id": "SPY_20260818_overbought",
-    "symbol": "SPY",
-    "name": "SPDR S&P 500 ETF Trust",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 80.84,
-    "kd_d": 84.38,
-    "current_price": 775.42,
-    "threshold": 80,
-    "message": "⚠️ SPY (SPDR S&P 500 ETF Trust) is OVERBOUGHT! KD-K: 80.84, KD-D: 84.38 (>= 80)",
-    "timestamp": "2026-08-18T00:25:52.407624",
     "date": "2026-08-18",
     "acknowledged": false
   }
