@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-08-20T21:44:40.502943",
+  "timestamp": "2026-08-20T22:35:04.755878",
   "date": "2026-08-20",
   "macro": {
     "us10y": {
-      "value": 4.7,
-      "change": 0.047
+      "value": 4.692,
+      "change": 0.039
     },
     "dxy": {
-      "value": 98.79,
-      "change": -0.04
+      "value": 98.82,
+      "change": -0.01
     },
     "fear_greed": {
-      "value": 15.87,
-      "change": 0.98,
+      "value": 15.97,
+      "change": 1.08,
       "label": "VIX Index",
-      "timestamp": "2026-08-20T21:44:34.500340"
+      "timestamp": "2026-08-20T22:34:59.638534"
     },
     "btc": {
-      "value": 71577.0,
-      "change_pct": 3.34
+      "value": 71532.0,
+      "change_pct": 3.27
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 5,
-  "overbought_count": 6,
-  "oversold_count": 9,
-  "normal_count": 110,
+  "new_alerts": 1,
+  "overbought_count": 5,
+  "oversold_count": 11,
+  "normal_count": 109,
   "overbought_stocks": [
     {
       "symbol": "00715L.TW",
@@ -74,44 +74,30 @@
     {
       "symbol": "NFLX",
       "name": "Netflix Inc.",
-      "current_price": 80.96,
-      "change_pct": 0.92,
+      "current_price": 79.91,
+      "change_pct": -0.39,
       "extra_data": {
-        "regular_market_price": 80.96,
+        "regular_market_price": 79.91,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 80.22
       },
-      "kd_k": 85.26,
-      "kd_d": 80.04
-    },
-    {
-      "symbol": "NFXL",
-      "name": "Direxion Daily NFLX Bull 2X Shares",
-      "current_price": 19.34,
-      "change_pct": 1.74,
-      "extra_data": {
-        "regular_market_price": 19.34,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 19.01
-      },
-      "kd_k": 84.69,
-      "kd_d": 79.2
+      "kd_k": 80.64,
+      "kd_d": 78.5
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 82.245,
-      "change_pct": 4.65,
+      "current_price": 81.381,
+      "change_pct": 3.55,
       "extra_data": {
-        "regular_market_price": 82.245,
+        "regular_market_price": 81.381,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 78.59
       },
-      "kd_k": 86.59,
-      "kd_d": 82.9
+      "kd_k": 85.05,
+      "kd_d": 82.38
     }
   ],
   "oversold_stocks": [
@@ -160,86 +146,114 @@
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "current_price": 343.19,
-      "change_pct": -0.44,
+      "current_price": 341.731,
+      "change_pct": -0.87,
       "extra_data": {
-        "regular_market_price": 343.19,
+        "regular_market_price": 341.731,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 344.72
       },
-      "kd_k": 18.78,
-      "kd_d": 21.61
+      "kd_k": 15.8,
+      "kd_d": 20.61
     },
     {
       "symbol": "META",
       "name": "Meta Platforms Inc.",
-      "current_price": 547.81,
-      "change_pct": 0.33,
+      "current_price": 544.63,
+      "change_pct": -0.26,
       "extra_data": {
-        "regular_market_price": 547.81,
+        "regular_market_price": 544.63,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 546.03
       },
-      "kd_k": 19.54,
-      "kd_d": 32.32
+      "kd_k": 18.14,
+      "kd_d": 31.85
     },
     {
       "symbol": "AVGO",
       "name": "Broadcom Inc.",
-      "current_price": 366.38,
-      "change_pct": 1.08,
+      "current_price": 366.32,
+      "change_pct": 1.06,
       "extra_data": {
-        "regular_market_price": 366.38,
+        "regular_market_price": 366.32,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 362.48
       },
-      "kd_k": 17.72,
-      "kd_d": 32.37
+      "kd_k": 17.69,
+      "kd_d": 32.36
+    },
+    {
+      "symbol": "DIA",
+      "name": "SPDR Dow Jones Industrial Average ETF",
+      "current_price": 530.78,
+      "change_pct": -0.65,
+      "extra_data": {
+        "regular_market_price": 530.78,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 534.27
+      },
+      "kd_k": 19.28,
+      "kd_d": 30.83
+    },
+    {
+      "symbol": "AMZU",
+      "name": "Direxion Daily AMZN Bull 2X Shares",
+      "current_price": 38.3399,
+      "change_pct": -3.26,
+      "extra_data": {
+        "regular_market_price": 38.3399,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 39.63
+      },
+      "kd_k": 19.6,
+      "kd_d": 24.56
     },
     {
       "symbol": "FBL",
       "name": "GraniteShares 2x Long META Daily ETF",
-      "current_price": 18.81,
-      "change_pct": 0.53,
+      "current_price": 18.595,
+      "change_pct": -0.61,
       "extra_data": {
-        "regular_market_price": 18.81,
+        "regular_market_price": 18.595,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 18.71
       },
-      "kd_k": 18.36,
-      "kd_d": 30.69
+      "kd_k": 17.07,
+      "kd_d": 30.26
     },
     {
       "symbol": "GGLL",
       "name": "Direxion Daily GOOGL Bull 2X Shares",
-      "current_price": 101.201,
-      "change_pct": -0.95,
+      "current_price": 100.42,
+      "change_pct": -1.71,
       "extra_data": {
-        "regular_market_price": 101.201,
+        "regular_market_price": 100.42,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 102.17
       },
-      "kd_k": 16.96,
-      "kd_d": 19.65
+      "kd_k": 14.57,
+      "kd_d": 18.85
     },
     {
       "symbol": "AVGX",
       "name": "Defiance Daily Target 2X Long AVGO ETF",
-      "current_price": 41.935,
-      "change_pct": 1.88,
+      "current_price": 42.0,
+      "change_pct": 2.04,
       "extra_data": {
-        "regular_market_price": 41.935,
+        "regular_market_price": 42.0,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 41.16
       },
-      "kd_k": 16.7,
-      "kd_d": 31.27
+      "kd_k": 16.82,
+      "kd_d": 31.31
     }
   ],
   "errors": []

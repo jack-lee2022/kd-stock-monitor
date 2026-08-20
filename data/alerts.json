@@ -1,5 +1,21 @@
 [
   {
+    "id": "DIA_20260820_oversold",
+    "symbol": "DIA",
+    "name": "SPDR Dow Jones Industrial Average ETF",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.28,
+    "kd_d": 30.83,
+    "current_price": 530.78,
+    "threshold": 20,
+    "message": "✅ DIA (SPDR Dow Jones Industrial Average ETF) is OVERSOLD! KD-K: 19.28, KD-D: 30.83 (<= 20)",
+    "timestamp": "2026-08-20T22:35:01.178644",
+    "date": "2026-08-20",
+    "acknowledged": false
+  },
+  {
     "id": "META_20260820_oversold",
     "symbol": "META",
     "name": "Meta Platforms Inc.",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00893.TW (國泰智能電動車) is OVERBOUGHT! KD-K: 89.22, KD-D: 83.99 (>= 80)",
     "timestamp": "2026-08-18T00:25:52.406888",
-    "date": "2026-08-18",
-    "acknowledged": false
-  },
-  {
-    "id": "00895.TW_20260818_overbought",
-    "symbol": "00895.TW",
-    "name": "富邦未來車",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 90.8,
-    "kd_d": 87.3,
-    "current_price": 51.25,
-    "threshold": 80,
-    "message": "⚠️ 00895.TW (富邦未來車) is OVERBOUGHT! KD-K: 90.8, KD-D: 87.3 (>= 80)",
-    "timestamp": "2026-08-18T00:25:52.406910",
     "date": "2026-08-18",
     "acknowledged": false
   }
