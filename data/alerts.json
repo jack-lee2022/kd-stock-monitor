@@ -1,5 +1,21 @@
 [
   {
+    "id": "DIA_20260822_oversold",
+    "symbol": "DIA",
+    "name": "SPDR Dow Jones Industrial Average ETF",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.88,
+    "kd_d": 26.59,
+    "current_price": 531.04,
+    "threshold": 20,
+    "message": "✅ DIA (SPDR Dow Jones Industrial Average ETF) is OVERSOLD! KD-K: 19.88, KD-D: 26.59 (<= 20)",
+    "timestamp": "2026-08-22T01:26:45.354948",
+    "date": "2026-08-22",
+    "acknowledged": false
+  },
+  {
     "id": "00635U.TW_20260822_overbought",
     "symbol": "00635U.TW",
     "name": "期元大S&P黃金",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 0050.TW (元大台灣50) is OVERBOUGHT! KD-K: 75.84, KD-D: 83.98 (>= 80)",
     "timestamp": "2026-08-19T00:29:28.407955",
-    "date": "2026-08-19",
-    "acknowledged": false
-  },
-  {
-    "id": "0056.TW_20260819_overbought",
-    "symbol": "0056.TW",
-    "name": "元大高股息",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 73.14,
-    "kd_d": 80.76,
-    "current_price": 52.7,
-    "threshold": 80,
-    "message": "⚠️ 0056.TW (元大高股息) is OVERBOUGHT! KD-K: 73.14, KD-D: 80.76 (>= 80)",
-    "timestamp": "2026-08-19T00:29:28.408011",
     "date": "2026-08-19",
     "acknowledged": false
   }
