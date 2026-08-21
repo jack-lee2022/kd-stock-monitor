@@ -1,5 +1,21 @@
 [
   {
+    "id": "ADBE_20260821_overbought",
+    "symbol": "ADBE",
+    "name": "Adobe Inc.",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.39,
+    "kd_d": 71.58,
+    "current_price": 276.1165,
+    "threshold": 80,
+    "message": "⚠️ ADBE (Adobe Inc.) is OVERBOUGHT! KD-K: 80.39, KD-D: 71.58 (>= 80)",
+    "timestamp": "2026-08-21T23:31:03.042285",
+    "date": "2026-08-21",
+    "acknowledged": false
+  },
+  {
     "id": "FNGG_20260821_oversold",
     "symbol": "FNGG",
     "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00992A.TW (主動群益科技創新) is OVERBOUGHT! KD-K: 88.54, KD-D: 89.92 (>= 80)",
     "timestamp": "2026-08-19T00:29:28.409542",
-    "date": "2026-08-19",
-    "acknowledged": false
-  },
-  {
-    "id": "GOOGL_20260819_oversold",
-    "symbol": "GOOGL",
-    "name": "Alphabet Inc.",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 16.23,
-    "kd_d": 24.69,
-    "current_price": 343.78,
-    "threshold": 20,
-    "message": "✅ GOOGL (Alphabet Inc.) is OVERSOLD! KD-K: 16.23, KD-D: 24.69 (<= 20)",
-    "timestamp": "2026-08-19T00:29:28.409578",
     "date": "2026-08-19",
     "acknowledged": false
   }
