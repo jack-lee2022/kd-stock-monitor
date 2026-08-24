@@ -1,5 +1,21 @@
 [
   {
+    "id": "AMDL_20260825_oversold",
+    "symbol": "AMDL",
+    "name": "GraniteShares 2x Long AMD Daily ETF",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.32,
+    "kd_d": 28.89,
+    "current_price": 45.93,
+    "threshold": 20,
+    "message": "✅ AMDL (GraniteShares 2x Long AMD Daily ETF) is OVERSOLD! KD-K: 19.32, KD-D: 28.89 (<= 20)",
+    "timestamp": "2026-08-25T03:28:10.143893",
+    "date": "2026-08-25",
+    "acknowledged": false
+  },
+  {
     "id": "VOO_20260825_oversold",
     "symbol": "VOO",
     "name": "Vanguard S&P 500 ETF",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ TSLL (Direxion Daily TSLA Bull 2X Shares) is OVERBOUGHT! KD-K: 81.79, KD-D: 77.55 (>= 80)",
     "timestamp": "2026-08-24T00:22:44.943082",
-    "date": "2026-08-24",
-    "acknowledged": false
-  },
-  {
-    "id": "ARM_20260824_oversold",
-    "symbol": "ARM",
-    "name": "Arm Holdings plc",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 18.33,
-    "kd_d": 31.57,
-    "current_price": 243.32,
-    "threshold": 20,
-    "message": "✅ ARM (Arm Holdings plc) is OVERSOLD! KD-K: 18.33, KD-D: 31.57 (<= 20)",
-    "timestamp": "2026-08-24T00:22:44.943110",
     "date": "2026-08-24",
     "acknowledged": false
   }
