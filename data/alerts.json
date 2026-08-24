@@ -1,5 +1,21 @@
 [
   {
+    "id": "FNGG_20260825_oversold",
+    "symbol": "FNGG",
+    "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 20.0,
+    "kd_d": 30.93,
+    "current_price": 253.143,
+    "threshold": 20,
+    "message": "✅ FNGG (Direxion Daily NYSE FANG+ Bull 2X Shares) is OVERSOLD! KD-K: 20.0, KD-D: 30.93 (<= 20)",
+    "timestamp": "2026-08-25T05:27:15.463130",
+    "date": "2026-08-25",
+    "acknowledged": false
+  },
+  {
     "id": "AMDL_20260825_oversold",
     "symbol": "AMDL",
     "name": "GraniteShares 2x Long AMD Daily ETF",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ CRMG (Leverage Shares 2X Long CRM Daily ETF) is OVERBOUGHT! KD-K: 80.68, KD-D: 75.12 (>= 80)",
     "timestamp": "2026-08-24T00:22:44.943057",
-    "date": "2026-08-24",
-    "acknowledged": false
-  },
-  {
-    "id": "TSLL_20260824_overbought",
-    "symbol": "TSLL",
-    "name": "Direxion Daily TSLA Bull 2X Shares",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 81.79,
-    "kd_d": 77.55,
-    "current_price": 9.77,
-    "threshold": 80,
-    "message": "⚠️ TSLL (Direxion Daily TSLA Bull 2X Shares) is OVERBOUGHT! KD-K: 81.79, KD-D: 77.55 (>= 80)",
-    "timestamp": "2026-08-24T00:22:44.943082",
     "date": "2026-08-24",
     "acknowledged": false
   }
