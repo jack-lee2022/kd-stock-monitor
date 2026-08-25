@@ -1,5 +1,21 @@
 [
   {
+    "id": "FNGS_20260825_oversold",
+    "symbol": "FNGS",
+    "name": "MicroSectors FANG+ Index ETN",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.75,
+    "kd_d": 28.53,
+    "current_price": 78.7,
+    "threshold": 20,
+    "message": "✅ FNGS (MicroSectors FANG+ Index ETN) is OVERSOLD! KD-K: 19.75, KD-D: 28.53 (<= 20)",
+    "timestamp": "2026-08-25T22:42:42.250217",
+    "date": "2026-08-25",
+    "acknowledged": false
+  },
+  {
     "id": "00670L.TW_20260825_oversold",
     "symbol": "00670L.TW",
     "name": "富邦NASDAQ",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ AVGO (Broadcom Inc.) is OVERSOLD! KD-K: 16.35, KD-D: 26.8 (<= 20)",
     "timestamp": "2026-08-24T00:22:44.942829",
-    "date": "2026-08-24",
-    "acknowledged": false
-  },
-  {
-    "id": "NFLX_20260824_overbought",
-    "symbol": "NFLX",
-    "name": "Netflix Inc.",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 80.87,
-    "kd_d": 79.52,
-    "current_price": 79.59,
-    "threshold": 80,
-    "message": "⚠️ NFLX (Netflix Inc.) is OVERBOUGHT! KD-K: 80.87, KD-D: 79.52 (>= 80)",
-    "timestamp": "2026-08-24T00:22:44.942852",
     "date": "2026-08-24",
     "acknowledged": false
   }
