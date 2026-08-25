@@ -1,5 +1,21 @@
 [
   {
+    "id": "SPY_20260826_oversold",
+    "symbol": "SPY",
+    "name": "SPDR S&P 500 ETF Trust",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 18.33,
+    "kd_d": 28.84,
+    "current_price": 764.79,
+    "threshold": 20,
+    "message": "✅ SPY (SPDR S&P 500 ETF Trust) is OVERSOLD! KD-K: 18.33, KD-D: 28.84 (<= 20)",
+    "timestamp": "2026-08-26T01:31:02.873057",
+    "date": "2026-08-26",
+    "acknowledged": false
+  },
+  {
     "id": "00635U.TW_20260826_overbought",
     "symbol": "00635U.TW",
     "name": "期元大S&P黃金",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ AMD (Advanced Micro Devices Inc.) is OVERSOLD! KD-K: 19.7, KD-D: 31.32 (<= 20)",
     "timestamp": "2026-08-24T22:00:10.098309",
-    "date": "2026-08-24",
-    "acknowledged": false
-  },
-  {
-    "id": "CRWD_20260824_oversold",
-    "symbol": "CRWD",
-    "name": "CrowdStrike Holdings Inc.",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 19.65,
-    "kd_d": 35.13,
-    "current_price": 191.175,
-    "threshold": 20,
-    "message": "✅ CRWD (CrowdStrike Holdings Inc.) is OVERSOLD! KD-K: 19.65, KD-D: 35.13 (<= 20)",
-    "timestamp": "2026-08-24T22:00:10.098442",
     "date": "2026-08-24",
     "acknowledged": false
   }
