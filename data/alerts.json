@@ -1,5 +1,21 @@
 [
   {
+    "id": "ADBE_20260827_overbought",
+    "symbol": "ADBE",
+    "name": "Adobe Inc.",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.91,
+    "kd_d": 78.59,
+    "current_price": 272.875,
+    "threshold": 80,
+    "message": "⚠️ ADBE (Adobe Inc.) is OVERBOUGHT! KD-K: 80.91, KD-D: 78.59 (>= 80)",
+    "timestamp": "2026-08-27T02:59:48.385158",
+    "date": "2026-08-27",
+    "acknowledged": false
+  },
+  {
     "id": "00635U.TW_20260827_overbought",
     "symbol": "00635U.TW",
     "name": "期元大S&P黃金",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00635U.TW (期元大S&P黃金) is OVERBOUGHT! KD-K: 87.8, KD-D: 82.56 (>= 80)",
     "timestamp": "2026-08-25T00:35:14.394445",
-    "date": "2026-08-25",
-    "acknowledged": false
-  },
-  {
-    "id": "00637L.TW_20260825_oversold",
-    "symbol": "00637L.TW",
-    "name": "元大滜深300正2",
-    "market": "TW",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 19.68,
-    "kd_d": 35.89,
-    "current_price": 19.67,
-    "threshold": 20,
-    "message": "✅ 00637L.TW (元大滜深300正2) is OVERSOLD! KD-K: 19.68, KD-D: 35.89 (<= 20)",
-    "timestamp": "2026-08-25T00:35:14.394526",
     "date": "2026-08-25",
     "acknowledged": false
   }
