@@ -1,5 +1,21 @@
 [
   {
+    "id": "ADBG_20260827_overbought",
+    "symbol": "ADBG",
+    "name": "Leverage Shares 2X Long ADBE Daily ETF",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.17,
+    "kd_d": 77.25,
+    "current_price": 5.0155,
+    "threshold": 80,
+    "message": "⚠️ ADBG (Leverage Shares 2X Long ADBE Daily ETF) is OVERBOUGHT! KD-K: 80.17, KD-D: 77.25 (>= 80)",
+    "timestamp": "2026-08-27T05:44:30.641724",
+    "date": "2026-08-27",
+    "acknowledged": false
+  },
+  {
     "id": "ADBE_20260827_overbought",
     "symbol": "ADBE",
     "name": "Adobe Inc.",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ AMZU (Direxion Daily AMZN Bull 2X Shares) is OVERSOLD! KD-K: 18.7, KD-D: 19.98 (<= 20)",
     "timestamp": "2026-08-25T01:29:22.911271",
-    "date": "2026-08-25",
-    "acknowledged": false
-  },
-  {
-    "id": "00635U.TW_20260825_overbought",
-    "symbol": "00635U.TW",
-    "name": "期元大S&P黃金",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 87.8,
-    "kd_d": 82.56,
-    "current_price": 48.07,
-    "threshold": 80,
-    "message": "⚠️ 00635U.TW (期元大S&P黃金) is OVERBOUGHT! KD-K: 87.8, KD-D: 82.56 (>= 80)",
-    "timestamp": "2026-08-25T00:35:14.394445",
     "date": "2026-08-25",
     "acknowledged": false
   }
