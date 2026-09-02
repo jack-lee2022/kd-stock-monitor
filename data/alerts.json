@@ -1,5 +1,21 @@
 [
   {
+    "id": "ARM_20260902_oversold",
+    "symbol": "ARM",
+    "name": "Arm Holdings plc",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 14.5,
+    "kd_d": 20.17,
+    "current_price": 229.91,
+    "threshold": 20,
+    "message": "✅ ARM (Arm Holdings plc) is OVERSOLD! KD-K: 14.5, KD-D: 20.17 (<= 20)",
+    "timestamp": "2026-09-02T22:59:15.832768",
+    "date": "2026-09-02",
+    "acknowledged": false
+  },
+  {
     "id": "00830.TW_20260902_oversold",
     "symbol": "00830.TW",
     "name": "國泰費城半導體",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ 00951.TW (台新日本半導體) is OVERSOLD! KD-K: 19.82, KD-D: 24.57 (<= 20)",
     "timestamp": "2026-08-31T11:41:11.623882",
-    "date": "2026-08-31",
-    "acknowledged": false
-  },
-  {
-    "id": "009800.TW_20260831_oversold",
-    "symbol": "009800.TW",
-    "name": "中信NASDAQ",
-    "market": "TW",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 17.92,
-    "kd_d": 19.86,
-    "current_price": 12.9,
-    "threshold": 20,
-    "message": "✅ 009800.TW (中信NASDAQ) is OVERSOLD! KD-K: 17.92, KD-D: 19.86 (<= 20)",
-    "timestamp": "2026-08-31T11:41:11.623908",
     "date": "2026-08-31",
     "acknowledged": false
   }
