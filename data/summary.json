@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-09-04T00:56:55.793808",
+  "timestamp": "2026-09-04T03:41:12.682599",
   "date": "2026-09-04",
   "macro": {
     "us10y": {
-      "value": 4.748,
-      "change": -0.048
+      "value": 4.762,
+      "change": -0.034
     },
     "dxy": {
-      "value": 98.85,
-      "change": -0.71
+      "value": 99.0,
+      "change": -0.56
     },
     "fear_greed": {
-      "value": 14.58,
-      "change": -0.62,
+      "value": 14.42,
+      "change": -0.78,
       "label": "VIX Index",
-      "timestamp": "2026-09-04T00:56:49.903355"
+      "timestamp": "2026-09-04T03:41:06.722762"
     },
     "btc": {
-      "value": 80970.0,
-      "change_pct": 4.75
+      "value": 81598.0,
+      "change_pct": 5.56
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 29,
-  "overbought_count": 17,
-  "oversold_count": 12,
-  "normal_count": 96,
+  "new_alerts": 0,
+  "overbought_count": 15,
+  "oversold_count": 11,
+  "normal_count": 99,
   "overbought_stocks": [
     {
       "symbol": "0056.TW",
@@ -198,32 +198,18 @@
       "kd_d": 79.38
     },
     {
-      "symbol": "AAPL",
-      "name": "Apple Inc.",
-      "current_price": 329.05,
-      "change_pct": 1.26,
-      "extra_data": {
-        "regular_market_price": 329.05,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 324.96
-      },
-      "kd_k": 82.02,
-      "kd_d": 73.0
-    },
-    {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
-      "current_price": 264.92,
-      "change_pct": 3.11,
+      "current_price": 264.865,
+      "change_pct": 3.09,
       "extra_data": {
-        "regular_market_price": 264.92,
+        "regular_market_price": 264.865,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 256.93
       },
-      "kd_k": 90.55,
-      "kd_d": 87.23
+      "kd_k": 90.53,
+      "kd_d": 87.22
     },
     {
       "symbol": "CRMG",
@@ -240,32 +226,18 @@
       "kd_d": 86.21
     },
     {
-      "symbol": "QCOM",
-      "name": "QUALCOMM Incorporated",
-      "current_price": 169.105,
-      "change_pct": 0.04,
-      "extra_data": {
-        "regular_market_price": 169.105,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 169.04
-      },
-      "kd_k": 80.54,
-      "kd_d": 73.03
-    },
-    {
       "symbol": "QCML",
       "name": "GraniteShares 2x Long QCOM Daily ETF",
-      "current_price": 15.8538,
-      "change_pct": -0.23,
+      "current_price": 15.86,
+      "change_pct": -0.19,
       "extra_data": {
-        "regular_market_price": 15.8538,
+        "regular_market_price": 15.86,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 15.89
       },
-      "kd_k": 80.63,
-      "kd_d": 71.9
+      "kd_k": 80.7,
+      "kd_d": 71.92
     }
   ],
   "oversold_stocks": [
@@ -398,44 +370,30 @@
     {
       "symbol": "RKLB",
       "name": "Rocket Lab USA, Inc.",
-      "current_price": 63.65,
-      "change_pct": 0.87,
+      "current_price": 63.495,
+      "change_pct": 0.63,
       "extra_data": {
-        "regular_market_price": 63.65,
+        "regular_market_price": 63.495,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 63.1
       },
-      "kd_k": 13.21,
-      "kd_d": 10.8
+      "kd_k": 12.68,
+      "kd_d": 10.62
     },
     {
       "symbol": "RKLX",
       "name": "Defiance Daily Target 2X Long RKLB ETF",
-      "current_price": 14.88,
-      "change_pct": 1.85,
+      "current_price": 14.7647,
+      "change_pct": 1.06,
       "extra_data": {
-        "regular_market_price": 14.88,
+        "regular_market_price": 14.7647,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 14.61
       },
-      "kd_k": 11.42,
-      "kd_d": 9.46
-    },
-    {
-      "symbol": "ARMG",
-      "name": "Leverage Shares 2X Long ARM Daily ETF",
-      "current_price": 15.5051,
-      "change_pct": 3.44,
-      "extra_data": {
-        "regular_market_price": 15.5051,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 14.99
-      },
-      "kd_k": 21.23,
-      "kd_d": 19.95
+      "kd_k": 10.63,
+      "kd_d": 9.2
     }
   ],
   "errors": []
