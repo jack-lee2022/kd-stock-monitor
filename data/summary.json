@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-09-04T18:37:15.655384",
+  "timestamp": "2026-09-04T22:47:55.438731",
   "date": "2026-09-04",
   "macro": {
     "us10y": {
-      "value": 4.762,
-      "change": -0.034
+      "value": 4.764,
+      "change": 0.002
     },
     "dxy": {
       "value": 99.11,
       "change": 0.11
     },
     "fear_greed": {
-      "value": 14.2,
-      "change": -0.12,
+      "value": 14.11,
+      "change": -0.21,
       "label": "VIX Index",
-      "timestamp": "2026-09-04T18:37:09.654526"
+      "timestamp": "2026-09-04T22:47:49.478568"
     },
     "btc": {
-      "value": 81048.0,
-      "change_pct": 0
+      "value": 78807.0,
+      "change_pct": -3.03
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 19,
+  "new_alerts": 1,
+  "overbought_count": 20,
   "oversold_count": 8,
-  "normal_count": 98,
+  "normal_count": 97,
   "overbought_stocks": [
     {
       "symbol": "0056.TW",
@@ -240,60 +240,74 @@
       "kd_d": 81.06
     },
     {
-      "symbol": "AAPL",
-      "name": "Apple Inc.",
-      "current_price": 328.21,
-      "change_pct": 1.0,
+      "symbol": "META",
+      "name": "Meta Platforms Inc.",
+      "current_price": 612.42,
+      "change_pct": 0.28,
       "extra_data": {
-        "regular_market_price": 328.21,
-        "pre_market_price": 326.5,
+        "regular_market_price": 612.42,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 324.96
+        "prev_close": 610.68
       },
-      "kd_k": 80.78,
-      "kd_d": 72.59
+      "kd_k": 80.72,
+      "kd_d": 70.27
     },
     {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
-      "current_price": 264.43,
-      "change_pct": 2.92,
+      "current_price": 259.99,
+      "change_pct": -1.68,
       "extra_data": {
-        "regular_market_price": 264.43,
-        "pre_market_price": 262.29,
+        "regular_market_price": 259.99,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 256.93
+        "prev_close": 264.43
       },
-      "kd_k": 90.32,
-      "kd_d": 87.15
+      "kd_k": 89.56,
+      "kd_d": 87.95
     },
     {
       "symbol": "CRMG",
       "name": "Leverage Shares 2X Long CRM Daily ETF",
-      "current_price": 10.62,
-      "change_pct": 5.67,
+      "current_price": 10.245,
+      "change_pct": -3.53,
       "extra_data": {
-        "regular_market_price": 10.62,
-        "pre_market_price": 10.45,
+        "regular_market_price": 10.245,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 10.05
+        "prev_close": 10.62
       },
-      "kd_k": 89.25,
-      "kd_d": 86.12
+      "kd_k": 88.06,
+      "kd_d": 86.77
     },
     {
       "symbol": "QCOM",
       "name": "QUALCOMM Incorporated",
-      "current_price": 168.57,
-      "change_pct": -0.28,
+      "current_price": 169.05,
+      "change_pct": 0.28,
       "extra_data": {
-        "regular_market_price": 168.57,
-        "pre_market_price": 170.45,
+        "regular_market_price": 169.05,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 169.04
+        "prev_close": 168.57
       },
-      "kd_k": 80.12,
-      "kd_d": 71.77
+      "kd_k": 82.19,
+      "kd_d": 75.24
+    },
+    {
+      "symbol": "QCML",
+      "name": "GraniteShares 2x Long QCOM Daily ETF",
+      "current_price": 15.855,
+      "change_pct": 0.54,
+      "extra_data": {
+        "regular_market_price": 15.855,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 15.77
+      },
+      "kd_k": 81.18,
+      "kd_d": 74.68
     }
   ],
   "oversold_stocks": [
@@ -384,30 +398,30 @@
     {
       "symbol": "RKLB",
       "name": "Rocket Lab USA, Inc.",
-      "current_price": 63.81,
-      "change_pct": 1.13,
+      "current_price": 63.58,
+      "change_pct": -0.36,
       "extra_data": {
-        "regular_market_price": 63.81,
-        "pre_market_price": 65.34,
+        "regular_market_price": 63.58,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 63.1
+        "prev_close": 63.81
       },
-      "kd_k": 13.75,
-      "kd_d": 10.98
+      "kd_k": 17.47,
+      "kd_d": 13.14
     },
     {
       "symbol": "RKLX",
       "name": "Defiance Daily Target 2X Long RKLB ETF",
-      "current_price": 14.94,
-      "change_pct": 2.26,
+      "current_price": 14.8,
+      "change_pct": -0.94,
       "extra_data": {
-        "regular_market_price": 14.94,
-        "pre_market_price": 15.59,
+        "regular_market_price": 14.8,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 14.61
+        "prev_close": 14.94
       },
-      "kd_k": 11.83,
-      "kd_d": 9.6
+      "kd_k": 14.9,
+      "kd_d": 11.37
     }
   ],
   "errors": []
