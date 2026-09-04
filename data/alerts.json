@@ -1,5 +1,37 @@
 [
   {
+    "id": "META_20260905_overbought",
+    "symbol": "META",
+    "name": "Meta Platforms Inc.",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 83.01,
+    "kd_d": 71.03,
+    "current_price": 616.77,
+    "threshold": 80,
+    "message": "⚠️ META (Meta Platforms Inc.) is OVERBOUGHT! KD-K: 83.01, KD-D: 71.03 (>= 80)",
+    "timestamp": "2026-09-05T05:14:52.621471",
+    "date": "2026-09-05",
+    "acknowledged": false
+  },
+  {
+    "id": "FBL_20260905_overbought",
+    "symbol": "FBL",
+    "name": "GraniteShares 2x Long META Daily ETF",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 82.4,
+    "kd_d": 70.03,
+    "current_price": 23.65,
+    "threshold": 80,
+    "message": "⚠️ FBL (GraniteShares 2x Long META Daily ETF) is OVERBOUGHT! KD-K: 82.4, KD-D: 70.03 (>= 80)",
+    "timestamp": "2026-09-05T05:14:52.621522",
+    "date": "2026-09-05",
+    "acknowledged": false
+  },
+  {
     "id": "0056.TW_20260905_overbought",
     "symbol": "0056.TW",
     "name": "元大高股息",
@@ -1565,38 +1597,6 @@
     "message": "✅ ARM (Arm Holdings plc) is OVERSOLD! KD-K: 17.75, KD-D: 21.25 (<= 20)",
     "timestamp": "2026-09-03T02:31:07.905164",
     "date": "2026-09-03",
-    "acknowledged": false
-  },
-  {
-    "id": "ARMG_20260903_oversold",
-    "symbol": "ARMG",
-    "name": "Leverage Shares 2X Long ARM Daily ETF",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 15.87,
-    "kd_d": 18.97,
-    "current_price": 14.83,
-    "threshold": 20,
-    "message": "✅ ARMG (Leverage Shares 2X Long ARM Daily ETF) is OVERSOLD! KD-K: 15.87, KD-D: 18.97 (<= 20)",
-    "timestamp": "2026-09-03T02:31:07.905241",
-    "date": "2026-09-03",
-    "acknowledged": false
-  },
-  {
-    "id": "ARM_20260902_oversold",
-    "symbol": "ARM",
-    "name": "Arm Holdings plc",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 14.5,
-    "kd_d": 20.17,
-    "current_price": 229.91,
-    "threshold": 20,
-    "message": "✅ ARM (Arm Holdings plc) is OVERSOLD! KD-K: 14.5, KD-D: 20.17 (<= 20)",
-    "timestamp": "2026-09-02T22:59:15.832768",
-    "date": "2026-09-02",
     "acknowledged": false
   }
 ]
