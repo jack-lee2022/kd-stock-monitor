@@ -1,32 +1,32 @@
 {
-  "timestamp": "2026-09-09T21:24:55.533863",
-  "date": "2026-09-09",
+  "timestamp": "2026-09-10T01:34:09.155705",
+  "date": "2026-09-10",
   "macro": {
     "us10y": {
-      "value": 4.808,
-      "change": 0.002
+      "value": 4.835,
+      "change": 0.029
     },
     "dxy": {
-      "value": 98.65,
-      "change": -0.19
+      "value": 98.74,
+      "change": -0.1
     },
     "fear_greed": {
-      "value": 16.19,
-      "change": 0.47,
+      "value": 16.25,
+      "change": 0.53,
       "label": "VIX Index",
-      "timestamp": "2026-09-09T21:24:49.629179"
+      "timestamp": "2026-09-10T01:34:05.333361"
     },
     "btc": {
-      "value": 79524.0,
-      "change_pct": 1.38
+      "value": 78782.0,
+      "change_pct": 0.44
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 27,
-  "oversold_count": 5,
+  "new_alerts": 32,
+  "overbought_count": 28,
+  "oversold_count": 4,
   "normal_count": 93,
   "overbought_stocks": [
     {
@@ -340,72 +340,86 @@
     {
       "symbol": "META",
       "name": "Meta Platforms Inc.",
-      "current_price": 613.48,
-      "change_pct": -0.53,
+      "current_price": 653.83,
+      "change_pct": 6.58,
       "extra_data": {
-        "regular_market_price": 613.48,
-        "pre_market_price": 645.97,
+        "regular_market_price": 653.83,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 616.77
+        "prev_close": 613.48
       },
-      "kd_k": 83.18,
-      "kd_d": 75.08
+      "kd_k": 87.47,
+      "kd_d": 79.21
     },
     {
       "symbol": "FBL",
       "name": "GraniteShares 2x Long META Daily ETF",
-      "current_price": 23.39,
-      "change_pct": -1.1,
+      "current_price": 26.39,
+      "change_pct": 12.83,
       "extra_data": {
-        "regular_market_price": 23.39,
-        "pre_market_price": 25.9,
+        "regular_market_price": 26.39,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 23.65
+        "prev_close": 23.39
       },
-      "kd_k": 82.51,
-      "kd_d": 74.19
+      "kd_k": 86.69,
+      "kd_d": 78.36
     },
     {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
-      "current_price": 249.12,
-      "change_pct": -3.9,
+      "current_price": 247.465,
+      "change_pct": -0.66,
       "extra_data": {
-        "regular_market_price": 249.12,
-        "pre_market_price": 249.35,
+        "regular_market_price": 247.465,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 259.23
+        "prev_close": 249.12
       },
-      "kd_k": 83.59,
-      "kd_d": 86.42
+      "kd_k": 70.92,
+      "kd_d": 81.25
     },
     {
-      "symbol": "CRMG",
-      "name": "Leverage Shares 2X Long CRM Daily ETF",
-      "current_price": 9.39,
-      "change_pct": -7.85,
+      "symbol": "SNDK",
+      "name": "Sandisk Corporation",
+      "current_price": 1772.0,
+      "change_pct": 1.96,
       "extra_data": {
-        "regular_market_price": 9.39,
-        "pre_market_price": 9.411,
+        "regular_market_price": 1772.0,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 10.19
+        "prev_close": 1737.99
       },
-      "kd_k": 80.88,
-      "kd_d": 84.72
+      "kd_k": 80.35,
+      "kd_d": 68.66
     },
     {
       "symbol": "DELL",
       "name": "Dell Technologies Inc.",
-      "current_price": 533.88,
-      "change_pct": 1.86,
+      "current_price": 541.78,
+      "change_pct": 1.48,
       "extra_data": {
-        "regular_market_price": 533.88,
-        "pre_market_price": 535.5,
+        "regular_market_price": 541.78,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 524.14
+        "prev_close": 533.88
       },
-      "kd_k": 81.33,
-      "kd_d": 67.03
+      "kd_k": 82.54,
+      "kd_d": 72.2
+    },
+    {
+      "symbol": "DLLL",
+      "name": "GraniteShares 2x Long DELL Daily ETF",
+      "current_price": 34.11,
+      "change_pct": 2.8,
+      "extra_data": {
+        "regular_market_price": 34.11,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 33.18
+      },
+      "kd_k": 80.65,
+      "kd_d": 70.17
     }
   ],
   "oversold_stocks": [
@@ -464,20 +478,6 @@
       },
       "kd_k": 16.94,
       "kd_d": 19.86
-    },
-    {
-      "symbol": "RKLX",
-      "name": "Defiance Daily Target 2X Long RKLB ETF",
-      "current_price": 15.87,
-      "change_pct": 4.89,
-      "extra_data": {
-        "regular_market_price": 15.87,
-        "pre_market_price": 16.6207,
-        "post_market_price": null,
-        "prev_close": 15.13
-      },
-      "kd_k": 33.0,
-      "kd_d": 19.16
     }
   ],
   "errors": []
