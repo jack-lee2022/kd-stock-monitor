@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-09-10T01:34:09.155705",
+  "timestamp": "2026-09-10T04:27:01.268015",
   "date": "2026-09-10",
   "macro": {
     "us10y": {
-      "value": 4.835,
-      "change": 0.029
+      "value": 4.837,
+      "change": 0.031
     },
     "dxy": {
-      "value": 98.74,
-      "change": -0.1
+      "value": 98.83,
+      "change": -0.01
     },
     "fear_greed": {
-      "value": 16.25,
-      "change": 0.53,
+      "value": 16.48,
+      "change": 0.76,
       "label": "VIX Index",
-      "timestamp": "2026-09-10T01:34:05.333361"
+      "timestamp": "2026-09-10T04:26:57.423717"
     },
     "btc": {
-      "value": 78782.0,
-      "change_pct": 0.44
+      "value": 78125.0,
+      "change_pct": -0.4
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 32,
-  "overbought_count": 28,
+  "new_alerts": 0,
+  "overbought_count": 26,
   "oversold_count": 4,
-  "normal_count": 93,
+  "normal_count": 95,
   "overbought_stocks": [
     {
       "symbol": "0050.TW",
@@ -340,86 +340,58 @@
     {
       "symbol": "META",
       "name": "Meta Platforms Inc.",
-      "current_price": 653.83,
-      "change_pct": 6.58,
+      "current_price": 653.69,
+      "change_pct": 6.55,
       "extra_data": {
-        "regular_market_price": 653.83,
+        "regular_market_price": 653.69,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 651.5,
         "prev_close": 613.48
       },
-      "kd_k": 87.47,
-      "kd_d": 79.21
+      "kd_k": 87.42,
+      "kd_d": 79.19
     },
     {
       "symbol": "FBL",
       "name": "GraniteShares 2x Long META Daily ETF",
-      "current_price": 26.39,
-      "change_pct": 12.83,
+      "current_price": 26.41,
+      "change_pct": 12.91,
       "extra_data": {
-        "regular_market_price": 26.39,
+        "regular_market_price": 26.41,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 26.23,
         "prev_close": 23.39
       },
-      "kd_k": 86.69,
-      "kd_d": 78.36
+      "kd_k": 86.78,
+      "kd_d": 78.39
     },
     {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
-      "current_price": 247.465,
-      "change_pct": -0.66,
+      "current_price": 244.16,
+      "change_pct": -1.99,
       "extra_data": {
-        "regular_market_price": 247.465,
+        "regular_market_price": 244.16,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 244.42,
         "prev_close": 249.12
       },
-      "kd_k": 70.92,
-      "kd_d": 81.25
-    },
-    {
-      "symbol": "SNDK",
-      "name": "Sandisk Corporation",
-      "current_price": 1772.0,
-      "change_pct": 1.96,
-      "extra_data": {
-        "regular_market_price": 1772.0,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 1737.99
-      },
-      "kd_k": 80.35,
-      "kd_d": 68.66
+      "kd_k": 68.03,
+      "kd_d": 80.29
     },
     {
       "symbol": "DELL",
       "name": "Dell Technologies Inc.",
-      "current_price": 541.78,
-      "change_pct": 1.48,
+      "current_price": 535.25,
+      "change_pct": 0.26,
       "extra_data": {
-        "regular_market_price": 541.78,
+        "regular_market_price": 535.25,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 534.7817,
         "prev_close": 533.88
       },
-      "kd_k": 82.54,
-      "kd_d": 72.2
-    },
-    {
-      "symbol": "DLLL",
-      "name": "GraniteShares 2x Long DELL Daily ETF",
-      "current_price": 34.11,
-      "change_pct": 2.8,
-      "extra_data": {
-        "regular_market_price": 34.11,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 33.18
-      },
-      "kd_k": 80.65,
-      "kd_d": 70.17
+      "kd_k": 81.0,
+      "kd_d": 71.69
     }
   ],
   "oversold_stocks": [
