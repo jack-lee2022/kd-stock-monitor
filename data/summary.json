@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-09-11T21:15:19.272609",
-  "date": "2026-09-11",
+  "timestamp": "2026-09-12T01:31:35.519532",
+  "date": "2026-09-12",
   "macro": {
     "us10y": {
-      "value": 4.916,
-      "change": -0.028
+      "value": 4.95,
+      "change": 0.006
     },
     "dxy": {
-      "value": 99.02,
-      "change": -0.07
+      "value": 99.1,
+      "change": 0.01
     },
     "fear_greed": {
-      "value": 15.96,
-      "change": -1.88,
+      "value": 15.72,
+      "change": -2.12,
       "label": "VIX Index",
-      "timestamp": "2026-09-11T21:15:13.246368"
+      "timestamp": "2026-09-12T01:31:29.455970"
     },
     "btc": {
-      "value": 77684.0,
-      "change_pct": 1.46
+      "value": 77854.0,
+      "change_pct": 1.68
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 9,
-  "oversold_count": 10,
-  "normal_count": 106,
+  "new_alerts": 23,
+  "overbought_count": 12,
+  "oversold_count": 11,
+  "normal_count": 102,
   "overbought_stocks": [
     {
       "symbol": "0056.TW",
@@ -130,30 +130,72 @@
     {
       "symbol": "META",
       "name": "Meta Platforms Inc.",
-      "current_price": 644.38,
-      "change_pct": -1.42,
+      "current_price": 651.0,
+      "change_pct": 1.03,
       "extra_data": {
-        "regular_market_price": 644.38,
-        "pre_market_price": 655.19,
+        "regular_market_price": 651.0,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 653.69
+        "prev_close": 644.38
       },
-      "kd_k": 85.68,
-      "kd_d": 81.36
+      "kd_k": 86.36,
+      "kd_d": 83.03
     },
     {
       "symbol": "FBL",
       "name": "GraniteShares 2x Long META Daily ETF",
-      "current_price": 25.68,
-      "change_pct": -2.76,
+      "current_price": 26.16,
+      "change_pct": 1.87,
       "extra_data": {
-        "regular_market_price": 25.68,
-        "pre_market_price": 26.61,
+        "regular_market_price": 26.16,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 26.41
+        "prev_close": 25.68
       },
-      "kd_k": 84.63,
-      "kd_d": 80.46
+      "kd_k": 85.2,
+      "kd_d": 82.04
+    },
+    {
+      "symbol": "DELL",
+      "name": "Dell Technologies Inc.",
+      "current_price": 557.59,
+      "change_pct": 10.06,
+      "extra_data": {
+        "regular_market_price": 557.59,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 506.62
+      },
+      "kd_k": 80.35,
+      "kd_d": 75.09
+    },
+    {
+      "symbol": "QCOM",
+      "name": "QUALCOMM Incorporated",
+      "current_price": 185.1701,
+      "change_pct": 4.69,
+      "extra_data": {
+        "regular_market_price": 185.1701,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 176.88
+      },
+      "kd_k": 81.09,
+      "kd_d": 75.82
+    },
+    {
+      "symbol": "QCML",
+      "name": "GraniteShares 2x Long QCOM Daily ETF",
+      "current_price": 18.9,
+      "change_pct": 9.19,
+      "extra_data": {
+        "regular_market_price": 18.9,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 17.31
+      },
+      "kd_k": 80.4,
+      "kd_d": 75.26
     }
   ],
   "oversold_stocks": [
@@ -270,32 +312,46 @@
       "kd_d": 15.86
     },
     {
+      "symbol": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "current_price": 167.116,
+      "change_pct": 0.76,
+      "extra_data": {
+        "regular_market_price": 167.116,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 165.86
+      },
+      "kd_k": 19.93,
+      "kd_d": 33.16
+    },
+    {
       "symbol": "ADBE",
       "name": "Adobe Inc.",
-      "current_price": 248.83,
-      "change_pct": -2.37,
+      "current_price": 254.45,
+      "change_pct": 2.26,
       "extra_data": {
-        "regular_market_price": 248.83,
-        "pre_market_price": 241.5785,
+        "regular_market_price": 254.45,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 254.86
+        "prev_close": 248.83
       },
-      "kd_k": 17.65,
-      "kd_d": 37.23
+      "kd_k": 19.9,
+      "kd_d": 31.46
     },
     {
       "symbol": "ADBG",
       "name": "Leverage Shares 2X Long ADBE Daily ETF",
-      "current_price": 4.075,
-      "change_pct": -4.79,
+      "current_price": 4.255,
+      "change_pct": 4.42,
       "extra_data": {
-        "regular_market_price": 4.075,
-        "pre_market_price": 3.83,
+        "regular_market_price": 4.255,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 4.28
+        "prev_close": 4.075
       },
-      "kd_k": 16.58,
-      "kd_d": 35.86
+      "kd_k": 18.12,
+      "kd_d": 29.94
     }
   ],
   "errors": []
