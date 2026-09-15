@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-09-15T19:06:10.684497",
-  "date": "2026-09-15",
+  "timestamp": "2026-09-16T00:16:33.222675",
+  "date": "2026-09-16",
   "macro": {
     "us10y": {
-      "value": 4.961,
-      "change": -0.014
+      "value": 4.996,
+      "change": 0.035
     },
     "dxy": {
-      "value": 99.6,
-      "change": 0.14
+      "value": 99.64,
+      "change": 0.18
     },
     "fear_greed": {
-      "value": 17.2,
-      "change": 0.1,
+      "value": 17.61,
+      "change": 0.51,
       "label": "VIX Index",
-      "timestamp": "2026-09-15T19:06:06.830764"
+      "timestamp": "2026-09-16T00:16:27.201208"
     },
     "btc": {
-      "value": 77083.0,
-      "change_pct": -1.38
+      "value": 76305.0,
+      "change_pct": -2.38
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 8,
-  "oversold_count": 10,
-  "normal_count": 107,
+  "new_alerts": 21,
+  "overbought_count": 10,
+  "oversold_count": 11,
+  "normal_count": 104,
   "overbought_stocks": [
     {
       "symbol": "00713.TW",
@@ -102,44 +102,72 @@
     {
       "symbol": "META",
       "name": "Meta Platforms Inc.",
-      "current_price": 665.6,
-      "change_pct": 2.71,
+      "current_price": 665.765,
+      "change_pct": 0.02,
       "extra_data": {
-        "regular_market_price": 665.6,
-        "pre_market_price": 662.55,
+        "regular_market_price": 665.765,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 648.03
+        "prev_close": 665.6
       },
-      "kd_k": 89.42,
-      "kd_d": 84.95
+      "kd_k": 88.66,
+      "kd_d": 86.19
     },
     {
       "symbol": "FBL",
       "name": "GraniteShares 2x Long META Daily ETF",
-      "current_price": 27.36,
-      "change_pct": 5.43,
+      "current_price": 27.45,
+      "change_pct": 0.33,
       "extra_data": {
-        "regular_market_price": 27.36,
-        "pre_market_price": 27.15,
+        "regular_market_price": 27.45,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 25.95
+        "prev_close": 27.36
       },
-      "kd_k": 88.66,
-      "kd_d": 84.05
+      "kd_k": 88.14,
+      "kd_d": 85.41
     },
     {
       "symbol": "DELL",
       "name": "Dell Technologies Inc.",
-      "current_price": 534.28,
-      "change_pct": -5.82,
+      "current_price": 546.5,
+      "change_pct": 2.29,
       "extra_data": {
-        "regular_market_price": 534.28,
-        "pre_market_price": 537.4308,
+        "regular_market_price": 546.5,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 567.29
+        "prev_close": 534.28
       },
-      "kd_k": 80.73,
-      "kd_d": 77.47
+      "kd_k": 81.74,
+      "kd_d": 78.89
+    },
+    {
+      "symbol": "QCOM",
+      "name": "QUALCOMM Incorporated",
+      "current_price": 187.41,
+      "change_pct": 4.03,
+      "extra_data": {
+        "regular_market_price": 187.41,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 180.15
+      },
+      "kd_k": 81.54,
+      "kd_d": 77.26
+    },
+    {
+      "symbol": "QCML",
+      "name": "GraniteShares 2x Long QCOM Daily ETF",
+      "current_price": 19.33,
+      "change_pct": 7.93,
+      "extra_data": {
+        "regular_market_price": 19.33,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 17.91
+      },
+      "kd_k": 80.72,
+      "kd_d": 76.59
     }
   ],
   "oversold_stocks": [
@@ -282,6 +310,20 @@
       },
       "kd_k": 17.53,
       "kd_d": 30.2
+    },
+    {
+      "symbol": "DIA",
+      "name": "SPDR Dow Jones Industrial Average ETF",
+      "current_price": 519.54,
+      "change_pct": -0.94,
+      "extra_data": {
+        "regular_market_price": 519.54,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 524.49
+      },
+      "kd_k": 18.11,
+      "kd_d": 26.72
     }
   ],
   "errors": []
