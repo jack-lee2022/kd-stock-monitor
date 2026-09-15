@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-16T04:00:29.747435",
+  "timestamp": "2026-09-16T06:52:21.716666",
   "date": "2026-09-16",
   "macro": {
     "us10y": {
@@ -7,27 +7,27 @@
       "change": 0.035
     },
     "dxy": {
-      "value": 99.62,
-      "change": 0.16
+      "value": 99.61,
+      "change": 0.15
     },
     "fear_greed": {
-      "value": 17.52,
-      "change": 0.42,
+      "value": 17.2,
+      "change": 0.1,
       "label": "VIX Index",
-      "timestamp": "2026-09-16T04:00:23.425712"
+      "timestamp": "2026-09-16T06:52:15.737409"
     },
     "btc": {
-      "value": 76120.0,
-      "change_pct": -2.61
+      "value": 75682.0,
+      "change_pct": -3.17
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 0,
+  "new_alerts": 1,
   "overbought_count": 10,
-  "oversold_count": 10,
-  "normal_count": 105,
+  "oversold_count": 11,
+  "normal_count": 104,
   "overbought_stocks": [
     {
       "symbol": "00713.TW",
@@ -107,11 +107,11 @@
       "extra_data": {
         "regular_market_price": 670.24,
         "pre_market_price": null,
-        "post_market_price": 670.24,
+        "post_market_price": 668.7967,
         "prev_close": 665.6
       },
-      "kd_k": 90.07,
-      "kd_d": 86.66
+      "kd_k": 90.12,
+      "kd_d": 86.68
     },
     {
       "symbol": "FBL",
@@ -121,11 +121,11 @@
       "extra_data": {
         "regular_market_price": 27.75,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 27.6,
         "prev_close": 27.36
       },
-      "kd_k": 89.32,
-      "kd_d": 85.81
+      "kd_k": 89.45,
+      "kd_d": 85.85
     },
     {
       "symbol": "DELL",
@@ -135,11 +135,11 @@
       "extra_data": {
         "regular_market_price": 543.51,
         "pre_market_price": null,
-        "post_market_price": 543.41,
+        "post_market_price": 544.5,
         "prev_close": 534.28
       },
-      "kd_k": 80.85,
-      "kd_d": 78.59
+      "kd_k": 81.01,
+      "kd_d": 78.65
     },
     {
       "symbol": "QCOM",
@@ -149,7 +149,7 @@
       "extra_data": {
         "regular_market_price": 187.8,
         "pre_market_price": null,
-        "post_market_price": 187.8,
+        "post_market_price": 187.9,
         "prev_close": 180.15
       },
       "kd_k": 81.68,
@@ -163,11 +163,11 @@
       "extra_data": {
         "regular_market_price": 19.44,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 19.42,
         "prev_close": 17.91
       },
-      "kd_k": 81.09,
-      "kd_d": 76.71
+      "kd_k": 81.19,
+      "kd_d": 76.75
     }
   ],
   "oversold_stocks": [
@@ -282,6 +282,20 @@
       },
       "kd_k": 19.12,
       "kd_d": 27.21
+    },
+    {
+      "symbol": "00936.TW",
+      "name": "台新永續高息中小",
+      "current_price": 20.89,
+      "change_pct": -1.83,
+      "extra_data": {
+        "regular_market_price": 20.89,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 21.28
+      },
+      "kd_k": 18.89,
+      "kd_d": 29.9
     },
     {
       "symbol": "00946.TW",
