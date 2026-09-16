@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-16T06:52:21.716666",
+  "timestamp": "2026-09-16T09:06:31.734244",
   "date": "2026-09-16",
   "macro": {
     "us10y": {
@@ -7,18 +7,18 @@
       "change": 0.035
     },
     "dxy": {
-      "value": 99.61,
-      "change": 0.15
+      "value": 99.71,
+      "change": 0.25
     },
     "fear_greed": {
       "value": 17.2,
       "change": 0.1,
       "label": "VIX Index",
-      "timestamp": "2026-09-16T06:52:15.737409"
+      "timestamp": "2026-09-16T09:06:29.044521"
     },
     "btc": {
-      "value": 75682.0,
-      "change_pct": -3.17
+      "value": 75706.0,
+      "change_pct": 0
     }
   },
   "stocks_processed": 125,
@@ -26,8 +26,8 @@
   "stocks_failed": 0,
   "new_alerts": 1,
   "overbought_count": 10,
-  "oversold_count": 11,
-  "normal_count": 104,
+  "oversold_count": 12,
+  "normal_count": 103,
   "overbought_stocks": [
     {
       "symbol": "00713.TW",
@@ -107,7 +107,7 @@
       "extra_data": {
         "regular_market_price": 670.24,
         "pre_market_price": null,
-        "post_market_price": 668.7967,
+        "post_market_price": 668.7,
         "prev_close": 665.6
       },
       "kd_k": 90.12,
@@ -121,7 +121,7 @@
       "extra_data": {
         "regular_market_price": 27.75,
         "pre_market_price": null,
-        "post_market_price": 27.6,
+        "post_market_price": 27.55,
         "prev_close": 27.36
       },
       "kd_k": 89.45,
@@ -135,7 +135,7 @@
       "extra_data": {
         "regular_market_price": 543.51,
         "pre_market_price": null,
-        "post_market_price": 544.5,
+        "post_market_price": 543.0,
         "prev_close": 534.28
       },
       "kd_k": 81.01,
@@ -149,7 +149,7 @@
       "extra_data": {
         "regular_market_price": 187.8,
         "pre_market_price": null,
-        "post_market_price": 187.9,
+        "post_market_price": 187.6,
         "prev_close": 180.15
       },
       "kd_k": 81.68,
@@ -163,7 +163,7 @@
       "extra_data": {
         "regular_market_price": 19.44,
         "pre_market_price": null,
-        "post_market_price": 19.42,
+        "post_market_price": 19.5,
         "prev_close": 17.91
       },
       "kd_k": 81.19,
@@ -324,6 +324,20 @@
       },
       "kd_k": 17.53,
       "kd_d": 30.2
+    },
+    {
+      "symbol": "2330.TW",
+      "name": "台積電",
+      "current_price": 2385.0,
+      "change_pct": 0.21,
+      "extra_data": {
+        "regular_market_price": 2385.0,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 2380.0
+      },
+      "kd_k": 18.95,
+      "kd_d": 34.77
     }
   ],
   "errors": []
