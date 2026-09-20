@@ -1,5 +1,21 @@
 [
   {
+    "id": "00940.TW_20260920_overbought",
+    "symbol": "00940.TW",
+    "name": "元大台灣價值高息",
+    "market": "TW",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 85.67,
+    "kd_d": 74.32,
+    "current_price": 13.11,
+    "threshold": 80,
+    "message": "⚠️ 00940.TW (元大台灣價值高息) is OVERBOUGHT! KD-K: 85.67, KD-D: 74.32 (>= 80)",
+    "timestamp": "2026-09-20T13:43:34.699526",
+    "date": "2026-09-20",
+    "acknowledged": false
+  },
+  {
     "id": "00652.TW_20260920_oversold",
     "symbol": "00652.TW",
     "name": "富邦印度",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ AAPL (Apple Inc.) is OVERBOUGHT! KD-K: 80.85, KD-D: 73.63 (>= 80)",
     "timestamp": "2026-09-17T01:59:25.630820",
-    "date": "2026-09-17",
-    "acknowledged": false
-  },
-  {
-    "id": "AMZN_20260917_oversold",
-    "symbol": "AMZN",
-    "name": "Amazon.com Inc.",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 18.87,
-    "kd_d": 25.29,
-    "current_price": 247.83,
-    "threshold": 20,
-    "message": "✅ AMZN (Amazon.com Inc.) is OVERSOLD! KD-K: 18.87, KD-D: 25.29 (<= 20)",
-    "timestamp": "2026-09-17T01:59:25.630870",
     "date": "2026-09-17",
     "acknowledged": false
   }
