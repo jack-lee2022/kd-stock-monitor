@@ -1,5 +1,21 @@
 [
   {
+    "id": "00910.TW_20260922_overbought",
+    "symbol": "00910.TW",
+    "name": "第一金太空衛星",
+    "market": "TW",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 80.44,
+    "kd_d": 65.34,
+    "current_price": 59.4,
+    "threshold": 80,
+    "message": "⚠️ 00910.TW (第一金太空衛星) is OVERBOUGHT! KD-K: 80.44, KD-D: 65.34 (>= 80)",
+    "timestamp": "2026-09-22T15:19:44.382759",
+    "date": "2026-09-22",
+    "acknowledged": false
+  },
+  {
     "id": "00631L.TW_20260922_overbought",
     "symbol": "00631L.TW",
     "name": "元大台灣50正2",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 00939.TW (統一台灣高息動能) is OVERBOUGHT! KD-K: 87.53, KD-D: 85.65 (>= 80)",
     "timestamp": "2026-09-18T03:33:48.436662",
-    "date": "2026-09-18",
-    "acknowledged": false
-  },
-  {
-    "id": "00951.TW_20260918_oversold",
-    "symbol": "00951.TW",
-    "name": "台新日本半導體",
-    "market": "TW",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 19.75,
-    "kd_d": 29.17,
-    "current_price": 16.37,
-    "threshold": 20,
-    "message": "✅ 00951.TW (台新日本半導體) is OVERSOLD! KD-K: 19.75, KD-D: 29.17 (<= 20)",
-    "timestamp": "2026-09-18T03:33:48.436686",
     "date": "2026-09-18",
     "acknowledged": false
   }
