@@ -1,5 +1,21 @@
 [
   {
+    "id": "ORCL_20260929_oversold",
+    "symbol": "ORCL",
+    "name": "Oracle Corporation",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 18.48,
+    "kd_d": 25.21,
+    "current_price": 132.6,
+    "threshold": 20,
+    "message": "✅ ORCL (Oracle Corporation) is OVERSOLD! KD-K: 18.48, KD-D: 25.21 (<= 20)",
+    "timestamp": "2026-09-29T07:42:51.213053",
+    "date": "2026-09-29",
+    "acknowledged": false
+  },
+  {
     "id": "00403A.TW_20260929_overbought",
     "symbol": "00403A.TW",
     "name": "主動統一升級50",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ AMD (Advanced Micro Devices Inc.) is OVERBOUGHT! KD-K: 95.05, KD-D: 92.55 (>= 80)",
     "timestamp": "2026-09-27T02:20:11.413265",
-    "date": "2026-09-27",
-    "acknowledged": false
-  },
-  {
-    "id": "NFLX_20260927_oversold",
-    "symbol": "NFLX",
-    "name": "Netflix Inc.",
-    "market": "US",
-    "type": "oversold",
-    "level": "low",
-    "kd_k": 14.97,
-    "kd_d": 18.32,
-    "current_price": 71.145,
-    "threshold": 20,
-    "message": "✅ NFLX (Netflix Inc.) is OVERSOLD! KD-K: 14.97, KD-D: 18.32 (<= 20)",
-    "timestamp": "2026-09-27T02:20:11.413322",
     "date": "2026-09-27",
     "acknowledged": false
   }
