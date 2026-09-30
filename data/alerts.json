@@ -1,5 +1,21 @@
 [
   {
+    "id": "QQQ_20260930_overbought",
+    "symbol": "QQQ",
+    "name": "Invesco QQQ Trust",
+    "market": "US",
+    "type": "overbought",
+    "level": "high",
+    "kd_k": 81.37,
+    "kd_d": 80.24,
+    "current_price": 743.7,
+    "threshold": 80,
+    "message": "⚠️ QQQ (Invesco QQQ Trust) is OVERBOUGHT! KD-K: 81.37, KD-D: 80.24 (>= 80)",
+    "timestamp": "2026-09-30T22:50:10.278437",
+    "date": "2026-09-30",
+    "acknowledged": false
+  },
+  {
     "id": "00713.TW_20260930_oversold",
     "symbol": "00713.TW",
     "name": "元大台灣高息低波",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ MU (Micron Technology Inc.) is OVERBOUGHT! KD-K: 83.03, KD-D: 75.14 (>= 80)",
     "timestamp": "2026-09-28T01:30:40.322194",
-    "date": "2026-09-28",
-    "acknowledged": false
-  },
-  {
-    "id": "TSM_20260928_overbought",
-    "symbol": "TSM",
-    "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 86.77,
-    "kd_d": 78.05,
-    "current_price": 450.61,
-    "threshold": 80,
-    "message": "⚠️ TSM (Taiwan Semiconductor Manufacturing Company Ltd.) is OVERBOUGHT! KD-K: 86.77, KD-D: 78.05 (>= 80)",
-    "timestamp": "2026-09-28T01:30:40.322241",
     "date": "2026-09-28",
     "acknowledged": false
   }
