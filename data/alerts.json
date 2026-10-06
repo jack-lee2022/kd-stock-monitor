@@ -1,5 +1,21 @@
 [
   {
+    "id": "CRCL_20261007_oversold",
+    "symbol": "CRCL",
+    "name": "Circle Internet Group, Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.54,
+    "kd_d": 22.37,
+    "current_price": 84.13,
+    "threshold": 20,
+    "message": "✅ CRCL (Circle Internet Group, Inc.) is OVERSOLD! KD-K: 19.54, KD-D: 22.37 (<= 20)",
+    "timestamp": "2026-10-07T06:25:09.618800",
+    "date": "2026-10-07",
+    "acknowledged": false
+  },
+  {
     "id": "00403A.TW_20261007_overbought",
     "symbol": "00403A.TW",
     "name": "主動統一升級50",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ SMH (VanEck Semiconductor ETF) is OVERBOUGHT! KD-K: 90.76, KD-D: 88.69 (>= 80)",
     "timestamp": "2026-10-06T01:53:53.154150",
-    "date": "2026-10-06",
-    "acknowledged": false
-  },
-  {
-    "id": "USD_20261006_overbought",
-    "symbol": "USD",
-    "name": "ProShares Ultra Semiconductors",
-    "market": "US",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 84.56,
-    "kd_d": 82.72,
-    "current_price": 102.26,
-    "threshold": 80,
-    "message": "⚠️ USD (ProShares Ultra Semiconductors) is OVERBOUGHT! KD-K: 84.56, KD-D: 82.72 (>= 80)",
-    "timestamp": "2026-10-06T01:53:53.154174",
     "date": "2026-10-06",
     "acknowledged": false
   }
