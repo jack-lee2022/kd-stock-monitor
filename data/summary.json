@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-10-09T01:21:36.528325",
+  "timestamp": "2026-10-09T06:55:06.774706",
   "date": "2026-10-09",
   "macro": {
     "us10y": {
-      "value": 5.242,
-      "change": -0.035
+      "value": 5.231,
+      "change": -0.046
     },
     "dxy": {
-      "value": 102.18,
-      "change": -0.06
+      "value": 102.11,
+      "change": -0.12
     },
     "fear_greed": {
-      "value": 16.04,
-      "change": 0.96,
+      "value": 15.41,
+      "change": 0.33,
       "label": "VIX Index",
-      "timestamp": "2026-10-09T01:21:31.558079"
+      "timestamp": "2026-10-09T06:55:03.486436"
     },
     "btc": {
-      "value": 80642.0,
-      "change_pct": -3.16
+      "value": 81788.0,
+      "change_pct": -1.79
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 43,
-  "overbought_count": 31,
+  "new_alerts": 2,
+  "overbought_count": 32,
   "oversold_count": 12,
-  "normal_count": 82,
+  "normal_count": 81,
   "overbought_stocks": [
     {
       "symbol": "00403A.TW",
@@ -450,18 +450,32 @@
       "kd_d": 85.19
     },
     {
-      "symbol": "FNGG",
-      "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
-      "current_price": 290.0,
-      "change_pct": -0.01,
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+      "current_price": 457.99,
+      "change_pct": -3.01,
       "extra_data": {
-        "regular_market_price": 290.0,
+        "regular_market_price": 457.99,
         "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 290.0147
+        "post_market_price": 460.0465,
+        "prev_close": 472.2
       },
-      "kd_k": 83.53,
-      "kd_d": 73.19
+      "kd_k": 66.29,
+      "kd_d": 80.46
+    },
+    {
+      "symbol": "SMH",
+      "name": "VanEck Semiconductor ETF",
+      "current_price": 607.27,
+      "change_pct": -2.84,
+      "extra_data": {
+        "regular_market_price": 607.27,
+        "pre_market_price": null,
+        "post_market_price": 608.5,
+        "prev_close": 625.03
+      },
+      "kd_k": 66.07,
+      "kd_d": 80.07
     }
   ],
   "oversold_stocks": [
@@ -594,44 +608,44 @@
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 79.3617,
-      "change_pct": -1.83,
+      "current_price": 80.84,
+      "change_pct": 0.0,
       "extra_data": {
-        "regular_market_price": 79.3617,
+        "regular_market_price": 80.84,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 81.0901,
         "prev_close": 80.84
       },
-      "kd_k": 12.4,
-      "kd_d": 17.72
+      "kd_k": 17.78,
+      "kd_d": 19.52
     },
     {
       "symbol": "QCOM",
       "name": "QUALCOMM Incorporated",
-      "current_price": 171.695,
-      "change_pct": -3.06,
+      "current_price": 176.01,
+      "change_pct": -0.63,
       "extra_data": {
-        "regular_market_price": 171.695,
+        "regular_market_price": 176.01,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 176.5,
         "prev_close": 177.12
       },
-      "kd_k": 8.06,
-      "kd_d": 18.09
+      "kd_k": 13.7,
+      "kd_d": 19.97
     },
     {
       "symbol": "QCML",
       "name": "GraniteShares 2x Long QCOM Daily ETF",
-      "current_price": 15.78,
-      "change_pct": -6.02,
+      "current_price": 16.58,
+      "change_pct": -1.25,
       "extra_data": {
-        "regular_market_price": 15.78,
+        "regular_market_price": 16.58,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 16.6814,
         "prev_close": 16.79
       },
-      "kd_k": 6.79,
-      "kd_d": 15.9
+      "kd_k": 12.05,
+      "kd_d": 17.65
     }
   ],
   "errors": []
