@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-10-08T18:01:03.869186",
-  "date": "2026-10-08",
+  "timestamp": "2026-10-09T01:21:36.528325",
+  "date": "2026-10-09",
   "macro": {
     "us10y": {
-      "value": 5.277,
-      "change": 0.008
+      "value": 5.242,
+      "change": -0.035
     },
     "dxy": {
-      "value": 102.39,
-      "change": 0.15
+      "value": 102.18,
+      "change": -0.06
     },
     "fear_greed": {
-      "value": 15.71,
-      "change": 0.63,
+      "value": 16.04,
+      "change": 0.96,
       "label": "VIX Index",
-      "timestamp": "2026-10-08T18:00:57.930692"
+      "timestamp": "2026-10-09T01:21:31.558079"
     },
     "btc": {
-      "value": 83048.0,
-      "change_pct": -0.27
+      "value": 80642.0,
+      "change_pct": -3.16
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 2,
-  "overbought_count": 39,
-  "oversold_count": 13,
-  "normal_count": 73,
+  "new_alerts": 43,
+  "overbought_count": 31,
+  "oversold_count": 12,
+  "normal_count": 82,
   "overbought_stocks": [
     {
       "symbol": "00403A.TW",
@@ -450,130 +450,18 @@
       "kd_d": 85.19
     },
     {
-      "symbol": "MSFT",
-      "name": "Microsoft Corp.",
-      "current_price": 529.76,
-      "change_pct": 0.09,
+      "symbol": "FNGG",
+      "name": "Direxion Daily NYSE FANG+ Bull 2X Shares",
+      "current_price": 290.0,
+      "change_pct": -0.01,
       "extra_data": {
-        "regular_market_price": 529.76,
-        "pre_market_price": 529.73,
-        "post_market_price": null,
-        "prev_close": 529.3
-      },
-      "kd_k": 81.13,
-      "kd_d": 75.88
-    },
-    {
-      "symbol": "CRWD",
-      "name": "CrowdStrike Holdings Inc.",
-      "current_price": 265.44,
-      "change_pct": -4.81,
-      "extra_data": {
-        "regular_market_price": 265.44,
-        "pre_market_price": 263.63,
-        "post_market_price": null,
-        "prev_close": 278.86
-      },
-      "kd_k": 73.39,
-      "kd_d": 82.78
-    },
-    {
-      "symbol": "TSM",
-      "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
-      "current_price": 472.2,
-      "change_pct": -2.09,
-      "extra_data": {
-        "regular_market_price": 472.2,
-        "pre_market_price": 467.3,
-        "post_market_price": null,
-        "prev_close": 482.3
-      },
-      "kd_k": 82.67,
-      "kd_d": 87.54
-    },
-    {
-      "symbol": "QQQ",
-      "name": "Invesco QQQ Trust",
-      "current_price": 757.73,
-      "change_pct": -0.25,
-      "extra_data": {
-        "regular_market_price": 757.73,
-        "pre_market_price": 753.83,
-        "post_market_price": null,
-        "prev_close": 759.66
-      },
-      "kd_k": 84.7,
-      "kd_d": 82.3
-    },
-    {
-      "symbol": "SMH",
-      "name": "VanEck Semiconductor ETF",
-      "current_price": 625.03,
-      "change_pct": -1.18,
-      "extra_data": {
-        "regular_market_price": 625.03,
-        "pre_market_price": 617.97,
-        "post_market_price": null,
-        "prev_close": 632.5
-      },
-      "kd_k": 82.96,
-      "kd_d": 87.07
-    },
-    {
-      "symbol": "USD",
-      "name": "ProShares Ultra Semiconductors",
-      "current_price": 102.77,
-      "change_pct": -0.96,
-      "extra_data": {
-        "regular_market_price": 102.77,
-        "pre_market_price": 100.75,
-        "post_market_price": null,
-        "prev_close": 103.77
-      },
-      "kd_k": 82.8,
-      "kd_d": 83.8
-    },
-    {
-      "symbol": "MSFU",
-      "name": "Direxion Daily MSFT Bull 2X Shares",
-      "current_price": 41.81,
-      "change_pct": 0.02,
-      "extra_data": {
-        "regular_market_price": 41.81,
-        "pre_market_price": 42.0,
-        "post_market_price": null,
-        "prev_close": 41.8
-      },
-      "kd_k": 80.05,
-      "kd_d": 74.24
-    },
-    {
-      "symbol": "TSMX",
-      "name": "Direxion Daily TSM Bull 2X Shares",
-      "current_price": 96.38,
-      "change_pct": -4.12,
-      "extra_data": {
-        "regular_market_price": 96.38,
-        "pre_market_price": 94.2,
-        "post_market_price": null,
-        "prev_close": 100.52
-      },
-      "kd_k": 82.32,
-      "kd_d": 87.42
-    },
-    {
-      "symbol": "FNGS",
-      "name": "MicroSectors FANG+ Index ETN",
-      "current_price": 84.76,
-      "change_pct": 0.65,
-      "extra_data": {
-        "regular_market_price": 84.76,
+        "regular_market_price": 290.0,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 84.21
+        "prev_close": 290.0147
       },
-      "kd_k": 83.36,
-      "kd_d": 74.61
+      "kd_k": 83.53,
+      "kd_d": 73.19
     }
   ],
   "oversold_stocks": [
@@ -704,60 +592,46 @@
       "kd_d": 36.25
     },
     {
-      "symbol": "NFXL",
-      "name": "Direxion Daily NFLX Bull 2X Shares",
-      "current_price": 13.82,
-      "change_pct": 2.75,
-      "extra_data": {
-        "regular_market_price": 13.82,
-        "pre_market_price": 13.93,
-        "post_market_price": null,
-        "prev_close": 13.45
-      },
-      "kd_k": 31.21,
-      "kd_d": 19.07
-    },
-    {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 80.84,
-      "change_pct": -3.91,
+      "current_price": 79.3617,
+      "change_pct": -1.83,
       "extra_data": {
-        "regular_market_price": 80.84,
-        "pre_market_price": 80.42,
+        "regular_market_price": 79.3617,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 84.13
+        "prev_close": 80.84
       },
-      "kd_k": 16.42,
-      "kd_d": 20.39
+      "kd_k": 12.4,
+      "kd_d": 17.72
     },
     {
       "symbol": "QCOM",
       "name": "QUALCOMM Incorporated",
-      "current_price": 177.12,
-      "change_pct": -2.16,
+      "current_price": 171.695,
+      "change_pct": -3.06,
       "extra_data": {
-        "regular_market_price": 177.12,
-        "pre_market_price": 176.0,
+        "regular_market_price": 171.695,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 181.03
+        "prev_close": 177.12
       },
-      "kd_k": 11.68,
-      "kd_d": 23.1
+      "kd_k": 8.06,
+      "kd_d": 18.09
     },
     {
       "symbol": "QCML",
       "name": "GraniteShares 2x Long QCOM Daily ETF",
-      "current_price": 16.79,
-      "change_pct": -4.6,
+      "current_price": 15.78,
+      "change_pct": -6.02,
       "extra_data": {
-        "regular_market_price": 16.79,
-        "pre_market_price": 16.63,
+        "regular_market_price": 15.78,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 17.6
+        "prev_close": 16.79
       },
-      "kd_k": 9.92,
-      "kd_d": 20.46
+      "kd_k": 6.79,
+      "kd_d": 15.9
     }
   ],
   "errors": []
