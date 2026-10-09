@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-10-09T18:03:56.314248",
-  "date": "2026-10-09",
+  "timestamp": "2026-10-10T01:19:48.829222",
+  "date": "2026-10-10",
   "macro": {
     "us10y": {
-      "value": 5.231,
-      "change": -0.046
+      "value": 5.246,
+      "change": 0.015
     },
     "dxy": {
-      "value": 102.1,
-      "change": -0.04
+      "value": 102.29,
+      "change": 0.15
     },
     "fear_greed": {
-      "value": 15.22,
-      "change": -0.19,
+      "value": 14.87,
+      "change": -0.54,
       "label": "VIX Index",
-      "timestamp": "2026-10-09T18:03:50.249041"
+      "timestamp": "2026-10-10T01:19:42.670282"
     },
     "btc": {
-      "value": 82602.0,
-      "change_pct": 1.13
+      "value": 82604.0,
+      "change_pct": 1.14
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 0,
-  "overbought_count": 32,
-  "oversold_count": 12,
-  "normal_count": 81,
+  "new_alerts": 47,
+  "overbought_count": 33,
+  "oversold_count": 14,
+  "normal_count": 78,
   "overbought_stocks": [
     {
       "symbol": "00403A.TW",
@@ -450,32 +450,46 @@
       "kd_d": 85.19
     },
     {
-      "symbol": "TSM",
-      "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
-      "current_price": 457.99,
-      "change_pct": -3.01,
+      "symbol": "MSFT",
+      "name": "Microsoft Corp.",
+      "current_price": 534.08,
+      "change_pct": 2.19,
       "extra_data": {
-        "regular_market_price": 457.99,
-        "pre_market_price": 464.4,
+        "regular_market_price": 534.08,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 472.2
+        "prev_close": 522.61
       },
-      "kd_k": 66.29,
-      "kd_d": 80.46
+      "kd_k": 81.32,
+      "kd_d": 77.36
     },
     {
-      "symbol": "SMH",
-      "name": "VanEck Semiconductor ETF",
-      "current_price": 607.27,
-      "change_pct": -2.84,
+      "symbol": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "current_price": 205.54,
+      "change_pct": 3.4,
       "extra_data": {
-        "regular_market_price": 607.27,
-        "pre_market_price": 617.74,
+        "regular_market_price": 205.54,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 625.03
+        "prev_close": 198.78
       },
-      "kd_k": 66.07,
-      "kd_d": 80.07
+      "kd_k": 81.29,
+      "kd_d": 74.79
+    },
+    {
+      "symbol": "MSFU",
+      "name": "Direxion Daily MSFT Bull 2X Shares",
+      "current_price": 42.47,
+      "change_pct": 4.32,
+      "extra_data": {
+        "regular_market_price": 42.47,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 40.71
+      },
+      "kd_k": 80.05,
+      "kd_d": 75.93
     }
   ],
   "oversold_stocks": [
@@ -606,46 +620,74 @@
       "kd_d": 36.25
     },
     {
-      "symbol": "CRCL",
-      "name": "Circle Internet Group, Inc.",
-      "current_price": 80.84,
-      "change_pct": 0.0,
+      "symbol": "SNDK",
+      "name": "Sandisk Corporation",
+      "current_price": 1603.15,
+      "change_pct": -0.39,
       "extra_data": {
-        "regular_market_price": 80.84,
-        "pre_market_price": 82.6,
+        "regular_market_price": 1603.15,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 80.84
+        "prev_close": 1609.46
       },
-      "kd_k": 17.81,
-      "kd_d": 19.53
+      "kd_k": 18.61,
+      "kd_d": 27.5
+    },
+    {
+      "symbol": "SNXX",
+      "name": "Tradr 2X Long Sndk Daily ETF",
+      "current_price": 14.075,
+      "change_pct": -1.02,
+      "extra_data": {
+        "regular_market_price": 14.075,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 14.22
+      },
+      "kd_k": 17.09,
+      "kd_d": 25.16
+    },
+    {
+      "symbol": "ARMG",
+      "name": "Leverage Shares 2X Long ARM Daily ETF",
+      "current_price": 17.555,
+      "change_pct": -6.47,
+      "extra_data": {
+        "regular_market_price": 17.555,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 18.77
+      },
+      "kd_k": 18.33,
+      "kd_d": 29.8
     },
     {
       "symbol": "QCOM",
       "name": "QUALCOMM Incorporated",
-      "current_price": 176.01,
-      "change_pct": -0.63,
+      "current_price": 173.24,
+      "change_pct": -1.57,
       "extra_data": {
-        "regular_market_price": 176.01,
-        "pre_market_price": 176.85,
+        "regular_market_price": 173.24,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 177.12
+        "prev_close": 176.01
       },
-      "kd_k": 13.7,
-      "kd_d": 19.97
+      "kd_k": 13.03,
+      "kd_d": 17.65
     },
     {
       "symbol": "QCML",
       "name": "GraniteShares 2x Long QCOM Daily ETF",
-      "current_price": 16.58,
-      "change_pct": -1.25,
+      "current_price": 16.04,
+      "change_pct": -3.43,
       "extra_data": {
-        "regular_market_price": 16.58,
-        "pre_market_price": 16.7,
+        "regular_market_price": 16.04,
+        "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 16.79
+        "prev_close": 16.61
       },
-      "kd_k": 12.05,
-      "kd_d": 17.65
+      "kd_k": 11.56,
+      "kd_d": 15.62
     }
   ],
   "errors": []
