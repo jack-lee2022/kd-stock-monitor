@@ -1,5 +1,21 @@
 [
   {
+    "id": "ADBE_20261112_oversold",
+    "symbol": "ADBE",
+    "name": "Adobe Inc.",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 18.33,
+    "kd_d": 20.85,
+    "current_price": 236.9906,
+    "threshold": 20,
+    "message": "✅ ADBE (Adobe Inc.) is OVERSOLD! KD-K: 18.33, KD-D: 20.85 (<= 20)",
+    "timestamp": "2026-11-12T02:23:38.488514",
+    "date": "2026-11-12",
+    "acknowledged": false
+  },
+  {
     "id": "00652.TW_20261112_overbought",
     "symbol": "00652.TW",
     "name": "富邦印度",
@@ -1580,22 +1596,6 @@
     "threshold": 80,
     "message": "⚠️ 009815.TWO (大華美國MAG7+) is OVERBOUGHT! KD-K: 94.38, KD-D: 90.97 (>= 80)",
     "timestamp": "2026-10-11T03:45:56.489553",
-    "date": "2026-10-11",
-    "acknowledged": false
-  },
-  {
-    "id": "009819.TW_20261011_overbought",
-    "symbol": "009819.TW",
-    "name": "中信數據及電力",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 82.86,
-    "kd_d": 68.48,
-    "current_price": 10.14,
-    "threshold": 80,
-    "message": "⚠️ 009819.TW (中信數據及電力) is OVERBOUGHT! KD-K: 82.86, KD-D: 68.48 (>= 80)",
-    "timestamp": "2026-10-11T03:45:56.489614",
     "date": "2026-10-11",
     "acknowledged": false
   }
