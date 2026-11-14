@@ -1,5 +1,21 @@
 [
   {
+    "id": "NFXL_20261114_oversold",
+    "symbol": "NFXL",
+    "name": "Direxion Daily NFLX Bull 2X Shares",
+    "market": "US",
+    "type": "oversold",
+    "level": "low",
+    "kd_k": 19.69,
+    "kd_d": 29.05,
+    "current_price": 10.72,
+    "threshold": 20,
+    "message": "✅ NFXL (Direxion Daily NFLX Bull 2X Shares) is OVERSOLD! KD-K: 19.69, KD-D: 29.05 (<= 20)",
+    "timestamp": "2026-11-14T09:17:52.794097",
+    "date": "2026-11-14",
+    "acknowledged": false
+  },
+  {
     "id": "00652.TW_20261114_overbought",
     "symbol": "00652.TW",
     "name": "富邦印度",
@@ -1580,22 +1596,6 @@
     "threshold": 20,
     "message": "✅ 00708L.TW (期元大S&P黃金正2) is OVERSOLD! KD-K: 9.8, KD-D: 11.48 (<= 20)",
     "timestamp": "2026-10-11T03:45:56.487853",
-    "date": "2026-10-11",
-    "acknowledged": false
-  },
-  {
-    "id": "00715L.TW_20261011_overbought",
-    "symbol": "00715L.TW",
-    "name": "期街口布蘭特正2",
-    "market": "TW",
-    "type": "overbought",
-    "level": "high",
-    "kd_k": 82.66,
-    "kd_d": 70.46,
-    "current_price": 71.4,
-    "threshold": 80,
-    "message": "⚠️ 00715L.TW (期街口布蘭特正2) is OVERBOUGHT! KD-K: 82.66, KD-D: 70.46 (>= 80)",
-    "timestamp": "2026-10-11T03:45:56.487919",
     "date": "2026-10-11",
     "acknowledged": false
   }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-14T04:47:06.113366",
+  "timestamp": "2026-11-14T09:17:54.425978",
   "date": "2026-11-14",
   "macro": {
     "us10y": {
@@ -11,23 +11,23 @@
       "change": 0.24
     },
     "fear_greed": {
-      "value": 19.16,
-      "change": 0.46,
+      "value": 19.3,
+      "change": 0.6,
       "label": "VIX Index",
-      "timestamp": "2026-11-14T04:47:02.903112"
+      "timestamp": "2026-11-14T09:17:51.800063"
     },
     "btc": {
-      "value": 68880.0,
-      "change_pct": -3.45
+      "value": 68163.0,
+      "change_pct": 0
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 9,
+  "new_alerts": 1,
   "overbought_count": 3,
-  "oversold_count": 6,
-  "normal_count": 116,
+  "oversold_count": 7,
+  "normal_count": 115,
   "overbought_stocks": [
     {
       "symbol": "00652.TW",
@@ -60,16 +60,16 @@
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "current_price": 355.78,
-      "change_pct": 0.25,
+      "current_price": 356.27,
+      "change_pct": 0.39,
       "extra_data": {
-        "regular_market_price": 355.78,
+        "regular_market_price": 356.27,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 355.3849,
         "prev_close": 354.88
       },
-      "kd_k": 83.22,
-      "kd_d": 76.27
+      "kd_k": 83.68,
+      "kd_d": 76.42
     }
   ],
   "oversold_stocks": [
@@ -90,72 +90,86 @@
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corp.",
-      "current_price": 162.225,
-      "change_pct": -2.39,
+      "current_price": 162.85,
+      "change_pct": -2.01,
       "extra_data": {
-        "regular_market_price": 162.225,
+        "regular_market_price": 162.85,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 161.01,
         "prev_close": 166.19
       },
-      "kd_k": 19.69,
-      "kd_d": 16.86
+      "kd_k": 20.02,
+      "kd_d": 16.97
     },
     {
       "symbol": "NVDL",
       "name": "GraniteShares 2x Long NVDA Daily ETF",
-      "current_price": 17.685,
-      "change_pct": -4.77,
+      "current_price": 17.83,
+      "change_pct": -3.98,
       "extra_data": {
-        "regular_market_price": 17.685,
+        "regular_market_price": 17.83,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 17.3999,
         "prev_close": 18.57
       },
-      "kd_k": 17.69,
-      "kd_d": 15.23
+      "kd_k": 18.0,
+      "kd_d": 15.34
+    },
+    {
+      "symbol": "NFXL",
+      "name": "Direxion Daily NFLX Bull 2X Shares",
+      "current_price": 10.72,
+      "change_pct": -1.65,
+      "extra_data": {
+        "regular_market_price": 10.72,
+        "pre_market_price": null,
+        "post_market_price": 10.66,
+        "prev_close": 10.9
+      },
+      "kd_k": 19.69,
+      "kd_d": 29.05
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 62.315,
-      "change_pct": -2.36,
+      "current_price": 62.2,
+      "change_pct": -2.54,
       "extra_data": {
-        "regular_market_price": 62.315,
+        "regular_market_price": 62.2,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 61.39,
         "prev_close": 63.82
       },
-      "kd_k": 13.49,
-      "kd_d": 16.72
+      "kd_k": 13.27,
+      "kd_d": 16.64
     },
     {
       "symbol": "SNXX",
       "name": "Tradr 2X Long Sndk Daily ETF",
-      "current_price": 3.535,
-      "change_pct": -12.72,
+      "current_price": 3.58,
+      "change_pct": -11.6,
       "extra_data": {
-        "regular_market_price": 3.535,
+        "regular_market_price": 3.58,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 3.42,
         "prev_close": 4.05
       },
-      "kd_k": 16.21,
-      "kd_d": 14.45
+      "kd_k": 16.62,
+      "kd_d": 14.59
     },
     {
       "symbol": "DLLL",
       "name": "GraniteShares 2x Long DELL Daily ETF",
-      "current_price": 11.5,
-      "change_pct": -15.63,
+      "current_price": 11.63,
+      "change_pct": -14.67,
       "extra_data": {
-        "regular_market_price": 11.5,
+        "regular_market_price": 11.63,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 11.3386,
         "prev_close": 13.63
       },
-      "kd_k": 23.37,
-      "kd_d": 19.71
+      "kd_k": 23.89,
+      "kd_d": 19.88
     }
   ],
   "errors": []
