@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-17T09:41:18.682500",
+  "timestamp": "2026-11-17T18:12:37.530233",
   "date": "2026-11-17",
   "macro": {
     "us10y": {
@@ -7,79 +7,65 @@
       "change": -0.033
     },
     "dxy": {
-      "value": 103.69,
-      "change": 0.0
+      "value": 103.52,
+      "change": -0.03
     },
     "fear_greed": {
-      "value": 22.91,
-      "change": 3.61,
+      "value": 23.71,
+      "change": 0.8,
       "label": "VIX Index",
-      "timestamp": "2026-11-17T09:41:13.142979"
+      "timestamp": "2026-11-17T18:12:32.140631"
     },
     "btc": {
-      "value": 64706.0,
-      "change_pct": 0
+      "value": 64313.0,
+      "change_pct": -0.84
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 3,
+  "new_alerts": 0,
   "overbought_count": 2,
-  "oversold_count": 14,
-  "normal_count": 109,
+  "oversold_count": 12,
+  "normal_count": 111,
   "overbought_stocks": [
     {
       "symbol": "00652.TW",
       "name": "富邦印度",
-      "current_price": 36.19,
-      "change_pct": 0.42,
+      "current_price": 36.59,
+      "change_pct": 1.53,
       "extra_data": {
-        "regular_market_price": 36.19,
+        "regular_market_price": 36.59,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 36.04
       },
-      "kd_k": 90.9,
-      "kd_d": 91.93
+      "kd_k": 93.94,
+      "kd_d": 92.95
     },
     {
       "symbol": "00653L.TW",
       "name": "富邦印度正2",
-      "current_price": 50.6,
-      "change_pct": 0.5,
+      "current_price": 51.25,
+      "change_pct": 1.79,
       "extra_data": {
-        "regular_market_price": 50.6,
+        "regular_market_price": 51.25,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 50.35
       },
-      "kd_k": 92.04,
-      "kd_d": 92.1
+      "kd_k": 94.8,
+      "kd_d": 93.02
     }
   ],
   "oversold_stocks": [
     {
-      "symbol": "00635U.TW",
-      "name": "期元大S&P黃金",
-      "current_price": 39.51,
-      "change_pct": -0.58,
-      "extra_data": {
-        "regular_market_price": 39.51,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 39.74
-      },
-      "kd_k": 19.25,
-      "kd_d": 35.59
-    },
-    {
       "symbol": "00662.TW",
       "name": "富邦NASDAQ",
-      "current_price": 23.11,
-      "change_pct": -1.91,
+      "current_price": 23.1,
+      "change_pct": -1.95,
       "extra_data": {
-        "regular_market_price": 23.11,
+        "regular_market_price": 23.1,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 23.56
@@ -88,46 +74,32 @@
       "kd_d": 3.91
     },
     {
-      "symbol": "00708L.TW",
-      "name": "期元大S&P黃金正2",
-      "current_price": 60.5,
-      "change_pct": -1.22,
-      "extra_data": {
-        "regular_market_price": 60.5,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 61.25
-      },
-      "kd_k": 19.03,
-      "kd_d": 35.42
-    },
-    {
       "symbol": "00715L.TW",
       "name": "期街口布蘭特正2",
-      "current_price": 60.0,
-      "change_pct": -6.83,
+      "current_price": 59.65,
+      "change_pct": -7.38,
       "extra_data": {
-        "regular_market_price": 60.0,
+        "regular_market_price": 59.65,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 64.4
       },
-      "kd_k": 11.9,
-      "kd_d": 15.13
+      "kd_k": 12.12,
+      "kd_d": 15.21
     },
     {
       "symbol": "00951.TW",
       "name": "台新日本半導體",
-      "current_price": 10.63,
-      "change_pct": -1.76,
+      "current_price": 10.47,
+      "change_pct": -3.23,
       "extra_data": {
-        "regular_market_price": 10.63,
+        "regular_market_price": 10.47,
         "pre_market_price": null,
         "post_market_price": null,
         "prev_close": 10.82
       },
-      "kd_k": 9.18,
-      "kd_d": 12.1
+      "kd_k": 9.12,
+      "kd_d": 12.08
     },
     {
       "symbol": "NVDA",
@@ -136,8 +108,8 @@
       "change_pct": -4.12,
       "extra_data": {
         "regular_market_price": 156.14,
-        "pre_market_price": null,
-        "post_market_price": 155.5984,
+        "pre_market_price": 155.32,
+        "post_market_price": null,
         "prev_close": 162.85
       },
       "kd_k": 17.57,
@@ -150,8 +122,8 @@
       "change_pct": -2.25,
       "extra_data": {
         "regular_market_price": 60.75,
-        "pre_market_price": null,
-        "post_market_price": 60.89,
+        "pre_market_price": 60.76,
+        "post_market_price": null,
         "prev_close": 62.15
       },
       "kd_k": 17.32,
@@ -164,8 +136,8 @@
       "change_pct": -9.49,
       "extra_data": {
         "regular_market_price": 49.68,
-        "pre_market_price": null,
-        "post_market_price": 49.3,
+        "pre_market_price": 49.29,
+        "post_market_price": null,
         "prev_close": 54.89
       },
       "kd_k": 19.07,
@@ -178,8 +150,8 @@
       "change_pct": -8.3,
       "extra_data": {
         "regular_market_price": 16.35,
-        "pre_market_price": null,
-        "post_market_price": 16.24,
+        "pre_market_price": 16.19,
+        "post_market_price": null,
         "prev_close": 17.83
       },
       "kd_k": 16.04,
@@ -192,8 +164,8 @@
       "change_pct": -4.66,
       "extra_data": {
         "regular_market_price": 10.22,
-        "pre_market_price": null,
-        "post_market_price": 10.23,
+        "pre_market_price": 10.2,
+        "post_market_price": null,
         "prev_close": 10.72
       },
       "kd_k": 14.3,
@@ -206,8 +178,8 @@
       "change_pct": -7.32,
       "extra_data": {
         "regular_market_price": 57.65,
-        "pre_market_price": null,
-        "post_market_price": 57.45,
+        "pre_market_price": 56.5792,
+        "post_market_price": null,
         "prev_close": 62.2
       },
       "kd_k": 9.77,
@@ -220,8 +192,8 @@
       "change_pct": -8.58,
       "extra_data": {
         "regular_market_price": 809.11,
-        "pre_market_price": null,
-        "post_market_price": 813.05,
+        "pre_market_price": 793.9279,
+        "post_market_price": null,
         "prev_close": 885.01
       },
       "kd_k": 17.75,
@@ -234,8 +206,8 @@
       "change_pct": -17.32,
       "extra_data": {
         "regular_market_price": 2.96,
-        "pre_market_price": null,
-        "post_market_price": 2.9903,
+        "pre_market_price": 2.85,
+        "post_market_price": null,
         "prev_close": 3.58
       },
       "kd_k": 11.84,
@@ -248,8 +220,8 @@
       "change_pct": -14.27,
       "extra_data": {
         "regular_market_price": 9.97,
-        "pre_market_price": null,
-        "post_market_price": 10.02,
+        "pre_market_price": 9.9,
+        "post_market_price": null,
         "prev_close": 11.63
       },
       "kd_k": 16.55,
