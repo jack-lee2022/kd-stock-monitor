@@ -1,245 +1,315 @@
 {
-  "timestamp": "2026-11-18T03:38:03.975721",
+  "timestamp": "2026-11-18T10:08:07.869983",
   "date": "2026-11-18",
   "macro": {
     "us10y": {
-      "value": 5.101,
-      "change": -0.02
+      "value": 5.103,
+      "change": -0.018
     },
     "dxy": {
-      "value": 103.47,
-      "change": -0.08
+      "value": 103.61,
+      "change": 0.06
     },
     "fear_greed": {
-      "value": 25.57,
-      "change": 2.66,
+      "value": 25.46,
+      "change": 2.55,
       "label": "VIX Index",
-      "timestamp": "2026-11-18T03:38:00.739321"
+      "timestamp": "2026-11-18T10:08:03.817098"
     },
     "btc": {
-      "value": 63642.0,
-      "change_pct": -1.87
+      "value": 64215.0,
+      "change_pct": 0
     }
   },
   "stocks_processed": 125,
   "stocks_successful": 125,
   "stocks_failed": 0,
-  "new_alerts": 15,
+  "new_alerts": 6,
   "overbought_count": 2,
-  "oversold_count": 13,
-  "normal_count": 110,
+  "oversold_count": 18,
+  "normal_count": 105,
   "overbought_stocks": [
     {
       "symbol": "00652.TW",
       "name": "富邦印度",
-      "current_price": 36.59,
-      "change_pct": 1.53,
+      "current_price": 36.31,
+      "change_pct": -0.77,
       "extra_data": {
-        "regular_market_price": 36.59,
+        "regular_market_price": 36.31,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 36.04
+        "prev_close": 36.59
       },
-      "kd_k": 93.94,
-      "kd_d": 92.95
+      "kd_k": 91.13,
+      "kd_d": 92.34
     },
     {
       "symbol": "00653L.TW",
       "name": "富邦印度正2",
-      "current_price": 51.25,
-      "change_pct": 1.79,
+      "current_price": 50.5,
+      "change_pct": -1.46,
       "extra_data": {
-        "regular_market_price": 51.25,
+        "regular_market_price": 50.5,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 50.35
+        "prev_close": 51.25
       },
-      "kd_k": 94.8,
-      "kd_d": 93.02
+      "kd_k": 91.27,
+      "kd_d": 92.44
     }
   ],
   "oversold_stocks": [
     {
-      "symbol": "00662.TW",
-      "name": "富邦NASDAQ",
-      "current_price": 23.1,
-      "change_pct": -1.95,
+      "symbol": "00635U.TW",
+      "name": "期元大S&P黃金",
+      "current_price": 39.1,
+      "change_pct": -1.76,
       "extra_data": {
-        "regular_market_price": 23.1,
+        "regular_market_price": 39.1,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 23.56
+        "prev_close": 39.8
       },
-      "kd_k": 1.64,
-      "kd_d": 3.91
+      "kd_k": 15.07,
+      "kd_d": 29.46
+    },
+    {
+      "symbol": "00662.TW",
+      "name": "富邦NASDAQ",
+      "current_price": 22.99,
+      "change_pct": -0.48,
+      "extra_data": {
+        "regular_market_price": 22.99,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 23.1
+      },
+      "kd_k": 1.23,
+      "kd_d": 3.01
+    },
+    {
+      "symbol": "00708L.TW",
+      "name": "期元大S&P黃金正2",
+      "current_price": 59.35,
+      "change_pct": -3.57,
+      "extra_data": {
+        "regular_market_price": 59.35,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 61.55
+      },
+      "kd_k": 15.51,
+      "kd_d": 29.62
     },
     {
       "symbol": "00715L.TW",
       "name": "期街口布蘭特正2",
-      "current_price": 59.65,
-      "change_pct": -7.38,
+      "current_price": 61.0,
+      "change_pct": 2.26,
       "extra_data": {
-        "regular_market_price": 59.65,
+        "regular_market_price": 61.0,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 64.4
+        "prev_close": 59.65
       },
-      "kd_k": 12.12,
-      "kd_d": 15.21
+      "kd_k": 12.25,
+      "kd_d": 14.22
+    },
+    {
+      "symbol": "00753L.TW",
+      "name": "中信中國50正2",
+      "current_price": 7.46,
+      "change_pct": -1.32,
+      "extra_data": {
+        "regular_market_price": 7.46,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 7.56
+      },
+      "kd_k": 17.81,
+      "kd_d": 33.93
+    },
+    {
+      "symbol": "00909.TW",
+      "name": "國泰數位支付服務",
+      "current_price": 33.58,
+      "change_pct": -1.09,
+      "extra_data": {
+        "regular_market_price": 33.58,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 33.95
+      },
+      "kd_k": 15.45,
+      "kd_d": 24.75
     },
     {
       "symbol": "00951.TW",
       "name": "台新日本半導體",
-      "current_price": 10.47,
-      "change_pct": -3.23,
+      "current_price": 10.39,
+      "change_pct": -0.76,
       "extra_data": {
-        "regular_market_price": 10.47,
+        "regular_market_price": 10.39,
         "pre_market_price": null,
         "post_market_price": null,
-        "prev_close": 10.82
+        "prev_close": 10.47
       },
-      "kd_k": 9.12,
-      "kd_d": 12.08
+      "kd_k": 7.44,
+      "kd_d": 10.53
+    },
+    {
+      "symbol": "00980A.TW",
+      "name": "主動野村臺灣優選",
+      "current_price": 17.88,
+      "change_pct": -0.17,
+      "extra_data": {
+        "regular_market_price": 17.88,
+        "pre_market_price": null,
+        "post_market_price": null,
+        "prev_close": 17.91
+      },
+      "kd_k": 17.28,
+      "kd_d": 25.13
     },
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corp.",
-      "current_price": 153.585,
-      "change_pct": -1.64,
+      "current_price": 155.46,
+      "change_pct": -0.44,
       "extra_data": {
-        "regular_market_price": 153.585,
+        "regular_market_price": 155.46,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 162.94,
         "prev_close": 156.14
       },
-      "kd_k": 15.07,
-      "kd_d": 16.47
+      "kd_k": 16.39,
+      "kd_d": 16.91
     },
     {
       "symbol": "NFLX",
       "name": "Netflix Inc.",
-      "current_price": 59.665,
-      "change_pct": -1.79,
+      "current_price": 59.68,
+      "change_pct": -1.76,
       "extra_data": {
-        "regular_market_price": 59.665,
+        "regular_market_price": 59.68,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 59.73,
         "prev_close": 60.75
       },
-      "kd_k": 12.62,
-      "kd_d": 22.75
-    },
-    {
-      "symbol": "USD",
-      "name": "ProShares Ultra Semiconductors",
-      "current_price": 48.425,
-      "change_pct": -2.53,
-      "extra_data": {
-        "regular_market_price": 48.425,
-        "pre_market_price": null,
-        "post_market_price": null,
-        "prev_close": 49.68
-      },
-      "kd_k": 17.41,
-      "kd_d": 20.96
+      "kd_k": 12.68,
+      "kd_d": 22.77
     },
     {
       "symbol": "NVDL",
       "name": "GraniteShares 2x Long NVDA Daily ETF",
-      "current_price": 15.81,
-      "change_pct": -3.3,
+      "current_price": 16.22,
+      "change_pct": -0.8,
       "extra_data": {
-        "regular_market_price": 15.81,
+        "regular_market_price": 16.22,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 17.7416,
         "prev_close": 16.35
       },
-      "kd_k": 14.25,
-      "kd_d": 15.13
+      "kd_k": 15.39,
+      "kd_d": 15.51
     },
     {
       "symbol": "NFXL",
       "name": "Direxion Daily NFLX Bull 2X Shares",
-      "current_price": 9.85,
-      "change_pct": -3.62,
+      "current_price": 9.86,
+      "change_pct": -3.52,
       "extra_data": {
-        "regular_market_price": 9.85,
+        "regular_market_price": 9.86,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 9.8818,
         "prev_close": 10.22
       },
-      "kd_k": 10.42,
-      "kd_d": 19.56
+      "kd_k": 10.53,
+      "kd_d": 19.6
     },
     {
       "symbol": "CRCL",
       "name": "Circle Internet Group, Inc.",
-      "current_price": 54.9,
-      "change_pct": -4.77,
+      "current_price": 54.63,
+      "change_pct": -5.24,
       "extra_data": {
-        "regular_market_price": 54.9,
+        "regular_market_price": 54.63,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 56.5606,
         "prev_close": 57.65
       },
-      "kd_k": 9.03,
-      "kd_d": 12.58
+      "kd_k": 8.61,
+      "kd_d": 12.44
+    },
+    {
+      "symbol": "CRM",
+      "name": "Salesforce, Inc.",
+      "current_price": 194.52,
+      "change_pct": -9.45,
+      "extra_data": {
+        "regular_market_price": 194.52,
+        "pre_market_price": null,
+        "post_market_price": 195.718,
+        "prev_close": 214.83
+      },
+      "kd_k": 19.36,
+      "kd_d": 23.86
     },
     {
       "symbol": "CRMG",
       "name": "Leverage Shares 2X Long CRM Daily ETF",
-      "current_price": 5.555,
-      "change_pct": -16.09,
+      "current_price": 5.3684,
+      "change_pct": -18.91,
       "extra_data": {
-        "regular_market_price": 5.555,
+        "regular_market_price": 5.3684,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 5.47,
         "prev_close": 6.62
       },
-      "kd_k": 19.95,
-      "kd_d": 22.26
+      "kd_k": 17.16,
+      "kd_d": 21.33
     },
     {
       "symbol": "SNDK",
       "name": "Sandisk Corporation",
-      "current_price": 789.08,
-      "change_pct": -2.48,
+      "current_price": 797.24,
+      "change_pct": -1.47,
       "extra_data": {
-        "regular_market_price": 789.08,
+        "regular_market_price": 797.24,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 843.3,
         "prev_close": 809.11
       },
-      "kd_k": 16.92,
-      "kd_d": 18.89
+      "kd_k": 17.9,
+      "kd_d": 19.22
     },
     {
       "symbol": "SNXX",
       "name": "Tradr 2X Long Sndk Daily ETF",
-      "current_price": 2.8199,
-      "change_pct": -4.73,
+      "current_price": 2.87,
+      "change_pct": -3.04,
       "extra_data": {
-        "regular_market_price": 2.8199,
+        "regular_market_price": 2.87,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 3.2098,
         "prev_close": 2.96
       },
-      "kd_k": 12.48,
-      "kd_d": 13.28
+      "kd_k": 13.25,
+      "kd_d": 13.53
     },
     {
       "symbol": "DLLL",
       "name": "GraniteShares 2x Long DELL Daily ETF",
-      "current_price": 9.9195,
-      "change_pct": -0.51,
+      "current_price": 10.11,
+      "change_pct": 1.4,
       "extra_data": {
-        "regular_market_price": 9.9195,
+        "regular_market_price": 10.11,
         "pre_market_price": null,
-        "post_market_price": null,
+        "post_market_price": 11.4002,
         "prev_close": 9.97
       },
-      "kd_k": 16.09,
-      "kd_d": 17.88
+      "kd_k": 17.26,
+      "kd_d": 18.27
     }
   ],
   "errors": []
